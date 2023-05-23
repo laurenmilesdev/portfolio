@@ -16,7 +16,7 @@ export default function Navigation(props: Props): JSX.Element {
   };
 
   return (
-    <div className={`${styles.container} col-md-12`}>
+    <div className={styles.container}>
       <div className="col-md-12">
         <Tabs
           value={value}
@@ -25,7 +25,8 @@ export default function Navigation(props: Props): JSX.Element {
           sx={{
             '& .MuiTabs-indicator': {
               color: '#fff',
-              backgroundColor: 'orange',
+              backgroundColor: '#3D57C2',
+              height: '3px',
             },
           }}
         >
