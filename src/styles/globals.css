@@ -70,6 +70,14 @@
   }
 }
 
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -83,8 +91,6 @@ html {
 
 body {
   background-color: #fafafa;
-  /* Margin bottom by footer height */
-  margin-bottom: 3%;
 }
 
 a {
