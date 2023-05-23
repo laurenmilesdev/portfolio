@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tab, Tabs } from '@mui/material';
+import TabPanel from '../tabs/TabPanel';
 import TabModel from '@/types/tab';
 
 type Props = {
@@ -15,9 +16,9 @@ export default function Navigation(props: Props) {
   return (
     <div className="col-md-12">
       <div className="col-md-12">
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+        <Tabs value={value} onChange={handleChange} aria-label="navigation tabs">
           {props.pages.map(({ label }, i) => (
-            <Tab label={label} key={i} />
+            <Tab label={label} key={i} {...a11yProps(i)} />
           ))}
         </Tabs>
       </div>
@@ -30,31 +31,9 @@ export default function Navigation(props: Props) {
   );
 }
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <div>{children}</div>}
-    </div>
-  );
-}
-
 function a11yProps(index: number) {
   return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    id: `tab-${index}`,
+    'aria-controls': `tabpanel-${index}`,
   };
 }
