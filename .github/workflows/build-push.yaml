@@ -1,0 +1,23 @@
+name: Build and Push portfolio
+
+on:
+  push:
+    branches-ignore: [development, production]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.16.0
+      - run: npm install
+
+      - name: Build
+      - run: npm run build
+      - run: npm run prettier
+      - run: npm run test
