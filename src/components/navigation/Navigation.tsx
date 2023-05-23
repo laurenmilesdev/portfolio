@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Tab, Tabs } from '@mui/material';
 import TabPanel from '../tabs/TabPanel';
 import TabModel from '@/types/tab';
@@ -9,8 +9,8 @@ type Props = {
   pages: TabModel[];
 };
 
-export default function Navigation(props: Props) {
-  const [value, setValue] = React.useState(0);
+export default function Navigation(props: Props): JSX.Element {
+  const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };

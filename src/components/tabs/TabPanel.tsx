@@ -6,7 +6,7 @@ type Props = {
   value: number;
 };
 
-export default function TabPanel(props: Props) {
+export default function TabPanel(props: Props): JSX.Element {
   const { children, value, index, ...other } = props;
 
   return (

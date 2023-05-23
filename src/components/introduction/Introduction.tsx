@@ -7,7 +7,7 @@ type Props = {
   description: string;
 };
 
-export default function Introduction(props: Props) {
+export default function Introduction(props: Props): JSX.Element {
   return (
     <div className={`${styles.container} col-md-12`}>
       <div className={`${styles.left} col-md-7`}>
