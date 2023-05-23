@@ -20,7 +20,7 @@ export function getStaticProps() {
 function introductionComponent(): JSX.Element {
   const props = {
     title: "Hello, I'm Lauren.",
-    description: 'Software developer with a passion for creating modern web pages',
+    description: 'Software developer with a passion for creating modern web pages.',
   };
 
   return <Introduction title={props.title} description={props.description}></Introduction>;
