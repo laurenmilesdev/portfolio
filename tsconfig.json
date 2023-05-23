@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "exclude": ["./cypress.config.ts", ".next", "out", "node_modules", "cypress", "**/*.cy.tsx"],
+  "exclude": [".next", "node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "jest.config.cjs"]
 }
