@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.title {
+  color: #c9c30c;
+  font-size: 10rem;
+  font-weight: 600;
+}
+
+.description {
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  animation: typing 2.5s steps(50, end) forwards, blink 0.8s infinite;
+  font-size: 1.6rem;
+  width: 0;
+}
+
+.description-container {
+  display: inline-block;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: orange;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: #fff;
+}
+
+.right {
+  height: auto;
+  background-color: #c9c30c;
+}
+
+.photo {
+  width: 75%;
+  height: auto;
+}

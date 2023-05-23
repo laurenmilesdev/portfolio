@@ -17,6 +17,7 @@
   },
   "plugins": ["@typescript-eslint", "jest", "promise"],
   "rules": {
+    "import/extensions": "off",
     "consistent-return": "off",
     "array-callback-return": "off",
     "no-nested-ternary": "off",
