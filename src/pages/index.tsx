@@ -8,8 +8,8 @@ import Contacts from '@/components/contact/Contacts';
 import introImg from '../../public/img/introduction/IMG_8341.jpg';
 import aboutImg from '../../public/img/about/IMG_1465.jpg';
 
-import TabType from '@/types/tab';
-import ImageType from '@/types/image';
+import TabType from '@/types/component-helpers/tab';
+import ImageType from '@/types/component-helpers/image';
 
 const introductionComponent = (): JSX.Element => (
   <Introduction subtitle={Data.introduction.subtitle} />

@@ -1,6 +1,6 @@
 import Contact from './Contact';
 
-import ContactType from '@/types/contact';
+import ContactType from '@/types/contact/contact';
 
 type Props = {
   description: string;

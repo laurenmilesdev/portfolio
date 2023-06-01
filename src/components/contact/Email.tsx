@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 
-import EmailType from '@/types/email';
+import EmailType from '@/types/contact/email';
 import EmailService from '@/services/email-service';
 
 import styles from './Email.module.css';

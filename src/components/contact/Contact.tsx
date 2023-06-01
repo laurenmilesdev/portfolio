@@ -3,7 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
-import ContactType from '@/types/contact';
+import ContactType from '@/types/contact/contact';
 import * as ContactTypeConstant from '@/constants/contact-type';
 
 import styles from './Contact.module.css';

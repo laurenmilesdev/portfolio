@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Fade from '@mui/material/Fade';
 
 import Email from '../contact/Email';
-import ImageType from '@/types/image';
+import ImageType from '@/types/component-helpers/image';
 
 import styles from './Layout.module.css';
 
