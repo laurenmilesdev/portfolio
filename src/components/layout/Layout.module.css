@@ -11,18 +11,9 @@
   color: #fff;
 }
 
-.title {
-  /* color: #c9c30c; */
-  color: var(--primary);
-  font-size: 8.5vw;
-  font-weight: 600;
-}
-
 .title-animated {
   /* color: #c9c30c; */
-  color: var(--primary);
-  font-size: 8.5vw;
-  font-weight: 600;
+  font-size: 5vw;
   overflow: hidden;
   border-right: 0.15em solid var(--secondary);
   white-space: nowrap;
