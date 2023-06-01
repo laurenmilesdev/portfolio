@@ -18,11 +18,7 @@ const introductionComponent = (): JSX.Element => (
 const aboutComponent = (): JSX.Element => <About description={Data.about.description}></About>;
 
 const contactComponent = (): JSX.Element => (
-  <Contact
-    description={Data.contact.description}
-    contacts={Data.contact.contacts}
-    links={Data.contact.links}
-  ></Contact>
+  <Contact description={Data.contact.description} contacts={Data.contact.contacts}></Contact>
 );
 
 export default function Home(): JSX.Element {

@@ -1,11 +1,9 @@
-import LinkType from '@/types/link';
+import ContactType from '@/types/contact';
 
 type Props = {
   description: string;
 
-  contacts: any[];
-
-  links: LinkType[];
+  contacts: ContactType[];
 };
 
 export default function Contact(props: Props): JSX.Element {
@@ -14,17 +12,9 @@ export default function Contact(props: Props): JSX.Element {
       <div>{props.description}</div>
       <div>
         {props.description &&
-          props.contacts.map((contact: any) => (
+          props.contacts.map((contact: ContactType) => (
             <p>
-              {contact.name}: {contact.value}
-            </p>
-          ))}
-      </div>
-      <div>
-        {props.description &&
-          props.links.map((link: LinkType) => (
-            <p>
-              {link.name}: {link.url}
+              {contact.name}: {contact.value ?? contact.url}
             </p>
           ))}
       </div>
