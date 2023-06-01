@@ -1,0 +1,13 @@
+.list {
+  list-style: none;
+  margin-bottom: 0.5%;
+}
+
+.list-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-icon {
+  margin-right: 1%;
+}
