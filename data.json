@@ -15,19 +15,19 @@
   },
   "contact": {
     "title": "Contact",
-    "description": "There are a few ways to contact me, or you can view some of my socials or download my resume below.",
+    "description": "There are a few ways to contact me, or you can view some of my socials or view/download my resume below.",
     "contacts": [
-      {
-        "name": "GitHub",
-        "value": "/laurenmilesdev",
-        "description": "Link to GitHub",
-        "url": "https://github.com/laurenmilesdev"
-      },
       {
         "name": "LinkedIn",
         "value": "/laurenmmiles",
         "description": "Link to LinkedIn",
         "url": "https://www.linkedin.com/in/laurenmmiles"
+      },
+      {
+        "name": "GitHub",
+        "value": "/laurenmilesdev",
+        "description": "Link to GitHub",
+        "url": "https://github.com/laurenmilesdev"
       },
       {
         "name": "Email",

@@ -19,7 +19,17 @@ const contactItem = (contact: ContactType) => (
   <li key={contact.name} className={styles.list}>
     <div className={`${styles['list-content']} col-md-12`}>
       <div className={styles['list-icon']}>{getIcon(contact.name)}</div>
-      <div>{contact.url ? <Link href={contact.url}>{contact.value}</Link> : contact.value}</div>
+      <div>
+        {contact.url ? (
+          <Link href={contact.url}>{contact.value}</Link>
+        ) : contact.name === ContactTypeConstant.resume ? (
+          <Link href={'/files/Lauren_Miles_Resume.pdf'} target="_blank">
+            {contact.value}
+          </Link>
+        ) : (
+          contact.value
+        )}
+      </div>
     </div>
   </li>
 );
