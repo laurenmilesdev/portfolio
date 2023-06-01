@@ -26,7 +26,7 @@ export default function Navigation(props: Props): JSX.Element {
             '& .MuiTabs-indicator': {
               color: '#fff',
               backgroundColor: '#3D57C2',
-              height: '3px',
+              height: '4px',
             },
           }}
         >
