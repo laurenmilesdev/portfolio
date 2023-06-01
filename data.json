@@ -30,11 +30,6 @@
         "url": "https://github.com/laurenmilesdev"
       },
       {
-        "name": "Email",
-        "value": "laurenmiles.dev@gmail.com",
-        "description": "Email me"
-      },
-      {
         "name": "Resume",
         "value": "Lauren_Miles_Resume.pdf",
         "description": "Download resume as PDF"
