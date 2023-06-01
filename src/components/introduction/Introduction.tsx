@@ -5,5 +5,5 @@ type Props = {
 };
 
 export default function Introduction(props: Props): JSX.Element {
-  return <div className={styles.content}>{props.subtitle}</div>;
+  return <div className={`${styles['content-animated']} col-md-12`}>{props.subtitle}</div>;
 }

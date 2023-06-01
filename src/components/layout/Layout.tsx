@@ -5,6 +5,7 @@ import ImageType from '@/types/image';
 type Props = {
   title: string;
   content: JSX.Element;
+  animatedTitle: boolean;
   image?: ImageType;
 };
 
@@ -12,7 +13,11 @@ export default function Layout(props: Props): JSX.Element {
   return (
     <div className={`${styles.container} col-md-12`}>
       <div className={styles.left}>
-        <div className={`${styles.title} col-md-12`}>{props.title}</div>
+        <div
+          className={`${props.animatedTitle ? styles['title-animated'] : styles.title} col-md-12`}
+        >
+          {props.title}
+        </div>
         <div className={`${styles['description-container']} col-md-12`}>{props.content}</div>
       </div>
       <div className={styles.right}>

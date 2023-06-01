@@ -18,6 +18,27 @@
   font-weight: 600;
 }
 
+.title-animated {
+  /* color: #c9c30c; */
+  color: var(--primary);
+  font-size: 8.5vw;
+  font-weight: 600;
+  overflow: hidden;
+  border-right: 0.15em solid var(--secondary);
+  white-space: nowrap;
+  animation: blink 0.8s infinite;
+  width: 100%;
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: var(--secondary);
+  }
+}
+
 .description-container {
   display: inline-block;
 }
