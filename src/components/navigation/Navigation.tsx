@@ -26,12 +26,13 @@ export default function Navigation(props: Props): JSX.Element {
             '& .MuiTabs-indicator': {
               color: '#fff',
               backgroundColor: '#3D57C2',
-              height: '3px',
+              height: '4px',
             },
           }}
         >
           {props.pages.map(({ label }, i) => (
             <Tab
+              className={styles.tab}
               label={label}
               key={i}
               {...a11yProps(i)}
@@ -39,7 +40,6 @@ export default function Navigation(props: Props): JSX.Element {
                 '&.Mui-selected': {
                   color: '#fff',
                 },
-                color: '#fff',
               }}
             />
           ))}
