@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Tab, Tabs } from '@mui/material';
 import TabPanel from '../tabs/TabPanel';
-import TabModel from '@/types/tab';
+import TabType from '../../types/component-helpers/tab';
 
 import styles from './Navigation.module.css';
 
 type Props = {
-  pages: TabModel[];
+  pages: TabType[];
 };
 
 export default function Navigation(props: Props): JSX.Element {
@@ -30,12 +30,13 @@ export default function Navigation(props: Props): JSX.Element {
             },
           }}
         >
-          {props.pages.map(({ label }, i) => (
+          {props.pages.map(({ label }, index: number) => (
             <Tab
               className={styles.tab}
               label={label}
-              key={i}
-              {...a11yProps(i)}
+              key={index}
+              {...a11yProps(index)}
+              data-testid={`tab-${index}`}
               sx={{
                 '&.Mui-selected': {
                   color: '#fff',
@@ -45,8 +46,8 @@ export default function Navigation(props: Props): JSX.Element {
           ))}
         </Tabs>
       </div>
-      {props.pages.map(({ component }, i) => (
-        <TabPanel value={value} index={i} key={i}>
+      {props.pages.map(({ component }, index: number) => (
+        <TabPanel value={value} index={index} key={index}>
           {component}
         </TabPanel>
       ))}
