@@ -1,4 +1,4 @@
-import Tab from '../../../src/types/tab';
+import Tab from '../../../../src/types/component-helpers/tab';
 
 describe('Tab', () => {
   it('returns Tab type object', () => {
