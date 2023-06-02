@@ -8,7 +8,7 @@ type Props = {
 
 export default function LeftContainer(props: Props) {
   return (
-    <div className={styles.container} data-testid="container">
+    <div className={styles['left-container']} data-testid="left-container">
       <div
         className={`${props.animated ? styles['title-animated'] : ''} col-md-12`}
         data-testid="title"
