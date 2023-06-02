@@ -31,13 +31,7 @@ export default function Home(): JSX.Element {
     introductionImage
   );
   const about = getContent(Data.about.title, aboutComponent(), true, aboutImage);
-  const contact = getContent(
-    Data.contact.title as string,
-    contactComponent(),
-    true,
-    undefined,
-    true
-  );
+  const contact = getContent(Data.contact.title, contactComponent(), true, undefined, true);
   const pages: TabType[] = [
     new TabType('Home', intro),
     new TabType('About', about),
