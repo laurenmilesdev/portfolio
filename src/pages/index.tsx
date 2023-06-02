@@ -28,10 +28,11 @@ export default function Home(): JSX.Element {
     Data.introduction.title,
     introductionComponent(),
     false,
+    false,
     introductionImage
   );
-  const about = getContent(Data.about.title, aboutComponent(), true, aboutImage);
-  const contact = getContent(Data.contact.title, contactComponent(), true, undefined, true);
+  const about = getContent(Data.about.title, aboutComponent(), true, false, aboutImage);
+  const contact = getContent(Data.contact.title, contactComponent(), true, true);
   const pages: TabType[] = [
     new TabType('Home', intro),
     new TabType('About', about),
@@ -53,18 +54,18 @@ export function getContent(
   title: string,
   component: JSX.Element,
   animatedTitle: boolean,
-  image?: ImageType,
-  email?: boolean
+  includeEmail: boolean,
+  image?: ImageType
 ) {
   return (
     <Layout
       title={title}
       content={component}
       animatedTitle={animatedTitle}
-      image={image}
-      email={email}
+      includeEmail={includeEmail}
       emailSubtitle={Data.email.subtitle}
       emailDescription={Data.email.description}
+      image={image}
     />
   );
 }
