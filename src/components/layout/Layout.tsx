@@ -1,12 +1,10 @@
-import Image from 'next/image';
 import Fade from '@mui/material/Fade';
-
 import LeftContainer from './LeftContainer';
-import Email from '../contact/Email';
+import RightContainer from './RightContainer';
+
 import ImageType from '@/types/component-helpers/image';
 
 import styles from './Layout.module.css';
-import RightContainer from './RightContainer';
 
 type Props = {
   title: string;
