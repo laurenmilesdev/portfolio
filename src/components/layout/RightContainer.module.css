@@ -1,0 +1,10 @@
+.container {
+  width: 43%;
+  height: auto;
+  background-color: var(--primary);
+}
+
+.photo {
+  width: 75%;
+  height: auto;
+}

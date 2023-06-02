@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 57%;
+  padding-left: 2%;
+  color: #fff;
+}
+
+.title-animated {
+  /* color: #c9c30c; */
+  font-size: 5vw;
+  overflow: hidden;
+  border-right: 0.15em solid var(--secondary);
+  white-space: nowrap;
+  animation: blink 0.8s infinite;
+  width: 100%;
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: var(--secondary);
+  }
+}
