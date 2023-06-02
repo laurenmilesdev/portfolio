@@ -2,12 +2,23 @@ import { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 
 import EmailType from '@/types/contact/email';
+import TextFieldType from '@/types/component-helpers/text-field';
 import EmailService from '@/services/email-service';
 
 import styles from './Email.module.css';
 
-export default function Email() {
+type Props = {
+  subtitle: string;
+  description: string;
+};
+
+export default function Email(props: Props) {
   const [email, setEmail] = useState(new EmailType('laurenmiles.dev@gmail.com', '', '', ''));
+  const fields = [
+    new TextFieldType('from', 'email', email.from, 'Email Address', 'email address'),
+    new TextFieldType('subject', 'text', email.subject, 'Subject', 'subject'),
+    new TextFieldType('body', 'text', email.body, 'Body', 'body'),
+  ];
 
   function handleChange(e: any) {
     setEmail((prev) => ({
@@ -20,7 +31,7 @@ export default function Email() {
     e.preventDefault();
 
     if (email.to && email.from && email.subject && email.body) {
-      new EmailService().send();
+      new EmailService().send(email);
     }
   }
 
@@ -28,53 +39,28 @@ export default function Email() {
     <form onSubmit={(e: any) => submit(e)}>
       <div className="col-md-12">
         <div className="col-md-12 p-3">
-          <h3>Want to send me an email?</h3>
+          <h3>{props.subtitle}</h3>
         </div>
         <div className="col-md-12 p-3">
-          <p>
-            Feel free to send me an email to connect with me. You can either use the built in email
-            text box below or send me an email on your own time at{' '}
-            <strong>laurenmiles.dev@gmail.com</strong>.
-          </p>
+          <p>{props.description}</p>
         </div>
-        <div className="col-md-12 p-3">
-          <TextField
-            id="from"
-            type="email"
-            value={email.from}
-            onChange={handleChange}
-            className={styles['text-field']}
-            placeholder="email address"
-            fullWidth
-            required
-          />
-        </div>
-        <div className="col-md-12 p-3">
-          <TextField
-            id="subject"
-            type="text"
-            value={email.subject}
-            onChange={handleChange}
-            className={styles['text-field']}
-            placeholder="subject"
-            fullWidth
-            required
-          />
-        </div>
-        <div className="col-md-12 p-3">
-          <TextField
-            id="body"
-            type="text"
-            value={email.body}
-            onChange={handleChange}
-            className={styles['text-field']}
-            placeholder="body"
-            rows={7}
-            multiline
-            fullWidth
-            required
-          />
-        </div>
+        {fields.map((field) => (
+          <div className="col-md-12 p-3">
+            <TextField
+              id={field.id}
+              type={field.type}
+              value={field.value}
+              label={field.label}
+              onChange={handleChange}
+              className={styles['text-field']}
+              placeholder={field.placeholder}
+              fullWidth
+              required
+              multiline={field.isBody}
+              rows={field.isBody ? 7 : 1}
+            />
+          </div>
+        ))}
         <div className="col-md-12 p-3">
           <Button onClick={submit}>Send</Button>
           <Button>Clear</Button>
