@@ -35,5 +35,9 @@
         "description": "Download resume as PDF"
       }
     ]
+  },
+  "email": {
+    "subtitle": "Want to send me an email?",
+    "description": " Feel free to send me an email to connect with me. You can either use the built in email capability below or send me an email on your own time at laurenmiles.dev@gmail.com."
   }
 }
