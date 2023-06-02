@@ -2,7 +2,3 @@
   display: flex;
   flex-direction: row;
 }
-
-.description-container {
-  display: inline-block;
-}
