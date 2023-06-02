@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 
-import EmailService from '@/services/email-service';
-import EmailType from '@/types/contact/email';
-import TextFieldType from '@/types/component-helpers/text-field';
+import EmailService from '../../services/email-service';
+import EmailType from '../../types/contact/email';
+import TextFieldType from '../../types/component-helpers/text-field';
 import * as EmailTextFieldConstant from '../../constants/email-text-field-type';
 
 import styles from './Email.module.css';
@@ -65,7 +65,7 @@ export default function Email(props: Props) {
 
   return (
     <form onSubmit={(e: any) => submit(e)}>
-      <div className="col-md-12">
+      <div className="col-md-12 email-container">
         <div className="col-md-12 p-3">
           <h3>{props.subtitle}</h3>
         </div>
@@ -73,7 +73,7 @@ export default function Email(props: Props) {
           <p>{props.description}</p>
         </div>
         {fields.map((field) => (
-          <div className="col-md-12 p-3">
+          <div className="col-md-12 p-3" key={field.id} data-testid={field.id}>
             <TextField
               id={field.id}
               type={field.type}

@@ -13,9 +13,9 @@ type Props = {
 
 export default function RightContainer(props: Props) {
   return (
-    <div className={styles.container}>
+    <div className={styles['right-container']} data-testid="right-container">
       {props.includeEmail ? (
-        <Email subtitle={props.emailSubtitle ?? ''} description={props.emailDescription ?? ''} />
+        <Email subtitle={props.emailSubtitle} description={props.emailDescription} />
       ) : props.image ? (
         <Image src={props.image.src} alt={props.image.altText} className={styles.photo} />
       ) : (
