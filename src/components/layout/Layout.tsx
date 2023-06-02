@@ -12,6 +12,8 @@ type Props = {
   animatedTitle: boolean;
   image?: ImageType;
   email?: boolean;
+  emailSubtitle?: string;
+  emailDescription?: string;
 };
 
 export default function Layout(props: Props): JSX.Element {
@@ -28,7 +30,10 @@ export default function Layout(props: Props): JSX.Element {
           {props.image ? (
             <Image src={props.image.src} alt={props.image.altText} className={styles.photo} />
           ) : props.email ? (
-            <Email />
+            <Email
+              subtitle={props.emailSubtitle ?? ''}
+              description={props.emailDescription ?? ''}
+            />
           ) : (
             <></>
           )}

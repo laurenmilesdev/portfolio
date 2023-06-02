@@ -63,6 +63,8 @@ export function getContent(
       animatedTitle={animatedTitle}
       image={image}
       email={email}
+      emailSubtitle={Data.email.subtitle}
+      emailDescription={Data.email.description}
     />
   );
 }
