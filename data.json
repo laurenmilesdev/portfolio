@@ -39,5 +39,23 @@
   "email": {
     "subtitle": "Want to send me an email?",
     "description": " Feel free to send me an email to connect with me. You can either use the built in email capability below or send me an email on your own time at laurenmiles.dev@gmail.com."
+  },
+  "project": {
+    "title": "Projects",
+    "description": "This is a description for all the key projects I have worked on.",
+    "projects": [
+      {
+        "title": "Project Title 1",
+        "description": "Project title  1 description",
+        "company": "project title 1 company",
+        "technologies": ["technology 1", "technology 2", "technology 3"]
+      },
+      {
+        "title": "Project Title 2",
+        "description": "Project title  2 description",
+        "company": "project title 2 company",
+        "technologies": ["technology 1", "technology 2", "technology 3"]
+      }
+    ]
   }
 }
