@@ -1,24 +1,27 @@
-name: Build and Push portfolio
+name: Azure Static Web Apps CI/CD
 
 on:
   push:
     branches-ignore: [development, production]
-  workflow_dispatch:
 
 jobs:
-  build:
+  build_job:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
+    name: Build Job
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
         with:
-          node-version: 18.16.0
-      - run: npm install
-
+          submodules: true
       - name: Build
-      - run: npm run build
-      - run: npm run prettier
-      - run: npm run lint
-      - run: npm run test
+        id: build
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
+          action: 'upload'
+          ###### Repository/Build Configurations ######
+          app_location: 'src' # App source code path relative to repository root
+          api_location: 'api' # Api source code path relative to repository root - optional
+          output_location: 'public' # Built app content directory, relative to app_location - optional
+          ###### End of Repository/Build Configurations ######
