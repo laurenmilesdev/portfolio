@@ -4,6 +4,7 @@ import Layout from '@/components/layout/Layout';
 import Introduction from '@/components/introduction/Introduction';
 import About from '@/components/about/About';
 import Contacts from '@/components/contact/Contacts';
+import Projects from '@/components/projects/Projects';
 
 import introImg from '../../public/img/introduction/IMG_8341.jpg';
 import aboutImg from '../../public/img/about/IMG_1465.jpg';
@@ -14,9 +15,10 @@ import ImageType from '@/types/component-helpers/image';
 const introductionComponent = (): JSX.Element => (
   <Introduction subtitle={Data.introduction.subtitle} />
 );
-
 const aboutComponent = (): JSX.Element => <About paragraphs={Data.about.paragraphs} />;
-
+const projectComponent = (): JSX.Element => (
+  <Projects description={Data.project.description} projects={Data.project.projects} />
+);
 const contactComponent = (): JSX.Element => (
   <Contacts description={Data.contact.description} contacts={Data.contact.contacts} />
 );
@@ -32,10 +34,12 @@ export default function Home(): JSX.Element {
     introductionImage
   );
   const about = getContent(Data.about.title, aboutComponent(), true, false, aboutImage);
+  const projects = getContent(Data.project.title as string, projectComponent(), true, false);
   const contact = getContent(Data.contact.title, contactComponent(), true, true);
   const pages: TabType[] = [
     new TabType('Home', intro),
     new TabType('About', about),
+    new TabType('Projects', projects),
     new TabType('Contact', contact),
   ];
 
