@@ -15,7 +15,7 @@ const introductionComponent = (): JSX.Element => (
   <Introduction subtitle={Data.introduction.subtitle} />
 );
 
-const aboutComponent = (): JSX.Element => <About description={Data.about.description} />;
+const aboutComponent = (): JSX.Element => <About paragraphs={Data.about.paragraphs} />;
 
 const contactComponent = (): JSX.Element => (
   <Contacts description={Data.contact.description} contacts={Data.contact.contacts} />
