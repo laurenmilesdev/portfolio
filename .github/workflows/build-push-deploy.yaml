@@ -11,7 +11,7 @@ on:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
@@ -26,7 +26,4 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: 'upload'
           ###### Repository/Build Configurations ######
-          app_location: 'src' # App source code path relative to repository root
-          api_location: 'api' # Api source code path relative to repository root - optional
-          output_location: 'public' # Built app content directory, relative to app_location - optional
-          ###### End of Repository/Build Configurations ######
+          app_location: '/src' # App source code path relative to repository root
