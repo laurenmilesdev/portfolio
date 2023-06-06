@@ -42,19 +42,51 @@
   },
   "project": {
     "title": "Projects",
-    "description": "This is a description for all the key projects I have worked on.",
+    "description": "Below is a list of some projects I have contributed to or created during my career so far. The projects vary from large application re-writes, maintaining and enhancing existing applications, brand new applications, and microservices to automate manual processes.",
     "projects": [
       {
-        "title": "Project Title 1",
-        "description": "Project title  1 description",
-        "company": "project title 1 company",
-        "technologies": ["technology 1", "technology 2", "technology 3"]
+        "title": "KSBA Portal",
+        "company": "KiZAN Technologies",
+        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
+        "description": "Contributed to the re-write of a large portal for the Kentucky School Board Association. The web application included roles with user management for board members (add, edit, or delete users based on roles), a section to keep school board meeting minutes (create and edit an agenda, keep notes, track votes, and screen share the meeting live), a separate smaller application to record job applications for open positions, and other existing internal data on the legacy application. All the existing data was migrated over and enhancements were made to clean up the data and tables."
       },
       {
-        "title": "Project Title 2",
-        "description": "Project title  2 description",
-        "company": "project title 2 company",
-        "technologies": ["technology 1", "technology 2", "technology 3"]
+        "title": "Four Roses Bourbon Internal Application",
+        "company": "KiZAN Technologies",
+        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
+        "description": "Contributed (was main developer) in creating an internal application for Four Roses to keep track of internal funding proposals. Basic CRUD application where a user could write up a proposal and submit it to the proper department. Users on the receiving end would get an email when a proposal was submitted and have the capability of approving or rejecting the proposal or requesting more information. If more information was needed, the proposal would begin the process over again."
+      },
+      {
+        "title": "Nationwide Children's Hospital Website",
+        "company": "Nationwide Children's Hospital",
+        "technologies": [".NET", "C#", "Sitecore"],
+        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. I mostly focused my time on adding and fixing accessibility issues to make specific pages and forms more accessible for all users."
+      },
+      {
+        "title": "Shipping Label Automation",
+        "company": "Tech Elevator",
+        "technologies": [
+          "Node.js",
+          "JavaScript",
+          "Azure",
+          "Jest",
+          "Zoho API",
+          "Postmark",
+          "Google Drive API"
+        ],
+        "description": "Created two Azure functions applications that served for automating the shipping label generation for the upcoming or ending bootcamp cohorts. One function created shipping labels to use to mail the students their laptops, and the other created the return shipping labels that were emailed to the students to mail back their laptops. These tokens ran on an HTTP trigger, triggering from a Zoho workflow."
+      },
+      {
+        "title": "Roating Tokens Automation",
+        "company": "Tech Elevator",
+        "technologies": ["Node.js", "JavaScript", "Azure", "Jest", "Zoho API"],
+        "description": "Created an Azure function application made to house any rotating tokens needed for development or production environments. A specific function within the application would be used to fetch the necessary token and update the value in an Azure Key Vault. These functions ran on a timer trigger, updating the token with a new value before the it expired."
+      },
+      {
+        "title": "BootcampOS",
+        "company": "Tech Elevator",
+        "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
+        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with another team under the Stride company umbrella to add features to the application that were specific to Tech Elevators needs."
       }
     ]
   }
