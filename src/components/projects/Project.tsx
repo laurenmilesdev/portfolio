@@ -1,25 +1,34 @@
+import TabPanel from '../tabs/TabPanel';
 import Technologies from './Technologies';
 import ProjectType from '@/types/projects/project';
 
 type Props = {
-  project: ProjectType;
+  pageDescription: string;
+  projects: ProjectType[];
+  value: number;
 };
+
+const content = (project: ProjectType): JSX.Element => (
+  <div>
+    <h2 data-testid="project-title">{project.title}</h2>
+    <p data-testid="project-company">{project.company}</p>
+    {project.technologies && <Technologies technologies={project.technologies} />}
+    <div data-testid="project-description">
+      <p>{project.description}</p>
+    </div>
+  </div>
+);
 
 export default function Project(props: Props): JSX.Element {
   return (
-    props.project && (
-      <div className="col-md-12">
-        <div>
-          <h2 data-testid="project-title">{props.project.title}</h2>
-          <h4 data-testid="project-company">{props.project.company}</h4>
-        </div>
-        <div>
-          {props.project.technologies && <Technologies technologies={props.project.technologies} />}
-        </div>
-        <div data-testid="project-description">
-          <p>{props.project.description}</p>
-        </div>
-      </div>
-    )
+    <div className="col-md-12">
+      <p data-testid="description">{props.pageDescription}</p>
+      <hr />
+      {props.projects.map((project: ProjectType, index: number) => (
+        <TabPanel value={props.value} index={index} key={index}>
+          {content(project)}
+        </TabPanel>
+      ))}
+    </div>
   );
 }
