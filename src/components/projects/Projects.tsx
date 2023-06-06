@@ -9,7 +9,7 @@ type Props = {
 export default function Projects(props: Props): JSX.Element {
   return (
     <div className="col-md-12">
-      <p>{props.description}</p>
+      <p data-testid="description">{props.description}</p>
       {props.projects &&
         props.projects.map((project: ProjectType) => (
           <div className="col-md-12" key={project.title}>
