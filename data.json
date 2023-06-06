@@ -38,11 +38,11 @@
   },
   "email": {
     "subtitle": "Want to send me an email?",
-    "description": " Feel free to send me an email to connect with me. You can either use the built in email capability below or send me an email on your own time at laurenmiles.dev@gmail.com."
+    "description": "Feel free to send me an email to connect with me. You can either use the built in email capability below or send me an email on your own time at laurenmiles.dev@gmail.com."
   },
   "project": {
     "title": "Projects",
-    "description": "Below is a list of some projects I have contributed to or created during my career so far. The projects vary from large application re-writes, maintaining and enhancing existing applications, brand new applications, and microservices to automate manual processes.",
+    "description": "On the right are a list of some projects I have contributed to or created during my career so far. Click on one to view the details. The projects vary from large application re-writes, maintaining and enhancing existing applications, brand new applications, and microservices to automate manual processes.",
     "projects": [
       {
         "title": "KSBA Portal",
