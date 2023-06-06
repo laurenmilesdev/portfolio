@@ -1,14 +1,14 @@
 type Props = {
-  description: string[];
+  paragraphs: string[];
 };
 
 export default function About(props: Props): JSX.Element {
   return (
     <div className="col-md-12">
-      {props.description &&
-        props.description.map((item: string, index: number) => (
+      {props.paragraphs &&
+        props.paragraphs.map((paragraph: string, index: number) => (
           <p data-testid={`paragraph-${index}`} key={index}>
-            {item}
+            {paragraph}
           </p>
         ))}
     </div>

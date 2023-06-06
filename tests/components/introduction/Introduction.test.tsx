@@ -1,13 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Introduction from '../../../src/components/introduction/Introduction';
 
 describe('Introduction component', () => {
   it('renders subtitle', () => {
     const subtitle = 'This is a subtitle';
 
-    render(<Introduction subtitle={subtitle} />);
+    const { getByTestId } = render(<Introduction subtitle={subtitle} />);
 
-    expect(screen.getByTestId('intro')).toHaveTextContent(subtitle);
+    expect(getByTestId('intro')).toHaveTextContent(subtitle);
   });
 
   it('has class assigned to div', () => {

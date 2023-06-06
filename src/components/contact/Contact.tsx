@@ -14,24 +14,26 @@ type Props = {
 
 export default function Contact(props: Props) {
   return (
-    <li key={props.contact.name} className={styles.list}>
-      <div className={`${styles['list-content']} col-md-12`}>
-        <div className={styles['list-icon']}>{getIcon(props.contact.name)}</div>
-        <div>
-          {props.contact.url ? (
-            <Link href={props.contact.url} target="_blank">
-              {props.contact.value}
-            </Link>
-          ) : props.contact.name === ContactTypeConstant.resume ? (
-            <Link href={'/files/Lauren_Miles_Resume.pdf'} target="_blank">
-              {props.contact.value}
-            </Link>
-          ) : (
-            props.contact.value
-          )}
+    props.contact && (
+      <li key={props.contact.name} className={styles.list}>
+        <div className={`${styles['list-content']} col-md-12`}>
+          <div className={styles['list-icon']}>{getIcon(props.contact.name)}</div>
+          <div>
+            {props.contact.url ? (
+              <Link href={props.contact.url} target="_blank">
+                {props.contact.value}
+              </Link>
+            ) : props.contact.name === ContactTypeConstant.resume ? (
+              <Link href={'/files/Lauren_Miles_Resume.pdf'} target="_blank">
+                {props.contact.value}
+              </Link>
+            ) : (
+              props.contact.value
+            )}
+          </div>
         </div>
-      </div>
-    </li>
+      </li>
+    )
   );
 }
 
