@@ -1,21 +1,17 @@
 .left-container {
-  display: flex;
-  flex-direction: column;
   width: 57%;
-  height: auto;
-  padding-left: 2%;
+  padding: 1%;
   color: #fff;
-  background-color: #000;
 }
 
 .title-animated {
-  /* color: #c9c30c; */
-  font-size: 5vw;
+  font-size: 4vw;
   overflow: hidden;
   border-right: 0.15em solid var(--secondary);
   white-space: nowrap;
   animation: blink 0.8s infinite;
   width: 100%;
+  margin-bottom: 1%;
 }
 
 @keyframes blink {
