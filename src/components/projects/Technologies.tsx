@@ -10,7 +10,7 @@ export default function Technologies(props: Props): JSX.Element {
     <div className={styles['chip-container']}>
       {props.technologies &&
         props.technologies.map((tech: string) => (
-          <Chip label={tech} className={styles.chip}></Chip>
+          <Chip label={tech.toUpperCase()} className={styles.chip} key={tech}></Chip>
         ))}
     </div>
   );
