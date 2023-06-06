@@ -1,105 +1,46 @@
 import { render } from '@testing-library/react';
 import RightContainer from '../../../src/components/layout/RightContainer';
-import ImageType from '../../../src/types/component-helpers/image';
-import img from '../../../../public/img/about/IMG_1465.jpg';
-
-jest.mock('next/image', () => ({
-  __esModule: true,
-  default: (props: any) => <img {...props} />,
-}));
 
 describe('RightContainer component', () => {
-  const emailSubtitle = 'Subtitle';
-  const emailDescription = 'This is email description.';
-  const imageAltText = 'Alt text';
-  const testImage = new ImageType(img, imageAltText);
   const rightContainerClass = 'right-container';
+  const contentText = 'This is content';
+  const testClassName = 'test';
+  const content = <div data-testid={testClassName}>{contentText}</div>;
 
   it('contains correct classes when includeEmail is false and imgage is undefined', () => {
-    const { container } = render(
-      <RightContainer
-        includeEmail={false}
-        emailSubtitle={emailSubtitle}
-        emailDescription={emailDescription}
-      />
-    );
+    const { container } = render(<RightContainer content={content} />);
     const { firstChild } = container;
 
     expect(firstChild).toHaveClass(rightContainerClass);
   });
 
-  it('contains correct classes when includeEmail is true and image is undefined', () => {
-    const { container } = render(
-      <RightContainer
-        includeEmail={true}
-        emailSubtitle={emailSubtitle}
-        emailDescription={emailDescription}
-      />
-    );
-    const { firstChild } = container;
-    const thirdChild = firstChild?.firstChild?.firstChild;
-
-    expect(firstChild).toHaveClass(rightContainerClass);
-    expect(thirdChild).toHaveClass('email-container');
-  });
-
-  it('contains correct classes when includeEmail is false and image is not undefined', () => {
-    const { container } = render(
-      <RightContainer
-        includeEmail={false}
-        emailSubtitle={emailSubtitle}
-        emailDescription={emailDescription}
-        image={testImage}
-      />
-    );
+  it('contains correct classes when content is defined', () => {
+    const { container } = render(<RightContainer content={content} />);
     const { firstChild } = container;
     const secondChild = firstChild?.firstChild;
 
     expect(firstChild).toHaveClass(rightContainerClass);
-    expect(secondChild).toHaveClass('photo');
+    expect(secondChild).toHaveClass(testClassName);
   });
 
-  it('contains correct content when includeEmail is false and imgage is undefined', () => {
-    const { getByTestId } = render(
-      <RightContainer
-        includeEmail={false}
-        emailSubtitle={emailSubtitle}
-        emailDescription={emailDescription}
-      />
-    );
+  it('contains correct classes when content is undefined', () => {
+    const { container } = render(<RightContainer content={undefined} />);
+    const { firstChild } = container;
 
+    expect(firstChild).toHaveClass(rightContainerClass);
+  });
+
+  it('contains correct content when content is defined', () => {
+    const { getByTestId } = render(<RightContainer content={content} />);
+    const rightContainer = getByTestId(rightContainerClass);
+
+    expect(rightContainer).toHaveTextContent(contentText);
+  });
+
+  it('contains correct content when content is undefined', () => {
+    const { getByTestId } = render(<RightContainer content={undefined} />);
     const rightContainer = getByTestId(rightContainerClass);
 
     expect(rightContainer).toHaveTextContent('');
-  });
-
-  it('contains correct content when includeEmail is true and image is undefined', () => {
-    const { getByTestId } = render(
-      <RightContainer
-        includeEmail={true}
-        emailSubtitle={emailSubtitle}
-        emailDescription={emailDescription}
-      />
-    );
-
-    const rightContainer = getByTestId(rightContainerClass);
-
-    expect(rightContainer).toHaveTextContent(emailSubtitle);
-    expect(rightContainer).toHaveTextContent(emailDescription);
-  });
-
-  it('contains correct content when includeEmail is false and image is not undefined', () => {
-    const { getByAltText, container } = render(
-      <RightContainer
-        includeEmail={false}
-        emailSubtitle={emailSubtitle}
-        emailDescription={emailDescription}
-        image={testImage}
-      />
-    );
-    const { firstChild } = container;
-    const image = getByAltText(imageAltText);
-
-    expect(firstChild?.firstChild).toBe(image);
   });
 });
