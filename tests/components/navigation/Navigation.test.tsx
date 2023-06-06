@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Navigation from '../../../src/components/navigation/Navigation';
 import TabType from '../../../src/types/component-helpers/tab';
 
@@ -10,36 +10,36 @@ describe('Navigation component', () => {
   ];
 
   it('renders tabs', () => {
-    render(<Navigation pages={pages} />);
+    const { getByTestId } = render(<Navigation pages={pages} />);
 
-    expect(screen.getByTestId('tab-0')).toHaveTextContent('Tab 1');
-    expect(screen.getByTestId('tab-1')).toHaveTextContent('Tab 2');
-    expect(screen.getByTestId('tab-2')).toHaveTextContent('Tab 3');
+    expect(getByTestId('tab-0')).toHaveTextContent('Tab 1');
+    expect(getByTestId('tab-1')).toHaveTextContent('Tab 2');
+    expect(getByTestId('tab-2')).toHaveTextContent('Tab 3');
   });
 
   it('renders content in Tab 1', () => {
-    render(<Navigation pages={pages} />);
+    const { getByTestId } = render(<Navigation pages={pages} />);
 
-    expect(screen.getByTestId('tab-0-content')).toHaveTextContent('Tab 1 content');
+    expect(getByTestId('tab-0-content')).toHaveTextContent('Tab 1 content');
   });
 
   it('renders content in Tab 2', () => {
-    render(<Navigation pages={pages} />);
+    const { getByTestId } = render(<Navigation pages={pages} />);
 
-    const tab2 = screen.getByTestId('tab-1');
+    const tab2 = getByTestId('tab-1');
 
     fireEvent.click(tab2);
 
-    expect(screen.getByTestId('tab-1-content')).toHaveTextContent('Tab 2 content');
+    expect(getByTestId('tab-1-content')).toHaveTextContent('Tab 2 content');
   });
 
   it('renders content in Tab 3', () => {
-    render(<Navigation pages={pages} />);
+    const { getByTestId } = render(<Navigation pages={pages} />);
 
-    const tab3 = screen.getByTestId('tab-2');
+    const tab3 = getByTestId('tab-2');
 
     fireEvent.click(tab3);
 
-    expect(screen.getByTestId('tab-2-content')).toHaveTextContent('Tab 3 content');
+    expect(getByTestId('tab-2-content')).toHaveTextContent('Tab 3 content');
   });
 });
