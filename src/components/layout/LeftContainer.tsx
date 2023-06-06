@@ -6,7 +6,7 @@ type Props = {
   animated?: boolean;
 };
 
-export default function LeftContainer(props: Props) {
+export default function LeftContainer(props: Props): JSX.Element {
   return (
     <div className={styles['left-container']} data-testid="left-container">
       <div

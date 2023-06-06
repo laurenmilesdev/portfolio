@@ -13,7 +13,7 @@ type Props = {
   description: string;
 };
 
-export default function Email(props: Props) {
+export default function Email(props: Props): JSX.Element {
   const [email, setEmail] = useState(new EmailType('laurenmiles.dev@gmail.com', '', '', ''));
   const [fromError, setFromError] = useState(false);
   const [subjectError, setSubjectError] = useState(false);

@@ -12,7 +12,7 @@ type Props = {
   contact: ContactType;
 };
 
-export default function Contact(props: Props) {
+export default function Contact(props: Props): JSX.Element {
   return (
     props.contact && (
       <li key={props.contact.name} className={styles.list}>

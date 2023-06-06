@@ -11,7 +11,7 @@ type Props = {
   image?: ImageType;
 };
 
-export default function RightContainer(props: Props) {
+export default function RightContainer(props: Props): JSX.Element {
   return (
     <div className={styles['right-container']} data-testid="right-container">
       {props.includeEmail ? (
