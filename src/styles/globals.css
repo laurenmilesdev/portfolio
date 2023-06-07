@@ -37,8 +37,10 @@
   --card-border-rgb: 131, 134, 135;
 
   --primary: #e0d26e;
-  --secondary: #3d57c2;
-  --primary-hover: #e9df96;
+  --primary-light: #ede5ab;
+  --secondary: #6e7ce0;
+  --secondary-light: #abb3ed;
+  --tertiary: #808080;
 
   --warn: #e0a66c;
 }
@@ -95,8 +97,13 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--tertiary);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--tertiary);
+  text-decoration: underline;
 }
 
 h1 {
@@ -106,7 +113,7 @@ h1 {
 }
 
 h2 {
-  color: #696016;
+  color: var(--secondary);
 }
 
 h3 {
@@ -117,6 +124,10 @@ h3 {
   color: var(--bs-body-color);
 }
 
+.primary-btn:hover {
+  background-color: var(--secondary-light);
+}
+
 .warn-btn {
   color: var(--bs-body-color);
 }
@@ -125,16 +136,19 @@ h3 {
   background-color: var(--warn);
 }
 
-.primary-btn:hover {
-  background-color: var(--primary-hover);
-}
-
-/* 
 .MuiTabs-indicator {
   color: '#fff';
   background-color: var(--secondary);
   height: 4px;
-} */
+}
+
+#nav-tabs .MuiTab-root.Mui-selected {
+  color: #fff;
+}
+
+#projects-tabs .MuiTab-root.Mui-selected {
+  color: var(--bs-body-color);
+}
 
 .intro-photo {
   width: 75%;
