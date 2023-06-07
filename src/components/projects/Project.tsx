@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import TabPanel from '../tabs/TabPanel';
 import Technologies from './Technologies';
 import ProjectType from '@/types/projects/project';
@@ -11,7 +12,11 @@ type Props = {
 const content = (project: ProjectType): JSX.Element => (
   <div>
     <h2 data-testid="project-title">{project.title}</h2>
-    <p data-testid="project-company">{project.company}</p>
+    <p data-testid="project-company">
+      <Link href={project.companyUrl ?? ''} target="_blank">
+        {project.company}
+      </Link>
+    </p>
     {project.technologies && <Technologies technologies={project.technologies} />}
     <div data-testid="project-description">
       <p>{project.description}</p>
