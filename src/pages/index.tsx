@@ -16,7 +16,7 @@ import aboutImg from '../../public/img/about/IMG_1465.jpg';
 import TabType from '@/types/component-helpers/tab';
 
 export default function Home(): JSX.Element {
-  const [projectValue, setProjectValue] = useState<number>(-1);
+  const [projectValue, setProjectValue] = useState<number>(0);
   const introductionComponent = () => <Introduction subtitle={Data.introduction.subtitle} />;
   const introductionImage = () => (
     <Image src={introImg} alt="Image of Lauren" className="intro-photo" />
@@ -59,10 +59,10 @@ export default function Home(): JSX.Element {
   );
   const aboutPage = pageContent(Data.about.title, true, aboutComponent(), aboutImage());
   const projectsPage = pageContent(
-    Data.project.title as string,
+    Data.project.title,
     true,
-    projectComponent(),
-    projectsComponent()
+    projectsComponent(),
+    projectComponent()
   );
   const contactPage = pageContent(
     Data.contact.title,
