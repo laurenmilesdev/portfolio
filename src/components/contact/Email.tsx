@@ -69,7 +69,7 @@ export default function Email(props: Props): JSX.Element {
     <form onSubmit={(e: any) => submit(e)}>
       <div className="col-md-12 email-container">
         <div className="col-md-12 p-3">
-          <h3>{props.subtitle}</h3>
+          <h2>{props.subtitle.toUpperCase()}</h2>
         </div>
         <div className="col-md-12 p-3">
           <p>{props.description}</p>
@@ -95,13 +95,11 @@ export default function Email(props: Props): JSX.Element {
           </div>
         ))}
         <div className="col-md-12 p-3">
-          <Button onClick={submit} className="primary-btn">
+          <Button onClick={submit} className="btn-primary">
             <SendIcon />
           </Button>
-          <Button className="warn-btn">
-            <span id="clear-btn">
-              <ClearIcon />
-            </span>
+          <Button className="btn-warn">
+            <ClearIcon />
           </Button>
         </div>
       </div>

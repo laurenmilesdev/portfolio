@@ -137,11 +137,11 @@ ul {
   background-color: var(--primary-light);
 }
 
-.warn-btn {
+.btn-warn {
   color: var(--bs-body-color);
 }
 
-.warn-btn:hover {
+.btn-warn:hover {
   background-color: var(--warn);
 }
 
