@@ -11,7 +11,7 @@
   white-space: nowrap;
   animation: blink 0.8s infinite;
   width: 100%;
-  margin-bottom: 1%;
+  margin-bottom: 3%;
 }
 
 @keyframes blink {
