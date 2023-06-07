@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Tab, Tabs } from '@mui/material';
+import { Container, Tab, Tabs } from '@mui/material';
 import { a11yProps } from '../../helpers/helpers';
 import TabPanel from '../tabs/TabPanel';
 import TabType from '../../types/component-helpers/tab';
@@ -18,28 +18,42 @@ export default function Navigation(props: Props): JSX.Element {
   }
 
   return (
-    <div className={styles.container}>
-      <div className="col-md-12">
-        <Tabs value={value} onChange={handleChange} aria-label="navigation tabs">
-          {props.pages.map(({ label }, index: number) => (
-            <Tab
-              className={styles.tab}
-              label={label}
-              key={index}
-              {...a11yProps(index)}
-              data-testid={`tab-${index}`}
-              sx={{
-                '&.Mui-selected': {
-                  color: '#fff',
-                },
-              }}
-            />
-          ))}
-        </Tabs>
-      </div>
+    <div>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        aria-label="navigation tabs"
+        // Have to specify styling here to not affect styling in other tabs
+        sx={{
+          '& .MuiTabs-indicator': {
+            color: '#fff',
+            backgroundColor: '#3d57c2',
+            height: '4px',
+          },
+        }}
+        className={styles.tabs}
+      >
+        {props.pages.map(({ label }, index: number) => (
+          <Tab
+            className={styles.tab}
+            label={label}
+            key={index}
+            {...a11yProps(index)}
+            data-testid={`tab-${index}`}
+            sx={{
+              '&.Mui-selected': {
+                color: '#fff',
+              },
+            }}
+          />
+        ))}
+      </Tabs>
+
       {props.pages.map(({ component }, index: number) => (
         <TabPanel value={value} index={index} key={index}>
-          {component}
+          <Container maxWidth={false} sx={{ maxWidth: '85%' }}>
+            {component}
+          </Container>
         </TabPanel>
       ))}
     </div>
