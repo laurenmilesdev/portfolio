@@ -38,6 +38,9 @@
 
   --primary: #e0d26e;
   --secondary: #3d57c2;
+  --primary-hover: #e9df96;
+
+  --warn: #e0a66c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -103,18 +106,35 @@ h1 {
 }
 
 h2 {
-  color: darkgray;
+  color: #696016;
 }
 
 h3 {
   font-size: 2.5vw;
 }
 
+.primary-btn {
+  color: var(--bs-body-color);
+}
+
+.warn-btn {
+  color: var(--bs-body-color);
+}
+
+.warn-btn:hover {
+  background-color: var(--warn);
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* 
 .MuiTabs-indicator {
-  color: #fff;
+  color: '#fff';
   background-color: var(--secondary);
   height: 4px;
-}
+} */
 
 .intro-photo {
   width: 75%;
