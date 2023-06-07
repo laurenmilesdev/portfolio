@@ -19,32 +19,13 @@ export default function Navigation(props: Props): JSX.Element {
 
   return (
     <div>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        aria-label="navigation tabs"
-        // Have to specify styling here to not affect styling in other tabs
-        sx={{
-          '& .MuiTabs-indicator': {
-            color: '#fff',
-            backgroundColor: '#3d57c2',
-            height: '4px',
-          },
-        }}
-        className={styles.tabs}
-      >
+      <Tabs value={value} onChange={handleChange} aria-label="navigation tabs">
         {props.pages.map(({ label }, index: number) => (
           <Tab
-            className={styles.tab}
+            className={`${styles.tab} nav-tab`}
             label={label}
             key={index}
             {...a11yProps(index)}
-            data-testid={`tab-${index}`}
-            sx={{
-              '&.Mui-selected': {
-                color: '#fff',
-              },
-            }}
           />
         ))}
       </Tabs>
