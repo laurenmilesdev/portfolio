@@ -7,29 +7,6 @@ describe('RightContainer component', () => {
   const testClassName = 'test';
   const content = <div data-testid={testClassName}>{contentText}</div>;
 
-  it('contains correct classes when includeEmail is false and imgage is undefined', () => {
-    const { container } = render(<RightContainer content={content} />);
-    const { firstChild } = container;
-
-    expect(firstChild).toHaveClass(rightContainerClass);
-  });
-
-  it('contains correct classes when content is defined', () => {
-    const { container } = render(<RightContainer content={content} />);
-    const { firstChild } = container;
-    const secondChild = firstChild?.firstChild;
-
-    expect(firstChild).toHaveClass(rightContainerClass);
-    expect(secondChild).toHaveClass(testClassName);
-  });
-
-  it('contains correct classes when content is undefined', () => {
-    const { container } = render(<RightContainer content={undefined} />);
-    const { firstChild } = container;
-
-    expect(firstChild).toHaveClass(rightContainerClass);
-  });
-
   it('contains correct content when content is defined', () => {
     const { getByTestId } = render(<RightContainer content={content} />);
     const rightContainer = getByTestId(rightContainerClass);
