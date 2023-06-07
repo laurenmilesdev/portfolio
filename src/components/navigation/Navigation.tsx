@@ -26,6 +26,7 @@ export default function Navigation(props: Props): JSX.Element {
             label={label}
             key={index}
             {...a11yProps(index)}
+            data-testid={`tab-${index}`}
           />
         ))}
       </Tabs>
