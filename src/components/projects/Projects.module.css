@@ -4,5 +4,5 @@
 
 .tab:hover {
   color: var(--bs-body-color);
-  background-color: var(--secondary-light);
+  background-color: var(--primary-light);
 }

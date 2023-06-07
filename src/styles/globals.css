@@ -113,7 +113,7 @@ h1 {
 }
 
 h2 {
-  color: var(--tertiary);
+  color: var(--primary-light);
 }
 
 h3 {
@@ -155,7 +155,7 @@ h3 {
 /* Selected projects tabs */
 .projects-tab.MuiTab-root.Mui-selected {
   color: #000;
-  background-color: var(--secondary-light);
+  background-color: var(--primary-light);
   text-align: left;
 }
 
