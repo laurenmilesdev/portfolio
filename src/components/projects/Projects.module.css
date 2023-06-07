@@ -1,0 +1,8 @@
+.tab {
+  width: 50%;
+}
+
+.tab:hover {
+  color: var(--bs-body-color);
+  background-color: var(--secondary-light);
+}
