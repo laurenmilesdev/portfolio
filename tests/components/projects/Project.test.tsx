@@ -3,27 +3,48 @@ import Project from '../../../src/components/projects/Project';
 import ProjectType from '../../../src/types/projects/project';
 
 describe('Project component', () => {
-  const title = 'Project 1';
-  const description = 'Project 1 description';
-  const company = 'company';
+  const pageDescription = 'This is a description';
   const technologies = ['tech 1', 'tech 2'];
-  const project: ProjectType = new ProjectType(title, description, company, technologies);
+  const projects: ProjectType[] = [
+    new ProjectType('Project 1', 'Company 1', technologies, 'Project 1 description'),
+    new ProjectType('Project 2', 'Company 2', technologies, 'Project 2 description', 'url.com'),
+  ];
 
-  it('renders project title', () => {
-    const { getByTestId } = render(<Project project={project} />);
+  it('renders page description', () => {
+    const { getByTestId } = render(
+      <Project pageDescription={pageDescription} projects={projects} value={0} />
+    );
 
-    expect(getByTestId('project-title')).toHaveTextContent(title);
+    expect(getByTestId('description')).toHaveTextContent(pageDescription);
   });
 
-  it('renders project company', () => {
-    const { getByTestId } = render(<Project project={project} />);
+  it('renders project titles', () => {
+    projects.forEach((project: ProjectType, index: number) => {
+      const { getByTestId } = render(
+        <Project pageDescription={pageDescription} projects={projects} value={index} />
+      );
 
-    expect(getByTestId('project-company')).toHaveTextContent(company);
+      expect(getByTestId(`project-title-${index}`)).toHaveTextContent(project.title);
+    });
   });
 
-  it('renders project description', () => {
-    const { getByTestId } = render(<Project project={project} />);
+  it('renders project companies', () => {
+    projects.forEach((project: ProjectType, index: number) => {
+      const { getByTestId } = render(
+        <Project pageDescription={pageDescription} projects={projects} value={index} />
+      );
 
-    expect(getByTestId('project-description')).toHaveTextContent(description);
+      expect(getByTestId(`project-company-${index}`)).toHaveTextContent(project.company);
+    });
+  });
+
+  it('renders project descriptions', () => {
+    projects.forEach((project: ProjectType, index: number) => {
+      const { getByTestId } = render(
+        <Project pageDescription={pageDescription} projects={projects} value={index} />
+      );
+
+      expect(getByTestId(`project-description-${index}`)).toHaveTextContent(project.description);
+    });
   });
 });

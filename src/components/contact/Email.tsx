@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Button, TextField } from '@mui/material';
+import SendIcon from '@mui/icons-material/Send';
+import ClearIcon from '@mui/icons-material/Clear';
 
 import EmailService from '../../services/email-service';
 import EmailType from '../../types/contact/email';
@@ -13,7 +15,7 @@ type Props = {
   description: string;
 };
 
-export default function Email(props: Props) {
+export default function Email(props: Props): JSX.Element {
   const [email, setEmail] = useState(new EmailType('laurenmiles.dev@gmail.com', '', '', ''));
   const [fromError, setFromError] = useState(false);
   const [subjectError, setSubjectError] = useState(false);
@@ -67,7 +69,7 @@ export default function Email(props: Props) {
     <form onSubmit={(e: any) => submit(e)}>
       <div className="col-md-12 email-container">
         <div className="col-md-12 p-3">
-          <h3>{props.subtitle}</h3>
+          <h2>{props.subtitle.toUpperCase()}</h2>
         </div>
         <div className="col-md-12 p-3">
           <p>{props.description}</p>
@@ -93,8 +95,12 @@ export default function Email(props: Props) {
           </div>
         ))}
         <div className="col-md-12 p-3">
-          <Button onClick={submit}>Send</Button>
-          <Button>Clear</Button>
+          <Button onClick={submit} className="btn-primary">
+            <SendIcon />
+          </Button>
+          <Button className="btn-warn">
+            <ClearIcon />
+          </Button>
         </div>
       </div>
     </form>

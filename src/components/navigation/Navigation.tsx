@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Tab, Tabs } from '@mui/material';
+import { Container, Tab, Tabs } from '@mui/material';
+import { a11yProps } from '../../helpers/helpers';
 import TabPanel from '../tabs/TabPanel';
 import TabType from '../../types/component-helpers/tab';
 
@@ -11,53 +12,32 @@ type Props = {
 
 export default function Navigation(props: Props): JSX.Element {
   const [value, setValue] = useState(0);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+
+  function handleChange(event: React.SyntheticEvent, newValue: number) {
     setValue(newValue);
-  };
+  }
 
   return (
-    <div className={styles.container}>
-      <div className="col-md-12">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="navigation tabs"
-          sx={{
-            '& .MuiTabs-indicator': {
-              color: '#fff',
-              backgroundColor: '#3D57C2',
-              height: '4px',
-            },
-          }}
-        >
-          {props.pages.map(({ label }, index: number) => (
-            <Tab
-              className={styles.tab}
-              label={label}
-              key={index}
-              {...a11yProps(index)}
-              data-testid={`tab-${index}`}
-              sx={{
-                '&.Mui-selected': {
-                  color: '#fff',
-                },
-              }}
-            />
-          ))}
-        </Tabs>
-      </div>
+    <div>
+      <Tabs value={value} onChange={handleChange} aria-label="navigation tabs">
+        {props.pages.map(({ label }, index: number) => (
+          <Tab
+            className={`${styles.tab} nav-tab`}
+            label={label}
+            key={index}
+            {...a11yProps(index)}
+            data-testid={`tab-${index}`}
+          />
+        ))}
+      </Tabs>
+
       {props.pages.map(({ component }, index: number) => (
         <TabPanel value={value} index={index} key={index}>
-          {component}
+          <Container maxWidth={false} sx={{ maxWidth: '85%' }}>
+            {component}
+          </Container>
         </TabPanel>
       ))}
     </div>
   );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `tab-${index}`,
-    'aria-controls': `tabpanel-${index}`,
-  };
 }

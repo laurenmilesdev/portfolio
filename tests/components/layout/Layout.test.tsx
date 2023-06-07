@@ -3,20 +3,18 @@ import Layout from '../../../src/components/layout/Layout';
 
 describe('Layout component', () => {
   const title = 'Title';
-  const contentText = 'This is content';
-  const content = <div>{contentText}</div>;
-  const emailSubtitle = 'Subtitle';
-  const emailDescription = 'This is email description.';
+  const leftComponentText = 'This is the left component';
+  const rightComponentText = 'This is the right component';
+  const leftComponent = <div>{leftComponentText}</div>;
+  const rightComponent = <div>{rightComponentText}</div>;
 
   it('contains correct classes', () => {
     const { container } = render(
       <Layout
         title={title}
-        content={content}
         animatedTitle={false}
-        includeEmail={false}
-        emailSubtitle={emailSubtitle}
-        emailDescription={emailDescription}
+        leftComponent={leftComponent}
+        rightComponent={rightComponent}
       />
     );
     const { firstChild } = container;
@@ -24,19 +22,12 @@ describe('Layout component', () => {
     expect(firstChild).toHaveClass('container');
   });
 
-  it('contains correct content when includeEmail is false and image is undefined', () => {
+  it('contains correct content when rightComponent is undefined', () => {
     const { getByTestId } = render(
-      <Layout
-        title={title}
-        content={content}
-        animatedTitle={false}
-        includeEmail={false}
-        emailSubtitle={emailSubtitle}
-        emailDescription={emailDescription}
-      />
+      <Layout title={title} animatedTitle={false} leftComponent={leftComponent} />
     );
 
     expect(getByTestId('title')).toHaveTextContent(title);
-    expect(getByTestId('content')).toHaveTextContent(contentText);
+    expect(getByTestId('content')).toHaveTextContent(leftComponentText);
   });
 });

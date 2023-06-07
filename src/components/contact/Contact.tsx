@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Button } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
@@ -12,21 +12,28 @@ type Props = {
   contact: ContactType;
 };
 
-export default function Contact(props: Props) {
+export default function Contact(props: Props): JSX.Element {
+  const icon = getIcon(props.contact.name);
+
   return (
     props.contact && (
       <li key={props.contact.name} className={styles.list}>
         <div className={`${styles['list-content']} col-md-12`}>
-          <div className={styles['list-icon']}>{getIcon(props.contact.name)}</div>
           <div>
             {props.contact.url ? (
-              <Link href={props.contact.url} target="_blank">
+              <Button href={props.contact.url} target="_blank" className="btn-primary-light">
+                {icon}
                 {props.contact.value}
-              </Link>
+              </Button>
             ) : props.contact.name === ContactTypeConstant.resume ? (
-              <Link href={'/files/Lauren_Miles_Resume.pdf'} target="_blank">
+              <Button
+                href={'/files/Lauren_Miles_Resume.pdf'}
+                target="_blank"
+                className="btn-primary-light"
+              >
+                {icon}
                 {props.contact.value}
-              </Link>
+              </Button>
             ) : (
               props.contact.value
             )}
