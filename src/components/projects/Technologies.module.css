@@ -5,7 +5,7 @@
 
 .chip {
   color: #000;
-  background-color: var(--secondary);
+  background-color: #fff;
   border: none;
   border-radius: 5%;
   margin-right: 1%;
