@@ -1,5 +1,14 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.switch {
+  justify-content: end;
+}
+
 .tab {
-  color: #fff;
+  color: var(--font-color);
 }
 
 .tab:hover {

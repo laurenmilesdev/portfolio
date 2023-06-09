@@ -42,6 +42,22 @@
   --secondary-light: #abb3ed;
   --tertiary: #808080;
 
+  --background-color: #000;
+  --font-color: #fff;
+
+  --warn: #e0a66c;
+}
+
+[data-theme='light'] {
+  --primary: #e0d26e;
+  --primary-light: #ede5ab;
+  --secondary: #6e7ce0;
+  --secondary-light: #abb3ed;
+  --tertiary: #808080;
+
+  --background-color: #fff;
+  --font-color: #000;
+
   --warn: #e0a66c;
 }
 
@@ -93,7 +109,7 @@ div#__next > div {
 }
 
 body {
-  background-color: #000;
+  background-color: var(--background-color);
 }
 
 a {
@@ -130,7 +146,7 @@ ul {
 }
 
 .btn-primary-light {
-  color: #fff;
+  color: var(--font-color);
 }
 
 .btn-primary-light:hover {
@@ -153,7 +169,7 @@ ul {
 
 /* Selected navigation tabs */
 .nav-tab.MuiTab-root.Mui-selected {
-  color: #fff;
+  color: var(--font-color);
 }
 
 /* Removes right border on projects tabs */
@@ -165,12 +181,17 @@ ul {
 .projects-tab.MuiTab-root.Mui-selected {
   color: #000;
   background-color: var(--primary-light);
-  text-align: left;
+  /* text-align: left; */
 }
 
-.intro-photo {
+.image {
   width: 75%;
   height: auto;
+}
+
+/* Removes extra margin from Switch */
+.MuiSwitch-root.MuiSwitch-sizeMedium {
+  margin-bottom: 0;
 }
 
 @media (prefers-color-scheme: dark) {

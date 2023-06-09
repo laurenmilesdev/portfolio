@@ -1,7 +1,7 @@
 .left-container {
   width: 57%;
   padding: 1%;
-  color: #fff;
+  color: var(--font-color);
 }
 
 .title-animated {
