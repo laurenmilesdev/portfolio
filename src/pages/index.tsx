@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Data from '../../data.json';
+import { getTheme } from '@/helpers/helpers';
 import Navigation from '@/components/navigation/Navigation';
 import Layout from '@/components/layout/Layout';
 import Introduction from '@/components/introduction/Introduction';
@@ -17,16 +18,15 @@ import TabType from '@/types/component-helpers/tab';
 
 export default function Home(): JSX.Element {
   const [projectValue, setProjectValue] = useState<number>(0);
+  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
   const introductionComponent = () => <Introduction subtitle={Data.introduction.subtitle} />;
-  const introductionImage = () => (
-    <Image src={introImg} alt="Image of Lauren" className="intro-photo" />
-  );
+  const introductionImage = () => <Image src={introImg} alt="Image of Lauren" className="image" />;
   const aboutComponent = () => <About paragraphs={Data.about.paragraphs} />;
   const aboutImage = () => (
     <Image
       src={aboutImg}
       alt="Image of Lauren as a child washing a truck with dad"
-      className="intro-photo"
+      className="image"
     />
   );
   const projectsComponent = () => (
@@ -81,7 +81,21 @@ export default function Home(): JSX.Element {
     setProjectValue(newValue);
   }
 
-  return <Navigation pages={pages} />;
+  function handleThemeChange(event: React.SyntheticEvent, newUseDarkTheme: boolean) {
+    const theme = getTheme(newUseDarkTheme);
+
+    document.documentElement.setAttribute('data-theme', theme);
+    setUseDarkTheme(newUseDarkTheme);
+    localStorage.setItem('theme', theme);
+  }
+
+  useEffect(() => {
+    localStorage.setItem('theme', 'dark');
+  });
+
+  return (
+    <Navigation pages={pages} useDarkTheme={useDarkTheme} handleThemeChange={handleThemeChange} />
+  );
 }
 
 function pageContent(
