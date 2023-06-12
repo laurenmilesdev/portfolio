@@ -1,0 +1,33 @@
+name: Build, Push, and Deploy portfolio
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    name: Build project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run tests
+        run: npm run test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'production'
+      url: https://white-glacier-0f02fd40f.3.azurestaticapps.net
+
+    steps:
+      - name: Deploy te-cohort-provisioning-tool-front-end-prd to Azure
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'te-cohort-provisioning-tool-front-end-prd'

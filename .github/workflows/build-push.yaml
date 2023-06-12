@@ -1,20 +1,20 @@
-name: Build portfolio
+name: Build and Push portfolio
 on:
   push:
-  pull_request:
-    branches:
-      - development
-      - main
+    branches-ignore: [development, main]
 jobs:
-  build-project:
+  build:
     name: Build project
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Install dependencies
         run: npm install
+
       - name: Build project
         run: npm run build
+
       - name: Run tests
         run: npm run test
