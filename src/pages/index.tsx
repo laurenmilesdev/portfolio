@@ -82,7 +82,7 @@ export default function Home(): JSX.Element {
   }
 
   function handleThemeChange(event: React.SyntheticEvent, newUseDarkTheme: boolean) {
-    const theme = getTheme(newUseDarkTheme);
+    const theme: string = getTheme(newUseDarkTheme);
 
     document.documentElement.setAttribute('data-theme', theme);
     setUseDarkTheme(newUseDarkTheme);

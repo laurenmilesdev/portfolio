@@ -28,12 +28,12 @@ export default function ThemeSwitch(props: Props) {
         },
         '& + .MuiSwitch-track': {
           opacity: 1,
-          backgroundColor: theme.palette.mode === ThemeConstants.Dark ? '#8796A5' : '#aab4be',
+          backgroundColor: theme.palette.mode === ThemeConstants.DARK ? '#8796A5' : '#aab4be',
         },
       },
     },
     '& .MuiSwitch-thumb': {
-      backgroundColor: theme.palette.mode === ThemeConstants.Dark ? '#003892' : '#001e3c',
+      backgroundColor: theme.palette.mode === ThemeConstants.DARK ? '#003892' : '#001e3c',
       width: 32,
       height: 32,
       '&:before': {
@@ -52,13 +52,23 @@ export default function ThemeSwitch(props: Props) {
     },
     '& .MuiSwitch-track': {
       opacity: 1,
-      backgroundColor: theme.palette.mode === ThemeConstants.Dark ? '#8796A5' : '#aab4be',
+      backgroundColor: theme.palette.mode === ThemeConstants.DARK ? '#8796A5' : '#aab4be',
       borderRadius: 20 / 2,
     },
   }));
 
   return (
     <div className={styles.switch}>
+      {/* <FormControlLabel
+        control={
+          <MaterialUISwitch
+            sx={{ m: 1 }}
+            checked={props.useDarkTheme}
+            onChange={props.handleThemeChange}
+          />
+        }
+        label={`${getTheme(props.useDarkTheme)} theme`.toUpperCase()}
+      /> */}
       <MaterialUISwitch
         sx={{ m: 1 }}
         checked={props.useDarkTheme}
