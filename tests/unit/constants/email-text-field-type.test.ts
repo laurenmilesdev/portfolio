@@ -1,27 +1,27 @@
-import * as EmailTextFieldTypeConstant from '../../../src/constants/email-text-field-type';
+import EmailTextFieldTypeConstant from '../../../src/constants/email-text-field-type';
 
 describe('email-text-field-type constants', () => {
   it('returns to constant', () => {
-    const response = EmailTextFieldTypeConstant.to;
+    const response = EmailTextFieldTypeConstant.TO;
 
-    expect(response).toEqual('to');
+    expect(response).toEqual('To');
   });
 
   it('returns from constant', () => {
-    const response = EmailTextFieldTypeConstant.from;
+    const response = EmailTextFieldTypeConstant.FROM;
 
-    expect(response).toEqual('from');
+    expect(response).toEqual('From');
   });
 
   it('returns subject constant', () => {
-    const response = EmailTextFieldTypeConstant.subject;
+    const response = EmailTextFieldTypeConstant.SUBJECT;
 
-    expect(response).toEqual('subject');
+    expect(response).toEqual('Subject');
   });
 
   it('returns body constant', () => {
-    const response = EmailTextFieldTypeConstant.body;
+    const response = EmailTextFieldTypeConstant.BODY;
 
-    expect(response).toEqual('body');
+    expect(response).toEqual('Body');
   });
 });

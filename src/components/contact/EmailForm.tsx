@@ -16,9 +16,27 @@ export default function EmailForm() {
   const [subjectError, setSubjectError] = useState(false);
   const [bodyError, setBodyError] = useState(false);
   const fields = [
-    new TextFieldType('from', 'email', email.from, 'Email Address', 'email address'),
-    new TextFieldType('subject', 'text', email.subject, 'Subject', 'subject'),
-    new TextFieldType('body', 'text', email.body, 'Body', 'body'),
+    new TextFieldType(
+      EmailTextFieldConstant.FROM,
+      'email',
+      email.from,
+      'Email Address',
+      'email address'
+    ),
+    new TextFieldType(
+      EmailTextFieldConstant.SUBJECT,
+      'text',
+      email.subject,
+      EmailTextFieldConstant.SUBJECT,
+      'subject'
+    ),
+    new TextFieldType(
+      EmailTextFieldConstant.BODY,
+      'text',
+      email.body,
+      EmailTextFieldConstant.BODY,
+      'body'
+    ),
   ];
 
   function handleChange(event: any) {

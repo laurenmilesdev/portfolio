@@ -8,5 +8,5 @@ export function a11yProps(index: number): object {
 }
 
 export function getTheme(useDarkTheme: boolean) {
-  return useDarkTheme ? ThemeConstants.Dark : ThemeConstants.Light;
+  return useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
 }
