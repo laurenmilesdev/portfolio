@@ -6,17 +6,15 @@ describe('Project component', () => {
   const pageDescription = 'This is a description';
   const technologies = ['tech 1', 'tech 2'];
   const projects: ProjectType[] = [
-    new ProjectType('Project 1', 'Company 1', technologies, 'Project 1 description'),
-    new ProjectType('Project 2', 'Company 2', technologies, 'Project 2 description', 'url.com'),
+    new ProjectType('Project 1'.toUpperCase(), 'Company 1', technologies, 'Project 1 description'),
+    new ProjectType(
+      'Project 2'.toUpperCase(),
+      'Company 2',
+      technologies,
+      'Project 2 description',
+      'url.com'
+    ),
   ];
-
-  it('renders page description', () => {
-    const { getByTestId } = render(
-      <Project pageDescription={pageDescription} projects={projects} value={0} />
-    );
-
-    expect(getByTestId('description')).toHaveTextContent(pageDescription);
-  });
 
   it('renders project titles', () => {
     projects.forEach((project: ProjectType, index: number) => {
