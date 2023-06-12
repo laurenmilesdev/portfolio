@@ -4,7 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 import ContactType from '@/types/contact/contact';
-import * as ContactTypeConstant from '@/constants/contact-type';
+import ContactTypeConstant from '@/constants/contact-type';
 
 import styles from './Contact.module.css';
 
@@ -25,7 +25,7 @@ export default function Contact(props: Props): JSX.Element {
                 {icon}
                 {props.contact.value}
               </Button>
-            ) : props.contact.name === ContactTypeConstant.resume ? (
+            ) : props.contact.name === ContactTypeConstant.RESUME ? (
               <Button
                 href={'/files/Lauren_Miles_Resume.pdf'}
                 target="_blank"
@@ -45,15 +45,15 @@ export default function Contact(props: Props): JSX.Element {
 }
 
 function getIcon(name: string) {
-  if (name === ContactTypeConstant.gitHub) {
+  if (name === ContactTypeConstant.GITHUB) {
     return <GitHubIcon />;
   }
 
-  if (name === ContactTypeConstant.linkedIn) {
+  if (name === ContactTypeConstant.LINKEDIN) {
     return <LinkedInIcon />;
   }
 
-  if (name === ContactTypeConstant.resume) {
+  if (name === ContactTypeConstant.RESUME) {
     return <PictureAsPdfIcon />;
   }
 }

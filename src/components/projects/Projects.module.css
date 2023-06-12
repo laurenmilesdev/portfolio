@@ -1,5 +1,5 @@
 .tab {
-  color: #fff;
+  color: var(--font-color);
   width: 50%;
 }
 
