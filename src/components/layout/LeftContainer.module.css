@@ -1,0 +1,24 @@
+.left-container {
+  width: 57%;
+  padding: 1%;
+  color: var(--font-color);
+}
+
+.title-animated {
+  font-size: 4vw;
+  overflow: hidden;
+  /* border-right: 0.15em solid var(--secondary); */
+  white-space: nowrap;
+  /* animation: blink 0.8s infinite; */
+  width: 100%;
+  margin-bottom: 3%;
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: var(--secondary);
+  }
+}

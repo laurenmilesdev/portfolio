@@ -1,13 +1,13 @@
 import React from 'react';
 
 type Props = {
-  children?: React.ReactNode;
   index: number;
   value: number;
+  children?: React.ReactNode;
 };
 
 export default function TabPanel(props: Props): JSX.Element {
-  const { children, value, index, ...other } = props;
+  const { index, value, children, ...other } = props;
 
   return (
     <div

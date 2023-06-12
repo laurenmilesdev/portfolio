@@ -4,7 +4,96 @@
     "subtitle": "Software developer with a passion for creating modern web pages."
   },
   "about": {
-    "title": " About",
-    "description": ["Ever since I was little, I can remember being curious about how my belongings (toys, gadgets, etc) worked. My mom told me I would take apart my toys as a child just to put them back together. Along with that curiosity came a drive and desire to accomplish any task I put my mind to. I really was relentless and believed that if I put the time and effort into something, I could accomplish anything. I knew no limit.", "Fast forward to now, an adult with more resources and an income! Those skills and traits manifested into hobbies and side projects- refurbishing old bikes, screenprinting, embroidery… just to name a few.", "I spent a decade working in the retail world, specifically fashion merchandising. At first it was simply a way to pay the bills, but after some time, I realized that merchandising itself is a large puzzle to be solved. It’s like a game of tetris, balancing colors, shapes, sizes, and textures to fit and meet a list of requirements all in one space to aesthetically entice customers. I got paid to solve puzzles and be creative all at the same time? Felt like a dream.", "But as with how life goes, we all transform and grow. I felt like I had hit a wall and I no longer saw an upward trajectory for my career, so I decided that my growth was more important than remaining comfortable. I quit my job, the only consistent safety net I had ever known and enrolled in a coding bootcamp. I’ll keep it short and simply state that they are not for the faint of heart, but I made it to the other side and entered into the Software Development field.", "So here I am now, a Software Developer. I now have new passions to add to my list, like creating web applications that are both functional and creative. I transferred my skills from clothing to code. Now I enjoy flexing the skills I learned into back end and front end development, both of which pose their own challenges and allow for different solutions, logically and aesthetically. It’s an unlikely parallel that has allowed me to visualize my future again."]
+    "title": "About",
+    "paragraphs": [
+      "Ever since I was little, I can remember being curious about how my belongings (toys, gadgets, etc) worked. My mom told me I would take apart my toys as a child just to put them back together. Along with that curiosity came a drive and desire to accomplish any task I put my mind to. I really was relentless and believed that if I put the time and effort into something, I could accomplish anything. I knew no limit.",
+      "Fast forward to now, an adult with more resources and an income! Those skills and traits manifested into hobbies and side projects- refurbishing old bikes, screenprinting, embroidery… just to name a few.",
+      "I spent a decade working in the retail world, specifically fashion merchandising. At first it was simply a way to pay the bills, but after some time, I realized that merchandising itself is a large puzzle to be solved. It’s like a game of tetris, balancing colors, shapes, sizes, and textures to fit and meet a list of requirements all in one space to aesthetically entice customers. I got paid to solve puzzles and be creative all at the same time? Felt like a dream.",
+      "But as with how life goes, we all transform and grow. I felt like I had hit a wall and I no longer saw an upward trajectory for my career, so I decided that my growth was more important than remaining comfortable. I quit my job, the only consistent safety net I had ever known and enrolled in a coding bootcamp. I’ll keep it short and simply state that they are not for the faint of heart, but I made it to the other side and entered into the Software Development field.",
+      "So here I am now, a Software Developer. I now have new passions to add to my list, like creating web applications that are both functional and creative. I transferred my skills from clothing to code. Now I enjoy flexing the skills I learned into back end and front end development, both of which pose their own challenges and allow for different solutions, logically and aesthetically. It’s an unlikely parallel that has allowed me to visualize my future again."
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "There are a few ways to contact me, or you can view some of my socials or view/download my resume below.",
+    "contacts": [
+      {
+        "name": "LinkedIn",
+        "value": "/laurenmmiles",
+        "description": "Link to LinkedIn",
+        "url": "https://www.linkedin.com/in/laurenmmiles"
+      },
+      {
+        "name": "GitHub",
+        "value": "/laurenmilesdev",
+        "description": "Link to GitHub",
+        "url": "https://github.com/laurenmilesdev"
+      },
+      {
+        "name": "Resume",
+        "value": "Lauren_Miles_Resume.pdf",
+        "description": "Download resume as PDF"
+      }
+    ]
+  },
+  "email": {
+    "subtitle": "Want to send me an email?",
+    "description": "Feel free to send me an email to connect with me. You can either use the built in email capability below or send me an email on your own time at laurenmiles.dev@gmail.com."
+  },
+  "project": {
+    "title": "Projects",
+    "description": "Select a project on the right to view it's details. The projects I've worked on vary from large application re-writes, maintaining and enhancing existing applications, brand new applications, and microservices to automate manual processes.",
+    "projects": [
+      {
+        "title": "KSBA Portal",
+        "company": "KiZAN Technologies",
+        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
+        "description": "Contributed to the re-write of a large portal for the Kentucky School Board Association. The web application included roles with user management for board members (add, edit, or delete users based on roles), a section to keep school board meeting minutes (create and edit an agenda, keep notes, track votes, and screen share the meeting live), a separate smaller application to record job applications for open positions, and other existing internal data on the legacy application. All the existing data was migrated over and enhancements were made to clean up the data and tables.",
+        "companyUrl": "https://www.kizan.com"
+      },
+      {
+        "title": "Four Roses Bourbon Internal Application",
+        "company": "KiZAN Technologies",
+        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
+        "description": "Contributed (was main developer) in creating an internal application for Four Roses to keep track of internal funding proposals. Basic CRUD application where a user could write up a proposal and submit it to the proper department. Users on the receiving end would get an email when a proposal was submitted and have the capability of approving or rejecting the proposal or requesting more information. If more information was needed, the proposal would begin the process over again.",
+        "companyUrl": "https://www.kizan.com"
+      },
+      {
+        "title": "Nationwide Children's Hospital Website",
+        "company": "Nationwide Children's Hospital",
+        "technologies": [".NET", "C#", "Sitecore"],
+        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. I mostly focused my time on adding and fixing accessibility issues to make specific pages and forms more accessible for all users.",
+        "companyUrl": "https://www.nationwidechildrens.org"
+      },
+      {
+        "title": "Shipping Label Automation",
+        "company": "Tech Elevator",
+        "technologies": [
+          "Node.js",
+          "JavaScript",
+          "Azure",
+          "Jest",
+          "Zoho API",
+          "Postmark",
+          "Google Drive API"
+        ],
+        "description": "Created two Azure functions applications that served for automating the shipping label generation for the upcoming or ending bootcamp cohorts. One function created shipping labels to use to mail the students their laptops, and the other created the return shipping labels that were emailed to the students to mail back their laptops. These tokens ran on an HTTP trigger, triggering from a Zoho workflow.",
+        "companyUrl": "https://www.techelevator.com"
+      },
+      {
+        "title": "Roating Tokens Automation",
+        "company": "Tech Elevator",
+        "technologies": ["Node.js", "JavaScript", "Azure", "Jest", "Zoho API"],
+        "description": "Created an Azure function application made to house any rotating tokens needed for development or production environments. A specific function within the application would be used to fetch the necessary token and update the value in an Azure Key Vault. These functions ran on a timer trigger, updating the token with a new value before the it expired.",
+        "companyUrl": "https://www.techelevator.com"
+      },
+      {
+        "title": "BootcampOS",
+        "company": "Tech Elevator",
+        "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
+        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with another team under the Stride company umbrella to add features to the application that were specific to Tech Elevators needs.",
+        "companyUrl": "https://www.techelevator.com"
+      }
+    ]
   }
 }

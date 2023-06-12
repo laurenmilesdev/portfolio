@@ -1,0 +1,15 @@
+.chip-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 1%;
+}
+
+.chip {
+  color: var(--secondary);
+  background-color: #fff;
+  font-weight: 700;
+  border: none;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
