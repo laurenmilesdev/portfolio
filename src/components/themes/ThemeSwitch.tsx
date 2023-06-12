@@ -1,6 +1,6 @@
 import { Switch } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import ThemeConstants from '@/constants/theme';
+import ThemeConstants from '../../constants/theme';
 
 import styles from './ThemeSwitch.module.css';
 
