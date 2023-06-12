@@ -1,4 +1,4 @@
-import ThemeConstants from '@/constants/theme';
+import ThemeConstants from '../constants/theme';
 
 export function a11yProps(index: number): object {
   return {
