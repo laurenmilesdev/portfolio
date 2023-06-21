@@ -37,12 +37,12 @@ export default function Navigation(props: Props): JSX.Element {
           </Tabs>
         </Box>
 
-        <Box>
+        {/* <Box>
           <ThemeSwitch
             useDarkTheme={props.useDarkTheme}
             handleThemeChange={props.handleThemeChange}
           />
-        </Box>
+        </Box> */}
       </div>
 
       {props.pages.map(({ component }, index: number) => (
