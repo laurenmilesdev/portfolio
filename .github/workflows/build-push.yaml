@@ -1,7 +1,8 @@
 name: Build and Push portfolio
 on:
   pull_request:
-    branches: -development
+    branches:
+      - development
   # push:
   #   branches-ignore: [development, main]
 jobs:
