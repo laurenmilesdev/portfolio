@@ -49,16 +49,8 @@
 }
 
 [data-theme='light'] {
-  --primary: #e0d26e;
-  --primary-light: #ede5ab;
-  --secondary: #6e7ce0;
-  --secondary-light: #abb3ed;
-  --tertiary: #808080;
-
   --background-color: #fff;
   --font-color: #000;
-
-  --warn: #e0a66c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -162,7 +154,7 @@ ul {
 }
 
 .MuiTabs-indicator {
-  color: '#fff';
+  color: var(--font-color);
   background-color: var(--secondary);
   height: 4px;
 }
