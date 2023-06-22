@@ -1,6 +1,11 @@
 import { render } from '@testing-library/react';
 import About from '../../../src/components/about/About';
 
+jest.mock('next/image', () => ({
+  __esModule: true,
+  default: (props: any) => <img {...props} />,
+}));
+
 describe('About component', () => {
   it('renders string[] of paragraphs', () => {
     const dataTestId = 'about-paragraph';

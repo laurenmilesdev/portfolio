@@ -1,6 +1,11 @@
 import { render } from '@testing-library/react';
 import Introduction from '../../../src/components/introduction/Introduction';
 
+jest.mock('next/image', () => ({
+  __esModule: true,
+  default: (props: any) => <img {...props} />,
+}));
+
 describe('Introduction component', () => {
   const subtitle = 'This is a subtitle';
 
