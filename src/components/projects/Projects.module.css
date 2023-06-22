@@ -4,5 +4,5 @@
 
 .tab:hover {
   color: var(--font-color-opp) !important;
-  background-color: var(--primary-light);
+  background-color: var(--secondary);
 }

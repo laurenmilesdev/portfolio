@@ -35,11 +35,12 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
-
-  --primary: #e0d26e;
-  --primary-light: #ede5ab;
-  --secondary: #808080;
-  --secondary-light: #cccccc;
+  /* 
+  --primary: #e0d26e; */
+  --primary: #9093a2;
+  --primary-light: #d5d6dc;
+  --secondary: #a9a697;
+  --secondary-light: #e8e7e3;
 
   --background-color: #000;
   --font-color: #fff;
@@ -117,16 +118,20 @@ a:hover {
   border-radius: 0;
 }
 
+hr {
+  border: 4px solid var(--secondary);
+}
+
 h1 {
   color: var(--primary);
   font-family: 'Lacquer', monospace;
-  font-size: 5vw;
+  font-size: 7vw;
   font-weight: 600;
   margin-bottom: 3%;
 }
 
-h3 {
-  color: var(--primary);
+h4 {
+  color: #fff;
   font-family: 'Lacquer', monospace;
   font-size: 2vw;
   margin-bottom: 3%;
@@ -172,7 +177,7 @@ ul {
 /* Selected projects tabs */
 .projects-tab.MuiTab-root.Mui-selected {
   color: var(--font-color-opp) !important;
-  background-color: var(--primary-light) !important;
+  background-color: var(--secondary) !important;
   text-align: left;
 }
 
@@ -189,5 +194,15 @@ ul {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  h4 {
+    font-size: 1.5em;
   }
 }
