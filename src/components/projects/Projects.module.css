@@ -1,9 +1,8 @@
 .tab {
   color: var(--font-color);
-  width: 50%;
 }
 
 .tab:hover {
-  color: var(--bs-body-color);
+  color: var(--font-color-opp);
   background-color: var(--primary-light);
 }

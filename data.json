@@ -32,7 +32,13 @@
       {
         "name": "Resume",
         "value": "Lauren_Miles_Resume.pdf",
-        "description": "Download resume as PDF"
+        "description": "Download resume as PDF",
+        "url": "/files/Lauren_Miles_Resume.pdf"
+      },
+      {
+        "name": "Email",
+        "value": "laurenmiles.dev@gmail.com",
+        "description": "Send email"
       }
     ]
   },
@@ -92,6 +98,13 @@
         "company": "Tech Elevator",
         "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
         "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with another team under the Stride company umbrella to add features to the application that were specific to Tech Elevators needs.",
+        "companyUrl": "https://www.techelevator.com"
+      },
+      {
+        "title": "Women Wine & Web Design",
+        "company": "Tech Elevator",
+        "technologies": ["HTML", "CSS"],
+        "description": "Instructed at Tech Elevator's Women Wine & Web Design event in Detroit, Michigan. The event invited local women to make learn how to make basic webpages using HTML and CSS. I lead the instruction of course material, teaching the participants the fundamentals of web development.",
         "companyUrl": "https://www.techelevator.com"
       }
     ]

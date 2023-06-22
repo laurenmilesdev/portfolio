@@ -3,7 +3,6 @@ import Project from '../../../src/components/projects/Project';
 import ProjectType from '../../../src/types/projects/project';
 
 describe('Project component', () => {
-  const pageDescription = 'This is a description';
   const technologies = ['tech 1', 'tech 2'];
   const projects: ProjectType[] = [
     new ProjectType('Project 1'.toUpperCase(), 'Company 1', technologies, 'Project 1 description'),
@@ -16,33 +15,23 @@ describe('Project component', () => {
     ),
   ];
 
-  it('renders project titles', () => {
+  it('renders buttons to companies', () => {
     projects.forEach((project: ProjectType, index: number) => {
-      const { getByTestId } = render(
-        <Project pageDescription={pageDescription} projects={projects} value={index} />
-      );
+      render(<Project projects={projects} value={index} />);
 
-      expect(getByTestId(`project-title-${index}`)).toHaveTextContent(project.title);
-    });
-  });
+      const button = document.getElementById(`company-${index}`) as HTMLButtonElement;
 
-  it('renders project companies', () => {
-    projects.forEach((project: ProjectType, index: number) => {
-      const { getByTestId } = render(
-        <Project pageDescription={pageDescription} projects={projects} value={index} />
-      );
-
-      expect(getByTestId(`project-company-${index}`)).toHaveTextContent(project.company);
+      expect(button).toHaveTextContent(project.company);
     });
   });
 
   it('renders project descriptions', () => {
     projects.forEach((project: ProjectType, index: number) => {
-      const { getByTestId } = render(
-        <Project pageDescription={pageDescription} projects={projects} value={index} />
-      );
+      render(<Project projects={projects} value={index} />);
 
-      expect(getByTestId(`project-description-${index}`)).toHaveTextContent(project.description);
+      const projectDescription = document.getElementById(`project-description-${index}`);
+
+      expect(projectDescription).toHaveTextContent(project.description);
     });
   });
 });
