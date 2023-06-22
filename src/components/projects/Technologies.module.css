@@ -6,8 +6,8 @@
 }
 
 .chip {
-  color: var(--font-color-opp);
-  background-color: var(--font-color);
+  color: var(--font-color-opp) !important;
+  background-color: var(--secondary-light) !important;
   border: none;
   margin-right: 1%;
   margin-bottom: 1%;

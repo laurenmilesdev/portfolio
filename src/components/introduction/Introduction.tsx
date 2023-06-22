@@ -17,7 +17,7 @@ export default function Introduction(props: Props): JSX.Element {
       </div>
 
       <div className="col-md-12" data-testid="intro">
-        <h3>{props.subtitle}</h3>
+        <h4>{props.subtitle}</h4>
       </div>
     </div>
   );
