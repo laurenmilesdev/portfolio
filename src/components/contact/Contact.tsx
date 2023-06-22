@@ -2,9 +2,9 @@ import { Button } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-
+import EmailIcon from '@mui/icons-material/Email';
 import ContactType from '@/types/contact/contact';
-import ContactTypeConstant from '@/constants/contact-type';
+import ContactTypeConstants from '../../constants/contact-type';
 
 import styles from './Contact.module.css';
 
@@ -20,23 +20,16 @@ export default function Contact(props: Props): JSX.Element {
       <li key={props.contact.name} className={styles.list}>
         <div className={`${styles['list-content']} col-md-12`}>
           <div>
-            {props.contact.url ? (
-              <Button href={props.contact.url} target="_blank" className="btn-primary-light">
-                {icon}
-                {props.contact.value}
-              </Button>
-            ) : props.contact.name === ContactTypeConstant.RESUME ? (
-              <Button
-                href={'/files/Lauren_Miles_Resume.pdf'}
-                target="_blank"
-                className="btn-primary-light"
-              >
-                {icon}
-                {props.contact.value}
-              </Button>
-            ) : (
-              props.contact.value
-            )}
+            <Button
+              href={props.contact.url ?? ''}
+              target="_blank"
+              className="btn-primary"
+              aria-label={`Link to ${props.contact.name} in new tab.`}
+              id={`${props.contact.name}-btn`}
+            >
+              <div className={styles['list-icon']}>{icon}</div>
+              {props.contact.name}
+            </Button>
           </div>
         </div>
       </li>
@@ -44,16 +37,14 @@ export default function Contact(props: Props): JSX.Element {
   );
 }
 
-function getIcon(name: string) {
-  if (name === ContactTypeConstant.GITHUB) {
-    return <GitHubIcon />;
-  }
-
-  if (name === ContactTypeConstant.LINKEDIN) {
-    return <LinkedInIcon />;
-  }
-
-  if (name === ContactTypeConstant.RESUME) {
-    return <PictureAsPdfIcon />;
-  }
+export function getIcon(name: string) {
+  return name === ContactTypeConstants.GITHUB ? (
+    <GitHubIcon />
+  ) : name === ContactTypeConstants.LINKEDIN ? (
+    <LinkedInIcon />
+  ) : name === ContactTypeConstants.RESUME ? (
+    <PictureAsPdfIcon />
+  ) : (
+    <EmailIcon />
+  );
 }
