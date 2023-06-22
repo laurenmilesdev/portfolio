@@ -22,7 +22,7 @@ export default function About(props: Props): JSX.Element {
       </div>
 
       <div className="col-md-12">
-        <Image src={img} alt={imageAltText} aria-laebl={imageAltText} className={styles.image} />
+        <Image src={img} alt={imageAltText} aria-label={imageAltText} className={styles.image} />
       </div>
     </div>
   );
