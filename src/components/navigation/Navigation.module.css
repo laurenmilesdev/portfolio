@@ -7,12 +7,11 @@
 
 .switch {
   justify-content: end;
-}
-
-.tabs {
-  position: fixed;
-  bottom: 0;
 } */
+
+.app-bar {
+  background-color: var(--background-color);
+}
 
 .tab {
   color: var(--font-color) !important;
