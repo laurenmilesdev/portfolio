@@ -6,9 +6,8 @@
 }
 
 .chip {
-  color: var(--secondary);
-  background-color: #fff;
-  font-weight: 700;
+  color: var(--font-color-opp);
+  background-color: var(--font-color);
   border: none;
   margin-right: 1%;
   margin-bottom: 1%;

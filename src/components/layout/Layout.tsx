@@ -1,26 +1,23 @@
 import Fade from '@mui/material/Fade';
-import LeftContainer from './LeftContainer';
-import RightContainer from './RightContainer';
-
 import styles from './Layout.module.css';
 
 type Props = {
-  title: string;
-  animatedTitle: boolean;
-  leftComponent: JSX.Element;
-  rightComponent?: JSX.Element;
+  component: JSX.Element;
+  title?: string;
 };
 
 export default function Layout(props: Props): JSX.Element {
   return (
     <Fade in={true}>
-      <div className={styles.container}>
-        <LeftContainer
-          title={props.title}
-          content={props.leftComponent}
-          animated={props.animatedTitle}
-        />
-        <RightContainer content={props.rightComponent} />
+      <div className={styles.container} data-testid="container">
+        {props.title && (
+          <div className="col-md-12" data-testid="title">
+            <h1>{props.title}</h1>
+          </div>
+        )}
+        <div className="col-md-12" data-testid="content">
+          {props.component}
+        </div>
       </div>
     </Fade>
   );

@@ -1,27 +1,11 @@
-.content-animated {
-  overflow: hidden;
-  border-right: 0.15em solid var(--secondary);
-  white-space: nowrap;
-  animation: typing 2.5s steps(50, end) forwards, blink 0.8s infinite;
-  font-size: 1.5vw;
-  font-weight: 300;
-  width: 0;
+.container {
+  margin-top: 10%;
+  text-align: center;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 94%;
-  }
-}
-
-@keyframes blink {
-  from {
-    border-color: transparent;
-  }
-  to {
-    border-color: var(--secondary);
-  }
+.logo {
+  width: 60%;
+  height: auto;
+  margin-bottom: 3%;
+  opacity: 0.75;
 }

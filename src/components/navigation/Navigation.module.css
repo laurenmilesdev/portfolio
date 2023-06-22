@@ -1,11 +1,18 @@
-.nav {
+/* .nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
+  bottom: 0;
+  position: fixed;
 }
 
 .switch {
   justify-content: end;
 }
+
+.tabs {
+  position: fixed;
+  bottom: 0;
+} */
 
 .tab {
   color: var(--font-color);

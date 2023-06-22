@@ -1,0 +1,13 @@
+.text {
+  z-index: 100;
+  position: relative;
+}
+
+.image {
+  width: 30%;
+  height: auto;
+  opacity: 0.4;
+  position: absolute;
+  right: 10%;
+  top: 40%;
+}

@@ -38,20 +38,21 @@
 
   --primary: #e0d26e;
   --primary-light: #ede5ab;
-  --secondary: #6e7ce0;
-  --secondary-light: #abb3ed;
-  --tertiary: #808080;
+  --secondary: #808080;
+  --secondary-light: #cccccc;
 
   --background-color: #000;
   --font-color: #fff;
+  --font-color-opp: #000;
 
   --warn: #e0a66c;
 }
 
-[data-theme='light'] {
+/* [data-theme='light'] {
   --background-color: #fff;
   --font-color: #000;
-}
+  --font-color-opp: #fff;
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -105,24 +106,30 @@ body {
 }
 
 a {
-  color: var(--tertiary);
+  color: var(--secondary);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--tertiary);
+  color: var(--font-color-opp);
+  background-color: var(--primary-light);
   text-decoration: underline;
+  border-radius: 0;
 }
 
 h1 {
   color: var(--primary);
   font-family: 'Lacquer', monospace;
-  font-size: 8vw;
+  font-size: 5vw;
   font-weight: 600;
+  margin-bottom: 3%;
 }
 
 h3 {
-  font-size: 2.5vw;
+  color: var(--primary);
+  font-family: 'Lacquer', monospace;
+  font-size: 2vw;
+  margin-bottom: 3%;
 }
 
 ul {
@@ -130,23 +137,16 @@ ul {
 }
 
 .btn-primary {
-  color: var(--bs-body-color);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-light);
-}
-
-.btn-primary-light {
   color: var(--font-color);
 }
 
-.btn-primary-light:hover {
+.btn-primary:hover {
+  color: var(--font-color-opp);
   background-color: var(--primary-light);
 }
 
 .btn-warn {
-  color: var(--bs-body-color);
+  color: var(--font-color);
 }
 
 .btn-warn:hover {
@@ -154,7 +154,6 @@ ul {
 }
 
 .MuiTabs-indicator {
-  color: var(--font-color);
   background-color: var(--secondary);
   height: 4px;
 }
@@ -171,9 +170,9 @@ ul {
 
 /* Selected projects tabs */
 .projects-tab.MuiTab-root.Mui-selected {
-  color: #000;
+  color: var(--font-color-opp);
   background-color: var(--primary-light);
-  /* text-align: left; */
+  text-align: left;
 }
 
 .image {
