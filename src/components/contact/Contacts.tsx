@@ -15,7 +15,11 @@ export default function Contacts(props: Props): JSX.Element {
       <div className="col-md-12">
         <ul>
           {props.description &&
-            props.contacts.map((contact: ContactType) => <Contact contact={contact} />)}
+            props.contacts.map((contact: ContactType) => (
+              <div key={contact.name}>
+                <Contact contact={contact} />
+              </div>
+            ))}
         </ul>
       </div>
     </div>

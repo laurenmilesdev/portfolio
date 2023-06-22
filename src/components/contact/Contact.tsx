@@ -17,7 +17,7 @@ export default function Contact(props: Props): JSX.Element {
 
   return (
     props.contact && (
-      <li key={props.contact.name} className={styles.list}>
+      <li className={styles.list}>
         <div className={`${styles['list-content']} col-md-12`}>
           <div>
             <Button
