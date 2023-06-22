@@ -2,18 +2,20 @@ import { render } from '@testing-library/react';
 import Introduction from '../../../src/components/introduction/Introduction';
 
 describe('Introduction component', () => {
+  const subtitle = 'This is a subtitle';
+
   it('renders subtitle', () => {
-    const subtitle = 'This is a subtitle';
-
     const { getByTestId } = render(<Introduction subtitle={subtitle} />);
+    const intro = getByTestId('intro');
 
-    expect(getByTestId('intro')).toHaveTextContent(subtitle);
+    expect(intro).toHaveTextContent(subtitle);
   });
 
-  it('has class assigned to div', () => {
-    const subtitle = 'This is a subtitle';
-    const { container } = render(<Introduction subtitle={subtitle} />);
+  it('has logo', () => {
+    render(<Introduction subtitle={subtitle} />);
+    const imageAltText = 'Image of Lauren within text that says Lauren Miles';
+    const logo = document.querySelector('img') as HTMLImageElement;
 
-    expect(container.firstChild).toHaveClass('content-animated');
+    expect(logo.alt).toEqual(imageAltText);
   });
 });
