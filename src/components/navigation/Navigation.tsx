@@ -29,7 +29,7 @@ export default function Navigation(props: Props): JSX.Element {
         </TabPanel>
       ))}
 
-      <AppBar color="transparent">
+      <AppBar className={styles['app-bar']}>
         {/* Navigation tabs */}
         <Tabs
           value={value}
