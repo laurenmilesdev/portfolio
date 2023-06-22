@@ -1,7 +1,7 @@
 {
   "introduction": {
     "title": "Hello, I'm Lauren.",
-    "subtitle": "Software developer with a passion for creating modern web pages."
+    "subtitle": "Software developer with a passion for creating modern web pages"
   },
   "about": {
     "title": "About",
@@ -15,7 +15,7 @@
   },
   "contact": {
     "title": "Contact",
-    "description": "There are a few ways to contact me, or you can view some of my socials or view/download my resume below.",
+    "description": "Do you want to make a new professional connection? Connect with me on LinkedIn. Wanna know what I'm about? Check out my GitHub (the source code for this project exists there) and resume for more of my experience. If you would like more direct contact, feel free to shoot me an email at laurenmiles.dev@gmail.com.",
     "contacts": [
       {
         "name": "LinkedIn",
@@ -34,11 +34,6 @@
         "value": "Lauren_Miles_Resume.pdf",
         "description": "Download resume as PDF",
         "url": "/files/Lauren_Miles_Resume.pdf"
-      },
-      {
-        "name": "Email",
-        "value": "laurenmiles.dev@gmail.com",
-        "description": "Send email"
       }
     ]
   },
