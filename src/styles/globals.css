@@ -153,9 +153,10 @@ ul {
   background-color: var(--warn);
 }
 
+/* Tab bottom border */
 .MuiTabs-indicator {
-  background-color: var(--secondary);
-  height: 4px;
+  background-color: var(--secondary) !important;
+  height: 4px !important;
 }
 
 /* Selected navigation tabs */
