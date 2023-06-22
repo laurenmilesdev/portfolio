@@ -3,31 +3,20 @@ import Layout from '../../../src/components/layout/Layout';
 
 describe('Layout component', () => {
   const title = 'Title';
-  const leftComponentText = 'This is the left component';
-  const rightComponentText = 'This is the right component';
-  const leftComponent = <div>{leftComponentText}</div>;
-  const rightComponent = <div>{rightComponentText}</div>;
+  const componentText = 'This is the component';
+  const component = <div>{componentText}</div>;
 
   it('contains correct classes', () => {
-    const { container } = render(
-      <Layout
-        title={title}
-        animatedTitle={false}
-        leftComponent={leftComponent}
-        rightComponent={rightComponent}
-      />
-    );
+    const { container } = render(<Layout title={title} component={component} />);
     const { firstChild } = container;
 
     expect(firstChild).toHaveClass('container');
   });
 
-  it('contains correct content when rightComponent is undefined', () => {
-    const { getByTestId } = render(
-      <Layout title={title} animatedTitle={false} leftComponent={leftComponent} />
-    );
+  it('renders content', () => {
+    const { getByTestId } = render(<Layout title={title} component={component} />);
 
     expect(getByTestId('title')).toHaveTextContent(title);
-    expect(getByTestId('content')).toHaveTextContent(leftComponentText);
+    expect(getByTestId('content')).toHaveTextContent(componentText);
   });
 });
