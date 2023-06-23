@@ -5,17 +5,11 @@
   },
   "about": {
     "title": "About",
-    "paragraphs": [
-      "Ever since I was little, I can remember being curious about how my belongings (toys, gadgets, etc) worked. My mom told me I would take apart my toys as a child just to put them back together. Along with that curiosity came a drive and desire to accomplish any task I put my mind to. I really was relentless and believed that if I put the time and effort into something, I could accomplish anything. I knew no limit.",
-      "Fast forward to now, an adult with more resources and an income! Those skills and traits manifested into hobbies and side projects- refurbishing old bikes, screenprinting, embroidery… just to name a few.",
-      "I spent a decade working in the retail world, specifically fashion merchandising. At first it was simply a way to pay the bills, but after some time, I realized that merchandising itself is a large puzzle to be solved. It’s like a game of tetris, balancing colors, shapes, sizes, and textures to fit and meet a list of requirements all in one space to aesthetically entice customers. I got paid to solve puzzles and be creative all at the same time? Felt like a dream.",
-      "But as with how life goes, we all transform and grow. I felt like I had hit a wall and I no longer saw an upward trajectory for my career, so I decided that my growth was more important than remaining comfortable. I quit my job, the only consistent safety net I had ever known and enrolled in a coding bootcamp. I’ll keep it short and simply state that they are not for the faint of heart, but I made it to the other side and entered into the Software Development field.",
-      "So here I am now, a Software Developer. I now have new passions to add to my list, like creating web applications that are both functional and creative. I transferred my skills from clothing to code. Now I enjoy flexing the skills I learned into back end and front end development, both of which pose their own challenges and allow for different solutions, logically and aesthetically. It’s an unlikely parallel that has allowed me to visualize my future again."
-    ]
+    "description": "<p>Ever since I was little, I can remember being curious about how my belongings (toys, gadgets, etc) worked. My mom told me I would take apart my toys as a child just to put them back together. Along with that curiosity came a drive and desire to accomplish any task I put my mind to. I really was relentless and believed that if I put the time and effort into something, I could accomplish anything. I knew no limit.</p><p>Fast forward to now, an adult with more resources and an income! Those skills and traits manifested into hobbies and side projects- refurbishing old bikes, screenprinting, embroidery… just to name a few.</p><p>I spent a decade working in the retail world, specifically fashion merchandising. At first it was simply a way to pay the bills, but after some time, I realized that merchandising itself is a large puzzle to be solved. It’s like a game of tetris, balancing colors, shapes, sizes, and textures to fit and meet a list of requirements all in one space to aesthetically entice customers. I got paid to solve puzzles and be creative all at the same time? Felt like a dream.</p><p>But as with how life goes, we all transform and grow. I felt like I had hit a wall and I no longer saw an upward trajectory for my career, so I decided that my growth was more important than remaining comfortable. I quit my job, the only consistent safety net I had ever known and enrolled in a coding bootcamp. I’ll keep it short and simply state that they are not for the faint of heart, but I made it to the other side and entered into the Software Development field.</p><p>So here I am now, a Software Developer. I now have new passions to add to my list, like creating web applications that are both functional and creative. I transferred my skills from clothing to code. Now I enjoy flexing the skills I learned into back end and front end development, both of which pose their own challenges and allow for different solutions, logically and aesthetically. It’s an unlikely parallel that has allowed me to visualize my future again.</p>"
   },
   "contact": {
     "title": "Contact",
-    "description": "Do you want to make a new professional connection? Connect with me on LinkedIn. Wanna know what I'm about? Check out my GitHub (the source code for this project exists there) and resume for more of my experience. If you would like more direct contact, feel free to shoot me an email at laurenmiles.dev@gmail.com.",
+    "description": "Do you want to make a new professional connection? Connect with me on LinkedIn. Wanna know what I'm about? Check out my GitHub (the source code for this project exists there) and resume for more of my experience. If you would like more direct contact, feel free to shoot me an email at <a href='mailto: laurenmiles.dev@gmail.com' target='_blank'>laurenmiles.dev@gmail.com</a>.",
     "contacts": [
       {
         "name": "LinkedIn",
@@ -36,10 +30,6 @@
         "url": "/files/Lauren_Miles_Resume.pdf"
       }
     ]
-  },
-  "email": {
-    "subtitle": "Want to send me an email?",
-    "description": "Feel free to send me an email to connect with me. You can either use the built in email capability below or send me an email on your own time at laurenmiles.dev@gmail.com."
   },
   "project": {
     "title": "Projects",
