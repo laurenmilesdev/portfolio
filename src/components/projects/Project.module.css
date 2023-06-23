@@ -1,3 +1,17 @@
 .content {
   padding-right: 3%;
 }
+
+.company-links {
+  margin-bottom: 2%;
+}
+
+.company-link {
+  color: var(--secondary);
+  text-decoration: none;
+  margin-bottom: 5%;
+}
+
+.company-link:hover {
+  text-decoration: underline;
+}

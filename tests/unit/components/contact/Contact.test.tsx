@@ -1,5 +1,5 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { getIcon } from '../../../../src/components/contact/Contact';
+import { getIcon } from '../../../../src/components/contact/Contacts';
 import ContactTypeConstants from '../../../../src/constants/contact-type';
 
 describe('getIcon', () => {

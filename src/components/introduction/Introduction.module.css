@@ -4,8 +4,14 @@
 }
 
 .logo {
-  width: 70%;
+  width: 75%;
   height: auto;
   margin-bottom: 3%;
   opacity: 0.75;
+}
+
+@media screen and (max-width: 900px) {
+  .logo {
+    width: 100%;
+  }
 }

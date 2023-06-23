@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import Fade from '@mui/material/Fade';
 import TabPanel from '../tabs/TabPanel';
 import Technologies from './Technologies';
@@ -13,8 +12,16 @@ type Props = {
 
 const content = (project: ProjectType, index: number): JSX.Element => (
   <div className={`${styles.content} col-md-12`}>
-    <div className="col-md-12">
-      {project.technologies && <Technologies technologies={project.technologies} />}
+    <div className={`${styles['company-links']} col-md-12`}>
+      <a
+        className={styles['company-link']}
+        href={project.companyUrl ?? ''}
+        target="_blank"
+        id={`company-${index}`}
+        aria-label={`Link to ${project.company} website`}
+      >
+        <h5>{project.company.toUpperCase()}</h5>
+      </a>
     </div>
 
     <div className="col-md-12" id={`project-description-${index}`}>
@@ -22,15 +29,7 @@ const content = (project: ProjectType, index: number): JSX.Element => (
     </div>
 
     <div className="col-md-12">
-      <Button
-        className="btn-primary"
-        href={project.companyUrl ?? ''}
-        target="_blank"
-        id={`company-${index}`}
-        aria-label={`Link to ${project.company} website`}
-      >
-        {project.company}
-      </Button>
+      {project.technologies && <Technologies technologies={project.technologies} />}
     </div>
   </div>
 );
