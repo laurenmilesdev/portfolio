@@ -78,14 +78,14 @@
           "Postmark",
           "Google Drive API"
         ],
-        "description": "Created two Azure functions applications that served for automating the shipping label generation for the upcoming or ending bootcamp cohorts. One function created shipping labels to use to mail the students their laptops, and the other created the return shipping labels that were emailed to the students to mail back their laptops. These tokens ran on an HTTP trigger, triggering from a Zoho workflow.",
+        "description": "Created two Azure functions applications that served for automating the shipping label generation for the upcoming or ending bootcamp cohorts. One function created shipping labels used to mail the students their laptops, and the other created the return shipping labels that were emailed to the students to mail back their laptops. These functions ran on an HTTP trigger, triggering from a Zoho workflow.",
         "companyUrl": "https://www.techelevator.com"
       },
       {
         "title": "Roating Tokens Automation",
         "company": "Tech Elevator",
         "technologies": ["Node.js", "JavaScript", "Azure", "Jest", "Zoho API"],
-        "description": "Created an Azure function application made to house any rotating tokens needed for development or production environments. A specific function within the application would be used to fetch the necessary token and update the value in an Azure Key Vault. These functions ran on a timer trigger, updating the token with a new value before the it expired.",
+        "description": "Created an Azure function application made to house any rotating tokens needed for development or production environments. A specific function within the application would be used to fetch the necessary token and update the value in an Azure Key Vault. These functions ran on a timer trigger, updating the token with a new value before it expired.",
         "companyUrl": "https://www.techelevator.com"
       },
       {
@@ -99,7 +99,7 @@
         "title": "Women Wine & Web Design",
         "company": "Tech Elevator",
         "technologies": ["HTML", "CSS"],
-        "description": "Instructed at Tech Elevator's Women Wine & Web Design event in Detroit, Michigan. The event invited local women to make learn how to make basic webpages using HTML and CSS. I lead the instruction of course material, teaching the participants the fundamentals of web development.",
+        "description": "Instructed at Tech Elevator's Women Wine & Web Design event in Detroit, Michigan. The event invited local women to learn how to make a basic webpage using HTML and CSS. I lead the instruction of course material, teaching the participants the fundamentals of web development.",
         "companyUrl": "https://www.techelevator.com"
       }
     ]
