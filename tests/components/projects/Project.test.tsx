@@ -19,9 +19,9 @@ describe('Project component', () => {
     projects.forEach((project: ProjectType, index: number) => {
       render(<Project projects={projects} value={index} />);
 
-      const button = document.getElementById(`company-${index}`) as HTMLButtonElement;
+      const link = document.getElementById(`company-${index}`) as HTMLLinkElement;
 
-      expect(button).toHaveTextContent(project.company);
+      expect(link).toHaveTextContent(project.company.toUpperCase());
     });
   });
 
