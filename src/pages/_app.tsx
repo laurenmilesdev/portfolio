@@ -33,10 +33,10 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 
   const pages: TabType[] = [
-    new TabType(Data.home.title as string, <Layout component={introductionComponent()} />),
+    new TabType(Data.home.title, <Layout component={introductionComponent()} />),
     new TabType(Data.about.title, <Layout component={aboutComponent()} title={Data.about.title} />),
     new TabType(
-      Data.portfolio.title as string,
+      Data.portfolio.title,
       <Layout component={portfolioComponent()} title={Data.portfolio.title} />
     ),
     new TabType(
