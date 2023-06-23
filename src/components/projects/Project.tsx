@@ -13,12 +13,12 @@ type Props = {
 
 const content = (project: ProjectType, index: number): JSX.Element => (
   <div className={`${styles.content} col-md-12`}>
-    <div className="col-md-12">
-      {project.technologies && <Technologies technologies={project.technologies} />}
-    </div>
-
     <div className="col-md-12" id={`project-description-${index}`}>
       <p>{project.description}</p>
+    </div>
+
+    <div className="col-md-12">
+      {project.technologies && <Technologies technologies={project.technologies} />}
     </div>
 
     <div className="col-md-12">
