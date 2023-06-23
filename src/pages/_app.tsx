@@ -12,7 +12,6 @@ import Introduction from '../components/introduction/Introduction';
 import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
 import Projects from '../components/projects/Projects';
-import Contacts from '../components/contact/Contacts';
 import TabType from '../types/component-helpers/tab';
 // import { getTheme } from '../helpers/helpers';
 
@@ -29,7 +28,9 @@ export default function App({ Component, pageProps }: AppProps) {
       value={projectValue}
     />
   );
-  const contactComponent = () => <Contact description={Data.contact.description} />;
+  const contactComponent = () => (
+    <Contact description={Data.contact.description} contacts={Data.contact.contacts} />
+  );
 
   const pages: TabType[] = [
     new TabType(Data.home.title as string, <Layout component={introductionComponent()} />),
@@ -79,8 +80,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Container>
         <Component {...pageProps} pageValue={pageValue} pages={pages} />
       </Container>
-
-      <Contacts contacts={Data.contact.contacts} />
     </>
   );
 }
