@@ -7,23 +7,19 @@ import Introduction from '@/components/introduction/Introduction';
 import About from '@/components/about/About';
 import Contacts from '@/components/contact/Contacts';
 import Projects from '@/components/projects/Projects';
-// import Email from '@/components/contact/Email';
 import TabType from '@/types/component-helpers/tab';
 
 export default function Home(): JSX.Element {
   const [projectValue, setProjectValue] = useState<number>(0);
   // const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
   const introductionComponent = () => <Introduction subtitle={Data.introduction.subtitle} />;
-  const aboutComponent = () => <About paragraphs={Data.about.paragraphs} />;
+  const aboutComponent = () => <About description={Data.about.description} />;
   const projectsComponent = () => (
     <Projects projects={Data.project.projects} handleChange={handleChange} value={projectValue} />
   );
   const contactComponent = () => (
     <Contacts description={Data.contact.description} contacts={Data.contact.contacts} />
   );
-  // const contactEmailComponent = () => (
-  //   <Email subtitle={Data.email.subtitle} description={Data.email.description} />
-  // );
 
   const introPage = pageContent(introductionComponent());
   const aboutPage = pageContent(aboutComponent(), Data.about.title);
