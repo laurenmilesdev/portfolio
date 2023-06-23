@@ -14,6 +14,7 @@ import Contact from '../components/contact/Contact';
 import Projects from '../components/projects/Projects';
 import Contacts from '../components/contact/Contacts';
 import TabType from '../types/component-helpers/tab';
+// import { getTheme } from '../helpers/helpers';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
@@ -30,15 +31,17 @@ export default function App({ Component, pageProps }: AppProps) {
   );
   const contactComponent = () => <Contact description={Data.contact.description} />;
 
-  const introPage = <Layout component={introductionComponent()} />;
-  const aboutPage = <Layout component={aboutComponent()} title={Data.about.title} />;
-  const portfolioPage = <Layout component={portfolioComponent()} title={Data.portfolio.title} />;
-  const contactPage = <Layout component={contactComponent()} title={Data.contact.title} />;
   const pages: TabType[] = [
-    new TabType(Data.home.title as string, introPage),
-    new TabType(Data.about.title, aboutPage),
-    new TabType(Data.portfolio.title as string, portfolioPage),
-    new TabType(Data.contact.title, contactPage),
+    new TabType(Data.home.title as string, <Layout component={introductionComponent()} />),
+    new TabType(Data.about.title, <Layout component={aboutComponent()} title={Data.about.title} />),
+    new TabType(
+      Data.portfolio.title as string,
+      <Layout component={portfolioComponent()} title={Data.portfolio.title} />
+    ),
+    new TabType(
+      Data.contact.title,
+      <Layout component={contactComponent()} title={Data.contact.title} />
+    ),
   ];
 
   function handlePageChange(event: React.SyntheticEvent, newValue: number) {
@@ -48,6 +51,14 @@ export default function App({ Component, pageProps }: AppProps) {
   function handleProjectChange(event: React.SyntheticEvent, newValue: number) {
     setProjectValue(newValue);
   }
+
+  // function handleThemeChange(event: React.SyntheticEvent, newUseDarkTheme: boolean) {
+  //   const theme: string = getTheme(newUseDarkTheme);
+
+  //   document.documentElement.setAttribute('data-theme', theme);
+  //   setUseDarkTheme(newUseDarkTheme);
+  //   localStorage.setItem('theme', theme);
+  // }
 
   return (
     <>
