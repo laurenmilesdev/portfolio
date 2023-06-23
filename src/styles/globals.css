@@ -104,18 +104,16 @@ div#__next > div {
 
 body {
   background-color: var(--background-color);
+  height: 100%;
 }
 
 a {
-  color: var(--secondary);
-  text-decoration: none;
+  color: var(--font-color);
 }
 
 a:hover {
-  color: var(--font-color-opp);
-  background-color: var(--primary-light);
-  text-decoration: underline;
-  border-radius: 0;
+  color: var(--secondary);
+  text-decoration: none;
 }
 
 hr {
