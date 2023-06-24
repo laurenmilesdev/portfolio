@@ -17,19 +17,12 @@ import TabType from '../types/component-helpers/tab';
 import ThemeConstants from '../constants/theme';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [projectValue, setProjectValue] = useState<number>(0);
   const [pageValue, setPageValue] = useState<number>(0);
   const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
 
   const introductionComponent = () => <Introduction subtitle={Data.home.subtitle} />;
   const aboutComponent = () => <About description={Data.about.description} />;
-  const projectsComponent = () => (
-    <Projects
-      projects={Data.projects.projects}
-      handleChange={handleProjectChange}
-      value={projectValue}
-    />
-  );
+  const projectsComponent = () => <Projects projects={Data.projects.projects} />;
   const contactComponent = () => (
     <Contact description={Data.contact.description} contacts={Data.contact.contacts} />
   );
@@ -46,10 +39,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout component={contactComponent()} title={Data.contact.title} />
     ),
   ];
-
-  function handleProjectChange(event: React.SyntheticEvent, newValue: number) {
-    setProjectValue(newValue);
-  }
 
   function handlePageChange(event: React.SyntheticEvent, newValue: number) {
     setPageValue(newValue);
