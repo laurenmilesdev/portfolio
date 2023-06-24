@@ -6,28 +6,23 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css';
 
 import Data from '../../data.json';
-import Layout from '../components/layout/Layout';
-import Navigation from '../components/navigation/Navigation';
 import Introduction from '../components/introduction/Introduction';
 import About from '../components/about/About';
-import Contact from '../components/contact/Contact';
 import Projects from '../components/projects/Projects';
+import Contact from '../components/contact/Contact';
+import Layout from '../components/layout/Layout';
+import Navigation from '../components/navigation/Navigation';
+import Footer from '../components/footer/Footer';
 import TabType from '../types/component-helpers/tab';
-// import { getTheme } from '../helpers/helpers';
+import ThemeConstants from '../constants/theme';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
-  const [projectValue, setProjectValue] = useState<number>(0);
+  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
 
   const introductionComponent = () => <Introduction subtitle={Data.home.subtitle} />;
   const aboutComponent = () => <About description={Data.about.description} />;
-  const portfolioComponent = () => (
-    <Projects
-      projects={Data.portfolio.projects}
-      handleChange={handleProjectChange}
-      value={projectValue}
-    />
-  );
+  const projectsComponent = () => <Projects projects={Data.projects.projects} />;
   const contactComponent = () => (
     <Contact description={Data.contact.description} contacts={Data.contact.contacts} />
   );
@@ -36,8 +31,8 @@ export default function App({ Component, pageProps }: AppProps) {
     new TabType(Data.home.title, <Layout component={introductionComponent()} />),
     new TabType(Data.about.title, <Layout component={aboutComponent()} title={Data.about.title} />),
     new TabType(
-      Data.portfolio.title,
-      <Layout component={portfolioComponent()} title={Data.portfolio.title} />
+      Data.projects.title,
+      <Layout component={projectsComponent()} title={Data.projects.title} />
     ),
     new TabType(
       Data.contact.title,
@@ -49,17 +44,13 @@ export default function App({ Component, pageProps }: AppProps) {
     setPageValue(newValue);
   }
 
-  function handleProjectChange(event: React.SyntheticEvent, newValue: number) {
-    setProjectValue(newValue);
+  function handleThemeChange(event: React.SyntheticEvent, newUseDarkTheme: boolean) {
+    const theme: string = newUseDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
+
+    document.documentElement.setAttribute('data-theme', theme);
+    setUseDarkTheme(newUseDarkTheme);
+    localStorage.setItem('theme', theme);
   }
-
-  // function handleThemeChange(event: React.SyntheticEvent, newUseDarkTheme: boolean) {
-  //   const theme: string = getTheme(newUseDarkTheme);
-
-  //   document.documentElement.setAttribute('data-theme', theme);
-  //   setUseDarkTheme(newUseDarkTheme);
-  //   localStorage.setItem('theme', theme);
-  // }
 
   return (
     <>
@@ -73,13 +64,18 @@ export default function App({ Component, pageProps }: AppProps) {
       <Navigation
         pageLabels={pages.map((page) => page.label)}
         handleChange={handlePageChange}
-        value={pageValue}
-        // useDarkTheme={useDarkTheme} handleThemeChange={handleThemeChange}
+        pageValue={pageValue}
       />
 
       <Container>
         <Component {...pageProps} pageValue={pageValue} pages={pages} />
       </Container>
+
+      <Footer
+        contacts={Data.contact.contacts}
+        useDarkTheme={useDarkTheme}
+        handleChange={handleThemeChange}
+      />
     </>
   );
 }

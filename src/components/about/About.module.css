@@ -1,12 +1,12 @@
 .text {
-  z-index: 100;
+  z-index: 1;
   position: relative;
 }
 
 .image {
   width: 30vw;
   height: auto;
-  opacity: 0.4;
+  opacity: var(--about-img-op);
   position: absolute;
   right: 10%;
   top: 40%;
