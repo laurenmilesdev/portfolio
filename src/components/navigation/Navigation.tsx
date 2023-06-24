@@ -11,7 +11,7 @@ type Props = {
 
 export default function Navigation(props: Props): JSX.Element {
   return (
-    <AppBar className={`${styles['app-bar']} col-md-12`}>
+    <AppBar className={`${styles['app-bar']} col-md-12`} elevation={0}>
       <Tabs
         value={props.pageValue}
         onChange={props.handleChange}
