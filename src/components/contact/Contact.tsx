@@ -1,4 +1,3 @@
-import Contacts from './Contacts';
 import ContactType from '@/types/contact/contact';
 
 type Props = {
@@ -14,8 +13,6 @@ export default function Contact(props: Props): JSX.Element {
         data-testid="description"
         dangerouslySetInnerHTML={{ __html: props.description }}
       />
-
-      <Contacts contacts={props.contacts} />
     </div>
   );
 }
