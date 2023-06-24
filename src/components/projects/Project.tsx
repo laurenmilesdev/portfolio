@@ -1,6 +1,6 @@
 import Fade from '@mui/material/Fade';
 import TabPanel from '../tabs/TabPanel';
-import Technologies from './Technologies';
+import Technologies from '../technologies/Technologies';
 import ProjectType from '@/types/projects/project';
 
 import styles from './Project.module.css';

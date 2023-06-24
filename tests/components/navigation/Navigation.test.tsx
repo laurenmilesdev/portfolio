@@ -8,7 +8,7 @@ describe('Navigation component', () => {
 
   it('renders tabs', () => {
     const { getByTestId } = render(
-      <Navigation pageLabels={pagesLabels} handleChange={handleChange} value={value} />
+      <Navigation pageLabels={pagesLabels} handleChange={handleChange} pageValue={value} />
     );
 
     expect(getByTestId('tab-0')).toHaveTextContent('Tab 1');

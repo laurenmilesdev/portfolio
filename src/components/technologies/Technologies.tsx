@@ -1,4 +1,5 @@
 import { Chip } from '@mui/material';
+
 import styles from './Technologies.module.css';
 
 type Props = {
