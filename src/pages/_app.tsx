@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const aboutComponent = () => <About description={Data.about.description} />;
   const portfolioComponent = () => (
     <Projects
-      projects={Data.portfolio.projects}
+      projects={Data.projects.projects}
       handleChange={handleProjectChange}
       value={projectValue}
     />
@@ -36,8 +36,8 @@ export default function App({ Component, pageProps }: AppProps) {
     new TabType(Data.home.title, <Layout component={introductionComponent()} />),
     new TabType(Data.about.title, <Layout component={aboutComponent()} title={Data.about.title} />),
     new TabType(
-      Data.portfolio.title,
-      <Layout component={portfolioComponent()} title={Data.portfolio.title} />
+      Data.projects.title,
+      <Layout component={portfolioComponent()} title={Data.projects.title} />
     ),
     new TabType(
       Data.contact.title,
@@ -74,7 +74,6 @@ export default function App({ Component, pageProps }: AppProps) {
         pageLabels={pages.map((page) => page.label)}
         handleChange={handlePageChange}
         value={pageValue}
-        // useDarkTheme={useDarkTheme} handleThemeChange={handleThemeChange}
       />
 
       <Container>
