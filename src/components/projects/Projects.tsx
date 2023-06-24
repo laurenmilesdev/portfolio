@@ -6,26 +6,24 @@ import styles from './Projects.module.css';
 
 type Props = {
   projects: ProjectType[];
-  handleChange: (event: React.SyntheticEvent, newValue: number) => void;
-  value: number;
 };
 
 const content = (project: ProjectType, index: number): JSX.Element => (
   <div className={`${styles.container} col-md-12`}>
-    <div className={styles.title}>
+    <div className={styles.title} id={`project-${index}-title`}>
       <h5>{project.title.toUpperCase()}</h5>
     </div>
 
     <div className={styles.description}>
-      <div className="col-md-12">
+      <div className="col-md-12" id={`project-${index}-technologies`}>
         {project.technologies && <Technologies technologies={project.technologies} />}
       </div>
 
-      <div className="col-md-12" id={`project-description-${index}`}>
+      <div className="col-md-12" id={`project-${index}-description`}>
         <p>{project.description}</p>
       </div>
 
-      <div className="col-md-12">
+      <div className="col-md-12" id={`project-${index}-company`}>
         <a
           href={project.companyUrl ?? ''}
           target="_blank"
