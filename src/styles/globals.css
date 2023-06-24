@@ -47,13 +47,18 @@
   --font-color-opp: #000;
 
   --warn: #e0a66c;
+
+  --about-img-op: 0.4;
+  --intro-img-op: 0.75;
 }
 
-/* [data-theme='light'] {
-  --background-color: #fff;
+[data-theme='light'] {
+  --background-color: var(--secondary-light);
   --font-color: #000;
   --font-color-opp: #fff;
-} */
+  --about-img-op: 0.25;
+  --intro-img-op: 1;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -105,6 +110,7 @@ div#__next > div {
 body {
   background-color: var(--background-color);
   height: 100%;
+  padding-bottom: 4%;
 }
 
 a {
@@ -129,7 +135,7 @@ h1 {
 }
 
 h4 {
-  color: #fff;
+  color: var(--font-color);
   font-family: 'Lacquer', monospace;
   font-size: 2vw;
   margin-bottom: 3%;
