@@ -38,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
     new TabType(Data.home.title, <Layout component={introductionComponent()} />),
     new TabType(Data.about.title, <Layout component={aboutComponent()} title={Data.about.title} />),
     new TabType(
-      Data.projects.title as string,
+      Data.projects.title,
       <Layout component={projectsComponent()} title={Data.projects.title} />
     ),
     new TabType(
