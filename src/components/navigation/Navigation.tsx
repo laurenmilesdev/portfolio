@@ -5,14 +5,19 @@ import styles from './Navigation.module.css';
 
 type Props = {
   pageLabels: string[];
+  pageValue: number;
   handleChange: (event: React.SyntheticEvent, newValue: number) => void;
-  value: number;
 };
 
 export default function Navigation(props: Props): JSX.Element {
   return (
     <AppBar className={`${styles['app-bar']} col-md-12`}>
-      <Tabs value={props.value} onChange={props.handleChange} aria-label="navigation tabs" centered>
+      <Tabs
+        value={props.pageValue}
+        onChange={props.handleChange}
+        aria-label="navigation tabs"
+        centered
+      >
         {props.pageLabels.map((label: string, index: number) => (
           <Tab
             className={`${styles.tab} nav-tab`}
