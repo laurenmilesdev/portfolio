@@ -12,11 +12,11 @@ type Props = {
 
 const content = (project: ProjectType, index: number): JSX.Element => (
   <div className={`${styles.container} col-md-12`}>
-    <div className="col-md-2">
+    <div className={styles.title}>
       <h5>{project.title.toUpperCase()}</h5>
     </div>
 
-    <div className="col-md-10">
+    <div className={styles.description}>
       <div className="col-md-12">
         {project.technologies && <Technologies technologies={project.technologies} />}
       </div>
