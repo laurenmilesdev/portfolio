@@ -1,8 +1,10 @@
-.tab {
-  color: var(--font-color) !important;
+.container {
+  display: flex;
+  flex: row;
+  margin-bottom: 4%;
 }
 
-.tab:hover {
-  color: var(--font-color-opp) !important;
-  background-color: var(--secondary);
+.icon {
+  font-size: 1.1em;
+  margin-left: 0.5%;
 }
