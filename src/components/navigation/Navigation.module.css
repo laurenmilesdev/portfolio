@@ -1,14 +1,3 @@
-/* .nav {
-  display: flex;
-  flex-direction: row; 
-  bottom: 0;
-  position: fixed;
-}
-
-.switch {
-  justify-content: end;
-} */
-
 .app-bar {
   background-color: var(--background-color) !important;
 }
