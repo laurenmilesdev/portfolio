@@ -58,22 +58,10 @@ export default function ThemeSwitch(props: Props) {
   }));
 
   return (
-    <div className={styles.switch}>
-      {/* <FormControlLabel
-        control={
-          <MaterialUISwitch
-            sx={{ m: 1 }}
-            checked={props.useDarkTheme}
-            onChange={props.handleThemeChange}
-          />
-        }
-        label={`${getTheme(props.useDarkTheme)} theme`.toUpperCase()}
-      /> */}
-      <MaterialUISwitch
-        sx={{ m: 1 }}
-        checked={props.useDarkTheme}
-        onChange={props.handleThemeChange}
-      />
-    </div>
+    <MaterialUISwitch
+      sx={{ m: 2 }}
+      checked={props.useDarkTheme}
+      onChange={props.handleThemeChange}
+    />
   );
 }
