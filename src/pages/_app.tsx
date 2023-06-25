@@ -43,11 +43,9 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   function handleThemeChange(event: React.SyntheticEvent, newUseDarkTheme: boolean) {
-    const theme: string = newUseDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
-
+    const theme = newUseDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
     document.documentElement.setAttribute('data-theme', theme);
     setUseDarkTheme(newUseDarkTheme);
-    localStorage.setItem('theme', theme);
   }
 
   return (

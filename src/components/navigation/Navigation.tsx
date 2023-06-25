@@ -1,5 +1,4 @@
 import { AppBar, Tab, Tabs } from '@mui/material';
-import { a11yProps } from '../../helpers/helpers';
 
 import styles from './Navigation.module.css';
 
@@ -25,4 +24,11 @@ export default function Navigation({ pageLabels, pageValue, handleChange }: Prop
       </Tabs>
     </AppBar>
   );
+}
+
+export function a11yProps(index: number): object {
+  return {
+    id: `tab-${index}`,
+    'aria-controls': `tabpanel-${index}`,
+  };
 }
