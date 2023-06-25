@@ -19,7 +19,7 @@ describe('Contacts component', () => {
 
   it('renders contact buttons with correct URLs', () => {
     contacts.forEach((contact: ContactType, index: number) => {
-      const element = document.getElementById(`btn-${index}`);
+      const element = document.getElementById(`btn-${index}`) as HTMLButtonElement;
 
       expect(element).toHaveAttribute('href', contact.url);
     });

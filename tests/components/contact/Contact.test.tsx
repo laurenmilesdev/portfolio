@@ -9,7 +9,7 @@ describe('Contact component', () => {
   });
 
   it('renders description', () => {
-    const element = document.getElementById('contact-description');
+    const element = document.getElementById('contact-description') as HTMLDivElement;
 
     expect(element).toHaveTextContent(description);
   });
