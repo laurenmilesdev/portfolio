@@ -1,26 +1,28 @@
 import { render } from '@testing-library/react';
-import Introduction from '../../../src/components/introduction/Introduction';
+import Introduction, { altText } from '../../../src/components/introduction/Introduction';
 
 jest.mock('next/image', () => ({
   __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
   default: (props: any) => <img {...props} />,
 }));
 
 describe('Introduction component', () => {
   const subtitle = 'This is a subtitle';
 
-  it('renders subtitle', () => {
-    const { getByTestId } = render(<Introduction subtitle={subtitle} />);
-    const intro = getByTestId('intro');
-
-    expect(intro).toHaveTextContent(subtitle);
+  beforeEach(() => {
+    render(<Introduction subtitle={subtitle} />);
   });
 
-  it('has logo', () => {
-    render(<Introduction subtitle={subtitle} />);
-    const imageAltText = 'Image of Lauren within text that says Lauren Miles';
-    const logo = document.querySelector('img') as HTMLImageElement;
+  it('renders logo', () => {
+    const logo = document.getElementById('logo') as HTMLImageElement;
 
-    expect(logo.alt).toEqual(imageAltText);
+    expect(logo.alt).toEqual(altText);
+  });
+
+  it('renders subtitle', () => {
+    const intro = document.getElementById('intro-subtitle') as HTMLDivElement;
+
+    expect(intro).toHaveTextContent(subtitle);
   });
 });
