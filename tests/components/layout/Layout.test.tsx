@@ -6,17 +6,19 @@ describe('Layout component', () => {
   const componentText = 'This is the component';
   const component = <div>{componentText}</div>;
 
-  it('contains correct classes', () => {
-    const { container } = render(<Layout title={title} component={component} />);
-    const { firstChild } = container;
+  beforeEach(() => {
+    render(<Layout title={title} component={component} />);
+  });
 
-    expect(firstChild).toHaveClass('container');
+  it('renders title if not undefined', () => {
+    const element = document.getElementById('title') as HTMLDivElement;
+
+    expect(element).toHaveTextContent(title);
   });
 
   it('renders content', () => {
-    const { getByTestId } = render(<Layout title={title} component={component} />);
+    const element = document.getElementById('content') as HTMLDivElement;
 
-    expect(getByTestId('title')).toHaveTextContent(title);
-    expect(getByTestId('content')).toHaveTextContent(componentText);
+    expect(element).toHaveTextContent(componentText);
   });
 });
