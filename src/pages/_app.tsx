@@ -23,9 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const homeComponent = () => <Home subtitle={Data.home.subtitle} />;
   const aboutComponent = () => <About description={Data.about.description} />;
   const projectsComponent = () => <Projects projects={Data.projects.projects} />;
-  const contactComponent = () => (
-    <Contact description={Data.contact.description} contacts={Data.contact.contacts} />
-  );
+  const contactComponent = () => <Contact description={Data.contact.description} />;
 
   const pages: TabType[] = [
     new TabType(Data.home.title, <Layout component={homeComponent()} />),
