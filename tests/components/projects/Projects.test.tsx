@@ -9,33 +9,32 @@ describe('Projects component', () => {
     new ProjectType('Project 2', 'Company 2', technologies, 'Project 2 description', 'url.com'),
   ];
 
-  it('renders project titles', () => {
+  beforeEach(() => {
     render(<Projects projects={projects} />);
+  });
 
+  it('renders project titles', () => {
     projects.forEach((project: ProjectType, index: number) => {
-      const title = document.getElementById(`project-${index}-title`);
+      const element = document.getElementById(`project-${index}-title`) as HTMLDivElement;
 
-      expect(title).toHaveTextContent(project.title.toUpperCase());
+      expect(element).toHaveTextContent(project.title.toUpperCase());
     });
   });
 
   it('renders project descriptions', () => {
-    render(<Projects projects={projects} />);
-
     projects.forEach((project: ProjectType, index: number) => {
-      const description = document.getElementById(`project-${index}-description`);
+      const element = document.getElementById(`project-${index}-description`) as HTMLDivElement;
 
-      expect(description).toHaveTextContent(project.description);
+      expect(element).toHaveTextContent(project.description);
     });
   });
 
   it('renders project company links', () => {
-    render(<Projects projects={projects} />);
-
     projects.forEach((project: ProjectType, index: number) => {
-      const company = document.getElementById(`project-${index}-company`);
+      const element = document.getElementById(`project-${index}-company`) as HTMLButtonElement;
 
-      expect(company).toHaveTextContent(project.company.toUpperCase());
+      expect(element).toHaveTextContent(project.company.toUpperCase());
+      expect(element).toHaveAttribute('href', project.companyUrl);
     });
   });
 });
