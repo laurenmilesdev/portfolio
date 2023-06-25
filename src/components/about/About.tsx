@@ -3,27 +3,31 @@ import img from '../../../public/img/about/IMG_1465.jpg';
 
 import styles from './About.module.css';
 
+export const altText = 'Image of Lauren as a child washing a truck with dad';
+
 type Props = {
   description: string;
 };
 
-export default function About(props: Props): JSX.Element {
-  const imageAltText = 'Image of Lauren as a child washing a truck with dad';
-
+export default function About({ description }: Props): JSX.Element {
   return (
     <div className="col-md-12">
-      <div className={`${styles.text} col-md-12`}>
-        {props.description && (
-          <div
-            className="col-md-12 mb-3"
-            data-testid="description"
-            dangerouslySetInnerHTML={{ __html: props.description }}
-          />
-        )}
-      </div>
+      {description && (
+        <div
+          className={`${styles.text} col-md-12`}
+          id="about-description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
+      )}
 
       <div className="col-md-12">
-        <Image src={img} alt={imageAltText} aria-label={imageAltText} className={styles.image} />
+        <Image
+          src={img}
+          alt={altText}
+          aria-label={altText}
+          className={styles.image}
+          id="about-img"
+        />
       </div>
     </div>
   );

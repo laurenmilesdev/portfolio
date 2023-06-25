@@ -1,26 +1,28 @@
 import { render } from '@testing-library/react';
-import About from '../../../src/components/about/About';
+import About, { altText } from '../../../src/components/about/About';
 
 jest.mock('next/image', () => ({
   __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
   default: (props: any) => <img {...props} />,
 }));
 
 describe('About component', () => {
   const description = 'This is a description';
 
-  it('renders string[] of paragraphs', () => {
-    const { getByTestId } = render(<About description={description} />);
-
-    expect(getByTestId('description')).toHaveTextContent(description);
+  beforeEach(() => {
+    render(<About description={description} />);
   });
 
-  it('renders photo', () => {
-    render(<About description={description} />);
+  it('renders description', () => {
+    const element = document.getElementById('about-description') as HTMLDivElement;
 
-    const imageAltText = 'Image of Lauren as a child washing a truck with dad';
-    const image = document.querySelector('img') as HTMLImageElement;
+    expect(element).toHaveTextContent(description);
+  });
 
-    expect(image.alt).toEqual(imageAltText);
+  it('renders photo with alt text', () => {
+    const element = document.getElementById('about-img') as HTMLImageElement;
+
+    expect(element.alt).toEqual(altText);
   });
 });
