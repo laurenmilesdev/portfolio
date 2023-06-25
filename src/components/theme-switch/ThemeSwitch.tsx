@@ -57,5 +57,12 @@ export default function ThemeSwitch(): JSX.Element {
     setUseDarkTheme(newUseDarkTheme);
   }
 
-  return <MaterialUISwitch sx={{ mt: 0.5 }} checked={useDarkTheme} onChange={handleChange} />;
+  return (
+    <MaterialUISwitch
+      sx={{ mt: 0.5 }}
+      checked={useDarkTheme}
+      onChange={handleChange}
+      id="theme-switch"
+    />
+  );
 }
