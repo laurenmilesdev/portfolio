@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css';
 
 import Data from '../../data.json';
-import Introduction from '../components/introduction/Introduction';
+import Home from '../components/home/Home';
 import About from '../components/about/About';
 import Projects from '../components/projects/Projects';
 import Contact from '../components/contact/Contact';
@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
   const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
 
-  const introductionComponent = () => <Introduction subtitle={Data.home.subtitle} />;
+  const homeComponent = () => <Home subtitle={Data.home.subtitle} />;
   const aboutComponent = () => <About description={Data.about.description} />;
   const projectsComponent = () => <Projects projects={Data.projects.projects} />;
   const contactComponent = () => (
@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 
   const pages: TabType[] = [
-    new TabType(Data.home.title, <Layout component={introductionComponent()} />),
+    new TabType(Data.home.title, <Layout component={homeComponent()} />),
     new TabType(Data.about.title, <Layout component={aboutComponent()} title={Data.about.title} />),
     new TabType(
       Data.projects.title,

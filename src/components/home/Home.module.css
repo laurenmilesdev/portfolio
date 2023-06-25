@@ -7,7 +7,7 @@
   width: 75%;
   height: auto;
   margin-bottom: 3%;
-  opacity: var(--intro-img-op);
+  opacity: var(--home-img-op);
 }
 
 @media screen and (max-width: 900px) {
