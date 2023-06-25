@@ -48,7 +48,7 @@
   --warn: #e0a66c;
 
   --about-img-op: 0.4;
-  --intro-img-op: 0.75;
+  --home-img-op: 0.75;
 }
 
 [data-theme='light'] {
@@ -62,7 +62,7 @@
   --font-color-opp: #fff;
 
   --about-img-op: 0.25;
-  --intro-img-op: 1;
+  --home-img-op: 1;
 }
 
 @media (prefers-color-scheme: dark) {

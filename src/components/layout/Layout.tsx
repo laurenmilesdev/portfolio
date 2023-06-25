@@ -6,17 +6,17 @@ type Props = {
   title?: string;
 };
 
-export default function Layout(props: Props): JSX.Element {
+export default function Layout({ component, title }: Props): JSX.Element {
   return (
     <Fade in={true}>
-      <div className={styles.container} data-testid="container">
-        {props.title && (
-          <div className="col-md-12" data-testid="title">
-            <h1>{props.title}</h1>
+      <div className={styles.container}>
+        {title && (
+          <div className="col-md-12" id="title">
+            <h1>{title}</h1>
           </div>
         )}
-        <div className="col-md-12" data-testid="content">
-          {props.component}
+        <div className="col-md-12" id="content">
+          {component}
         </div>
       </div>
     </Fade>

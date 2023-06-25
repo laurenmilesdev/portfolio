@@ -2,16 +2,26 @@ import { render } from '@testing-library/react';
 import Contacts from '../../../src/components/contact/Contacts';
 import ContactType from '../../../src/types/contact/contact';
 
+import { contacts } from '../../mocks/data-mock';
+
 describe('Contacts component', () => {
-  const contacts = [
-    new ContactType('GitHub', 'Contact description.', 'Contact value'),
-    new ContactType('LinkedIn', 'Contact description 2.', 'Contact value 2', 'url.com'),
-  ];
+  let getByTestId: any;
 
-  it('renders contact buttons', () => {
-    const { getByTestId } = render(<Contacts contacts={contacts} />);
+  beforeEach(() => {
+    ({ getByTestId } = render(<Contacts contacts={contacts} />));
+  });
 
+  it('renders contact buttons with correct icons', () => {
     expect(getByTestId('GitHubIcon')).toBeVisible();
     expect(getByTestId('LinkedInIcon')).toBeVisible();
+    expect(getByTestId('PictureAsPdfIcon')).toBeVisible();
+  });
+
+  it('renders contact buttons with correct URLs', () => {
+    contacts.forEach((contact: ContactType, index: number) => {
+      const element = document.getElementById(`btn-${index}`) as HTMLButtonElement;
+
+      expect(element).toHaveAttribute('href', contact.url);
+    });
   });
 });

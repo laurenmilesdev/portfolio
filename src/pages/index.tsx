@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import TabPanel from '@/components/tabs/TabPanel';
 import TabType from '@/types/component-helpers/tab';
 
@@ -8,10 +7,6 @@ type Props = {
 };
 
 export default function Home({ pageValue, pages }: Props): JSX.Element {
-  useEffect(() => {
-    localStorage.setItem('theme', 'dark');
-  });
-
   return (
     <>
       {pages.map(({ component }, index: number) => (

@@ -6,9 +6,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export default function TabPanel(props: Props): JSX.Element {
-  const { index, value, children, ...other } = props;
-
+export default function TabPanel({ index, value, children, ...other }: Props): JSX.Element {
   return (
     <div
       role="tabpanel"
