@@ -21,13 +21,7 @@ export default function About({ description }: Props): JSX.Element {
       )}
 
       <div className="col-md-12">
-        <Image
-          src={img}
-          alt={altText}
-          aria-label={altText}
-          className={styles.image}
-          id="about-img"
-        />
+        <Image src={img} alt={altText} className={styles.image} id="about-img" />
       </div>
     </div>
   );
