@@ -14,11 +14,9 @@ import Layout from '../components/layout/Layout';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
 import TabType from '../types/component-helpers/tab';
-import ThemeConstants from '../constants/theme';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
-  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
 
   const homeComponent = () => <Home subtitle={Data.home.subtitle} />;
   const aboutComponent = () => <About description={Data.about.description} />;
@@ -42,12 +40,6 @@ export default function App({ Component, pageProps }: AppProps) {
     setPageValue(newValue);
   }
 
-  function handleThemeChange(event: React.SyntheticEvent, newUseDarkTheme: boolean) {
-    const theme = newUseDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
-    document.documentElement.setAttribute('data-theme', theme);
-    setUseDarkTheme(newUseDarkTheme);
-  }
-
   return (
     <>
       <Head>
@@ -67,11 +59,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} pageValue={pageValue} pages={pages} />
       </Container>
 
-      <Footer
-        contacts={Data.contact.contacts}
-        useDarkTheme={useDarkTheme}
-        handleChange={handleThemeChange}
-      />
+      <Footer contacts={Data.contact.contacts} />
     </>
   );
 }
