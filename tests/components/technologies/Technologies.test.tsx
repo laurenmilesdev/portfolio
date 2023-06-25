@@ -4,10 +4,15 @@ import Technologies from '../../../src/components/technologies/Technologies';
 describe('Technologies component', () => {
   const technologies = ['tech 1', 'tech 2'];
 
-  it('renders technologies', () => {
-    const { getByTestId } = render(<Technologies technologies={technologies} />);
+  beforeEach(() => {
+    render(<Technologies technologies={technologies} />);
+  });
 
-    expect(getByTestId('tech-0')).toHaveTextContent(technologies[0].toUpperCase());
-    expect(getByTestId('tech-1')).toHaveTextContent(technologies[1].toUpperCase());
+  it('renders technologies chips', () => {
+    technologies.forEach((tech: string, index: number) => {
+      const element = document.getElementById(`tech-${index}`) as HTMLDivElement;
+
+      expect(element).toHaveTextContent(tech.toUpperCase());
+    });
   });
 });
