@@ -2,43 +2,38 @@ import { Button } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import EmailIcon from '@mui/icons-material/Email';
-import ContactType from '@/types/contact/contact';
+import ContactType from '../../types/contact/contact';
 import ContactTypeConstants from '../../constants/contact-type';
 
 type Props = {
   contacts: ContactType[];
 };
 
-const content = (contact: ContactType): JSX.Element => {
-  const icon = getIcon(contact.name);
-
-  return (
-    <Button
-      href={contact.url ?? ''}
-      target="_blank"
-      className="btn-primary"
-      aria-label={`Link to ${contact.name} in new tab.`}
-      id={`${contact.name}-btn`}
-      key={contact.name}
-    >
-      {icon}
-    </Button>
-  );
-};
-
-export default function Contacts(props: Props): JSX.Element {
-  return <>{props.contacts.map((contact: ContactType) => content(contact))}</>;
-}
-
-export function getIcon(name: string) {
-  return name === ContactTypeConstants.GITHUB ? (
+const icon = (name: string): JSX.Element =>
+  name === ContactTypeConstants.GITHUB ? (
     <GitHubIcon />
   ) : name === ContactTypeConstants.LINKEDIN ? (
     <LinkedInIcon />
   ) : name === ContactTypeConstants.RESUME ? (
     <PictureAsPdfIcon />
   ) : (
-    <EmailIcon />
+    <></>
+  );
+
+export default function Contacts({ contacts }: Props): JSX.Element {
+  return (
+    <>
+      {contacts.map((contact: ContactType, index: number) => (
+        <Button
+          href={contact.url ?? ''}
+          target="_blank"
+          className="btn-primary"
+          id={`btn-${index}`}
+          key={contact.name}
+        >
+          {icon(contact.name)}
+        </Button>
+      ))}
+    </>
   );
 }

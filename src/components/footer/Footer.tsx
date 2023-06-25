@@ -6,15 +6,13 @@ import styles from './Footer.module.css';
 
 type Props = {
   contacts: ContactType[];
-  useDarkTheme: boolean;
-  handleChange: (event: React.SyntheticEvent, theme: boolean) => void;
 };
 
-export default function Footer(props: Props) {
+export default function Footer({ contacts }: Props): JSX.Element {
   return (
     <div className={`${styles.container} col-md-12`}>
-      <Contacts contacts={props.contacts} />
-      <ThemeSwitch useDarkTheme={props.useDarkTheme} handleThemeChange={props.handleChange} />
+      <Contacts contacts={contacts} />
+      <ThemeSwitch />
     </div>
   );
 }
