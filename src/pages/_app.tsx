@@ -18,7 +18,9 @@ import TabType from '../types/component-helpers/tab';
 export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
 
-  const homeComponent = () => <Home subtitle={Data.home.subtitle} />;
+  const homeComponent = () => (
+    <Home subtitle={Data.home.subtitle} description={Data.home.description} />
+  );
   const aboutComponent = () => <About description={Data.about.description} />;
   const projectsComponent = () => <Projects projects={Data.projects.projects} />;
   const contactComponent = () => <Contact description={Data.contact.description} />;

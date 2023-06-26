@@ -36,9 +36,9 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 
-  --primary: #9093a2;
-  --secondary: #cfbab7;
-  --secondary-light: #f5f0f0;
+  --primary: #eed7ce;
+  --primary-light: #f8f0ec;
+  --secondary: #9093a2;
   --tertiary: #c2d2d6;
 
   --background-color: #000;
@@ -48,7 +48,7 @@
   --warn: #e0a66c;
 
   --about-img-op: 0.4;
-  --home-img-op: 0.75;
+  --home-img-op: 0.6;
 }
 
 [data-theme='light'] {
@@ -62,7 +62,7 @@
   --font-color-opp: #fff;
 
   --about-img-op: 0.25;
-  --home-img-op: 1;
+  --home-img-op: 0.5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -133,16 +133,9 @@ hr {
 
 h1 {
   color: var(--primary);
-  font-family: 'Lacquer', monospace;
-  font-size: 8vw;
+  font-family: 'Rock 3D', monospace;
+  font-size: 6vw;
   font-weight: 600;
-  margin-bottom: 3%;
-}
-
-h4 {
-  color: var(--font-color);
-  font-family: 'Lacquer', monospace;
-  font-size: 2vw;
   margin-bottom: 3%;
 }
 
@@ -208,10 +201,6 @@ ul {
 
 @media screen and (max-width: 900px) {
   h1 {
-    font-size: 5em;
-  }
-
-  h4 {
-    font-size: 1.2em;
+    font-size: 3em;
   }
 }
