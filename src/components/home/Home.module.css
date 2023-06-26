@@ -1,17 +1,43 @@
 .container {
-  margin-top: 10%;
+  margin-top: 8%;
   text-align: center;
 }
 
+.subtitle {
+  color: var(--primary);
+  font-family: 'Rock 3D', monospace;
+  font-size: 10vw;
+  font-weight: 600;
+  z-index: 1;
+  position: relative;
+}
+
+.description {
+  font-size: 1.5vw;
+  z-index: 1;
+  position: relative;
+}
+
 .logo {
-  width: 75%;
+  width: 55%;
   height: auto;
-  margin-bottom: 3%;
   opacity: var(--home-img-op);
+  position: absolute;
+  left: 22%;
+  top: 10%;
 }
 
 @media screen and (max-width: 900px) {
+  .subtitle {
+    font-size: 12vw;
+  }
+
+  .description {
+    font-size: 3vw;
+  }
+
   .logo {
-    width: 100%;
+    width: 75%;
+    left: 12%;
   }
 }
