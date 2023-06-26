@@ -12,7 +12,7 @@ export default function Layout({ component, title }: Props): JSX.Element {
       <div className={styles.container}>
         {title && (
           <div className="col-md-12" id="title">
-            <h1>{title}</h1>
+            <h1>{title.toUpperCase()}</h1>
           </div>
         )}
         <div className="col-md-12" id="content">

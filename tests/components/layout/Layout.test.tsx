@@ -13,7 +13,7 @@ describe('Layout component', () => {
   it('renders title if not undefined', () => {
     const element = document.getElementById('title') as HTMLDivElement;
 
-    expect(element).toHaveTextContent(title);
+    expect(element).toHaveTextContent(title.toUpperCase());
   });
 
   it('renders content', () => {
