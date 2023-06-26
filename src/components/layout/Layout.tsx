@@ -11,7 +11,7 @@ export default function Layout({ component, title }: Props): JSX.Element {
     <Fade in={true}>
       <div className={styles.container}>
         {title && (
-          <div className="col-md-12" id="title">
+          <div className="col-md-12 pb-3" id="title">
             <h1>{title.toUpperCase()}</h1>
           </div>
         )}
