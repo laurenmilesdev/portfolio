@@ -8,10 +8,11 @@ jest.mock('next/image', () => ({
 }));
 
 describe('Home component', () => {
-  const subtitle = 'This is a subtitle';
+  const subtitle = 'Subtitle';
+  const description = 'This is the description';
 
   beforeEach(() => {
-    render(<Home subtitle={subtitle} />);
+    render(<Home subtitle={subtitle} description={description} />);
   });
 
   it('renders logo', () => {
@@ -23,6 +24,12 @@ describe('Home component', () => {
   it('renders subtitle', () => {
     const element = document.getElementById('home-subtitle') as HTMLDivElement;
 
-    expect(element).toHaveTextContent(subtitle);
+    expect(element).toHaveTextContent(subtitle.toUpperCase());
+  });
+
+  it('renders description', () => {
+    const element = document.getElementById('home-description') as HTMLDivElement;
+
+    expect(element).toHaveTextContent(description);
   });
 });
