@@ -198,6 +198,7 @@ ul {
   background-color: var(--secondary) !important;
   color: var(--font-color-opp) !important;
   letter-spacing: 0.1rem;
+  text-transform: lowercase;
 }
 
 @media (prefers-color-scheme: dark) {

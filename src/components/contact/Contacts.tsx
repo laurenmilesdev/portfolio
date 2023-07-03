@@ -24,13 +24,12 @@ export default function Contacts({ contacts }: Props): JSX.Element {
   return (
     <>
       {contacts.map((contact: ContactType, index: number) => (
-        <Tooltip title={contact.name.toLocaleLowerCase()}>
+        <Tooltip title={contact.name} key={contact.name}>
           <Button
             href={contact.url ?? ''}
             target="_blank"
             className="btn-primary"
             id={`btn-${index}`}
-            key={contact.name}
           >
             {icon(contact.name)}
           </Button>
