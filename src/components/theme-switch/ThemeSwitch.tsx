@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Switch } from '@mui/material';
+import { Switch, Tooltip } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ThemeConstants from '../../constants/theme';
 
@@ -58,11 +58,13 @@ export default function ThemeSwitch(): JSX.Element {
   }
 
   return (
-    <MaterialUISwitch
-      sx={{ mt: 0.5 }}
-      checked={useDarkTheme}
-      onChange={handleChange}
-      id="theme-switch"
-    />
+    <Tooltip title={`${useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT} mode`}>
+      <MaterialUISwitch
+        sx={{ mt: 0.5 }}
+        checked={useDarkTheme}
+        onChange={handleChange}
+        id="theme-switch"
+      />
+    </Tooltip>
   );
 }

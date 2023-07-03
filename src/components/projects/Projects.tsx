@@ -15,7 +15,7 @@ export default function Projects({ projects }: Props): JSX.Element {
         projects.map((project: ProjectType, index: number) => (
           <div className={`${styles.container} col-md-12`} key={project.title}>
             <div className={`${styles.title} pb-2`} id={`project-${index}-title`}>
-              <h5>{project.title.toUpperCase()}</h5>
+              <h5>{project.title}</h5>
             </div>
 
             <div className={styles.description}>
@@ -29,7 +29,7 @@ export default function Projects({ projects }: Props): JSX.Element {
 
               <div className="col-md-12">
                 <a href={project.companyUrl ?? ''} target="_blank" id={`project-${index}-company`}>
-                  {project.company.toUpperCase()}
+                  {project.company}
                   {<OpenInNewIcon className={styles.icon} />}
                 </a>
               </div>

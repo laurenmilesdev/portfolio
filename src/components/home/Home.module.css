@@ -10,12 +10,15 @@
   font-weight: 600;
   z-index: 1;
   position: relative;
+  text-transform: uppercase;
 }
 
 .description {
   font-size: 1.5vw;
   z-index: 1;
   position: relative;
+  letter-spacing: 0.1rem;
+  text-transform: lowercase;
 }
 
 .logo {
