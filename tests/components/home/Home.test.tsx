@@ -24,7 +24,7 @@ describe('Home component', () => {
   it('renders subtitle', () => {
     const element = document.getElementById('home-subtitle') as HTMLDivElement;
 
-    expect(element).toHaveTextContent(subtitle.toUpperCase());
+    expect(element).toHaveTextContent(subtitle);
   });
 
   it('renders description', () => {

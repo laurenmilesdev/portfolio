@@ -6,6 +6,9 @@
 
 .title {
   width: 20%;
+  text-transform: lowercase;
+  letter-spacing: 0.1rem;
+  padding-right: 2%;
 }
 
 .description {

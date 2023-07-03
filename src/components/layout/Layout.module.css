@@ -7,6 +7,10 @@
   color: var(--font-color);
 }
 
+.title {
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 500px) {
   .container {
     padding-top: 15%;

@@ -4,6 +4,8 @@
 
 .tab {
   color: var(--font-color) !important;
+  text-transform: lowercase !important;
+  letter-spacing: 0.1rem;
 }
 
 .tab:hover {
