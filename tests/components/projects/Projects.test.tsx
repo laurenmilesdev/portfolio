@@ -17,7 +17,7 @@ describe('Projects component', () => {
     projects.forEach((project: ProjectType, index: number) => {
       const element = document.getElementById(`project-${index}-title`) as HTMLDivElement;
 
-      expect(element).toHaveTextContent(project.title.toUpperCase());
+      expect(element).toHaveTextContent(project.title);
     });
   });
 
@@ -33,7 +33,7 @@ describe('Projects component', () => {
     projects.forEach((project: ProjectType, index: number) => {
       const element = document.getElementById(`project-${index}-company`) as HTMLButtonElement;
 
-      expect(element).toHaveTextContent(project.company.toUpperCase());
+      expect(element).toHaveTextContent(project.company);
       expect(element).toHaveAttribute('href', project.companyUrl);
     });
   });

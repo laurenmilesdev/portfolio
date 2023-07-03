@@ -14,7 +14,7 @@ export default function Home({ subtitle, description }: Props): JSX.Element {
   return (
     <div className={`${styles.container} col-md-12`}>
       <div className={`${styles.subtitle} col-md-12`} id="home-subtitle">
-        {subtitle.toUpperCase()}
+        {subtitle}
       </div>
 
       <div className={`${styles.description} col-md-12`} id="home-description">

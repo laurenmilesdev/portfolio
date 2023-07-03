@@ -12,7 +12,7 @@ describe('Technologies component', () => {
     technologies.forEach((tech: string, index: number) => {
       const element = document.getElementById(`tech-${index}`) as HTMLDivElement;
 
-      expect(element).toHaveTextContent(tech.toUpperCase());
+      expect(element).toHaveTextContent(tech);
     });
   });
 });
