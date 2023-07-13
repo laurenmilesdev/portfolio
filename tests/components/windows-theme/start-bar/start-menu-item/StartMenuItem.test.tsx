@@ -2,14 +2,9 @@ import { render } from '@testing-library/react';
 import StartMenuItem, {
   shutdownLabelText,
 } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
-import PageModel from '../../../../../src/models/component-helpers/page';
+import { pages } from '../../../../mocks/data-mock';
 
 describe('StartMenuItem component', () => {
-  const pages = [
-    new PageModel('Page', <>Page</>),
-    new PageModel('Page 2', <>Page</>, 'window-id', 'start-bar-button-id', 'menu-item-button-id'),
-  ];
-
   it('renders null if index is 0', () => {
     const index = 0;
     const page = pages[index];
