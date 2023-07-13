@@ -8,7 +8,7 @@ type Props = {
   options: string[];
 };
 
-export default function WindowOptions({ options }: Props) {
+export default function WindowOptions({ options }: Props): JSX.Element {
   return (
     <div className={`${styles.options} ${styles.line}`}>
       {options &&

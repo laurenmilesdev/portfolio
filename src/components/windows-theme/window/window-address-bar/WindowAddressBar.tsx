@@ -3,7 +3,7 @@ import styles from './WindowAddressBar.module.css';
 export const label = 'Address';
 export const inputValue = 'https://portfolio.laurenmilesdev.com/';
 
-export default function WindowAddressBar() {
+export default function WindowAddressBar(): JSX.Element {
   return (
     <div className={`${styles.options} ${styles.padding}`}>
       <div className={styles.item} id="window-address-bar-label">

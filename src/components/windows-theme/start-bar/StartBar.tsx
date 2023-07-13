@@ -9,7 +9,7 @@ type Props = {
   pages: PageModel[];
 };
 
-export default function StartBar({ pages }: Props) {
+export default function StartBar({ pages }: Props): JSX.Element {
   return (
     <div className={styles['start-bar']}>
       <StartButton />

@@ -10,7 +10,7 @@ type Props = {
   content: JSX.Element;
 };
 
-export default function Window({ page, content }: Props) {
+export default function Window({ page, content }: Props): JSX.Element {
   const options = ['File', 'Edit', 'Views', 'Favorites', 'Tools', 'Help'];
 
   return (

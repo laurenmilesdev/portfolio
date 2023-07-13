@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import PageModel from '../../../../models/component-helpers/page';
 
-import img from '../../../../public/img/windows/ie.png';
+import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
 
 export const shutdownLabelText = 'Shutdown';
@@ -12,8 +12,12 @@ type Props = {
   index?: number;
 };
 
-export default function StartMenuItem({ pages, page = undefined, index = undefined }: Props) {
-  if (index && index === 0) return null;
+export default function StartMenuItem({
+  pages,
+  page = undefined,
+  index = undefined,
+}: Props): JSX.Element {
+  if (index && index === 0) return <></>;
 
   if (page) {
     const className = index === pages.length - 1 ? styles.line : '';

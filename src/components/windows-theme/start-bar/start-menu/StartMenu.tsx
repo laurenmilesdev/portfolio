@@ -7,7 +7,7 @@ type Props = {
   pages: PageModel[];
 };
 
-export default function StartMenu({ pages }: Props) {
+export default function StartMenu({ pages }: Props): JSX.Element {
   return (
     <div className={`${styles['start-menu']} windows-box-shadow`} id="start-menu">
       <div className={styles['start-menu-blue']}>
