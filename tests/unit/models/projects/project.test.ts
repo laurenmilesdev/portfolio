@@ -1,4 +1,4 @@
-import Project from '../../../../src/types/projects/project';
+import Project from '../../../../src/models/projects/project';
 
 describe('Project', () => {
   const title = 'title';
@@ -7,7 +7,7 @@ describe('Project', () => {
   const technologies = ['tech 1', 'tech 2'];
   const companyUrl = 'company.com';
 
-  it('returns Project type object without company url', () => {
+  it('returns Project object without company url', () => {
     const response = new Project(title, company, technologies, description);
     const expectedResponse: Project = {
       title,
@@ -19,7 +19,7 @@ describe('Project', () => {
     expect(response).toEqual(expectedResponse);
   });
 
-  it('returns Project type object with company url', () => {
+  it('returns Project object with company url', () => {
     const response = new Project(title, company, technologies, description, companyUrl);
     const expectedResponse: Project = {
       title,

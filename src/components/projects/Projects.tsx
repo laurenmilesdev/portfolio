@@ -1,18 +1,18 @@
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Technologies from '../technologies/Technologies';
-import ProjectType from '../../types/projects/project';
+import ProjectModel from '../../models/projects/project';
 
 import styles from './Projects.module.css';
 
 type Props = {
-  projects: ProjectType[];
+  projects: ProjectModel[];
 };
 
 export default function Projects({ projects }: Props): JSX.Element {
   return (
     <>
       {projects &&
-        projects.map((project: ProjectType, index: number) => (
+        projects.map((project: ProjectModel, index: number) => (
           <div className={`${styles.container} col-md-12`} key={project.title}>
             <div className={`${styles.title} pb-2`} id={`project-${index}-title`}>
               <h5>{project.title}</h5>
