@@ -22,6 +22,9 @@ describe('Page', () => {
     const expectedResponse: Page = {
       label,
       component,
+      windowId,
+      startBarButtonId,
+      menuItemButtonId,
     };
 
     expect(response).toEqual(expectedResponse);
