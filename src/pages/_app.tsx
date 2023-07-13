@@ -52,9 +52,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <Navigation
+        pageValue={pageValue}
         pageLabels={pages.map((page) => page.label)}
         handleChange={handlePageChange}
-        pageValue={pageValue}
       />
 
       <Container>

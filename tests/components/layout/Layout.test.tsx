@@ -7,7 +7,7 @@ describe('Layout component', () => {
   const component = <div>{componentText}</div>;
 
   beforeEach(() => {
-    render(<Layout title={title} component={component} />);
+    render(<Layout component={component} title={title} />);
   });
 
   it('renders title if not undefined', () => {

@@ -51,11 +51,12 @@ export default function ThemeSwitch(): JSX.Element {
     },
   }));
 
-  function handleChange(event: React.SyntheticEvent, newUseDarkTheme: boolean) {
+  const handleChange = (event: React.SyntheticEvent, newUseDarkTheme: boolean) => {
     const theme = newUseDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
+
     document.documentElement.setAttribute('data-theme', theme);
     setUseDarkTheme(newUseDarkTheme);
-  }
+  };
 
   return (
     <Tooltip title={`${useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT} mode`}>
