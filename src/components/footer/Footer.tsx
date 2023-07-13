@@ -1,11 +1,11 @@
 import Contacts from '../contact/Contacts';
 import ThemeSwitch from '../theme-switch/ThemeSwitch';
-import ContactType from '../../types/contact/contact';
+import ContactModel from '../../models/contact/contact';
 
 import styles from './Footer.module.css';
 
 type Props = {
-  contacts: ContactType[];
+  contacts: ContactModel[];
 };
 
 export default function Footer({ contacts }: Props): JSX.Element {

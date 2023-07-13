@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import Contacts from '../../../src/components/contact/Contacts';
-import ContactType from '../../../src/types/contact/contact';
+import ContactModel from '../../../src/models/contact/contact';
 
 import { contacts } from '../../mocks/data-mock';
 
@@ -18,7 +18,7 @@ describe('Contacts component', () => {
   });
 
   it('renders contact buttons with correct URLs', () => {
-    contacts.forEach((contact: ContactType, index: number) => {
+    contacts.forEach((contact: ContactModel, index: number) => {
       const element = document.getElementById(`btn-${index}`) as HTMLButtonElement;
 
       expect(element).toHaveAttribute('href', contact.url);

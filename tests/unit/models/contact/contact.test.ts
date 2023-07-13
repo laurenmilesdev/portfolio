@@ -1,7 +1,7 @@
-import Contact from '../../../../src/types/contact/contact';
+import Contact from '../../../../src/models/contact/contact';
 
 describe('Contact', () => {
-  it('returns Contact type object with url when provided', () => {
+  it('returns Contact object with url when provided', () => {
     const name = 'name';
     const description = 'description';
     const value = 'value';
