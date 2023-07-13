@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import About, { altText } from '../../../src/components/about/About';
+import About, { altText } from '../../../../src/components/pages/about/About';
 
 jest.mock('next/image', () => ({
   __esModule: true,

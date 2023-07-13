@@ -1,4 +1,4 @@
-import Contacts from '../contact/Contacts';
+import Contacts from '../contacts/Contacts';
 import ThemeSwitch from '../theme-switch/ThemeSwitch';
 import ContactModel from '../../models/contact/contact';
 

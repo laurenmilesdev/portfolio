@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Home, { altText } from '../../../src/components/home/Home';
+import Home, { altText } from '../../../../src/components/pages/home/Home';
 
 jest.mock('next/image', () => ({
   __esModule: true,

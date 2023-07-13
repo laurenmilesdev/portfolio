@@ -6,10 +6,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css';
 
 import Data from '../../data.json';
-import Home from '../components/home/Home';
-import About from '../components/about/About';
-import Projects from '../components/projects/Projects';
-import Contact from '../components/contact/Contact';
+import Home from '../components/pages/home/Home';
+import About from '../components/pages/about/About';
+import Projects from '../components/pages/projects/Projects';
+import Contact from '../components/pages/contact/Contact';
 import Layout from '../components/layout/Layout';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
@@ -36,9 +36,8 @@ export default function App({ Component, pageProps }: AppProps) {
     ),
   ];
 
-  function handlePageChange(event: React.SyntheticEvent, newValue: number) {
+  const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
     setPageValue(newValue);
-  }
 
   return (
     <>

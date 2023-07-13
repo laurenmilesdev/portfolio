@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import img from '../../../public/img/home/headshot.png';
 
+import img from '../../../../public/img/home/headshot.png';
 import styles from './Home.module.css';
 
 export const altText = 'Image of Lauren within text that says Lauren Miles';

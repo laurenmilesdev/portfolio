@@ -1,6 +1,6 @@
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import Technologies from '../technologies/Technologies';
-import ProjectModel from '../../models/projects/project';
+import Technologies from '../../technologies/Technologies';
+import ProjectModel from '../../../models/projects/project';
 
 import styles from './Projects.module.css';
 

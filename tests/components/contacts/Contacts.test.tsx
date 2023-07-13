@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Contacts from '../../../src/components/contact/Contacts';
+import Contacts from '../../../src/components/contacts/Contacts';
 import ContactModel from '../../../src/models/contact/contact';
 
 import { contacts } from '../../mocks/data-mock';
