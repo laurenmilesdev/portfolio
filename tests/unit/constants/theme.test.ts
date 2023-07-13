@@ -1,6 +1,6 @@
 import ThemeConstants from '../../../src/constants/theme';
 
-describe('content-type constants', () => {
+describe('ThemeConstants', () => {
   it('returns DARK constant', () => {
     const response = ThemeConstants.DARK;
 

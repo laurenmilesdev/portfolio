@@ -1,4 +1,4 @@
-export default class ContactTypeConstants {
+export default class ContactConstants {
   static readonly EMAIL: string = 'Email';
 
   static readonly GITHUB: string = 'GitHub';

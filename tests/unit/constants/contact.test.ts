@@ -1,20 +1,20 @@
-import ContactTypeConstants from '../../../src/constants/contact-type';
+import ContactConstants from '../../../src/constants/contact';
 
-describe('content-type constants', () => {
+describe('ContactConstants', () => {
   it('returns GITHUB constant', () => {
-    const response = ContactTypeConstants.GITHUB;
+    const response = ContactConstants.GITHUB;
 
     expect(response).toEqual('GitHub');
   });
 
   it('returns LINKEDIN constant', () => {
-    const response = ContactTypeConstants.LINKEDIN;
+    const response = ContactConstants.LINKEDIN;
 
     expect(response).toEqual('LinkedIn');
   });
 
   it('returns RESUME constant', () => {
-    const response = ContactTypeConstants.RESUME;
+    const response = ContactConstants.RESUME;
 
     expect(response).toEqual('Resume');
   });
