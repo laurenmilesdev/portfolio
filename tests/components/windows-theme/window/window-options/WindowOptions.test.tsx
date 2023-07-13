@@ -3,7 +3,7 @@ import WindowOptions, {
   imageAltText,
 } from '../../../../../src/components/windows-theme/window/window-options/WindowOptions';
 
-describe('WindowAddressBar component', () => {
+describe('WindowOptions component', () => {
   const options = ['Option 1', 'Option 2', 'Option 3'];
 
   beforeEach(() => {
