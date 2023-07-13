@@ -13,28 +13,26 @@ import Contact from '../components/contact/Contact';
 import Layout from '../components/layout/Layout';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
-import TabType from '../types/component-helpers/tab';
+import PageModel from '../models/component-helpers/page';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
 
-  const homeComponent = () => (
-    <Home subtitle={Data.home.subtitle} description={Data.home.description} />
-  );
-  const aboutComponent = () => <About description={Data.about.description} />;
-  const projectsComponent = () => <Projects projects={Data.projects.projects} />;
-  const contactComponent = () => <Contact description={Data.contact.description} />;
+  const homeComponent = <Home subtitle={Data.home.subtitle} description={Data.home.description} />;
+  const aboutComponent = <About description={Data.about.description} />;
+  const projectsComponent = <Projects projects={Data.projects.projects} />;
+  const contactComponent = <Contact description={Data.contact.description} />;
 
-  const pages: TabType[] = [
-    new TabType(Data.home.title, <Layout component={homeComponent()} />),
-    new TabType(Data.about.title, <Layout component={aboutComponent()} title={Data.about.title} />),
-    new TabType(
+  const pages: PageModel[] = [
+    new PageModel(Data.home.title, <Layout component={homeComponent} />),
+    new PageModel(Data.about.title, <Layout component={aboutComponent} title={Data.about.title} />),
+    new PageModel(
       Data.projects.title,
-      <Layout component={projectsComponent()} title={Data.projects.title} />
+      <Layout component={projectsComponent} title={Data.projects.title} />
     ),
-    new TabType(
+    new PageModel(
       Data.contact.title,
-      <Layout component={contactComponent()} title={Data.contact.title} />
+      <Layout component={contactComponent} title={Data.contact.title} />
     ),
   ];
 

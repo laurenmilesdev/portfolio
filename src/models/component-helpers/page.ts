@@ -1,4 +1,4 @@
-export default class Tab {
+export default class Page {
   label: string;
 
   component: JSX.Element;
