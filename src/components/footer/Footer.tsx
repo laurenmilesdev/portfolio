@@ -24,7 +24,11 @@ export default function Footer({
   const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
 
   return useWindowsTheme ? (
-    <WindowsStartBar pages={pages} />
+    <WindowsStartBar
+      pages={pages}
+      useWindowsTheme={useWindowsTheme}
+      setUseWindowsTheme={setUseWindowsTheme}
+    />
   ) : (
     <div className={`${styles.container} col-md-12`}>
       <WindowsThemeButton
