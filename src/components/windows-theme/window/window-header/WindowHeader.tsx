@@ -9,10 +9,15 @@ type Props = {
 export default function WindowHeader({ page }: Props) {
   return (
     <div className={styles.header}>
-      <label>{page.label}</label>
+      <label id="window-header-label">{page.label}</label>
       <div className={styles['header-buttons']}>
-        <label className={`${styles.minimize} windows-box-shadow`}></label>
-        <label className={`windows-box-shadow`}>X</label>
+        <label
+          className={`${styles.minimize} windows-box-shadow`}
+          id="window-header-minimize-btn"
+        ></label>
+        <label className={`windows-box-shadow`} id="window-header-close-btn">
+          X
+        </label>
       </div>
     </div>
   );
