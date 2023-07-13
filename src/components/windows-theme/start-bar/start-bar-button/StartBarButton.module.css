@@ -1,0 +1,30 @@
+.btn {
+  text-transform: capitalize;
+  width: 11em;
+  margin-right: 4%;
+  display: none;
+}
+
+.btn:active {
+  box-shadow: -2px -2px var(--windows-dark-gray), -2px 0 var(--windows-dark-gray),
+    0 -2px var(--windows-dark-gray), -4px -4px #000, -4px 0 #000, 0 -4px #000,
+    2px 2px var(--windows-light-gray), 0 2px var(--windows-light-gray),
+    2px 0 var(--windows-light-gray), 2px -2px var(--windows-dark-gray),
+    -2px 2px var(--windows-light-gray), -4px 2px #000, -4px 4px #fff, 4px 4px #fff, 4px 0 #fff,
+    0 4px #fff, 2px -4px #000, 4px -4px #fff;
+}
+
+.btn-label {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.ie-icon {
+  width: 3rem;
+  height: auto;
+  margin: -0.5em 0 0 -0.5em;
+}
