@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import TabPanel from '../../../src/components/tabs/TabPanel';
+import TabPanel from '../../../src/components/tab-panel/TabPanel';
 
 describe('TabPanel component', () => {
   const index = 0;

@@ -1,4 +1,4 @@
-import TabPanel from '../components/tabs/TabPanel';
+import TabPanel from '../components/tab-panel/TabPanel';
 import PageModel from '../models/component-helpers/page';
 
 type Props = {
