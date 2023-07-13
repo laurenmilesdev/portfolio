@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function StartMenuItem({ pages, page = undefined, index = undefined }: Props) {
-  if (index && index === 0) return <></>;
+  if (index && index === 0) return null;
 
   if (page) {
     const className = index === pages.length - 1 ? styles.line : '';

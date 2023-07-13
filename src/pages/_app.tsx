@@ -29,19 +29,20 @@ export default function App({ Component, pageProps }: AppProps) {
       Data.about.title,
       <Layout component={aboutComponent} title={Data.about.title} />,
       `${Data.about.title.toLowerCase()}-window`,
-      `${Data.about.title.toLowerCase()}-btn`
+      `${Data.about.title.toLowerCase()}-start-bar-btn`,
+      `${Data.about.title.toLowerCase()}-menu-item-btn`
     ),
     new PageModel(
       Data.projects.title,
       <Layout component={projectsComponent} title={Data.projects.title} />,
       `${Data.projects.title.toLowerCase()}-window`,
-      `${Data.projects.title.toLowerCase()}-btn`
+      `${Data.projects.title.toLowerCase()}-menu-item-btn`
     ),
     new PageModel(
       Data.contact.title,
       <Layout component={contactComponent} title={Data.contact.title} />,
       `${Data.contact.title.toLowerCase()}-window`,
-      `${Data.contact.title.toLowerCase()}-btn`
+      `${Data.contact.title.toLowerCase()}-menu-item-btn`
     ),
   ];
 

@@ -5,12 +5,21 @@ export default class Page {
 
   windowId?: string;
 
-  buttonId?: string;
+  startBarButtonId?: string;
 
-  constructor(label: string, component: JSX.Element, windowId?: string, buttonId?: string) {
+  menuItemButtonId?: string;
+
+  constructor(
+    label: string,
+    component: JSX.Element,
+    windowId?: string,
+    startBarButtonId?: string,
+    menuItemButtonId?: string
+  ) {
     this.label = label;
     this.component = component;
     this.windowId = windowId;
-    this.buttonId = buttonId;
+    this.startBarButtonId = startBarButtonId;
+    this.menuItemButtonId = menuItemButtonId;
   }
 }
