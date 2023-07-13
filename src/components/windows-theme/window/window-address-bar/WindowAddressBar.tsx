@@ -1,13 +1,19 @@
 import styles from './WindowAddressBar.module.css';
 
+export const label = 'Address';
+export const inputValue = 'https://portfolio.laurenmilesdev.com/';
+
 export default function WindowAddressBar() {
   return (
     <div className={`${styles.options} ${styles.padding}`}>
-      <div className={styles.item}>Address</div>
+      <div className={styles.item} id="window-address-bar-label">
+        {label}
+      </div>
       <input
         type="text"
         className={styles['inverse-windows-box-shadow']}
-        value="https://portfolio.laurenmilesdev.com/"
+        value={inputValue}
+        id="window-address-bar-input"
         readOnly
       />
     </div>
