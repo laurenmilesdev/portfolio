@@ -1,9 +1,9 @@
-import TabPanel from '@/components/tabs/TabPanel';
-import TabType from '@/types/component-helpers/tab';
+import TabPanel from '../components/tab-panel/TabPanel';
+import PageModel from '../models/component-helpers/page';
 
 type Props = {
   pageValue: number;
-  pages: TabType[];
+  pages: PageModel[];
 };
 
 export default function Home({ pageValue, pages }: Props): JSX.Element {

@@ -15,6 +15,7 @@ export default function Layout({ component, title }: Props): JSX.Element {
             <h1>{title}</h1>
           </div>
         )}
+
         <div className="col-md-12" id="content">
           {component}
         </div>

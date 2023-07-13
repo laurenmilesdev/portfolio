@@ -3,12 +3,17 @@ import { AppBar, Tab, Tabs } from '@mui/material';
 import styles from './Navigation.module.css';
 
 type Props = {
-  pageLabels: string[];
   pageValue: number;
+  pageLabels: string[];
   handleChange: (event: React.SyntheticEvent, newValue: number) => void;
 };
 
-export default function Navigation({ pageLabels, pageValue, handleChange }: Props): JSX.Element {
+const a11yProps = (index: number): object => ({
+  id: `tab-${index}`,
+  'aria-controls': `tabpanel-${index}`,
+});
+
+export default function Navigation({ pageValue, pageLabels, handleChange }: Props): JSX.Element {
   return (
     <AppBar className={`${styles['app-bar']} col-md-12`} elevation={0}>
       <Tabs value={pageValue} onChange={handleChange} centered>
@@ -24,11 +29,4 @@ export default function Navigation({ pageLabels, pageValue, handleChange }: Prop
       </Tabs>
     </AppBar>
   );
-}
-
-export function a11yProps(index: number): object {
-  return {
-    id: `tab-${index}`,
-    'aria-controls': `tabpanel-${index}`,
-  };
 }
