@@ -55,6 +55,8 @@
   --windows-light-gray: #e0dede;
   --windows-gray: #c0c0c0;
   --windows-dark-gray: #818181;
+
+  --windows-box-shadow-blue: #cce9eb;
 }
 
 [data-theme='light'] {
