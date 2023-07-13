@@ -2,6 +2,12 @@ import { render } from '@testing-library/react';
 import StartBarButton from '../../../../../src/components/windows-theme/start-bar/start-bar-button/StartBarButton';
 import { pages } from '../../../../mocks/data-mock';
 
+jest.mock('next/image', () => ({
+  __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
+  default: (props: any) => <img {...props} />,
+}));
+
 describe('StartBarButton component', () => {
   it('renders null if index is 0', () => {
     const page = pages[0];

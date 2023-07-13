@@ -4,6 +4,12 @@ import StartMenuItem, {
 } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
 import { pages } from '../../../../mocks/data-mock';
 
+jest.mock('next/image', () => ({
+  __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
+  default: (props: any) => <img {...props} />,
+}));
+
 describe('StartMenuItem component', () => {
   it('renders null if index is 0', () => {
     const index = 0;

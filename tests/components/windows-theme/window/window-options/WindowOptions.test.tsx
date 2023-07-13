@@ -3,6 +3,12 @@ import WindowOptions, {
   imageAltText,
 } from '../../../../../src/components/windows-theme/window/window-options/WindowOptions';
 
+jest.mock('next/image', () => ({
+  __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
+  default: (props: any) => <img {...props} />,
+}));
+
 describe('WindowOptions component', () => {
   const options = ['Option 1', 'Option 2', 'Option 3'];
 
