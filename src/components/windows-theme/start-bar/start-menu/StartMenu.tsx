@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import PageModel from '../../../../models/component-helpers/page';
 
 import styles from './StartMenu.module.css';
@@ -15,6 +15,16 @@ export default function StartMenu({
   useWindowsTheme,
   setUseWindowsTheme,
 }: Props): JSX.Element {
+  useEffect(() => {
+    document.addEventListener('mouseup', (e) => {
+      const element = document.getElementById('start-menu');
+
+      if (element && !element?.contains(e.target as Node)) {
+        element.style.display = 'none';
+      }
+    });
+  });
+
   return (
     <div className={`${styles['start-menu']} windows-box-shadow`} id="start-menu">
       <div className={styles['start-menu-blue']}>
