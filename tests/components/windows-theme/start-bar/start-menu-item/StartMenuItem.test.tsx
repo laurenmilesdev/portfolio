@@ -1,8 +1,15 @@
+import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
+import { useStateMock, setStateMock } from '../../../../mocks/use-state-mock';
 import StartMenuItem, {
   shutdownLabelText,
 } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
 import { pages } from '../../../../mocks/data-mock';
+
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useState: jest.fn(),
+}));
 
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -11,10 +18,25 @@ jest.mock('next/image', () => ({
 }));
 
 describe('StartMenuItem component', () => {
+  const useWindowsTheme = true;
+  const setUseWindowsTheme = setStateMock;
+
   it('renders null if index is 0', () => {
     const index = 0;
     const page = pages[index];
-    render(<StartMenuItem pages={pages} page={page} index={index} />);
+
+    jest
+      .spyOn(React, 'useState')
+      .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+    render(
+      <StartMenuItem
+        pages={pages}
+        useWindowsTheme={useWindowsTheme}
+        setUseWindowsTheme={setUseWindowsTheme}
+        page={page}
+        index={index}
+      />
+    );
 
     const element = document.getElementById(page.menuItemButtonId ?? '') as HTMLLabelElement;
 
@@ -24,7 +46,19 @@ describe('StartMenuItem component', () => {
   it('renders menu item if index is not 0', () => {
     const index = 1;
     const page = pages[index];
-    render(<StartMenuItem pages={pages} page={page} index={index} />);
+
+    jest
+      .spyOn(React, 'useState')
+      .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+    render(
+      <StartMenuItem
+        pages={pages}
+        useWindowsTheme={useWindowsTheme}
+        setUseWindowsTheme={setUseWindowsTheme}
+        page={page}
+        index={index}
+      />
+    );
 
     const element = document.getElementById(page.menuItemButtonId ?? '') as HTMLLabelElement;
 
@@ -33,7 +67,16 @@ describe('StartMenuItem component', () => {
   });
 
   it('renders shutdown menu item if page and index are undefined', () => {
-    render(<StartMenuItem pages={pages} />);
+    jest
+      .spyOn(React, 'useState')
+      .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+    render(
+      <StartMenuItem
+        pages={pages}
+        useWindowsTheme={useWindowsTheme}
+        setUseWindowsTheme={setUseWindowsTheme}
+      />
+    );
 
     const element = document.getElementById('shutdown-menu-item') as HTMLLabelElement;
 
