@@ -1,19 +1,29 @@
+import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import PageModel from '../../../../models/component-helpers/page';
+import { openCloseMenu } from '../../../../utils/window';
 
-import img from '../../../../public/img/windows/ie.png';
+import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
 
 export const shutdownLabelText = 'Shutdown';
 
 type Props = {
   pages: PageModel[];
+  useWindowsTheme: boolean;
+  setUseWindowsTheme: Dispatch<SetStateAction<boolean>>;
   page?: PageModel;
   index?: number;
 };
 
-export default function StartMenuItem({ pages, page = undefined, index = undefined }: Props) {
-  if (index && index === 0) return null;
+export default function StartMenuItem({
+  pages,
+  useWindowsTheme,
+  setUseWindowsTheme,
+  page = undefined,
+  index = undefined,
+}: Props): JSX.Element {
+  if (index && index === 0) return <></>;
 
   if (page) {
     const className = index === pages.length - 1 ? styles.line : '';
@@ -30,7 +40,14 @@ export default function StartMenuItem({ pages, page = undefined, index = undefin
 
   return (
     <li>
-      <label className={styles['menu-item-shutdown']} id="shutdown-menu-item">
+      <label
+        className={styles['menu-item-shutdown']}
+        id="shutdown-menu-item"
+        onClick={() => {
+          setUseWindowsTheme(!useWindowsTheme);
+          openCloseMenu();
+        }}
+      >
         <Image
           width={30}
           height={30}

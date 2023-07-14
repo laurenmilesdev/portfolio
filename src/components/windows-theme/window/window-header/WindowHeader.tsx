@@ -6,7 +6,7 @@ type Props = {
   page: PageModel;
 };
 
-export default function WindowHeader({ page }: Props) {
+export default function WindowHeader({ page }: Props): JSX.Element {
   return (
     <div className={styles.header}>
       <label id="window-header-label">{page.label}</label>

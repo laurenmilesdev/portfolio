@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { Switch, Tooltip } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ThemeConstants from '../../constants/theme';
 
-export default function ThemeSwitch(): JSX.Element {
-  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
+type Props = {
+  useDarkTheme: boolean;
+  setUseDarkTheme: Dispatch<SetStateAction<boolean>>;
+};
+
+export default function ThemeSwitch({ useDarkTheme, setUseDarkTheme }: Props): JSX.Element {
   const MaterialUISwitch = styled(Switch)(() => ({
     width: 62,
     height: 34,

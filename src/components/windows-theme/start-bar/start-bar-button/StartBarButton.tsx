@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Button } from '@mui/material';
 import PageModel from '../../../../models/component-helpers/page';
 
-import img from '../../../../public/img/windows/ie.png';
+import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartBarButton.module.css';
 
 type Props = {
@@ -10,8 +10,8 @@ type Props = {
   index: number;
 };
 
-export default function StartBarButton({ page, index }: Props) {
-  if (index === 0) return null;
+export default function StartBarButton({ page, index }: Props): JSX.Element {
+  if (index === 0) return <></>;
 
   return (
     <Button className={`${styles.btn} windows-box-shadow`} id={page.startBarButtonId} key={index}>
