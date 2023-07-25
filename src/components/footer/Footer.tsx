@@ -31,11 +31,13 @@ export default function Footer({
     />
   ) : (
     <div className={`${styles.container} col-md-12`}>
-      <WindowsThemeButton
+      {/* Hiding button until functionality is complete so new changes can be deployed */}
+
+      {/* <WindowsThemeButton
         useWindowsTheme={useWindowsTheme}
         setUseWindowsTheme={setUseWindowsTheme}
         useDarkTheme={useDarkTheme}
-      />
+      /> */}
       <Contacts contacts={contacts} />
       <ThemeSwitch useDarkTheme={useDarkTheme} setUseDarkTheme={setUseDarkTheme} />
     </div>
