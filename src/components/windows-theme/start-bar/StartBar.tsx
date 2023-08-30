@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import StartButton from './start-button/StartButton';
 import StartBarButton from './start-bar-button/StartBarButton';
 import StartMenu from './start-menu/StartMenu';
+import Clock from './clock/Clock';
 import PageModel from '../../../models/component-helpers/page';
 
 import styles from './StartBar.module.css';
@@ -32,6 +33,8 @@ export default function StartBar({
         useWindowsTheme={useWindowsTheme}
         setUseWindowsTheme={setUseWindowsTheme}
       />
+
+      <Clock currentTime={new Date()} />
     </div>
   );
 }

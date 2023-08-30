@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import WindowOptions, {
   imageAltText,
+  windowOptionsImageId,
 } from '../../../../../src/components/windows-theme/window/window-options/WindowOptions';
 
 jest.mock('next/image', () => ({
@@ -25,7 +26,7 @@ describe('WindowOptions component', () => {
   });
 
   it('renders photo with alt text', () => {
-    const element = document.getElementById('window-options-windows-logo') as HTMLImageElement;
+    const element = document.getElementById(windowOptionsImageId) as HTMLImageElement;
 
     expect(element.alt).toEqual(imageAltText);
   });
