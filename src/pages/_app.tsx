@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Container } from '@mui/material';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -12,18 +13,22 @@ import Projects from '../components/pages/projects/Projects';
 import Contact from '../components/pages/contact/Contact';
 import Layout from '../components/layout/Layout';
 import Navigation from '../components/navigation/Navigation';
+import Desktop from '../components/windows-theme/desktop/Desktop';
 import Footer from '../components/footer/Footer';
 import PageModel from '../models/component-helpers/page';
+import DesktopItemModel from '../models/component-helpers/desktop-item';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
   const [useWindowsTheme, setUseWindowsTheme] = useState<boolean>(false);
 
+  const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
+    setPageValue(newValue);
+
   const homeComponent = <Home subtitle={Data.home.subtitle} description={Data.home.description} />;
   const aboutComponent = <About description={Data.about.description} />;
   const projectsComponent = <Projects projects={Data.projects.projects} />;
   const contactComponent = <Contact description={Data.contact.description} />;
-
   const pages: PageModel[] = [
     new PageModel(Data.home.title, <Layout component={homeComponent} />),
     new PageModel(
@@ -46,9 +51,14 @@ export default function App({ Component, pageProps }: AppProps) {
       `${Data.contact.title.toLowerCase()}-menu-item-btn`
     ),
   ];
-
-  const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
-    setPageValue(newValue);
+  const desktopItems = Data.contact.contacts.map(
+    (contact) =>
+      new DesktopItemModel(
+        contact.name,
+        <Image width={50} height={50} src={contact.imgSrc} alt={contact.imgDescription} />,
+        contact.url
+      )
+  );
 
   return (
     <>
@@ -61,6 +71,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {useWindowsTheme && <Desktop desktopItems={desktopItems} />}
 
       {!useWindowsTheme && (
         <>

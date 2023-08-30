@@ -1,0 +1,36 @@
+.desktop-item {
+  color: var(--font-color);
+  text-align: center;
+  cursor: pointer;
+  align-items: center;
+  border: 1px solid transparent;
+  flex-direction: column;
+  max-width: 7rem;
+  width: 75rem;
+  justify-content: center;
+  min-height: 6.25rem;
+  margin: 0 0 2rem 0;
+  padding: 0.25rem 0;
+}
+
+.icon {
+  display: block;
+}
+
+.desktop-item img {
+  width: 3rem;
+  margin: 0 0 0.75rem 0;
+}
+
+a.desktop-item {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+a.desktop-item:hover {
+  color: var(--font-color);
+}
+
+.desktop-item:active .text {
+  background: #005959;
+}

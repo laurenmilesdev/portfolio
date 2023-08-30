@@ -19,7 +19,11 @@ export default function WindowsThemeButton({
 }: Props): JSX.Element {
   return (
     <Tooltip title="take me back in time">
-      <Button className=" btn-primary" onClick={() => setUseWindowsTheme(!useWindowsTheme)}>
+      <Button
+        className=" btn-primary"
+        onClick={() => setUseWindowsTheme(!useWindowsTheme)}
+        id="windows-theme-btn"
+      >
         <Image src={useDarkTheme ? imgWhite : imgBlack} alt="Windows icon" className={styles.img} />
       </Button>
     </Tooltip>

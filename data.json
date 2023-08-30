@@ -79,19 +79,25 @@
         "name": "LinkedIn",
         "value": "/laurenmmiles",
         "description": "Link to LinkedIn",
-        "url": "https://www.linkedin.com/in/laurenmmiles"
+        "url": "https://www.linkedin.com/in/laurenmmiles",
+        "imgSrc": "./img/desktop/linkedin-pixelated.png",
+        "imgDescription": "LinkedIn logo"
       },
       {
         "name": "GitHub",
         "value": "/laurenmilesdev",
         "description": "Link to GitHub",
-        "url": "https://github.com/laurenmilesdev"
+        "url": "https://github.com/laurenmilesdev",
+        "imgSrc": "./img/desktop/github-pixelated.png",
+        "imgDescription": "GitHub logo"
       },
       {
         "name": "Resume",
         "value": "Lauren_Miles_Resume.pdf",
         "description": "Download resume as PDF",
-        "url": "/files/Lauren_Miles_Resume.pdf"
+        "url": "/files/Lauren_Miles_Resume.pdf",
+        "imgSrc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAHlBMVEUAAACAgID//7QAAADAwMD///8AgIAAAIAAgAAAAP+MXRRYAAAAAXRSTlMAQObYZgAAAAFiS0dEBfhv6ccAAAAHdElNRQfiBhoANyCM1dKOAAAAkUlEQVQoz2NgYBCEAQYoEFKCAEUDdAFhdAFHAzSBEGE0gVCoErBAWpKSorGxMVwgzT0jCUg5wwTU3Do62lAEIirTmpEFUl0yy8qMkAVcJdJmIgukhUh0TkcWSJzZkY4ioDYzo7wcxZaZM6YVIwsolVcWG6EIKBmD+MgCEIBTYCYETBpoFYQERFzgACJgjAQYGADW/1JJ50I4UgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNi0yNlQwMDo1NTozMi0wNDowMA4ejnkAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDYtMjZUMDA6NTU6MzItMDQ6MDB/QzbFAAAAAElFTkSuQmCC",
+        "imgDescription": "Resume logo"
       }
     ]
   }

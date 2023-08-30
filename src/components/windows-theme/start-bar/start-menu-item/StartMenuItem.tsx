@@ -29,7 +29,7 @@ export default function StartMenuItem({
     const className = index === pages.length - 1 ? styles.line : '';
 
     return (
-      <li key={index} className={className}>
+      <li className={className}>
         <label className={styles['menu-item']} id={page.menuItemButtonId}>
           <Image src={img} alt="Internet Explorer icon" className={styles['ie-icon']} />
           {page.label}

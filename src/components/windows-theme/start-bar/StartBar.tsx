@@ -23,7 +23,7 @@ export default function StartBar({
 
       <div className={styles.items}>
         {pages.map((page: PageModel, index: number) => (
-          <StartBarButton page={page} index={index} />
+          <StartBarButton page={page} index={index} key={index} />
         ))}
       </div>
 
