@@ -6,8 +6,6 @@ import { openCloseMenu } from '../../../../utils/window';
 import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
 
-export const shutdownLabelText = 'Shutdown';
-
 type Props = {
   pages: PageModel[];
   useWindowsTheme: boolean;
@@ -15,6 +13,9 @@ type Props = {
   page?: PageModel;
   index?: number;
 };
+
+export const shutdownMenuItemLabelId = 'shutdown-menu-item';
+export const shutdownLabelText = 'Shutdown';
 
 export default function StartMenuItem({
   pages,
@@ -42,7 +43,7 @@ export default function StartMenuItem({
     <li>
       <label
         className={styles['menu-item-shutdown']}
-        id="shutdown-menu-item"
+        id={shutdownMenuItemLabelId}
         onClick={() => {
           setUseWindowsTheme(!useWindowsTheme);
           openCloseMenu();

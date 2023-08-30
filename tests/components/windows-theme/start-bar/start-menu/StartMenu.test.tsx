@@ -1,8 +1,13 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import { useStateMock, setStateMock } from '../../../../mocks/use-state-mock';
-import StartMenu from '../../../../../src/components/windows-theme/start-bar/start-menu/StartMenu';
-import { shutdownLabelText } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
+import StartMenu, {
+  startMenuDivId,
+} from '../../../../../src/components/windows-theme/start-bar/start-menu/StartMenu';
+import {
+  shutdownLabelText,
+  shutdownMenuItemLabelId,
+} from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
 import { pages } from '../../../../mocks/data-mock';
 
 jest.mock('react', () => ({
@@ -34,7 +39,7 @@ describe('StartMenu component', () => {
   });
 
   it('renders "Windows98" sidebar', () => {
-    const element = document.getElementById('start-menu') as HTMLDivElement;
+    const element = document.getElementById(startMenuDivId) as HTMLDivElement;
 
     expect(element).toHaveTextContent('Windows98');
   });
@@ -42,7 +47,7 @@ describe('StartMenu component', () => {
   it('renders correct menu items', () => {
     const page = pages[1];
     const element = document.getElementById(page.menuItemButtonId ?? '') as HTMLLabelElement;
-    const shutdownElement = document.getElementById('shutdown-menu-item') as HTMLLabelElement;
+    const shutdownElement = document.getElementById(shutdownMenuItemLabelId) as HTMLLabelElement;
 
     expect(element).toBeInTheDocument();
     expect(element).toHaveTextContent(page.label);
