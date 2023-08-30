@@ -6,17 +6,20 @@ type Props = {
   title?: string;
 };
 
+export const titleDivId = 'title';
+export const contentDivId = 'content';
+
 export default function Layout({ component, title }: Props): JSX.Element {
   return (
     <Fade in={true}>
       <div className={styles.container}>
         {title && (
-          <div className={`${styles.title} col-md-12 pb-3`} id="title">
+          <div className={`${styles.title} col-md-12 pb-3`} id={titleDivId}>
             <h1>{title}</h1>
           </div>
         )}
 
-        <div className="col-md-12" id="content">
+        <div className="col-md-12" id={contentDivId}>
           {component}
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Layout from '../../../src/components/layout/Layout';
+import Layout, { titleDivId, contentDivId } from '../../../src/components/layout/Layout';
 
 describe('Layout component', () => {
   const title = 'Title';
@@ -11,13 +11,13 @@ describe('Layout component', () => {
   });
 
   it('renders title if not undefined', () => {
-    const element = document.getElementById('title') as HTMLDivElement;
+    const element = document.getElementById(titleDivId) as HTMLDivElement;
 
     expect(element).toHaveTextContent(title);
   });
 
   it('renders content', () => {
-    const element = document.getElementById('content') as HTMLDivElement;
+    const element = document.getElementById(contentDivId) as HTMLDivElement;
 
     expect(element).toHaveTextContent(componentText);
   });
