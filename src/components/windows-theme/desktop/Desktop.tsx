@@ -10,8 +10,8 @@ type Props = {
 export default function Desktop({ desktopItems }: Props) {
   return (
     <div className={`${styles.desktop} col-md-12`}>
-      {desktopItems.map((item) => (
-        <DesktopItem label={item.label} image={item.image} url={item.url} />
+      {desktopItems.map((item: DesktopItemModel, index: number) => (
+        <DesktopItem label={item.label} image={item.image} url={item.url} key={index} />
       ))}
     </div>
   );

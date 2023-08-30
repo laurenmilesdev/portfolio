@@ -39,6 +39,7 @@ export default function StartMenu({
             setUseWindowsTheme={setUseWindowsTheme}
             page={page}
             index={index}
+            key={index}
           />
         ))}
 

@@ -14,7 +14,7 @@ export default function StartBarButton({ page, index }: Props): JSX.Element {
   if (index === 0) return <></>;
 
   return (
-    <Button className={`${styles.btn} windows-box-shadow`} id={page.startBarButtonId} key={index}>
+    <Button className={`${styles.btn} windows-box-shadow`} id={page.startBarButtonId}>
       <div className={styles['btn-label']}>
         <Image src={img} alt="Internet Explorer icon" className={styles['ie-icon']} />
         {page.label}
