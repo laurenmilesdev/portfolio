@@ -1,7 +1,7 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import { useStateMock, setStateMock } from '../../mocks/use-state-mock';
-import ThemeSwitch from '../../../src/components/theme-switch/ThemeSwitch';
+import ThemeSwitch, { switchId } from '../../../src/components/theme-switch/ThemeSwitch';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
@@ -21,7 +21,7 @@ describe('ThemeSwitch component', () => {
   });
 
   it('renders switch', () => {
-    const element = document.getElementById('theme-switch') as HTMLSpanElement;
+    const element = document.getElementById(switchId) as HTMLSpanElement;
 
     expect(element).toBeInTheDocument();
   });

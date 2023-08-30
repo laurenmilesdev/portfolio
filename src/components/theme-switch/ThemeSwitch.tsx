@@ -8,6 +8,8 @@ type Props = {
   setUseDarkTheme: Dispatch<SetStateAction<boolean>>;
 };
 
+export const switchId = 'theme-switch';
+
 export default function ThemeSwitch({ useDarkTheme, setUseDarkTheme }: Props): JSX.Element {
   const MaterialUISwitch = styled(Switch)(() => ({
     width: 62,
@@ -68,7 +70,7 @@ export default function ThemeSwitch({ useDarkTheme, setUseDarkTheme }: Props): J
         sx={{ mt: 0.5 }}
         checked={useDarkTheme}
         onChange={handleChange}
-        id="theme-switch"
+        id={switchId}
       />
     </Tooltip>
   );
