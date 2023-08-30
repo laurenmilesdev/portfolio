@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Contact from '../../../../src/components/pages/contact/Contact';
+import Contact, { descriptionDivId } from '../../../../src/components/pages/contact/Contact';
 
 describe('Contact component', () => {
   const description = 'This is a description';
@@ -9,7 +9,7 @@ describe('Contact component', () => {
   });
 
   it('renders description', () => {
-    const element = document.getElementById('contact-description') as HTMLDivElement;
+    const element = document.getElementById(descriptionDivId) as HTMLDivElement;
 
     expect(element).toHaveTextContent(description);
   });
