@@ -6,16 +6,17 @@ type Props = {
   page: PageModel;
 };
 
+export const headerLabelId = 'window-header-label';
+export const minimizeButtonId = 'window-header-minimize-btn';
+export const closeButtonId = 'window-header-close-btn';
+
 export default function WindowHeader({ page }: Props): JSX.Element {
   return (
     <div className={styles.header}>
-      <label id="window-header-label">{page.label}</label>
+      <label id={headerLabelId}>{page.label}</label>
       <div className={styles['header-buttons']}>
-        <label
-          className={`${styles.minimize} windows-box-shadow`}
-          id="window-header-minimize-btn"
-        ></label>
-        <label className={`windows-box-shadow`} id="window-header-close-btn">
+        <label className={`${styles.minimize} windows-box-shadow`} id={minimizeButtonId}></label>
+        <label className={`windows-box-shadow`} id={closeButtonId}>
           X
         </label>
       </div>
