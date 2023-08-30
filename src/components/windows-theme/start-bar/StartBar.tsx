@@ -34,7 +34,7 @@ export default function StartBar({
         setUseWindowsTheme={setUseWindowsTheme}
       />
 
-      <Clock />
+      <Clock currentTime={new Date()} />
     </div>
   );
 }
