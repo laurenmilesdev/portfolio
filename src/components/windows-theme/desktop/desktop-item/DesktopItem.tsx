@@ -8,7 +8,12 @@ type Props = {
 
 export default function DesktopItem({ label, image, url }: Props) {
   return (
-    <a className={styles['desktop-item']} href={url} target="_blank">
+    <a
+      className={styles['desktop-item']}
+      href={url}
+      target="_blank"
+      id={`${label.toLocaleLowerCase()}-desktop-item`}
+    >
       <div className={styles.icon}>{image}</div>
       <div className={styles.text}>{label}</div>
     </a>
