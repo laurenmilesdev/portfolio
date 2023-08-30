@@ -13,7 +13,7 @@ export default function WindowOptions({ options }: Props): JSX.Element {
     <div className={`${styles.options} ${styles.line}`}>
       {options &&
         options.map((option: string, index: number) => (
-          <div className={styles.item} id={`option-${index}`}>
+          <div className={styles.item} id={`option-${index}`} key={index}>
             {option}
           </div>
         ))}
