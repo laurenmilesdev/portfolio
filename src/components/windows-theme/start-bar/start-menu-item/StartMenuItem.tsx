@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import PageModel from '../../../../models/component-helpers/page';
+import ThemeConstants from '../../../../constants/theme';
 import { openCloseMenu } from '../../../../utils/window';
 
 import img from '../../../../../public/img/windows/ie.png';
@@ -8,8 +9,8 @@ import styles from './StartMenuItem.module.css';
 
 type Props = {
   pages: PageModel[];
-  useWindowsTheme: boolean;
-  setUseWindowsTheme: Dispatch<SetStateAction<boolean>>;
+  useDarkTheme: boolean;
+  setTheme: Dispatch<SetStateAction<string>>;
   page?: PageModel;
   index?: number;
 };
@@ -19,8 +20,8 @@ export const shutdownLabelText = 'Shutdown';
 
 export default function StartMenuItem({
   pages,
-  useWindowsTheme,
-  setUseWindowsTheme,
+  useDarkTheme,
+  setTheme,
   page = undefined,
   index = undefined,
 }: Props): JSX.Element {
@@ -45,7 +46,7 @@ export default function StartMenuItem({
         className={styles['menu-item-shutdown']}
         id={shutdownMenuItemLabelId}
         onClick={() => {
-          setUseWindowsTheme(!useWindowsTheme);
+          setTheme(useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT);
           openCloseMenu();
         }}
       >
