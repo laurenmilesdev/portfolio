@@ -1,23 +1,20 @@
-export default class Window {
-  title: string;
+import Page from './page';
 
-  component: JSX.Element;
+export default class Window extends Page {
+  windowId: string;
 
-  windowId?: string;
+  startBarButtonId: string;
 
-  startBarButtonId?: string;
-
-  menuItemButtonId?: string;
+  menuItemButtonId: string;
 
   constructor(
     title: string,
     component: JSX.Element,
-    windowId?: string,
-    startBarButtonId?: string,
-    menuItemButtonId?: string
+    windowId: string,
+    startBarButtonId: string,
+    menuItemButtonId: string
   ) {
-    this.title = title;
-    this.component = component;
+    super(title, component);
     this.windowId = windowId;
     this.startBarButtonId = startBarButtonId;
     this.menuItemButtonId = menuItemButtonId;
