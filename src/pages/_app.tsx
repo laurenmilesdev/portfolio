@@ -16,6 +16,7 @@ import Navigation from '../components/navigation/Navigation';
 import Desktop from '../components/windows-theme/desktop/Desktop';
 import Footer from '../components/footer/Footer';
 import PageModel from '../models/component-helpers/page';
+import WindowModel from '../models/component-helpers/window';
 import DesktopItemModel from '../models/component-helpers/desktop-item';
 import ThemeConstants from '../constants/theme';
 
@@ -53,6 +54,7 @@ export default function App({ Component, pageProps }: AppProps) {
       `${Data.contact.title.toLowerCase()}-menu-item-btn`
     ),
   ];
+  const windows: WindowModel[] = [];
   const desktopItems = Data.contact.contacts.map(
     (contact) =>
       new DesktopItemModel(
@@ -71,7 +73,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Navigation
         pageValue={pageValue}
-        pageLabels={pages.map((page) => page.label)}
+        pageLabels={pages.map((page: PageModel) => page.label)}
         handleChange={handlePageChange}
       />
       <Container>
@@ -95,7 +97,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {pageContent}
 
       <Footer
-        pages={pages}
+        windows={windows}
         contacts={Data.contact.contacts}
         useDarkTheme={useDarkTheme}
         setUseDarkTheme={setUseDarkTheme}

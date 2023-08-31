@@ -1,18 +1,18 @@
 import { Dispatch, SetStateAction, useEffect } from 'react';
-import PageModel from '../../../../models/component-helpers/page';
+import WindowModel from '../../../../models/component-helpers/window';
 
 import styles from './StartMenu.module.css';
 import StartMenuItem from '../start-menu-item/StartMenuItem';
 
 type Props = {
-  pages: PageModel[];
+  windows: WindowModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
 };
 
 export const startMenuDivId = 'start-menu';
 
-export default function StartMenu({ pages, useDarkTheme, setTheme }: Props): JSX.Element {
+export default function StartMenu({ windows, useDarkTheme, setTheme }: Props): JSX.Element {
   useEffect(() => {
     document.addEventListener('mouseup', (e) => {
       const element = document.getElementById(startMenuDivId);
@@ -30,18 +30,18 @@ export default function StartMenu({ pages, useDarkTheme, setTheme }: Props): JSX
       </div>
 
       <ul>
-        {pages.map((page: PageModel, index: number) => (
+        {windows.map((window: WindowModel, index: number) => (
           <StartMenuItem
-            pages={pages}
+            windows={windows}
             useDarkTheme={useDarkTheme}
             setTheme={setTheme}
-            page={page}
+            page={window}
             index={index}
             key={index}
           />
         ))}
 
-        <StartMenuItem pages={pages} useDarkTheme={useDarkTheme} setTheme={setTheme} />
+        <StartMenuItem windows={windows} useDarkTheme={useDarkTheme} setTheme={setTheme} />
       </ul>
     </div>
   );

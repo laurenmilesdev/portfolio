@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
-import PageModel from '../../../../models/component-helpers/page';
+import WindowModel from '../../../../models/component-helpers/window';
 import ThemeConstants from '../../../../constants/theme';
 import { openCloseMenu, updateWindowThemeBgColor } from '../../../../utils/window';
 
@@ -8,10 +8,10 @@ import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
 
 type Props = {
-  pages: PageModel[];
+  windows: WindowModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
-  page?: PageModel;
+  page?: WindowModel;
   index?: number;
 };
 
@@ -19,7 +19,7 @@ export const shutdownMenuItemLabelId = 'shutdown-menu-item';
 export const shutdownLabelText = 'Shutdown';
 
 export default function StartMenuItem({
-  pages,
+  windows,
   useDarkTheme,
   setTheme,
   page = undefined,
@@ -28,13 +28,13 @@ export default function StartMenuItem({
   if (index && index === 0) return <></>;
 
   if (page) {
-    const className = index === pages.length - 1 ? styles.line : '';
+    const className = index === windows.length - 1 ? styles.line : '';
 
     return (
       <li className={className}>
         <label className={styles['menu-item']} id={page.menuItemButtonId}>
           <Image src={img} alt="Internet Explorer icon" className={styles['ie-icon']} />
-          {page.label}
+          {page.title}
         </label>
       </li>
     );
