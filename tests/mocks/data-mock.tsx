@@ -1,5 +1,6 @@
 import ContactModel from '../../src/models/contact/contact';
 import PageModel from '../../src/models/component-helpers/page';
+import WindowModel from '../../src/models/component-helpers/window';
 import DesktopItemModel from '../../src/models/component-helpers/desktop-item';
 
 export const contacts = [
@@ -9,9 +10,17 @@ export const contacts = [
   new ContactModel('None', 'Contact description 4.', 'Contact value 4'),
 ];
 
-export const pages = [
-  new PageModel('Page', <>Page</>),
-  new PageModel('Page 2', <>Page</>, 'window-id', 'start-bar-button-id', 'menu-item-button-id'),
+export const pages = [new PageModel('Page', <>Page</>), new PageModel('Page 2', <>Page</>)];
+
+export const windows = [
+  new WindowModel('Page', <>Page</>, 'window-id', 'start-bar-button-id', 'menu-item-button-id'),
+  new WindowModel(
+    'Page 2',
+    <>Page</>,
+    'window-id-2',
+    'start-bar-button-id-2',
+    'menu-item-button-id-2'
+  ),
 ];
 
 export const desktopItems = [
