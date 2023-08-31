@@ -31,11 +31,10 @@ describe('StartMenuItem component', () => {
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
     render(
       <StartMenuItem
-        windows={windows}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
+        useLineStyle={true}
         window={window}
-        index={index}
       />
     );
 
@@ -49,7 +48,7 @@ describe('StartMenuItem component', () => {
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
-    render(<StartMenuItem windows={windows} useDarkTheme={useDarkTheme} setTheme={setTheme} />);
+    render(<StartMenuItem useDarkTheme={useDarkTheme} setTheme={setTheme} />);
 
     const element = document.getElementById(shutdownMenuItemLabelId) as HTMLLabelElement;
 

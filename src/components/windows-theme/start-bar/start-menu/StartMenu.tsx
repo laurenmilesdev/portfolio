@@ -32,16 +32,15 @@ export default function StartMenu({ windows, useDarkTheme, setTheme }: Props): J
       <ul>
         {windows.map((window: WindowModel, index: number) => (
           <StartMenuItem
-            windows={windows}
             useDarkTheme={useDarkTheme}
             setTheme={setTheme}
+            useLineStyle={index === windows.length - 1}
             window={window}
-            index={index}
             key={index}
           />
         ))}
 
-        <StartMenuItem windows={windows} useDarkTheme={useDarkTheme} setTheme={setTheme} />
+        <StartMenuItem useDarkTheme={useDarkTheme} setTheme={setTheme} />
       </ul>
     </div>
   );

@@ -8,27 +8,23 @@ import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
 
 type Props = {
-  windows: WindowModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
+  useLineStyle?: boolean;
   window?: WindowModel;
-  index?: number;
 };
 
 export const shutdownMenuItemLabelId = 'shutdown-menu-item';
 export const shutdownLabelText = 'Shutdown';
 
 export default function StartMenuItem({
-  windows,
   useDarkTheme,
   setTheme,
+  useLineStyle = false,
   window = undefined,
-  index = undefined,
 }: Props): JSX.Element {
-  if (index && index === 0) return <></>;
-
   if (window) {
-    const className = index === windows.length - 1 ? styles.line : '';
+    const className = useLineStyle ? styles.line : '';
 
     return (
       <li className={className}>
