@@ -1,28 +1,47 @@
+import { Container } from '@mui/material';
 import Fade from '@mui/material/Fade';
+import Navigation from '../navigation/Navigation';
+
 import styles from './Layout.module.css';
 
 type Props = {
-  component: JSX.Element;
-  title?: string;
+  pageValue: number;
+  pageTitles: string[];
+  handlePageChange: (event: React.SyntheticEvent, newValue: number) => void;
+  children: React.ReactNode;
 };
 
 export const titleDivId = 'title';
 export const contentDivId = 'content';
 
-export default function Layout({ component, title }: Props): JSX.Element {
-  return (
-    <Fade in={true}>
-      <div className={styles.container}>
-        {title && (
-          <div className={`${styles.title} col-md-12 pb-3`} id={titleDivId}>
-            <h1>{title}</h1>
-          </div>
-        )}
+export default function Layout({
+  pageValue,
+  pageTitles,
+  handlePageChange,
+  children,
+}: Props): JSX.Element {
+  // Removes Home title from Home page
+  const title = pageValue !== 0 ? pageTitles[pageValue] : undefined;
 
-        <div className="col-md-12" id={contentDivId}>
-          {component}
-        </div>
-      </div>
-    </Fade>
+  return (
+    <>
+      <Navigation pageValue={pageValue} pageTitles={pageTitles} handleChange={handlePageChange} />
+
+      <Fade in={true}>
+        <Container>
+          <div className={styles.container}>
+            {title && (
+              <div className={`${styles.title} col-md-12 pb-3`} id={titleDivId}>
+                <h1>{title}</h1>
+              </div>
+            )}
+
+            <div className="col-md-12" id={contentDivId}>
+              {children}
+            </div>
+          </div>
+        </Container>
+      </Fade>
+    </>
   );
 }
