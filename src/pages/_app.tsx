@@ -15,6 +15,7 @@ import Layout from '../components/layout/Layout';
 import Navigation from '../components/navigation/Navigation';
 import Desktop from '../components/windows-theme/desktop/Desktop';
 import Footer from '../components/footer/Footer';
+import Window from '../components/windows-theme/window/Window';
 import PageModel from '../models/component-helpers/page';
 import WindowModel from '../models/component-helpers/window';
 import DesktopItemModel from '../models/component-helpers/desktop-item';
@@ -27,6 +28,9 @@ export default function App({ Component, pageProps }: AppProps) {
     useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT
   );
   const useWindowsTheme = theme === ThemeConstants.WINDOWS;
+
+  const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
+    setPageValue(newValue);
 
   const homeComponent = <Home subtitle={Data.home.subtitle} description={Data.home.description} />;
   const aboutComponent = <About description={Data.about.description} />;
@@ -66,7 +70,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout component={contactComponent} title={Data.contact.title} />
     ),
   ];
-  const windows: WindowModel[] = [];
   const desktopItems = Data.contact.contacts.map(
     (contact) =>
       new DesktopItemModel(
@@ -76,12 +79,7 @@ export default function App({ Component, pageProps }: AppProps) {
       )
   );
 
-  const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
-    setPageValue(newValue);
-
-  const pageContent = useWindowsTheme ? (
-    <Desktop desktopItems={desktopItems} />
-  ) : (
+  const pageContent = (
     <>
       <Navigation
         pageValue={pageValue}
@@ -93,6 +91,16 @@ export default function App({ Component, pageProps }: AppProps) {
       </Container>
     </>
   );
+  const windows: WindowModel[] = [
+    new WindowModel(
+      'Lauren Miles Portfolio',
+      pageContent,
+      'portfolio-window',
+      'portfolio-start-bar-btn',
+      'portfolio-menu-item-btn'
+    ),
+    new WindowModel('test 2', <></>, '', '', ''),
+  ];
 
   return (
     <>
@@ -106,7 +114,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {pageContent}
+      {useWindowsTheme &&
+        windows.map((window: WindowModel, index: number) => (
+          <Window window={window} content={window.component} key={index} />
+        ))}
+
+      {useWindowsTheme ? <Desktop desktopItems={desktopItems} /> : pageContent}
 
       <Footer
         windows={windows}
