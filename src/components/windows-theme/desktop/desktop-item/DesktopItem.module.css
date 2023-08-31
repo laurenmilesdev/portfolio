@@ -1,5 +1,5 @@
 .desktop-item {
-  color: var(--font-color);
+  color: #fff;
   text-align: center;
   cursor: pointer;
   align-items: center;
@@ -28,7 +28,7 @@ a.desktop-item {
 }
 
 a.desktop-item:hover {
-  color: var(--font-color);
+  color: #fff;
 }
 
 .desktop-item:active .text {
