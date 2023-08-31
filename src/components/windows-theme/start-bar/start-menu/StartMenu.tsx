@@ -6,17 +6,13 @@ import StartMenuItem from '../start-menu-item/StartMenuItem';
 
 type Props = {
   pages: PageModel[];
-  useWindowsTheme: boolean;
-  setUseWindowsTheme: Dispatch<SetStateAction<boolean>>;
+  useDarkTheme: boolean;
+  setTheme: Dispatch<SetStateAction<string>>;
 };
 
 export const startMenuDivId = 'start-menu';
 
-export default function StartMenu({
-  pages,
-  useWindowsTheme,
-  setUseWindowsTheme,
-}: Props): JSX.Element {
+export default function StartMenu({ pages, useDarkTheme, setTheme }: Props): JSX.Element {
   useEffect(() => {
     document.addEventListener('mouseup', (e) => {
       const element = document.getElementById(startMenuDivId);
@@ -37,19 +33,15 @@ export default function StartMenu({
         {pages.map((page: PageModel, index: number) => (
           <StartMenuItem
             pages={pages}
-            useWindowsTheme={useWindowsTheme}
-            setUseWindowsTheme={setUseWindowsTheme}
+            useDarkTheme={useDarkTheme}
+            setTheme={setTheme}
             page={page}
             index={index}
             key={index}
           />
         ))}
 
-        <StartMenuItem
-          pages={pages}
-          useWindowsTheme={useWindowsTheme}
-          setUseWindowsTheme={setUseWindowsTheme}
-        />
+        <StartMenuItem pages={pages} useDarkTheme={useDarkTheme} setTheme={setTheme} />
       </ul>
     </div>
   );

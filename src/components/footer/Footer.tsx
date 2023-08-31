@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import WindowsStartBar from '../windows-theme/start-bar/StartBar';
 import WindowsThemeButton from '../windows-theme/windows-theme-button/WindowsThemeButton';
 import Contacts from '../contacts/Contacts';
@@ -11,33 +11,33 @@ import styles from './Footer.module.css';
 type Props = {
   pages: PageModel[];
   contacts: ContactModel[];
+  useDarkTheme: boolean;
+  setUseDarkTheme: Dispatch<SetStateAction<boolean>>;
   useWindowsTheme: boolean;
-  setUseWindowsTheme: Dispatch<SetStateAction<boolean>>;
+  setTheme: Dispatch<SetStateAction<string>>;
 };
 
 export default function Footer({
   pages,
   contacts,
+  useDarkTheme,
+  setUseDarkTheme,
   useWindowsTheme,
-  setUseWindowsTheme,
+  setTheme,
 }: Props): JSX.Element {
-  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
-
   return useWindowsTheme ? (
-    <WindowsStartBar
-      pages={pages}
-      useWindowsTheme={useWindowsTheme}
-      setUseWindowsTheme={setUseWindowsTheme}
-    />
+    <WindowsStartBar pages={pages} useDarkTheme={useDarkTheme} setTheme={setTheme} />
   ) : (
     <div className={`${styles.container} col-md-12`}>
-      <WindowsThemeButton
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
-        useDarkTheme={useDarkTheme}
-      />
+      <WindowsThemeButton setTheme={setTheme} useDarkTheme={useDarkTheme} />
+
       <Contacts contacts={contacts} />
-      <ThemeSwitch useDarkTheme={useDarkTheme} setUseDarkTheme={setUseDarkTheme} />
+
+      <ThemeSwitch
+        useDarkTheme={useDarkTheme}
+        setUseDarkTheme={setUseDarkTheme}
+        setTheme={setTheme}
+      />
     </div>
   );
 }

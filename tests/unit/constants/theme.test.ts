@@ -12,4 +12,10 @@ describe('ThemeConstants', () => {
 
     expect(response).toEqual('light');
   });
+
+  it('returns WINDOWS constant', () => {
+    const response = ThemeConstants.WINDOWS;
+
+    expect(response).toEqual('windows');
+  });
 });

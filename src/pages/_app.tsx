@@ -17,13 +17,15 @@ import Desktop from '../components/windows-theme/desktop/Desktop';
 import Footer from '../components/footer/Footer';
 import PageModel from '../models/component-helpers/page';
 import DesktopItemModel from '../models/component-helpers/desktop-item';
+import ThemeConstants from '../constants/theme';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
-  const [useWindowsTheme, setUseWindowsTheme] = useState<boolean>(false);
-
-  const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
-    setPageValue(newValue);
+  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
+  const [theme, setTheme] = useState<string>(
+    useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT
+  );
+  const useWindowsTheme = theme === ThemeConstants.WINDOWS;
 
   const homeComponent = <Home subtitle={Data.home.subtitle} description={Data.home.description} />;
   const aboutComponent = <About description={Data.about.description} />;
@@ -60,6 +62,24 @@ export default function App({ Component, pageProps }: AppProps) {
       )
   );
 
+  const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
+    setPageValue(newValue);
+
+  const pageContent = useWindowsTheme ? (
+    <Desktop desktopItems={desktopItems} />
+  ) : (
+    <>
+      <Navigation
+        pageValue={pageValue}
+        pageLabels={pages.map((page) => page.label)}
+        handleChange={handlePageChange}
+      />
+      <Container>
+        <Component {...pageProps} pageValue={pageValue} pages={pages} />
+      </Container>
+    </>
+  );
+
   return (
     <>
       <Head>
@@ -72,26 +92,15 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {useWindowsTheme && <Desktop desktopItems={desktopItems} />}
-
-      {!useWindowsTheme && (
-        <>
-          <Navigation
-            pageValue={pageValue}
-            pageLabels={pages.map((page) => page.label)}
-            handleChange={handlePageChange}
-          />
-          <Container>
-            <Component {...pageProps} pageValue={pageValue} pages={pages} />
-          </Container>
-        </>
-      )}
+      {pageContent}
 
       <Footer
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
-        contacts={Data.contact.contacts}
         pages={pages}
+        contacts={Data.contact.contacts}
+        useDarkTheme={useDarkTheme}
+        setUseDarkTheme={setUseDarkTheme}
+        useWindowsTheme={useWindowsTheme}
+        setTheme={setTheme}
       />
     </>
   );

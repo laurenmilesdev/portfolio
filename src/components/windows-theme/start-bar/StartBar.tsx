@@ -9,15 +9,11 @@ import styles from './StartBar.module.css';
 
 type Props = {
   pages: PageModel[];
-  useWindowsTheme: boolean;
-  setUseWindowsTheme: Dispatch<SetStateAction<boolean>>;
+  useDarkTheme: boolean;
+  setTheme: Dispatch<SetStateAction<string>>;
 };
 
-export default function StartBar({
-  pages,
-  useWindowsTheme,
-  setUseWindowsTheme,
-}: Props): JSX.Element {
+export default function StartBar({ pages, useDarkTheme, setTheme }: Props): JSX.Element {
   return (
     <div className={styles['start-bar']}>
       <StartButton />
@@ -28,11 +24,7 @@ export default function StartBar({
         ))}
       </div>
 
-      <StartMenu
-        pages={pages}
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
-      />
+      <StartMenu pages={pages} useDarkTheme={useDarkTheme} setTheme={setTheme} />
 
       <Clock currentTime={new Date()} />
     </div>
