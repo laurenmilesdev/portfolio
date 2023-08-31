@@ -15,7 +15,7 @@ export default function Window({ window, content }: Props): JSX.Element {
 
   return (
     <div className={`${styles.window} windows-box-shadow`} id={window.windowId}>
-      <WindowHeader page={window} />
+      <WindowHeader window={window} />
 
       <WindowOptions options={options} />
 
