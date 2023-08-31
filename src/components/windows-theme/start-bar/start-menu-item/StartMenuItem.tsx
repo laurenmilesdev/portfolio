@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import PageModel from '../../../../models/component-helpers/page';
 import ThemeConstants from '../../../../constants/theme';
-import { openCloseMenu } from '../../../../utils/window';
+import { openCloseMenu, updateWindowThemeBgColor } from '../../../../utils/window';
 
 import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
@@ -46,7 +46,10 @@ export default function StartMenuItem({
         className={styles['menu-item-shutdown']}
         id={shutdownMenuItemLabelId}
         onClick={() => {
-          setTheme(useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT);
+          const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
+
+          setTheme(theme);
+          updateWindowThemeBgColor(theme);
           openCloseMenu();
         }}
       >

@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import { Button, Tooltip } from '@mui/material';
 import ThemeConstants from '../../../constants/theme';
+import { updateWindowThemeBgColor } from '../../../utils/window';
 
 import imgWhite from '../../../../public/img/windows/windows-white.png';
 import imgBlack from '../../../../public/img/windows/windows-black.png';
@@ -19,7 +20,10 @@ export default function WindowsThemeButton({ useDarkTheme, setTheme }: Props): J
     <Tooltip title="take me back in time">
       <Button
         className=" btn-primary"
-        onClick={() => setTheme(ThemeConstants.WINDOWS)}
+        onClick={() => {
+          setTheme(ThemeConstants.WINDOWS);
+          updateWindowThemeBgColor(ThemeConstants.WINDOWS);
+        }}
         id={buttonId}
       >
         <Image src={useDarkTheme ? imgWhite : imgBlack} alt="Windows icon" className={styles.img} />
