@@ -1,6 +1,6 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
-import { useStateMock, setStateMock } from '../../../../mocks/use-state-mock';
+import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
 import StartMenu, {
   startMenuDivId,
 } from '../../../../../src/components/windows-theme/start-bar/start-menu/StartMenu';
@@ -22,20 +22,14 @@ jest.mock('next/image', () => ({
 }));
 
 describe('StartMenu component', () => {
-  const useWindowsTheme = true;
-  const setUseWindowsTheme = setStateMock;
+  const useDarkTheme = true;
+  const setTheme = setStringStateMock;
 
   beforeEach(() => {
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
-    render(
-      <StartMenu
-        pages={pages}
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
-      />
-    );
+    render(<StartMenu pages={pages} useDarkTheme={useDarkTheme} setTheme={setTheme} />);
   });
 
   it('renders "Windows98" sidebar', () => {
