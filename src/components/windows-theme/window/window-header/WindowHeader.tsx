@@ -13,7 +13,7 @@ export const closeButtonId = 'window-header-close-btn';
 export default function WindowHeader({ page }: Props): JSX.Element {
   return (
     <div className={styles.header}>
-      <label id={headerLabelId}>{page.label}</label>
+      <label id={headerLabelId}>{page.title}</label>
       <div className={styles['header-buttons']}>
         <label className={`${styles.minimize} windows-box-shadow`} id={minimizeButtonId}></label>
         <label className={`windows-box-shadow`} id={closeButtonId}>
