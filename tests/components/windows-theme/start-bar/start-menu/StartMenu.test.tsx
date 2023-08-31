@@ -1,9 +1,8 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
-import StartMenu, {
-  startMenuDivId,
-} from '../../../../../src/components/windows-theme/start-bar/start-menu/StartMenu';
+import StartMenu from '../../../../../src/components/windows-theme/start-bar/start-menu/StartMenu';
+import { startMenuDivId } from '../../../../../src/components/windows-theme/start-bar/StartBar';
 import {
   shutdownLabelText,
   shutdownMenuItemLabelId,
@@ -29,7 +28,14 @@ describe('StartMenu component', () => {
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
-    render(<StartMenu windows={windows} useDarkTheme={useDarkTheme} setTheme={setTheme} />);
+    render(
+      <StartMenu
+        startMenuDivId={startMenuDivId}
+        windows={windows}
+        useDarkTheme={useDarkTheme}
+        setTheme={setTheme}
+      />
+    );
   });
 
   it('renders "Windows98" sidebar', () => {

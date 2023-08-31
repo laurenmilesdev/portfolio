@@ -5,14 +5,18 @@ import styles from './StartMenu.module.css';
 import StartMenuItem from '../start-menu-item/StartMenuItem';
 
 type Props = {
+  startMenuDivId: string;
   windows: WindowModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
 };
 
-export const startMenuDivId = 'start-menu';
-
-export default function StartMenu({ windows, useDarkTheme, setTheme }: Props): JSX.Element {
+export default function StartMenu({
+  startMenuDivId,
+  windows,
+  useDarkTheme,
+  setTheme,
+}: Props): JSX.Element {
   useEffect(() => {
     document.addEventListener('mouseup', (e) => {
       const element = document.getElementById(startMenuDivId);
@@ -32,6 +36,7 @@ export default function StartMenu({ windows, useDarkTheme, setTheme }: Props): J
       <ul>
         {windows.map((window: WindowModel, index: number) => (
           <StartMenuItem
+            startMenuDivId={startMenuDivId}
             useDarkTheme={useDarkTheme}
             setTheme={setTheme}
             useLineStyle={index === windows.length - 1}
@@ -40,7 +45,11 @@ export default function StartMenu({ windows, useDarkTheme, setTheme }: Props): J
           />
         ))}
 
-        <StartMenuItem useDarkTheme={useDarkTheme} setTheme={setTheme} />
+        <StartMenuItem
+          startMenuDivId={startMenuDivId}
+          useDarkTheme={useDarkTheme}
+          setTheme={setTheme}
+        />
       </ul>
     </div>
   );

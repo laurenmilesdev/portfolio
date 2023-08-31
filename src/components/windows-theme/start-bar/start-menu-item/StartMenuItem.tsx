@@ -8,6 +8,7 @@ import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
 
 type Props = {
+  startMenuDivId: string;
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
   useLineStyle?: boolean;
@@ -18,6 +19,7 @@ export const shutdownMenuItemLabelId = 'shutdown-menu-item';
 export const shutdownLabelText = 'Shutdown';
 
 export default function StartMenuItem({
+  startMenuDivId,
   useDarkTheme,
   setTheme,
   useLineStyle = false,
@@ -46,7 +48,7 @@ export default function StartMenuItem({
 
           setTheme(theme);
           updateWindowThemeBgColor(theme);
-          openCloseMenu();
+          openCloseMenu(startMenuDivId);
         }}
       >
         <Image

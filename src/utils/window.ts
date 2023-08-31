@@ -1,7 +1,7 @@
 import ThemeConstants from '../constants/theme';
 
-export function openCloseMenu() {
-  const startMenu = document.getElementById('start-menu');
+export function openCloseMenu(id: string) {
+  const startMenu = document.getElementById(id);
 
   if (startMenu) {
     const visible = startMenu.checkVisibility();

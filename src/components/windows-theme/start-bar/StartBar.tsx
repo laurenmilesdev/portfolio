@@ -13,10 +13,12 @@ type Props = {
   setTheme: Dispatch<SetStateAction<string>>;
 };
 
+export const startMenuDivId = 'start-menu';
+
 export default function StartBar({ windows, useDarkTheme, setTheme }: Props): JSX.Element {
   return (
     <div className={styles['start-bar']}>
-      <StartButton />
+      <StartButton startMenuDivId={startMenuDivId} />
 
       <div className={styles.items}>
         {windows.map((window: WindowModel, index: number) => (
@@ -24,7 +26,12 @@ export default function StartBar({ windows, useDarkTheme, setTheme }: Props): JS
         ))}
       </div>
 
-      <StartMenu windows={windows} useDarkTheme={useDarkTheme} setTheme={setTheme} />
+      <StartMenu
+        startMenuDivId={startMenuDivId}
+        windows={windows}
+        useDarkTheme={useDarkTheme}
+        setTheme={setTheme}
+      />
 
       <Clock currentTime={new Date()} />
     </div>

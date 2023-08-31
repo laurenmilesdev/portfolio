@@ -5,6 +5,7 @@ import StartMenuItem, {
   shutdownLabelText,
   shutdownMenuItemLabelId,
 } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
+import { startMenuDivId } from '../../../../../src/components/windows-theme/start-bar/StartBar';
 import { windows } from '../../../../mocks/data-mock';
 
 jest.mock('react', () => ({
@@ -31,6 +32,7 @@ describe('StartMenuItem component', () => {
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
     render(
       <StartMenuItem
+        startMenuDivId={startMenuDivId}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
         useLineStyle={true}
@@ -48,7 +50,13 @@ describe('StartMenuItem component', () => {
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
-    render(<StartMenuItem useDarkTheme={useDarkTheme} setTheme={setTheme} />);
+    render(
+      <StartMenuItem
+        startMenuDivId={startMenuDivId}
+        useDarkTheme={useDarkTheme}
+        setTheme={setTheme}
+      />
+    );
 
     const element = document.getElementById(shutdownMenuItemLabelId) as HTMLLabelElement;
 
