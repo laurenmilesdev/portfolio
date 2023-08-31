@@ -2,7 +2,7 @@ import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import Footer from '../../../src/components/footer/Footer';
 import { contacts, pages } from '../../mocks/data-mock';
-import { useStateMock, setStateMock } from '../../mocks/use-state-mock';
+import { useStateMock, setBoolStateMock, setStringStateMock } from '../../mocks/use-state-mock';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
@@ -17,7 +17,9 @@ jest.mock('next/image', () => ({
 
 describe('Footer component', () => {
   let getByTestId: any;
-  const setUseWindowsTheme = setStateMock;
+  const useDarkTheme = true;
+  const setUseDarkTheme = setBoolStateMock;
+  const setTheme = setStringStateMock;
 
   describe('Windows Theme disabled', () => {
     const useWindowsTheme = false;
@@ -31,8 +33,10 @@ describe('Footer component', () => {
         <Footer
           pages={pages}
           contacts={contacts}
+          useDarkTheme={useDarkTheme}
+          setUseDarkTheme={setUseDarkTheme}
           useWindowsTheme={useWindowsTheme}
-          setUseWindowsTheme={setUseWindowsTheme}
+          setTheme={setTheme}
         />
       ));
     });
@@ -68,8 +72,10 @@ describe('Footer component', () => {
         <Footer
           pages={pages}
           contacts={contacts}
+          useDarkTheme={useDarkTheme}
+          setUseDarkTheme={setUseDarkTheme}
           useWindowsTheme={useWindowsTheme}
-          setUseWindowsTheme={setUseWindowsTheme}
+          setTheme={setTheme}
         />
       ));
     });
