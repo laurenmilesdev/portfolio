@@ -1,6 +1,6 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
-import { useStateMock, setStateMock } from '../../../../mocks/use-state-mock';
+import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
 import StartMenuItem, {
   shutdownLabelText,
 } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
@@ -18,8 +18,8 @@ jest.mock('next/image', () => ({
 }));
 
 describe('StartMenuItem component', () => {
-  const useWindowsTheme = true;
-  const setUseWindowsTheme = setStateMock;
+  const useDarkTheme = true;
+  const setTheme = setStringStateMock;
 
   it('renders null if index is 0', () => {
     const index = 0;
@@ -31,8 +31,8 @@ describe('StartMenuItem component', () => {
     render(
       <StartMenuItem
         pages={pages}
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
+        useDarkTheme={useDarkTheme}
+        setTheme={setTheme}
         page={page}
         index={index}
       />
@@ -53,8 +53,8 @@ describe('StartMenuItem component', () => {
     render(
       <StartMenuItem
         pages={pages}
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
+        useDarkTheme={useDarkTheme}
+        setTheme={setTheme}
         page={page}
         index={index}
       />
@@ -70,13 +70,7 @@ describe('StartMenuItem component', () => {
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
-    render(
-      <StartMenuItem
-        pages={pages}
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
-      />
-    );
+    render(<StartMenuItem pages={pages} useDarkTheme={useDarkTheme} setTheme={setTheme} />);
 
     const element = document.getElementById('shutdown-menu-item') as HTMLLabelElement;
 
