@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import WindowModel from '../../../../models/component-helpers/window';
 import ThemeConstants from '../../../../constants/theme';
-import { openCloseMenu, updateWindowThemeBgColor } from '../../../../utils/window';
+import { openCloseMenu, openCloseWindow, updateWindowThemeBgColor } from '../../../../utils/window';
 
 import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
@@ -30,7 +30,11 @@ export default function StartMenuItem({
 
     return (
       <li className={className}>
-        <label className={styles['menu-item']} id={window.menuItemButtonId}>
+        <label
+          className={styles['menu-item']}
+          id={window.menuItemButtonId}
+          onClick={() => openCloseWindow(window.windowId)}
+        >
           <Image src={img} alt="Internet Explorer icon" className={styles['ie-icon']} />
           {window.title}
         </label>

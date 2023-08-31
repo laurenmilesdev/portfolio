@@ -1,4 +1,5 @@
 import WindowModel from '../../../../models/component-helpers/window';
+import { openCloseWindow } from '../../../../utils/window';
 
 import styles from './WindowHeader.module.css';
 
@@ -16,7 +17,11 @@ export default function WindowHeader({ window }: Props): JSX.Element {
       <label id={headerLabelId}>{window.title}</label>
       <div className={styles['header-buttons']}>
         <label className={`${styles.minimize} windows-box-shadow`} id={minimizeButtonId}></label>
-        <label className={`windows-box-shadow`} id={closeButtonId}>
+        <label
+          className={`windows-box-shadow`}
+          id={closeButtonId}
+          onClick={() => openCloseWindow(window.windowId)}
+        >
           X
         </label>
       </div>
