@@ -11,7 +11,7 @@ type Props = {
   windows: WindowModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
-  page?: WindowModel;
+  window?: WindowModel;
   index?: number;
 };
 
@@ -22,19 +22,19 @@ export default function StartMenuItem({
   windows,
   useDarkTheme,
   setTheme,
-  page = undefined,
+  window = undefined,
   index = undefined,
 }: Props): JSX.Element {
   if (index && index === 0) return <></>;
 
-  if (page) {
+  if (window) {
     const className = index === windows.length - 1 ? styles.line : '';
 
     return (
       <li className={className}>
-        <label className={styles['menu-item']} id={page.menuItemButtonId}>
+        <label className={styles['menu-item']} id={window.menuItemButtonId}>
           <Image src={img} alt="Internet Explorer icon" className={styles['ie-icon']} />
-          {page.title}
+          {window.title}
         </label>
       </li>
     );

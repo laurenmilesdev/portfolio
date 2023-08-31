@@ -35,7 +35,7 @@ export default function StartMenu({ windows, useDarkTheme, setTheme }: Props): J
             windows={windows}
             useDarkTheme={useDarkTheme}
             setTheme={setTheme}
-            page={window}
+            window={window}
             index={index}
             key={index}
           />
