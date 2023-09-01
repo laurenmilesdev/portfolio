@@ -2,23 +2,67 @@ import { render } from '@testing-library/react';
 import Layout, { titleDivId, contentDivId } from '../../../src/components/layout/Layout';
 
 describe('Layout component', () => {
-  const title = 'Title';
+  const pageTitles = ['Title', 'Title2'];
   const componentText = 'This is the component';
   const component = <div>{componentText}</div>;
+  const handlePageChange = () => undefined;
+  const useWindowsTheme = false;
 
-  beforeEach(() => {
-    render(<Layout component={component} title={title} />);
+  describe('title is undefined', () => {
+    const pageValue = 0;
+
+    beforeEach(() => {
+      render(
+        <Layout
+          pageValue={pageValue}
+          pageTitles={pageTitles}
+          handlePageChange={handlePageChange}
+          useWindowsTheme={useWindowsTheme}
+        >
+          {component}
+        </Layout>
+      );
+    });
+
+    it('does not render title', () => {
+      const element = document.getElementById(titleDivId) as HTMLDivElement;
+
+      expect(element).toBeNull();
+    });
+
+    it('renders content', () => {
+      const element = document.getElementById(contentDivId) as HTMLDivElement;
+
+      expect(element).toHaveTextContent(componentText);
+    });
   });
 
-  it('renders title if not undefined', () => {
-    const element = document.getElementById(titleDivId) as HTMLDivElement;
+  describe('title is not undefined', () => {
+    const pageValue = 1;
 
-    expect(element).toHaveTextContent(title);
-  });
+    beforeEach(() => {
+      render(
+        <Layout
+          pageValue={pageValue}
+          pageTitles={pageTitles}
+          handlePageChange={handlePageChange}
+          useWindowsTheme={useWindowsTheme}
+        >
+          {component}
+        </Layout>
+      );
+    });
 
-  it('renders content', () => {
-    const element = document.getElementById(contentDivId) as HTMLDivElement;
+    it('renders title', () => {
+      const element = document.getElementById(titleDivId) as HTMLDivElement;
 
-    expect(element).toHaveTextContent(componentText);
+      expect(element).toHaveTextContent(pageTitles[pageValue]);
+    });
+
+    it('renders content', () => {
+      const element = document.getElementById(contentDivId) as HTMLDivElement;
+
+      expect(element).toHaveTextContent(componentText);
+    });
   });
 });

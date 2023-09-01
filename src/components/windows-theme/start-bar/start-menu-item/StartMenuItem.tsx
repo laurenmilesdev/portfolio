@@ -1,40 +1,42 @@
 import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
-import PageModel from '../../../../models/component-helpers/page';
+import WindowModel from '../../../../models/component-helpers/window';
 import ThemeConstants from '../../../../constants/theme';
-import { openCloseMenu, updateWindowThemeBgColor } from '../../../../utils/window';
+import { openCloseMenu, openCloseWindow, updateWindowThemeBgColor } from '../../../../utils/window';
 
 import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
 
 type Props = {
-  pages: PageModel[];
+  startMenuDivId: string;
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
-  page?: PageModel;
-  index?: number;
+  useLineStyle?: boolean;
+  window?: WindowModel;
 };
 
 export const shutdownMenuItemLabelId = 'shutdown-menu-item';
 export const shutdownLabelText = 'Shutdown';
 
 export default function StartMenuItem({
-  pages,
+  startMenuDivId,
   useDarkTheme,
   setTheme,
-  page = undefined,
-  index = undefined,
+  useLineStyle = false,
+  window = undefined,
 }: Props): JSX.Element {
-  if (index && index === 0) return <></>;
-
-  if (page) {
-    const className = index === pages.length - 1 ? styles.line : '';
+  if (window) {
+    const className = useLineStyle ? styles.line : '';
 
     return (
       <li className={className}>
-        <label className={styles['menu-item']} id={page.menuItemButtonId}>
+        <label
+          className={styles['menu-item']}
+          id={window.menuItemButtonId}
+          onClick={() => openCloseWindow(window.windowId)}
+        >
           <Image src={img} alt="Internet Explorer icon" className={styles['ie-icon']} />
-          {page.label}
+          {window.title}
         </label>
       </li>
     );
@@ -50,7 +52,7 @@ export default function StartMenuItem({
 
           setTheme(theme);
           updateWindowThemeBgColor(theme);
-          openCloseMenu();
+          openCloseMenu(startMenuDivId);
         }}
       >
         <Image

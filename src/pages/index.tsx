@@ -1,21 +1,9 @@
-import TabPanel from '../components/tab-panel/TabPanel';
-import PageModel from '../models/component-helpers/page';
-
 type Props = {
-  pageValue: number;
-  pages: PageModel[];
+  component: JSX.Element;
 };
 
-export default function Home({ pageValue, pages }: Props): JSX.Element {
-  return (
-    <>
-      {pages.map(({ component }, index: number) => (
-        <TabPanel value={pageValue} index={index} key={index}>
-          {component}
-        </TabPanel>
-      ))}
-    </>
-  );
+export default function Home({ component }: Props): JSX.Element {
+  return component;
 }
 
 export function getStaticProps() {

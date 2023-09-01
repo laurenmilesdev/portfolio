@@ -4,19 +4,19 @@ import WindowHeader, {
   minimizeButtonId,
   closeButtonId,
 } from '../../../../../src/components/windows-theme/window/window-header/WindowHeader';
-import PageModel from '../../../../../src/models/component-helpers/page';
+import { windows } from '../../../../mocks/data-mock';
 
 describe('WindowHeader component', () => {
-  const page = new PageModel('Page', <>Page</>);
+  const window = windows[0];
 
   beforeEach(() => {
-    render(<WindowHeader page={page} />);
+    render(<WindowHeader window={window} />);
   });
 
   it('renders "Address" label', () => {
     const element = document.getElementById(headerLabelId) as HTMLLabelElement;
 
-    expect(element).toHaveTextContent(page.label);
+    expect(element).toHaveTextContent(window.title);
   });
 
   it('renders minimize button', () => {
