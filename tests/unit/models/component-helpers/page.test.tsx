@@ -1,16 +1,14 @@
 import Page from '../../../../src/models/component-helpers/page';
 
 describe('Page', () => {
-  const navLabel = 'label';
   const title = 'title';
   const component: JSX.Element = <div>Test</div>;
 
   it('returns Page object', () => {
-    const response = new Page(navLabel, component, title);
+    const response = new Page(title, component);
     const expectedResponse: Page = {
-      navLabel,
-      component,
       title,
+      component,
     };
 
     expect(response).toEqual(expectedResponse);
