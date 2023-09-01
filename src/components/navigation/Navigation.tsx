@@ -4,7 +4,7 @@ import styles from './Navigation.module.css';
 
 type Props = {
   pageValue: number;
-  pageNavLabels: string[];
+  pageTitles: string[];
   handleChange: (event: React.SyntheticEvent, newValue: number) => void;
 };
 
@@ -13,14 +13,14 @@ const a11yProps = (index: number): object => ({
   'aria-controls': `tabpanel-${index}`,
 });
 
-export default function Navigation({ pageValue, pageNavLabels, handleChange }: Props): JSX.Element {
+export default function Navigation({ pageValue, pageTitles, handleChange }: Props): JSX.Element {
   return (
     <AppBar className={`${styles['app-bar']} col-md-12`} elevation={0}>
       <Tabs value={pageValue} onChange={handleChange} centered>
-        {pageNavLabels.map((label: string, index: number) => (
+        {pageTitles.map((title: string, index: number) => (
           <Tab
             className={`${styles.tab} nav-tab`}
-            label={label}
+            label={title}
             key={index}
             {...a11yProps(index)}
             id={`tab-${index}`}

@@ -1,13 +1,10 @@
 export default class Page {
-  navLabel: string;
+  title: string;
 
   component: JSX.Element;
 
-  title?: string;
-
-  constructor(navLabel: string, component: JSX.Element, title?: string) {
-    this.navLabel = navLabel;
-    this.component = component;
+  constructor(title: string, component: JSX.Element) {
     this.title = title;
+    this.component = component;
   }
 }
