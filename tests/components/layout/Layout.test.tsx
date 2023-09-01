@@ -5,13 +5,20 @@ describe('Layout component', () => {
   const pageTitles = ['Title', 'Title2'];
   const componentText = 'This is the component';
   const component = <div>{componentText}</div>;
+  const handlePageChange = () => undefined;
+  const useWindowsTheme = false;
 
   describe('title is undefined', () => {
     const pageValue = 0;
 
     beforeEach(() => {
       render(
-        <Layout pageValue={pageValue} pageTitles={pageTitles} handlePageChange={() => undefined}>
+        <Layout
+          pageValue={pageValue}
+          pageTitles={pageTitles}
+          handlePageChange={handlePageChange}
+          useWindowsTheme={useWindowsTheme}
+        >
           {component}
         </Layout>
       );
@@ -35,7 +42,12 @@ describe('Layout component', () => {
 
     beforeEach(() => {
       render(
-        <Layout pageValue={pageValue} pageTitles={pageTitles} handlePageChange={() => undefined}>
+        <Layout
+          pageValue={pageValue}
+          pageTitles={pageTitles}
+          handlePageChange={handlePageChange}
+          useWindowsTheme={useWindowsTheme}
+        >
           {component}
         </Layout>
       );

@@ -17,7 +17,7 @@ describe('Home component', () => {
   const description = 'This is the description';
 
   beforeEach(() => {
-    render(<Home subtitle={subtitle} description={description} />);
+    render(<Home subtitle={subtitle} description={description} useWindowsTheme={false} />);
   });
 
   it('renders logo', () => {

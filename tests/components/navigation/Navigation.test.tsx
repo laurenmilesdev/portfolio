@@ -7,7 +7,14 @@ describe('Navigation component', () => {
   const value = 0;
 
   beforeEach(() => {
-    render(<Navigation pageTitles={pageTitles} handleChange={handleChange} pageValue={value} />);
+    render(
+      <Navigation
+        pageTitles={pageTitles}
+        handleChange={handleChange}
+        pageValue={value}
+        useWindowsTheme={false}
+      />
+    );
   });
 
   it('renders tabs', () => {
