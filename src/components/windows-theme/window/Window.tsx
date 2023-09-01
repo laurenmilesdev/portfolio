@@ -7,10 +7,10 @@ import styles from './Window.module.css';
 
 type Props = {
   window: WindowModel;
-  content: JSX.Element;
+  children: JSX.Element;
 };
 
-export default function Window({ window, content }: Props): JSX.Element {
+export default function Window({ window, children }: Props): JSX.Element {
   const options = ['File', 'Edit', 'Views', 'Favorites', 'Tools', 'Help'];
 
   return (
@@ -21,7 +21,7 @@ export default function Window({ window, content }: Props): JSX.Element {
 
       <WindowAddressBar />
 
-      <div className={styles.content}>{content}</div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }
