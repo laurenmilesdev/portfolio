@@ -8,6 +8,7 @@ type Props = {
   pageValue: number;
   pageTitles: string[];
   handlePageChange: (event: React.SyntheticEvent, newValue: number) => void;
+  useWindowsTheme: boolean;
   children: React.ReactNode;
 };
 
@@ -18,6 +19,7 @@ export default function Layout({
   pageValue,
   pageTitles,
   handlePageChange,
+  useWindowsTheme,
   children,
 }: Props): JSX.Element {
   // Hides Home page title
@@ -25,7 +27,12 @@ export default function Layout({
 
   return (
     <>
-      <Navigation pageValue={pageValue} pageTitles={pageTitles} handleChange={handlePageChange} />
+      <Navigation
+        pageValue={pageValue}
+        pageTitles={pageTitles}
+        handleChange={handlePageChange}
+        useWindowsTheme={useWindowsTheme}
+      />
 
       <Fade in={true}>
         <Container>

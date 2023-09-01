@@ -31,7 +31,13 @@ export default function App({ Component, pageProps }: AppProps) {
   const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
     setPageValue(newValue);
 
-  const homeComponent = <Home subtitle={Data.home.subtitle} description={Data.home.description} />;
+  const homeComponent = (
+    <Home
+      subtitle={Data.home.subtitle}
+      description={Data.home.description}
+      useWindowsTheme={useWindowsTheme}
+    />
+  );
   const aboutComponent = <About description={Data.about.description} />;
   const projectsComponent = <Projects projects={Data.projects.projects} />;
   const contactComponent = <Contact description={Data.contact.description} />;
@@ -55,6 +61,7 @@ export default function App({ Component, pageProps }: AppProps) {
       pageValue={pageValue}
       pageTitles={pages.map((page: PageModel) => page.title)}
       handlePageChange={handlePageChange}
+      useWindowsTheme={useWindowsTheme}
     >
       {pages.map(({ component }, index: number) => (
         <TabPanel value={pageValue} index={index} key={index}>
@@ -89,7 +96,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
       {useWindowsTheme &&
         windows.map((window: WindowModel, index: number) => (
-          <Window window={window} content={window.component} key={index} />
+          <Window window={window} key={index}>
+            {window.component}
+          </Window>
         ))}
 
       {useWindowsTheme ? windowsThemePageContent : pageContent}
