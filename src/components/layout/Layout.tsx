@@ -6,6 +6,7 @@ import styles from './Layout.module.css';
 
 type Props = {
   pageValue: number;
+  pageNavLabels: string[];
   pageTitles: string[];
   handlePageChange: (event: React.SyntheticEvent, newValue: number) => void;
   children: React.ReactNode;
@@ -16,21 +17,25 @@ export const contentDivId = 'content';
 
 export default function Layout({
   pageValue,
+  pageNavLabels,
   pageTitles,
   handlePageChange,
   children,
 }: Props): JSX.Element {
-  // Removes Home title from Home page
-  const title = pageValue !== 0 ? pageTitles[pageValue] : undefined;
+  const title = pageTitles[pageValue];
 
   return (
     <>
-      <Navigation pageValue={pageValue} pageTitles={pageTitles} handleChange={handlePageChange} />
+      <Navigation
+        pageValue={pageValue}
+        pageNavLabels={pageNavLabels}
+        handleChange={handlePageChange}
+      />
 
       <Fade in={true}>
         <Container>
           <div className={styles.container}>
-            {title && (
+            {title !== '' && (
               <div className={`${styles.title} col-md-12 pb-3`} id={titleDivId}>
                 <h1>{title}</h1>
               </div>
