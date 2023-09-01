@@ -3,14 +3,22 @@
   text-align: center;
 }
 
-.subtitle {
+.subtitle,
+.windows-theme-subtitle {
   color: var(--primary);
   font-family: 'Rock 3D', monospace;
-  font-size: 10vw;
   font-weight: 600;
   z-index: 1;
   position: relative;
   text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 10vw;
+}
+
+.windows-theme-subtitle {
+  font-size: 7vw;
 }
 
 .description {
@@ -21,13 +29,23 @@
   text-transform: lowercase;
 }
 
-.logo {
-  width: 55%;
+.logo,
+.windows-theme-logo {
   height: auto;
   opacity: var(--home-img-op);
   position: absolute;
-  left: 22%;
+}
+
+.logo {
+  width: 55%;
   top: 10%;
+  left: 22%;
+}
+
+.windows-theme-logo {
+  width: 45%;
+  top: 27%;
+  left: 27%;
 }
 
 @media screen and (max-width: 900px) {
