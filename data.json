@@ -13,25 +13,11 @@
     "description": "Select a project on the right to view it's details. The projects I've worked on vary from large application re-writes, maintaining and enhancing existing applications, brand new applications, and microservices to automate manual processes.",
     "projects": [
       {
-        "title": "KSBA Portal",
-        "company": "KiZAN Technologies",
-        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
-        "description": "Contributed to the re-write of a large portal for the Kentucky School Board Association. The web application included roles with user management for board members (add, edit, or delete users based on roles), a section to keep school board meeting minutes (create and edit an agenda, keep notes, track votes, and screen share the meeting live), a separate smaller application to record job applications for open positions, and other existing internal data on the legacy application. All the existing data was migrated over and enhancements were made to clean up the data and tables.",
-        "companyUrl": "https://www.kizan.com"
-      },
-      {
-        "title": "Four Roses Bourbon Internal Application",
-        "company": "KiZAN Technologies",
-        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
-        "description": "Contributed in creating an internal application for Four Roses to keep track of internal funding proposals. The web application allowed a user to compose a proposal and submit it to the proper internal department. Users on the receiving end would get an email when a proposal was submitted and have the capability of approving or rejecting the proposal or requesting more information. If more information was needed, the proposal would begin the process over again.",
-        "companyUrl": "https://www.kizan.com"
-      },
-      {
-        "title": "Nationwide Children's Hospital Website",
-        "company": "Nationwide Children's Hospital",
-        "technologies": [".NET", "C#", "Sitecore"],
-        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore CRM was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. My time was mainly focused on enhancing accessibility within specific pages and forms to create a better experience for all users.",
-        "companyUrl": "https://www.nationwidechildrens.org"
+        "title": "BootcampOS",
+        "company": "Tech Elevator",
+        "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
+        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with another team under the Stride company umbrella to add features to the application that were specific to Tech Elevators needs.",
+        "companyUrl": "https://www.techelevator.com"
       },
       {
         "title": "Shipping Label Automation",
@@ -56,18 +42,32 @@
         "companyUrl": "https://www.techelevator.com"
       },
       {
-        "title": "BootcampOS",
-        "company": "Tech Elevator",
-        "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
-        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with another team under the Stride company umbrella to add features to the application that were specific to Tech Elevators needs.",
-        "companyUrl": "https://www.techelevator.com"
-      },
-      {
         "title": "Women Wine & Web Design",
         "company": "Tech Elevator",
         "technologies": ["HTML", "CSS"],
         "description": "Instructed at Tech Elevator's Women Wine & Web Design event in Detroit, Michigan. The event invited local women to learn how to make a basic webpage using HTML and CSS. I lead the instruction of course material, teaching the participants the fundamentals of web development.",
         "companyUrl": "https://www.techelevator.com"
+      },
+      {
+        "title": "Nationwide Children's Hospital Website",
+        "company": "Nationwide Children's Hospital",
+        "technologies": [".NET", "C#", "Sitecore"],
+        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore CRM was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. My time was mainly focused on enhancing accessibility within specific pages and forms to create a better experience for all users.",
+        "companyUrl": "https://www.nationwidechildrens.org"
+      },
+      {
+        "title": "KSBA Portal",
+        "company": "KiZAN Technologies",
+        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
+        "description": "Contributed to the re-write of a large portal for the Kentucky School Board Association. The web application included roles with user management for board members (add, edit, or delete users based on roles), a section to keep school board meeting minutes (create and edit an agenda, keep notes, track votes, and screen share the meeting live), a separate smaller application to record job applications for open positions, and other existing internal data on the legacy application. All the existing data was migrated over and enhancements were made to clean up the data and tables.",
+        "companyUrl": "https://www.kizan.com"
+      },
+      {
+        "title": "Four Roses Bourbon Internal Application",
+        "company": "KiZAN Technologies",
+        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
+        "description": "Contributed in creating an internal application for Four Roses to keep track of internal funding proposals. The web application allowed a user to compose a proposal and submit it to the proper internal department. Users on the receiving end would get an email when a proposal was submitted and have the capability of approving or rejecting the proposal or requesting more information. If more information was needed, the proposal would begin the process over again.",
+        "companyUrl": "https://www.kizan.com"
       }
     ]
   },
