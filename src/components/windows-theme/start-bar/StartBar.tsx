@@ -22,7 +22,7 @@ export default function StartBar({ windows, useDarkTheme, setTheme }: Props): JS
 
       <div className={styles.items}>
         {windows.map((window: WindowModel, index: number) => (
-          <StartBarButton window={window} index={index} key={index} />
+          <StartBarButton window={window} key={index} />
         ))}
       </div>
 

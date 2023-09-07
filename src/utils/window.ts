@@ -17,10 +17,28 @@ export function updateWindowThemeBgColor(theme: string) {
   else document.body.style.background = '';
 }
 
-export function openCloseWindow(windowId: string) {
+export function openCloseWindow(windowId: string, startBarButtonId: string, startMenuId?: string) {
   const window = document.getElementById(windowId);
+  const startBarButton = document.getElementById(startBarButtonId);
 
-  if (window) showHideElement(window);
+  if (window && startBarButton) {
+    showHideElement(window);
+    showHideElement(startBarButton);
+  }
+
+  if (startMenuId) openCloseMenu(startMenuId);
+}
+
+export function minimizeMaximizeWindow(windowId: string, startBarButtonId: string) {
+  const window = document.getElementById(windowId);
+  const startBarButton = document.getElementById(startBarButtonId);
+
+  if (window && startBarButton) {
+    const windowVisible = showHideElement(window);
+
+    if (windowVisible) removeInverseWindowsBoxShadowClass(startBarButton);
+    else removeWindowsBoxShadowClass(startBarButton);
+  }
 }
 
 function showHideElement(element: HTMLElement) {
@@ -28,4 +46,16 @@ function showHideElement(element: HTMLElement) {
 
   if (!visible) element.style.display = 'block';
   else element.style.display = 'none';
+
+  return visible;
+}
+
+function removeWindowsBoxShadowClass(button: HTMLElement) {
+  button.classList.remove('windows-box-shadow');
+  button.classList.add('inverse-windows-box-shadow');
+}
+
+function removeInverseWindowsBoxShadowClass(button: HTMLElement) {
+  button.classList.remove('inverse-windows-box-shadow');
+  button.classList.add('windows-box-shadow');
 }

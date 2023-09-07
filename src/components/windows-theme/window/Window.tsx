@@ -19,7 +19,7 @@ export default function Window({ window, children }: Props): JSX.Element {
 
       <WindowOptions options={options} />
 
-      <WindowAddressBar />
+      <WindowAddressBar addressBarUrl={window.addressBarUrl} />
 
       <div className={styles.content}>{children}</div>
     </div>

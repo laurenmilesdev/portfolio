@@ -1,11 +1,14 @@
 import styles from './WindowAddressBar.module.css';
 
 export const label = 'Address';
-export const inputValue = 'https://portfolio.laurenmilesdev.com/';
 export const divId = 'window-address-bar-label';
 export const inputId = 'window-address-bar-input';
 
-export default function WindowAddressBar(): JSX.Element {
+type Props = {
+  addressBarUrl?: string;
+};
+
+export default function WindowAddressBar({ addressBarUrl }: Props): JSX.Element {
   return (
     <div className={`${styles.options} ${styles.padding}`}>
       <div className={styles.item} id={divId}>
@@ -14,7 +17,7 @@ export default function WindowAddressBar(): JSX.Element {
       <input
         type="text"
         className={styles['inverse-windows-box-shadow']}
-        value={inputValue}
+        value={addressBarUrl ?? ''}
         id={inputId}
         readOnly
       />

@@ -25,44 +25,38 @@ export default function StartMenuItem({
   useLineStyle = false,
   window = undefined,
 }: Props): JSX.Element {
-  if (window) {
-    const className = useLineStyle ? styles.line : '';
-
-    return (
-      <li className={className}>
-        <label
-          className={styles['menu-item']}
-          id={window.menuItemButtonId}
-          onClick={() => openCloseWindow(window.windowId)}
-        >
-          <Image src={img} alt="Internet Explorer icon" className={styles['ie-icon']} />
-          {window.title}
-        </label>
-      </li>
-    );
-  }
+  const internetExplorerImage = (
+    <Image src={img} alt="Internet Explorer icon" className={styles['ie-icon']} />
+  );
+  const shutdownImage = (
+    <Image
+      width={30}
+      height={30}
+      className={styles['shutdown-icon']}
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAARVBMVEUAAACGhobAwMB3d3eysrLMzMz4+PjX19eZmZnq6urn59ZNTU2WlpZCQkIzAGYAAIAAAAAzAMwAAP8A/////wBVVVX///99stlUAAAAAXRSTlMAQObYZgAAAAFiS0dEFnzRqBkAAAAHdElNRQfiBhoANBn4/QlFAAAAzUlEQVQ4y83S0Q6DIAwFUGmhYudEdP7/r+6CZEEnvm438emetBDpun+KQW5rQpibtXWOHJHlPedeRHqHQHhm+zXKyKCqMmRhfV53IEb0YUh1EBCIMRH7PIAphEREipgJX71iijER16tAGJ79EShAJrZ3gu4KLMuaCDtqgHVZkwnXAGdYVskzqD3hhRE3IKYV7QkhxHyKBvCDUiKxnsAV2NhrIR9Q9cgGgv8QkAKOfU0KOPeFpGe1g8uHVUgb7MTjAk2QyTjO7T6T2/oHeQPSrw8Qg6bkoQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNi0yNlQwMDo1MjoyNS0wNDowMOXPqxAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDYtMjZUMDA6NTI6MjUtMDQ6MDCUkhOsAAAAAElFTkSuQmCC"
+      alt=""
+    />
+  );
 
   return (
-    <li>
+    <li className={useLineStyle ? styles.line : ''}>
       <label
-        className={styles['menu-item-shutdown']}
-        id={shutdownMenuItemLabelId}
+        className={window ? styles['menu-item'] : styles['menu-item-shutdown']}
+        id={window ? window.menuItemButtonId : shutdownMenuItemLabelId}
         onClick={() => {
-          const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
+          if (window) {
+            openCloseWindow(window.windowId, window.startBarButtonId, startMenuDivId);
+          } else {
+            const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
 
-          setTheme(theme);
-          updateWindowThemeBgColor(theme);
-          openCloseMenu(startMenuDivId);
+            setTheme(theme);
+            updateWindowThemeBgColor(theme);
+            openCloseMenu(startMenuDivId);
+          }
         }}
       >
-        <Image
-          width={30}
-          height={30}
-          className={styles['shutdown-icon']}
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAARVBMVEUAAACGhobAwMB3d3eysrLMzMz4+PjX19eZmZnq6urn59ZNTU2WlpZCQkIzAGYAAIAAAAAzAMwAAP8A/////wBVVVX///99stlUAAAAAXRSTlMAQObYZgAAAAFiS0dEFnzRqBkAAAAHdElNRQfiBhoANBn4/QlFAAAAzUlEQVQ4y83S0Q6DIAwFUGmhYudEdP7/r+6CZEEnvm438emetBDpun+KQW5rQpibtXWOHJHlPedeRHqHQHhm+zXKyKCqMmRhfV53IEb0YUh1EBCIMRH7PIAphEREipgJX71iijER16tAGJ79EShAJrZ3gu4KLMuaCDtqgHVZkwnXAGdYVskzqD3hhRE3IKYV7QkhxHyKBvCDUiKxnsAV2NhrIR9Q9cgGgv8QkAKOfU0KOPeFpGe1g8uHVUgb7MTjAk2QyTjO7T6T2/oHeQPSrw8Qg6bkoQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNi0yNlQwMDo1MjoyNS0wNDowMOXPqxAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDYtMjZUMDA6NTI6MjUtMDQ6MDCUkhOsAAAAAElFTkSuQmCC"
-          alt=""
-        />
-        {shutdownLabelText}
+        {window ? internetExplorerImage : shutdownImage}
+        {window ? window.title : shutdownLabelText}
       </label>
     </li>
   );
