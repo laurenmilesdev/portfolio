@@ -20,7 +20,7 @@ export default function WindowHeader({ window }: Props): JSX.Element {
         <label
           className={`windows-box-shadow`}
           id={closeButtonId}
-          onClick={() => openCloseWindow(window.windowId)}
+          onClick={() => openCloseWindow(window.windowId, window.startBarButtonId)}
         >
           X
         </label>
