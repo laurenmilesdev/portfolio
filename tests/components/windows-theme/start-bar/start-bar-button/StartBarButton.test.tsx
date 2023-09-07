@@ -9,22 +9,14 @@ jest.mock('next/image', () => ({
 }));
 
 describe('StartBarButton component', () => {
-  it('renders null if index is 0', () => {
-    const window = windows[0];
+  const window = windows[0];
 
-    render(<StartBarButton window={window} index={0} />);
-
-    const element = document.getElementById(window.startBarButtonId ?? '') as HTMLButtonElement;
-
-    expect(element).toEqual(null);
+  beforeEach(() => {
+    render(<StartBarButton window={window} />);
   });
 
-  it('renders button if index is not 0', () => {
-    const window = windows[1];
-
-    render(<StartBarButton window={window} index={1} />);
-
-    const element = document.getElementById(window.startBarButtonId ?? '') as HTMLButtonElement;
+  it('renders button', () => {
+    const element = document.getElementById(window.startBarButtonId) as HTMLButtonElement;
 
     expect(element).toBeInTheDocument();
     expect(element).toHaveTextContent(window.title);
