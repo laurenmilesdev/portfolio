@@ -77,7 +77,8 @@ export default function App({ Component, pageProps }: AppProps) {
       pageContent,
       'portfolio-window',
       'portfolio-start-bar-btn',
-      'portfolio-menu-item-btn'
+      'portfolio-menu-item-btn',
+      'https://portfolio.laurenmilesdev.com/'
     ),
     new WindowModel('test 2', <></>, '', '', ''),
   ];

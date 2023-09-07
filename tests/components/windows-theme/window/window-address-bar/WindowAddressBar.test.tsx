@@ -1,14 +1,15 @@
 import { render } from '@testing-library/react';
 import WindowAddressBar, {
   label,
-  inputValue,
   divId,
   inputId,
 } from '../../../../../src/components/windows-theme/window/window-address-bar/WindowAddressBar';
 
 describe('WindowAddressBar component', () => {
+  const addressBarUrl = 'http://url.com';
+
   beforeEach(() => {
-    render(<WindowAddressBar />);
+    render(<WindowAddressBar addressBarUrl={addressBarUrl} />);
   });
 
   it('renders "Address" label', () => {
@@ -21,7 +22,7 @@ describe('WindowAddressBar component', () => {
     const element = document.getElementById(inputId) as HTMLInputElement;
 
     expect(element.type).toEqual('text');
-    expect(element.value).toEqual(inputValue);
+    expect(element.value).toEqual(addressBarUrl);
     expect(element.readOnly).toEqual(true);
   });
 });
