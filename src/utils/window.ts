@@ -17,7 +17,7 @@ export function updateWindowThemeBgColor(theme: string) {
   else document.body.style.background = '';
 }
 
-export function openCloseWindow(windowId: string, startBarButtonId: string) {
+export function openCloseWindow(windowId: string, startBarButtonId: string, startMenuId?: string) {
   const window = document.getElementById(windowId);
   const startBarButton = document.getElementById(startBarButtonId);
 
@@ -25,6 +25,8 @@ export function openCloseWindow(windowId: string, startBarButtonId: string) {
     showHideElement(window);
     showHideElement(startBarButton);
   }
+
+  if (startMenuId) openCloseMenu(startMenuId);
 }
 
 export function minimizeMaximizeWindow(windowId: string, startBarButtonId: string) {

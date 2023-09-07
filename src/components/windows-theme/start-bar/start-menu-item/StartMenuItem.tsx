@@ -45,7 +45,7 @@ export default function StartMenuItem({
         id={window ? window.menuItemButtonId : shutdownMenuItemLabelId}
         onClick={() => {
           if (window) {
-            openCloseWindow(window.windowId, window.startBarButtonId);
+            openCloseWindow(window.windowId, window.startBarButtonId, startMenuDivId);
           } else {
             const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
 
