@@ -80,7 +80,6 @@ export default function App({ Component, pageProps }: AppProps) {
       'portfolio-menu-item-btn',
       'https://portfolio.laurenmilesdev.com/'
     ),
-    new WindowModel('test 2', <></>, '', '', ''),
   ];
 
   return (
