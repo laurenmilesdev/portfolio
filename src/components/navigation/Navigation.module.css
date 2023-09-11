@@ -1,15 +1,15 @@
 .app-bar {
-  background-color: var(--background-color) !important;
+  background-color: var(--background-color);
 }
 
 .tab {
-  color: var(--font-color) !important;
-  text-transform: lowercase !important;
+  color: var(--font-color);
+  text-transform: lowercase;
   letter-spacing: 0.1rem;
 }
 
 .tab:hover {
-  color: var(--font-color-opp) !important;
+  color: var(--font-color-opp);
   background-color: var(--secondary);
 }
 

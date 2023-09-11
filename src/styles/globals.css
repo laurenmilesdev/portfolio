@@ -172,12 +172,12 @@ ul {
 }
 
 .btn-primary {
-  color: var(--font-color) !important;
+  color: var(--font-color);
 }
 
 .btn-primary:hover {
-  color: var(--font-color-opp) !important;
-  background-color: var(--secondary) !important;
+  color: var(--font-color-opp);
+  background-color: var(--secondary);
 }
 
 .btn-warn {
@@ -190,8 +190,8 @@ ul {
 
 /* Navigation tabs bottom border */
 .MuiTabs-indicator {
-  background-color: var(--secondary) !important;
-  height: 4px !important;
+  background-color: var(--secondary);
+  height: 4px;
 }
 
 /* Selected navigation tabs */
@@ -206,8 +206,8 @@ ul {
 
 /* Selected projects tabs */
 .projects-tab.MuiTab-root.Mui-selected {
-  color: var(--font-color-opp) !important;
-  background-color: var(--secondary) !important;
+  color: var(--font-color-opp);
+  background-color: var(--secondary);
   text-align: left;
 }
 
@@ -222,8 +222,8 @@ ul {
 }
 
 .MuiTooltip-tooltip {
-  background-color: var(--secondary) !important;
-  color: var(--font-color-opp) !important;
+  background-color: var(--secondary);
+  color: var(--font-color-opp);
   letter-spacing: 0.1rem;
   text-transform: lowercase;
 }
