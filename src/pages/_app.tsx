@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
+import { StyledEngineProvider } from '@mui/material/styles';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css';
 
@@ -83,7 +84,7 @@ export default function App({ Component, pageProps }: AppProps) {
   ];
 
   return (
-    <>
+    <StyledEngineProvider injectFirst>
       <Head>
         <title>{pageProps.title ?? ''}</title>
         <meta
@@ -111,6 +112,6 @@ export default function App({ Component, pageProps }: AppProps) {
         useWindowsTheme={useWindowsTheme}
         setTheme={setTheme}
       />
-    </>
+    </StyledEngineProvider>
   );
 }
