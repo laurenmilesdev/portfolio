@@ -1,21 +1,33 @@
-import PageModel from '../../../../models/component-helpers/page';
+import WindowModel from '../../../../models/component-helpers/window';
+import { openCloseWindow, minimizeMaximizeWindow } from '../../../../utils/window';
 
 import styles from './WindowHeader.module.css';
 
 type Props = {
-  page: PageModel;
+  window: WindowModel;
 };
 
-export default function WindowHeader({ page }: Props): JSX.Element {
+export const headerLabelId = 'window-header-label';
+export const minimizeButtonId = 'window-header-minimize-btn';
+export const closeButtonId = 'window-header-close-btn';
+
+export default function WindowHeader({ window }: Props): JSX.Element {
   return (
     <div className={styles.header}>
-      <label id="window-header-label">{page.label}</label>
+      <label id={headerLabelId}>{window.title}</label>
       <div className={styles['header-buttons']}>
         <label
           className={`${styles.minimize} windows-box-shadow`}
-          id="window-header-minimize-btn"
+          id={minimizeButtonId}
+          onClick={() => {
+            minimizeMaximizeWindow(window.windowId, window.startBarButtonId);
+          }}
         ></label>
-        <label className={`windows-box-shadow`} id="window-header-close-btn">
+        <label
+          className={`windows-box-shadow`}
+          id={closeButtonId}
+          onClick={() => openCloseWindow(window.windowId, window.startBarButtonId)}
+        >
           X
         </label>
       </div>

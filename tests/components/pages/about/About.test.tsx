@@ -1,5 +1,9 @@
 import { render } from '@testing-library/react';
-import About, { altText } from '../../../../src/components/pages/about/About';
+import About, {
+  altText,
+  descriptionDivId,
+  imageId,
+} from '../../../../src/components/pages/about/About';
 
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -15,13 +19,13 @@ describe('About component', () => {
   });
 
   it('renders description', () => {
-    const element = document.getElementById('about-description') as HTMLDivElement;
+    const element = document.getElementById(descriptionDivId) as HTMLDivElement;
 
     expect(element).toHaveTextContent(description);
   });
 
   it('renders photo with alt text', () => {
-    const element = document.getElementById('about-img') as HTMLImageElement;
+    const element = document.getElementById(imageId) as HTMLImageElement;
 
     expect(element.alt).toEqual(altText);
   });

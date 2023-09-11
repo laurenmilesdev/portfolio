@@ -1,9 +1,13 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
-import { useStateMock, setStateMock } from '../../../../mocks/use-state-mock';
+import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
 import StartMenu from '../../../../../src/components/windows-theme/start-bar/start-menu/StartMenu';
-import { shutdownLabelText } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
-import { pages } from '../../../../mocks/data-mock';
+import { startMenuDivId } from '../../../../../src/components/windows-theme/start-bar/StartBar';
+import {
+  shutdownLabelText,
+  shutdownMenuItemLabelId,
+} from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
+import { windows } from '../../../../mocks/data-mock';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
@@ -17,8 +21,8 @@ jest.mock('next/image', () => ({
 }));
 
 describe('StartMenu component', () => {
-  const useWindowsTheme = true;
-  const setUseWindowsTheme = setStateMock;
+  const useDarkTheme = true;
+  const setTheme = setStringStateMock;
 
   beforeEach(() => {
     jest
@@ -26,26 +30,27 @@ describe('StartMenu component', () => {
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
     render(
       <StartMenu
-        pages={pages}
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
+        startMenuDivId={startMenuDivId}
+        windows={windows}
+        useDarkTheme={useDarkTheme}
+        setTheme={setTheme}
       />
     );
   });
 
   it('renders "Windows98" sidebar', () => {
-    const element = document.getElementById('start-menu') as HTMLDivElement;
+    const element = document.getElementById(startMenuDivId) as HTMLDivElement;
 
     expect(element).toHaveTextContent('Windows98');
   });
 
   it('renders correct menu items', () => {
-    const page = pages[1];
-    const element = document.getElementById(page.menuItemButtonId ?? '') as HTMLLabelElement;
-    const shutdownElement = document.getElementById('shutdown-menu-item') as HTMLLabelElement;
+    const window = windows[1];
+    const element = document.getElementById(window.menuItemButtonId ?? '') as HTMLLabelElement;
+    const shutdownElement = document.getElementById(shutdownMenuItemLabelId) as HTMLLabelElement;
 
     expect(element).toBeInTheDocument();
-    expect(element).toHaveTextContent(page.label);
+    expect(element).toHaveTextContent(window.title);
 
     expect(shutdownElement).toBeInTheDocument();
     expect(shutdownElement).toHaveTextContent(shutdownLabelText);

@@ -6,9 +6,16 @@ import ThemeConstants from '../../constants/theme';
 type Props = {
   useDarkTheme: boolean;
   setUseDarkTheme: Dispatch<SetStateAction<boolean>>;
+  setTheme: Dispatch<SetStateAction<string>>;
 };
 
-export default function ThemeSwitch({ useDarkTheme, setUseDarkTheme }: Props): JSX.Element {
+export const switchId = 'theme-switch';
+
+export default function ThemeSwitch({
+  useDarkTheme,
+  setUseDarkTheme,
+  setTheme,
+}: Props): JSX.Element {
   const MaterialUISwitch = styled(Switch)(() => ({
     width: 62,
     height: 34,
@@ -60,6 +67,7 @@ export default function ThemeSwitch({ useDarkTheme, setUseDarkTheme }: Props): J
 
     document.documentElement.setAttribute('data-theme', theme);
     setUseDarkTheme(newUseDarkTheme);
+    setTheme(theme);
   };
 
   return (
@@ -68,7 +76,7 @@ export default function ThemeSwitch({ useDarkTheme, setUseDarkTheme }: Props): J
         sx={{ mt: 0.5 }}
         checked={useDarkTheme}
         onChange={handleChange}
-        id="theme-switch"
+        id={switchId}
       />
     </Tooltip>
   );

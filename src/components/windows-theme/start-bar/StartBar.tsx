@@ -2,36 +2,38 @@ import { Dispatch, SetStateAction } from 'react';
 import StartButton from './start-button/StartButton';
 import StartBarButton from './start-bar-button/StartBarButton';
 import StartMenu from './start-menu/StartMenu';
-import PageModel from '../../../models/component-helpers/page';
+import Clock from './clock/Clock';
+import WindowModel from '../../../models/component-helpers/window';
 
 import styles from './StartBar.module.css';
 
 type Props = {
-  pages: PageModel[];
-  useWindowsTheme: boolean;
-  setUseWindowsTheme: Dispatch<SetStateAction<boolean>>;
+  windows: WindowModel[];
+  useDarkTheme: boolean;
+  setTheme: Dispatch<SetStateAction<string>>;
 };
 
-export default function StartBar({
-  pages,
-  useWindowsTheme,
-  setUseWindowsTheme,
-}: Props): JSX.Element {
+export const startMenuDivId = 'start-menu';
+
+export default function StartBar({ windows, useDarkTheme, setTheme }: Props): JSX.Element {
   return (
     <div className={styles['start-bar']}>
-      <StartButton />
+      <StartButton startMenuDivId={startMenuDivId} />
 
       <div className={styles.items}>
-        {pages.map((page: PageModel, index: number) => (
-          <StartBarButton page={page} index={index} />
+        {windows.map((window: WindowModel, index: number) => (
+          <StartBarButton window={window} key={index} />
         ))}
       </div>
 
       <StartMenu
-        pages={pages}
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
+        startMenuDivId={startMenuDivId}
+        windows={windows}
+        useDarkTheme={useDarkTheme}
+        setTheme={setTheme}
       />
+
+      <Clock currentTime={new Date()} />
     </div>
   );
 }

@@ -1,5 +1,10 @@
 import { render } from '@testing-library/react';
-import Home, { altText } from '../../../../src/components/pages/home/Home';
+import Home, {
+  altText,
+  subtitleDivId,
+  descriptionDivId,
+  imageId,
+} from '../../../../src/components/pages/home/Home';
 
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -12,23 +17,23 @@ describe('Home component', () => {
   const description = 'This is the description';
 
   beforeEach(() => {
-    render(<Home subtitle={subtitle} description={description} />);
+    render(<Home subtitle={subtitle} description={description} useWindowsTheme={false} />);
   });
 
   it('renders logo', () => {
-    const element = document.getElementById('logo') as HTMLImageElement;
+    const element = document.getElementById(imageId) as HTMLImageElement;
 
     expect(element.alt).toEqual(altText);
   });
 
   it('renders subtitle', () => {
-    const element = document.getElementById('home-subtitle') as HTMLDivElement;
+    const element = document.getElementById(subtitleDivId) as HTMLDivElement;
 
     expect(element).toHaveTextContent(subtitle);
   });
 
   it('renders description', () => {
-    const element = document.getElementById('home-description') as HTMLDivElement;
+    const element = document.getElementById(descriptionDivId) as HTMLDivElement;
 
     expect(element).toHaveTextContent(description);
   });

@@ -6,32 +6,18 @@
   },
   "about": {
     "title": "About",
-    "description": "<p>Ever since I was little, I can remember being curious about how my belongings (toys, gadgets, etc) worked. My mom told me I would take apart my toys as a child just to put them back together. Along with that curiosity came a drive and desire to accomplish any task I put my mind to. I really was relentless and believed that if I put the time and effort into something, I could accomplish anything. I knew no limit.</p><p>Fast forward to now, an adult with more resources and an income! Those skills and traits manifested into hobbies and side projects- refurbishing old bikes, screenprinting, embroidery… just to name a few. I enjoy testing my knowledge and limits to see what I am able to accomplish with the tools I possess, and this is not limited to the Software Development world.</p><p>Prior to being a Software Developer, I spent a decade working in the retail world, specifically fashion merchandising. At first it was simply a way to pay the bills, but after some time, I realized that merchandising itself is a large puzzle to be solved. It’s like a game of tetris, balancing colors, shapes, sizes, and textures to fit and meet a list of requirements all in one space to aesthetically entice customers. I got paid to solve puzzles and be creative all at the same time? Felt like a dream.</p><p>But as with how life goes, we all transform and grow. I felt like I had hit a wall and I no longer saw an upward trajectory for my career, so I decided that my growth was more important than remaining comfortable. I quit my job, one of the only consistent safety net I had ever known and enrolled in a coding bootcamp. I’ll keep it short and simply state that they are not for the faint of heart, but I made it to the other side and entered into the world of Tech.</p><p>So here I am now, a Software Developer. I have new passions to add to my list, like creating web applications that are both functional and creative. I transferred my skills from clothing to code. Now I enjoy flexing the skills I learned into back-end and front-end development, both of which pose their own challenges and allow for different solutions, logically and aesthetically. It’s an unlikely parallel that has allowed me to visualize my future again.</p>"
+    "description": "<p>Ever since I was little, I can remember being curious about how my belongings (toys, gadgets, etc.) worked. My mom told me I would take apart my toys as a child just to put them back together. Along with that curiosity came a drive and desire to accomplish any task I put my mind to. I was relentless and believed that if I put the time and effort into something, I could accomplish anything. I knew no limit.</p><p>Fast forward to now, an adult with more resources and an income! Those skills and traits manifested into hobbies and side projects- refurbishing old bikes, screen-printing, embroidery… just to name a few. I enjoy testing my knowledge and limits to see what I am able to accomplish with the tools I possess, and this is not limited to the Software Development world.</p><p>Prior to being a Software Developer, I spent a decade working in retail, specifically fashion merchandising. At first it was simply a way to pay the bills, but after some time, I realized that merchandising itself is a large puzzle to be solved and it became a passion of mine. It’s equivalent to a game of Tetris, balancing colors, shapes, sizes, and textures to meet a list of requirements all in one space to aesthetically entice customers. I got paid to solve puzzles and be creative all at the same time? Felt like a dream.</p><p>But as with how life goes, we all transform and grow. I had hit a wall and no longer saw an upward trajectory for my career and decided that my growth was more important than remaining comfortable. I quit my job, one of the only consistent safety nets I had ever known and enrolled in a coding bootcamp. I’ll keep it short and simply state that they are not for the faint of heart, but I made it to the other side and entered into the world of Tech.</p><p>So here I am now, a Software Developer. I have new passions to add to my list, like creating web applications that are both functional and creative. I transferred my skills from clothing to code. Now I enjoy flexing the skills I learned into back-end and front-end development, both of which pose their own challenges and allow for different solutions, logically and aesthetically. It’s an unlikely parallel that has allowed me to visualize my future again.</p>"
   },
   "projects": {
     "title": "Projects",
     "description": "Select a project on the right to view it's details. The projects I've worked on vary from large application re-writes, maintaining and enhancing existing applications, brand new applications, and microservices to automate manual processes.",
     "projects": [
       {
-        "title": "KSBA Portal",
-        "company": "KiZAN Technologies",
-        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
-        "description": "Contributed to the re-write of a large portal for the Kentucky School Board Association. The web application included roles with user management for board members (add, edit, or delete users based on roles), a section to keep school board meeting minutes (create and edit an agenda, keep notes, track votes, and screen share the meeting live), a separate smaller application to record job applications for open positions, and other existing internal data on the legacy application. All the existing data was migrated over and enhancements were made to clean up the data and tables.",
-        "companyUrl": "https://www.kizan.com"
-      },
-      {
-        "title": "Four Roses Bourbon Internal Application",
-        "company": "KiZAN Technologies",
-        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
-        "description": "Contributed in creating an internal application for Four Roses to keep track of internal funding proposals. The web application allowed a user to compose a proposal and submit it to the proper internal department. Users on the receiving end would get an email when a proposal was submitted and have the capability of approving or rejecting the proposal or requesting more information. If more information was needed, the proposal would begin the process over again.",
-        "companyUrl": "https://www.kizan.com"
-      },
-      {
-        "title": "Nationwide Children's Hospital Website",
-        "company": "Nationwide Children's Hospital",
-        "technologies": [".NET", "C#", "Sitecore"],
-        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore CRM was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. My time was mainly focused on enhancing accessibility within specific pages and forms to create a better experience for all users.",
-        "companyUrl": "https://www.nationwidechildrens.org"
+        "title": "BootcampOS",
+        "company": "Tech Elevator",
+        "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
+        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with another team under the Stride company umbrella to add features to the application that were specific to Tech Elevators needs.",
+        "companyUrl": "https://www.techelevator.com"
       },
       {
         "title": "Shipping Label Automation",
@@ -56,18 +42,32 @@
         "companyUrl": "https://www.techelevator.com"
       },
       {
-        "title": "BootcampOS",
-        "company": "Tech Elevator",
-        "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
-        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with another team under the Stride company umbrella to add features to the application that were specific to Tech Elevators needs.",
-        "companyUrl": "https://www.techelevator.com"
-      },
-      {
         "title": "Women Wine & Web Design",
         "company": "Tech Elevator",
         "technologies": ["HTML", "CSS"],
         "description": "Instructed at Tech Elevator's Women Wine & Web Design event in Detroit, Michigan. The event invited local women to learn how to make a basic webpage using HTML and CSS. I lead the instruction of course material, teaching the participants the fundamentals of web development.",
         "companyUrl": "https://www.techelevator.com"
+      },
+      {
+        "title": "Nationwide Children's Hospital Website",
+        "company": "Nationwide Children's Hospital",
+        "technologies": [".NET", "C#", "Sitecore"],
+        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore CRM was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. My time was mainly focused on enhancing accessibility within specific pages and forms to create a better experience for all users.",
+        "companyUrl": "https://www.nationwidechildrens.org"
+      },
+      {
+        "title": "KSBA Portal",
+        "company": "KiZAN Technologies",
+        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
+        "description": "Contributed to the re-write of a large portal for the Kentucky School Board Association. The web application included roles with user management for board members (add, edit, or delete users based on roles), a section to keep school board meeting minutes (create and edit an agenda, keep notes, track votes, and screen share the meeting live), a separate smaller application to record job applications for open positions, and other existing internal data on the legacy application. All the existing data was migrated over and enhancements were made to clean up the data and tables.",
+        "companyUrl": "https://www.kizan.com"
+      },
+      {
+        "title": "Four Roses Bourbon Internal Application",
+        "company": "KiZAN Technologies",
+        "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
+        "description": "Contributed in creating an internal application for Four Roses to keep track of internal funding proposals. The web application allowed a user to compose a proposal and submit it to the proper internal department. Users on the receiving end would get an email when a proposal was submitted and have the capability of approving or rejecting the proposal or requesting more information. If more information was needed, the proposal would begin the process over again.",
+        "companyUrl": "https://www.kizan.com"
       }
     ]
   },
@@ -79,19 +79,25 @@
         "name": "LinkedIn",
         "value": "/laurenmmiles",
         "description": "Link to LinkedIn",
-        "url": "https://www.linkedin.com/in/laurenmmiles"
+        "url": "https://www.linkedin.com/in/laurenmmiles",
+        "imgSrc": "./img/desktop/linkedin-pixelated.png",
+        "imgDescription": "LinkedIn logo"
       },
       {
         "name": "GitHub",
         "value": "/laurenmilesdev",
         "description": "Link to GitHub",
-        "url": "https://github.com/laurenmilesdev"
+        "url": "https://github.com/laurenmilesdev",
+        "imgSrc": "./img/desktop/github-pixelated.png",
+        "imgDescription": "GitHub logo"
       },
       {
         "name": "Resume",
         "value": "Lauren_Miles_Resume.pdf",
         "description": "Download resume as PDF",
-        "url": "/files/Lauren_Miles_Resume.pdf"
+        "url": "/files/Lauren_Miles_Resume.pdf",
+        "imgSrc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAHlBMVEUAAACAgID//7QAAADAwMD///8AgIAAAIAAgAAAAP+MXRRYAAAAAXRSTlMAQObYZgAAAAFiS0dEBfhv6ccAAAAHdElNRQfiBhoANyCM1dKOAAAAkUlEQVQoz2NgYBCEAQYoEFKCAEUDdAFhdAFHAzSBEGE0gVCoErBAWpKSorGxMVwgzT0jCUg5wwTU3Do62lAEIirTmpEFUl0yy8qMkAVcJdJmIgukhUh0TkcWSJzZkY4ioDYzo7wcxZaZM6YVIwsolVcWG6EIKBmD+MgCEIBTYCYETBpoFYQERFzgACJgjAQYGADW/1JJ50I4UgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNi0yNlQwMDo1NTozMi0wNDowMA4ejnkAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDYtMjZUMDA6NTU6MzItMDQ6MDB/QzbFAAAAAElFTkSuQmCC",
+        "imgDescription": "Resume logo"
       }
     ]
   }

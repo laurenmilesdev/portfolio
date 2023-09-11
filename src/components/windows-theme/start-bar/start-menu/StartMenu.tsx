@@ -1,23 +1,25 @@
 import { Dispatch, SetStateAction, useEffect } from 'react';
-import PageModel from '../../../../models/component-helpers/page';
+import WindowModel from '../../../../models/component-helpers/window';
 
 import styles from './StartMenu.module.css';
 import StartMenuItem from '../start-menu-item/StartMenuItem';
 
 type Props = {
-  pages: PageModel[];
-  useWindowsTheme: boolean;
-  setUseWindowsTheme: Dispatch<SetStateAction<boolean>>;
+  startMenuDivId: string;
+  windows: WindowModel[];
+  useDarkTheme: boolean;
+  setTheme: Dispatch<SetStateAction<string>>;
 };
 
 export default function StartMenu({
-  pages,
-  useWindowsTheme,
-  setUseWindowsTheme,
+  startMenuDivId,
+  windows,
+  useDarkTheme,
+  setTheme,
 }: Props): JSX.Element {
   useEffect(() => {
     document.addEventListener('mouseup', (e) => {
-      const element = document.getElementById('start-menu');
+      const element = document.getElementById(startMenuDivId);
 
       if (element && !element?.contains(e.target as Node)) {
         element.style.display = 'none';
@@ -26,26 +28,27 @@ export default function StartMenu({
   });
 
   return (
-    <div className={`${styles['start-menu']} windows-box-shadow`} id="start-menu">
+    <div className={`${styles['start-menu']} windows-box-shadow`} id={startMenuDivId}>
       <div className={styles['start-menu-blue']}>
         Windows<span>98</span>
       </div>
 
       <ul>
-        {pages.map((page: PageModel, index: number) => (
+        {windows.map((window: WindowModel, index: number) => (
           <StartMenuItem
-            pages={pages}
-            useWindowsTheme={useWindowsTheme}
-            setUseWindowsTheme={setUseWindowsTheme}
-            page={page}
-            index={index}
+            startMenuDivId={startMenuDivId}
+            useDarkTheme={useDarkTheme}
+            setTheme={setTheme}
+            useLineStyle={index === windows.length - 1}
+            window={window}
+            key={index}
           />
         ))}
 
         <StartMenuItem
-          pages={pages}
-          useWindowsTheme={useWindowsTheme}
-          setUseWindowsTheme={setUseWindowsTheme}
+          startMenuDivId={startMenuDivId}
+          useDarkTheme={useDarkTheme}
+          setTheme={setTheme}
         />
       </ul>
     </div>

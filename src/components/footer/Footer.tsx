@@ -1,45 +1,43 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import WindowsStartBar from '../windows-theme/start-bar/StartBar';
 import WindowsThemeButton from '../windows-theme/windows-theme-button/WindowsThemeButton';
 import Contacts from '../contacts/Contacts';
 import ThemeSwitch from '../theme-switch/ThemeSwitch';
 import ContactModel from '../../models/contact/contact';
-import PageModel from '../../models/component-helpers/page';
+import WindowModel from '../../models/component-helpers/window';
 
 import styles from './Footer.module.css';
 
 type Props = {
-  pages: PageModel[];
+  windows: WindowModel[];
   contacts: ContactModel[];
+  useDarkTheme: boolean;
+  setUseDarkTheme: Dispatch<SetStateAction<boolean>>;
   useWindowsTheme: boolean;
-  setUseWindowsTheme: Dispatch<SetStateAction<boolean>>;
+  setTheme: Dispatch<SetStateAction<string>>;
 };
 
 export default function Footer({
-  pages,
+  windows,
   contacts,
+  useDarkTheme,
+  setUseDarkTheme,
   useWindowsTheme,
-  setUseWindowsTheme,
+  setTheme,
 }: Props): JSX.Element {
-  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
-
   return useWindowsTheme ? (
-    <WindowsStartBar
-      pages={pages}
-      useWindowsTheme={useWindowsTheme}
-      setUseWindowsTheme={setUseWindowsTheme}
-    />
+    <WindowsStartBar windows={windows} useDarkTheme={useDarkTheme} setTheme={setTheme} />
   ) : (
     <div className={`${styles.container} col-md-12`}>
-      {/* Hiding button until functionality is complete so new changes can be deployed */}
+      <WindowsThemeButton setTheme={setTheme} useDarkTheme={useDarkTheme} />
 
-      {/* <WindowsThemeButton
-        useWindowsTheme={useWindowsTheme}
-        setUseWindowsTheme={setUseWindowsTheme}
-        useDarkTheme={useDarkTheme}
-      /> */}
       <Contacts contacts={contacts} />
-      <ThemeSwitch useDarkTheme={useDarkTheme} setUseDarkTheme={setUseDarkTheme} />
+
+      <ThemeSwitch
+        useDarkTheme={useDarkTheme}
+        setUseDarkTheme={setUseDarkTheme}
+        setTheme={setTheme}
+      />
     </div>
   );
 }
