@@ -1,7 +1,7 @@
 .start-bar {
   background-color: var(--windows-gray);
   width: 100%;
-  height: 3.5em;
+  height: 7%;
   bottom: 0;
   position: fixed;
   z-index: 2;
@@ -21,7 +21,7 @@
   width: 2px;
   height: calc(100% - 1rem);
   position: absolute;
-  background: #f2f2f2;
+  background: var(--windows-white);
   box-shadow: 1px 1px 0 var(--windows-dark-gray);
   left: 9rem;
   top: 0.5rem;
