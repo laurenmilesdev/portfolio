@@ -1,5 +1,5 @@
 .window {
-  background: #b9b9b9;
+  background: var(--windows-gray);
   z-index: 2;
   overflow: hidden;
   position: absolute;
