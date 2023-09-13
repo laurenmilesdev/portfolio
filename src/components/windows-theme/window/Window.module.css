@@ -1,5 +1,5 @@
 .window {
-  background: #b9b9b9;
+  background: var(--windows-gray);
   z-index: 2;
   overflow: hidden;
   position: absolute;
@@ -15,4 +15,50 @@
   height: 86%;
   background-color: var(--background-color);
   overflow: scroll;
+}
+
+@media screen and (max-height: 900px) {
+  .window {
+    height: 88%;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .window {
+    height: 87%;
+  }
+
+  .content {
+    height: 84%;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .window {
+    height: 86%;
+  }
+
+  .content {
+    height: 81%;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .window {
+    height: 85%;
+  }
+
+  .content {
+    height: 78%;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .window {
+    height: 84%;
+  }
+
+  .content {
+    height: 73%;
+  }
 }

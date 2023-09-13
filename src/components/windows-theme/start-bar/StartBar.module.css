@@ -1,7 +1,7 @@
 .start-bar {
   background-color: var(--windows-gray);
   width: 100%;
-  height: 3.5em;
+  height: 6.25%;
   bottom: 0;
   position: fixed;
   z-index: 2;
@@ -14,6 +14,7 @@
 .items {
   display: flex;
   flex-direction: row;
+  margin-left: 0.5%;
 }
 
 .items:before {
@@ -21,8 +22,39 @@
   width: 2px;
   height: calc(100% - 1rem);
   position: absolute;
-  background: #f2f2f2;
+  background: var(--windows-white);
   box-shadow: 1px 1px 0 var(--windows-dark-gray);
-  left: 9rem;
-  top: 0.5rem;
+  left: 8.5%;
+}
+
+@media screen and (max-width: 1500px), screen and (max-height: 800px) {
+  .start-bar {
+    height: 3rem;
+  }
+
+  .items {
+    margin-left: 0.5%;
+  }
+
+  .items:before {
+    left: 7.5rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .items {
+    margin-left: 1%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .items {
+    margin-left: 2%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .items {
+    margin-left: 3%;
+  }
 }

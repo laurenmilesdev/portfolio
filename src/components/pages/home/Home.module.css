@@ -48,9 +48,33 @@
   left: 27%;
 }
 
-@media screen and (max-width: 900px) {
-  .subtitle {
-    font-size: 15vw;
+@media screen and (max-width: 1500px) {
+  .subtitle,
+  .windows-theme-subtitle {
+    font-size: 9vw;
+  }
+
+  .description {
+    font-size: 2vw;
+  }
+
+  .logo {
+    width: 55%;
+    left: 23%;
+    top: 13%;
+  }
+
+  .windows-theme-logo {
+    width: 55%;
+    left: 21%;
+    top: 29%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .subtitle,
+  .windows-theme-subtitle {
+    font-size: 11vw;
   }
 
   .description {
@@ -59,6 +83,30 @@
 
   .logo {
     width: 75%;
+    left: 13%;
+    top: 13%;
+  }
+
+  .windows-theme-logo {
+    width: 65%;
+    left: 17%;
+    top: 32%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .subtitle,
+  .windows-theme-subtitle {
+    font-size: 13vw;
+  }
+
+  .description {
+    font-size: 4vw;
+  }
+
+  .windows-theme-logo {
+    width: 75%;
     left: 12%;
+    top: 40%;
   }
 }
