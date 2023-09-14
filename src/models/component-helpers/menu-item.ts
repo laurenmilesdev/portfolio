@@ -6,15 +6,15 @@ export default class MenuItem {
   menuItemButtonId: string;
 
   // Optional external URL link
-  url?: string;
+  externalUrl?: string;
 
   // Optional window to open on click
   window?: Window;
 
-  constructor(title: string, menuItemButtonId: string, url?: string, window?: Window) {
+  constructor(title: string, menuItemButtonId: string, externalUrl?: string, window?: Window) {
     this.title = title;
     this.menuItemButtonId = menuItemButtonId;
-    this.url = url;
+    this.externalUrl = externalUrl;
     this.window = window;
   }
 }
