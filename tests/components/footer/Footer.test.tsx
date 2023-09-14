@@ -1,7 +1,7 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import Footer from '../../../src/components/footer/Footer';
-import { contacts, windows } from '../../mocks/data-mock';
+import { contacts, menuItems } from '../../mocks/data-mock';
 import { useStateMock, setBoolStateMock, setStringStateMock } from '../../mocks/use-state-mock';
 
 jest.mock('react', () => ({
@@ -31,7 +31,7 @@ describe('Footer component', () => {
 
       ({ getByTestId } = render(
         <Footer
-          windows={windows}
+          menuItems={menuItems}
           contacts={contacts}
           useDarkTheme={useDarkTheme}
           setUseDarkTheme={setUseDarkTheme}
@@ -70,7 +70,7 @@ describe('Footer component', () => {
 
       ({ getByTestId } = render(
         <Footer
-          windows={windows}
+          menuItems={menuItems}
           contacts={contacts}
           useDarkTheme={useDarkTheme}
           setUseDarkTheme={setUseDarkTheme}
