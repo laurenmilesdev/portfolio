@@ -100,5 +100,25 @@
         "imgDescription": "Resume logo"
       }
     ]
-  }
+  },
+  "menuItems": [
+    {
+      "title": "Lauren Miles Portfolio",
+      "menuItemButtonId": "portfolio-menu-item-btn",
+      "externalUrl": null,
+      "windowId": "portfolio-window",
+      "startBarButtonId": "portfolio-start-bar-btn",
+      "isInternetExplorerWindow": true,
+      "addressBarUrl": "https://portfolio.laurenmilesdev.com/"
+    },
+    {
+      "title": "Help",
+      "menuItemButtonId": "help-menu-item-btn",
+      "externalUrl": null,
+      "windowId": "help-window",
+      "startBarButtonId": "help-start-bar-btn",
+      "isInternetExplorerWindow": false,
+      "addressBarUrl": ""
+    }
+  ]
 }
