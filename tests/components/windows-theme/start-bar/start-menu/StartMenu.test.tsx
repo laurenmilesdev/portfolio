@@ -7,7 +7,7 @@ import {
   shutdownLabelText,
   shutdownMenuItemLabelId,
 } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
-import { windows } from '../../../../mocks/data-mock';
+import { menuItems } from '../../../../mocks/data-mock';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
@@ -31,7 +31,7 @@ describe('StartMenu component', () => {
     render(
       <StartMenu
         startMenuDivId={startMenuDivId}
-        windows={windows}
+        menuItems={menuItems}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
       />
@@ -45,14 +45,15 @@ describe('StartMenu component', () => {
   });
 
   it('renders correct menu items', () => {
-    const window = windows[1];
-    const element = document.getElementById(window.menuItemButtonId ?? '') as HTMLLabelElement;
-    const shutdownElement = document.getElementById(shutdownMenuItemLabelId) as HTMLLabelElement;
+    menuItems.forEach((menuItem) => {
+      const element = document.getElementById(menuItem.menuItemButtonId) as HTMLLabelElement;
+      const shutdownElement = document.getElementById(shutdownMenuItemLabelId) as HTMLLabelElement;
 
-    expect(element).toBeInTheDocument();
-    expect(element).toHaveTextContent(window.title);
+      expect(element).toBeInTheDocument();
+      expect(element).toHaveTextContent(menuItem.title);
 
-    expect(shutdownElement).toBeInTheDocument();
-    expect(shutdownElement).toHaveTextContent(shutdownLabelText);
+      expect(shutdownElement).toBeInTheDocument();
+      expect(shutdownElement).toHaveTextContent(shutdownLabelText);
+    });
   });
 });

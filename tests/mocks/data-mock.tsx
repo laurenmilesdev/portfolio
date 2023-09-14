@@ -1,5 +1,6 @@
 import ContactModel from '../../src/models/contact/contact';
 import PageModel from '../../src/models/component-helpers/page';
+import MenuItemModel from '../../src/models/component-helpers/menu-item';
 import WindowModel from '../../src/models/component-helpers/window';
 import DesktopItemModel from '../../src/models/component-helpers/desktop-item';
 
@@ -12,16 +13,68 @@ export const contacts = [
 
 export const pages = [new PageModel('Page', <>Page</>), new PageModel('Page 2', <>Page</>)];
 
-export const windows = [
-  new WindowModel('Page', <>Page</>, 'window-id', 'start-bar-button-id', 'menu-item-button-id'),
-  new WindowModel(
-    'Page 2',
-    <>Page</>,
-    'window-id-2',
-    'start-bar-button-id-2',
-    'menu-item-button-id-2'
-  ),
+const menuItemsRawData = [
+  {
+    title: 'Test 1',
+    menuItemButtonId: 'test1-menu-item-btn',
+    externalUrl: null,
+    window: {
+      windowId: 'test1-window',
+      startBarButtonId: 'test1-start-bar-btn',
+      isInternetExplorerWindow: true,
+      addressBarUrl: 'https://test1.com/',
+    },
+  },
+  {
+    title: 'Test 2',
+    menuItemButtonId: 'test2-menu-item-btn',
+    externalUrl: null,
+    window: {
+      windowId: 'test2-window',
+      startBarButtonId: 'test2-start-bar-btn',
+      isInternetExplorerWindow: true,
+      addressBarUrl: 'https://test2.com/',
+    },
+  },
+  {
+    title: 'Test 3',
+    menuItemButtonId: 'test3-menu-item-btn',
+    externalUrl: 'https://test3.com/',
+    window: null,
+  },
 ];
+
+export const menuItems = menuItemsRawData.map(
+  (menuItem) =>
+    new MenuItemModel(
+      menuItem.title,
+      menuItem.menuItemButtonId,
+      menuItem.externalUrl ?? '',
+      menuItem.window
+        ? new WindowModel(
+            menuItem.title,
+            <>This is page content</>,
+            menuItem.window.windowId,
+            menuItem.window.startBarButtonId,
+            menuItem.window.isInternetExplorerWindow,
+            menuItem.window.addressBarUrl ?? ''
+          )
+        : undefined
+    )
+);
+
+export const windows = menuItems.map((menuItem) => {
+  if (menuItem.window) {
+    return new WindowModel(
+      menuItem.title,
+      menuItem.window.component,
+      menuItem.window.windowId,
+      menuItem.window.startBarButtonId,
+      menuItem.window.isInternetExplorerWindow,
+      menuItem.window.addressBarUrl
+    );
+  }
+});
 
 export const desktopItems = [
   new DesktopItemModel('label', <></>, 'url.com'),

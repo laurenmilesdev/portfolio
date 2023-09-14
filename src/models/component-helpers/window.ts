@@ -5,7 +5,7 @@ export default class Window extends Page {
 
   startBarButtonId: string;
 
-  menuItemButtonId: string;
+  isInternetExplorerWindow: boolean;
 
   addressBarUrl?: string;
 
@@ -14,13 +14,13 @@ export default class Window extends Page {
     component: JSX.Element,
     windowId: string,
     startBarButtonId: string,
-    menuItemButtonId: string,
+    isInternetExplorerWindow: boolean,
     addressBarUrl?: string
   ) {
     super(title, component);
     this.windowId = windowId;
     this.startBarButtonId = startBarButtonId;
-    this.menuItemButtonId = menuItemButtonId;
+    this.isInternetExplorerWindow = isInternetExplorerWindow;
     this.addressBarUrl = addressBarUrl;
   }
 }
