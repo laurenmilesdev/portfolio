@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
-import WindowModel from '../../../../models/component-helpers/window';
+import MenuItemModel from '../../../../models/component-helpers/menu-item';
 import ThemeConstants from '../../../../constants/theme';
 import { openCloseMenu, openCloseWindow, updateWindowThemeBgColor } from '../../../../utils/window';
 
@@ -12,7 +12,7 @@ type Props = {
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
   useLineStyle?: boolean;
-  window?: WindowModel;
+  menuItem?: MenuItemModel;
 };
 
 export const shutdownMenuItemLabelId = 'shutdown-menu-item';
@@ -23,7 +23,7 @@ export default function StartMenuItem({
   useDarkTheme,
   setTheme,
   useLineStyle = false,
-  window = undefined,
+  menuItem = undefined,
 }: Props): JSX.Element {
   const internetExplorerImage = (
     <Image src={img} alt="Internet Explorer icon" className={styles['ie-icon']} />
@@ -41,11 +41,15 @@ export default function StartMenuItem({
   return (
     <li className={useLineStyle ? styles.line : ''}>
       <label
-        className={window ? styles['menu-item'] : styles['menu-item-shutdown']}
-        id={window ? window.menuItemButtonId : shutdownMenuItemLabelId}
+        className={menuItem ? styles['menu-item'] : styles['menu-item-shutdown']}
+        id={menuItem ? menuItem.menuItemButtonId : shutdownMenuItemLabelId}
         onClick={() => {
-          if (window) {
-            openCloseWindow(window.windowId, window.startBarButtonId, startMenuDivId);
+          if (menuItem && menuItem.window) {
+            openCloseWindow(
+              menuItem.window.windowId,
+              menuItem.window.startBarButtonId,
+              startMenuDivId
+            );
           } else {
             const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
 
@@ -55,8 +59,8 @@ export default function StartMenuItem({
           }
         }}
       >
-        {window ? internetExplorerImage : shutdownImage}
-        {window ? window.title : shutdownLabelText}
+        {menuItem ? internetExplorerImage : shutdownImage}
+        {menuItem ? menuItem.title : shutdownLabelText}
       </label>
     </li>
   );
