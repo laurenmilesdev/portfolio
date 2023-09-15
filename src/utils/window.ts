@@ -20,8 +20,16 @@ export function openCloseWindow(windowId: string, startBarButtonId: string) {
   const startBarButton = document.getElementById(startBarButtonId);
 
   if (window && startBarButton) {
-    showHideElement(window);
-    showHideElement(startBarButton);
+    const buttonVisible = checkVisibility(startBarButton);
+    const windowVisible = checkVisibility(window);
+
+    if (buttonVisible && !windowVisible) {
+      showHideElement(window);
+      removeWindowsBoxShadowClass(startBarButton);
+    } else {
+      showHideElement(startBarButton);
+      showHideElement(window);
+    }
   }
 }
 
@@ -32,22 +40,22 @@ export function minimizeMaximizeWindow(windowId: string, startBarButtonId: strin
   if (window && startBarButton) {
     const windowVisible = showHideElement(window);
 
-    if (windowVisible) removeWindowsBoxShadowClass(startBarButton);
-    else removeInverseWindowsBoxShadowClass(startBarButton);
+    if (windowVisible) removeInverseWindowsBoxShadowClass(startBarButton);
+    else removeWindowsBoxShadowClass(startBarButton);
   }
 }
 
 function checkVisibility(element: HTMLElement) {
   const { display } = element.style;
 
-  return !(display && display === 'block');
+  return display === 'block';
 }
 
 function showHideElement(element: HTMLElement) {
   const visible = checkVisibility(element);
 
-  if (visible) element.style.display = 'block';
-  else element.style.display = 'none';
+  if (visible) element.style.display = 'none';
+  else element.style.display = 'block';
 
   return visible;
 }
