@@ -9,6 +9,8 @@ import styles from './StartMenuItem.module.css';
 
 type Props = {
   startMenuDivId: string;
+  showStartMenu: boolean;
+  setShowStartMenu: Dispatch<SetStateAction<boolean>>;
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
   useLineStyle?: boolean;
@@ -20,6 +22,8 @@ export const shutdownLabelText = 'Shutdown';
 
 export default function StartMenuItem({
   startMenuDivId,
+  showStartMenu,
+  setShowStartMenu,
   useDarkTheme,
   setTheme,
   useLineStyle = false,
@@ -38,25 +42,30 @@ export default function StartMenuItem({
     />
   );
 
+  function handleWindowOpen(windowId: string, startBarButtonId: string) {
+    openCloseWindow(windowId, startBarButtonId);
+    openCloseMenu(startMenuDivId, showStartMenu);
+    setShowStartMenu(!showStartMenu);
+  }
+
+  function handleShutdown() {
+    const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
+
+    setTheme(theme);
+    updateWindowThemeBgColor(theme);
+    openCloseMenu(startMenuDivId, showStartMenu);
+    setShowStartMenu(!showStartMenu);
+  }
+
   return (
     <li className={useLineStyle ? styles.line : ''}>
       <label
         className={menuItem ? styles['menu-item'] : styles['menu-item-shutdown']}
         id={menuItem ? menuItem.menuItemButtonId : shutdownMenuItemLabelId}
         onClick={() => {
-          if (menuItem && menuItem.window) {
-            openCloseWindow(
-              menuItem.window.windowId,
-              menuItem.window.startBarButtonId,
-              startMenuDivId
-            );
-          } else {
-            const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
-
-            setTheme(theme);
-            updateWindowThemeBgColor(theme);
-            openCloseMenu(startMenuDivId);
-          }
+          if (menuItem && menuItem.window)
+            handleWindowOpen(menuItem.window.windowId, menuItem.window.startBarButtonId);
+          else handleShutdown();
         }}
       >
         {menuItem ? internetExplorerImage : shutdownImage}

@@ -6,6 +6,8 @@ import StartMenuItem from '../start-menu-item/StartMenuItem';
 
 type Props = {
   startMenuDivId: string;
+  showStartMenu: boolean;
+  setShowStartMenu: Dispatch<SetStateAction<boolean>>;
   menuItems: MenuItemModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
@@ -13,6 +15,8 @@ type Props = {
 
 export default function StartMenu({
   startMenuDivId,
+  showStartMenu,
+  setShowStartMenu,
   menuItems,
   useDarkTheme,
   setTheme,
@@ -37,6 +41,8 @@ export default function StartMenu({
         {menuItems.map((menuItem: MenuItemModel, index: number) => (
           <StartMenuItem
             startMenuDivId={startMenuDivId}
+            showStartMenu={showStartMenu}
+            setShowStartMenu={setShowStartMenu}
             useDarkTheme={useDarkTheme}
             setTheme={setTheme}
             useLineStyle={index === menuItems.length - 1}
@@ -47,6 +53,8 @@ export default function StartMenu({
 
         <StartMenuItem
           startMenuDivId={startMenuDivId}
+          showStartMenu={showStartMenu}
+          setShowStartMenu={setShowStartMenu}
           useDarkTheme={useDarkTheme}
           setTheme={setTheme}
         />
