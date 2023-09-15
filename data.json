@@ -111,8 +111,8 @@
         "startBarButtonId": "portfolio-start-bar-btn",
         "isInternetExplorerWindow": true,
         "addressBarUrl": "https://portfolio.laurenmilesdev.com/",
-        "heightPercentage": "89",
-        "widthPercentage": "90"
+        "heightPercentage": 89,
+        "widthPercentage": 90
       }
     },
     {
@@ -124,8 +124,8 @@
         "startBarButtonId": "help-start-bar-btn",
         "isInternetExplorerWindow": false,
         "addressBarUrl": null,
-        "heightPercentage": "50",
-        "widthPercentage": "50"
+        "heightPercentage": 50,
+        "widthPercentage": 50
       }
     }
   ]
