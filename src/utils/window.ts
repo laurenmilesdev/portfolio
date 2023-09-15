@@ -32,15 +32,21 @@ export function minimizeMaximizeWindow(windowId: string, startBarButtonId: strin
   if (window && startBarButton) {
     const windowVisible = showHideElement(window);
 
-    if (windowVisible) removeInverseWindowsBoxShadowClass(startBarButton);
-    else removeWindowsBoxShadowClass(startBarButton);
+    if (windowVisible) removeWindowsBoxShadowClass(startBarButton);
+    else removeInverseWindowsBoxShadowClass(startBarButton);
   }
 }
 
-function showHideElement(element: HTMLElement) {
-  const visible = element.checkVisibility();
+function checkVisibility(element: HTMLElement) {
+  const { display } = element.style;
 
-  if (!visible) element.style.display = 'block';
+  return !(display && display === 'block');
+}
+
+function showHideElement(element: HTMLElement) {
+  const visible = checkVisibility(element);
+
+  if (visible) element.style.display = 'block';
   else element.style.display = 'none';
 
   return visible;
