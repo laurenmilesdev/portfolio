@@ -1,12 +1,32 @@
+import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import StartButton, {
   buttonId,
 } from '../../../../../src/components/windows-theme/start-bar/start-button/StartButton';
 import { startMenuDivId } from '../../../../../src/components/windows-theme/start-bar/StartBar';
+import { useStateMock, setBoolStateMock } from '../../../../mocks/use-state-mock';
+
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useState: jest.fn(),
+}));
 
 describe('StartButton component', () => {
+  const showStartMenu = true;
+  const setShowStartMenu = setBoolStateMock;
+
   beforeEach(() => {
-    render(<StartButton startMenuDivId={startMenuDivId} />);
+    jest
+      .spyOn(React, 'useState')
+      .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+
+    render(
+      <StartButton
+        startMenuDivId={startMenuDivId}
+        showStartMenu={showStartMenu}
+        setShowStartMenu={setShowStartMenu}
+      />
+    );
   });
 
   it('renders button', () => {

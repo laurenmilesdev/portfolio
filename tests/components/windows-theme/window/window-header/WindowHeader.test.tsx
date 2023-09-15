@@ -9,25 +9,27 @@ import { windows } from '../../../../mocks/data-mock';
 describe('WindowHeader component', () => {
   const window = windows[0];
 
-  beforeEach(() => {
-    render(<WindowHeader window={window} />);
-  });
+  if (window) {
+    beforeEach(() => {
+      render(<WindowHeader window={window} />);
+    });
 
-  it('renders "Address" label', () => {
-    const element = document.getElementById(headerLabelId) as HTMLLabelElement;
+    it('renders "Address" label', () => {
+      const element = document.getElementById(headerLabelId) as HTMLLabelElement;
 
-    expect(element).toHaveTextContent(window.title);
-  });
+      expect(element).toHaveTextContent(window.title);
+    });
 
-  it('renders minimize button', () => {
-    const element = document.getElementById(minimizeButtonId) as HTMLLabelElement;
+    it('renders minimize button', () => {
+      const element = document.getElementById(minimizeButtonId) as HTMLLabelElement;
 
-    expect(element).toBeInTheDocument();
-  });
+      expect(element).toBeInTheDocument();
+    });
 
-  it('renders close button', () => {
-    const element = document.getElementById(closeButtonId) as HTMLLabelElement;
+    it('renders close button', () => {
+      const element = document.getElementById(closeButtonId) as HTMLLabelElement;
 
-    expect(element).toBeInTheDocument();
-  });
+      expect(element).toBeInTheDocument();
+    });
+  }
 });

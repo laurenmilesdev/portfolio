@@ -1,6 +1,10 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
-import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
+import {
+  useStateMock,
+  setBoolStateMock,
+  setStringStateMock,
+} from '../../../../mocks/use-state-mock';
 import StartMenuItem, {
   shutdownLabelText,
   shutdownMenuItemLabelId,
@@ -20,6 +24,8 @@ jest.mock('next/image', () => ({
 }));
 
 describe('StartMenuItem component', () => {
+  const showStartMenu = true;
+  const setShowStartMenu = setBoolStateMock;
   const useDarkTheme = true;
   const setTheme = setStringStateMock;
 
@@ -30,9 +36,12 @@ describe('StartMenuItem component', () => {
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+
     render(
       <StartMenuItem
         startMenuDivId={startMenuDivId}
+        showStartMenu={showStartMenu}
+        setShowStartMenu={setShowStartMenu}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
         useLineStyle={true}
@@ -50,9 +59,12 @@ describe('StartMenuItem component', () => {
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+
     render(
       <StartMenuItem
         startMenuDivId={startMenuDivId}
+        showStartMenu={showStartMenu}
+        setShowStartMenu={setShowStartMenu}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
       />
