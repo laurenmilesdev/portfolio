@@ -3,62 +3,16 @@
   z-index: 2;
   overflow: hidden;
   position: absolute;
-  width: 90%;
   margin-top: 0;
-  height: 89%;
   top: 2%;
   left: 5%;
   display: none;
 }
 
 .content {
-  height: 86%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: var(--background-color);
-  overflow: scroll;
-}
-
-@media screen and (max-height: 900px) {
-  .window {
-    height: 88%;
-  }
-}
-
-@media screen and (max-height: 800px) {
-  .window {
-    height: 87%;
-  }
-
-  .content {
-    height: 84%;
-  }
-}
-
-@media screen and (max-height: 700px) {
-  .window {
-    height: 86%;
-  }
-
-  .content {
-    height: 81%;
-  }
-}
-
-@media screen and (max-height: 600px) {
-  .window {
-    height: 85%;
-  }
-
-  .content {
-    height: 78%;
-  }
-}
-
-@media screen and (max-height: 500px) {
-  .window {
-    height: 84%;
-  }
-
-  .content {
-    height: 73%;
-  }
+  overflow-y: scroll;
 }

@@ -1,4 +1,4 @@
-import styles from './WindowAddressBar.module.css';
+import styles from './AddressBar.module.css';
 
 export const label = 'Address';
 export const divId = 'window-address-bar-label';
@@ -8,7 +8,7 @@ type Props = {
   addressBarUrl?: string;
 };
 
-export default function WindowAddressBar({ addressBarUrl }: Props): JSX.Element {
+export default function AddressBar({ addressBarUrl }: Props): JSX.Element {
   return (
     <div className={`${styles.options} ${styles.padding}`}>
       <div className={styles.item} id={divId}>

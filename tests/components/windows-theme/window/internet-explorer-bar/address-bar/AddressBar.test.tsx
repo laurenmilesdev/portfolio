@@ -1,15 +1,15 @@
 import { render } from '@testing-library/react';
-import WindowAddressBar, {
+import AddressBar, {
   label,
   divId,
   inputId,
-} from '../../../../../src/components/windows-theme/window/window-address-bar/WindowAddressBar';
+} from '../../../../../../src/components/windows-theme/window/internet-explorer-bar/address-bar/AddressBar';
 
-describe('WindowAddressBar component', () => {
+describe('AddressBar component', () => {
   const addressBarUrl = 'http://url.com';
 
   beforeEach(() => {
-    render(<WindowAddressBar addressBarUrl={addressBarUrl} />);
+    render(<AddressBar addressBarUrl={addressBarUrl} />);
   });
 
   it('renders "Address" label', () => {

@@ -1,8 +1,9 @@
 import { render } from '@testing-library/react';
-import WindowOptions, {
+import Options, {
   imageAltText,
-  windowOptionsImageId,
-} from '../../../../../src/components/windows-theme/window/window-options/WindowOptions';
+  imageId,
+} from '../../../../../../src/components/windows-theme/window/internet-explorer-bar/options/Options';
+import { options } from '../../../../../../src/components/windows-theme/window/internet-explorer-bar/InternetExplorerBar';
 
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -10,11 +11,9 @@ jest.mock('next/image', () => ({
   default: (props: any) => <img {...props} />,
 }));
 
-describe('WindowOptions component', () => {
-  const options = ['Option 1', 'Option 2', 'Option 3'];
-
+describe('Options component', () => {
   beforeEach(() => {
-    render(<WindowOptions options={options} />);
+    render(<Options options={options} />);
   });
 
   it('renders options', () => {
@@ -26,7 +25,7 @@ describe('WindowOptions component', () => {
   });
 
   it('renders photo with alt text', () => {
-    const element = document.getElementById(windowOptionsImageId) as HTMLImageElement;
+    const element = document.getElementById(imageId) as HTMLImageElement;
 
     expect(element.alt).toEqual(imageAltText);
   });

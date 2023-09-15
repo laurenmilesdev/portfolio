@@ -23,6 +23,8 @@ const menuItemsRawData = [
       startBarButtonId: 'test1-start-bar-btn',
       isInternetExplorerWindow: true,
       addressBarUrl: 'https://test1.com/',
+      heightPercentage: 50,
+      widthPercentage: 50,
     },
   },
   {
@@ -34,6 +36,8 @@ const menuItemsRawData = [
       startBarButtonId: 'test2-start-bar-btn',
       isInternetExplorerWindow: true,
       addressBarUrl: 'https://test2.com/',
+      heightPercentage: 50,
+      widthPercentage: 50,
     },
   },
   {
@@ -57,6 +61,8 @@ export const menuItems = menuItemsRawData.map(
             menuItem.window.windowId,
             menuItem.window.startBarButtonId,
             menuItem.window.isInternetExplorerWindow,
+            menuItem.window.heightPercentage,
+            menuItem.window.widthPercentage,
             menuItem.window.addressBarUrl ?? ''
           )
         : undefined
@@ -71,6 +77,8 @@ export const windows = menuItems.map((menuItem) => {
       menuItem.window.windowId,
       menuItem.window.startBarButtonId,
       menuItem.window.isInternetExplorerWindow,
+      menuItem.window.heightPercentage,
+      menuItem.window.widthPercentage,
       menuItem.window.addressBarUrl
     );
   }
