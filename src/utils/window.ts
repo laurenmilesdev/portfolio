@@ -1,14 +1,12 @@
 /* eslint-disable no-param-reassign */
 import ThemeConstants from '../constants/theme';
 
-export function openCloseMenu(id: string) {
+export function openCloseMenu(id: string, showMenu: boolean) {
   const startMenu = document.getElementById(id);
 
   if (startMenu) {
-    const visible = startMenu.checkVisibility();
-
-    if (visible) startMenu.style.display = 'none';
-    else startMenu.style.display = 'block';
+    if (!showMenu) startMenu.style.display = 'block';
+    else startMenu.style.display = 'none';
   }
 }
 
@@ -17,7 +15,7 @@ export function updateWindowThemeBgColor(theme: string) {
   else document.body.style.background = '';
 }
 
-export function openCloseWindow(windowId: string, startBarButtonId: string, startMenuId?: string) {
+export function openCloseWindow(windowId: string, startBarButtonId: string) {
   const window = document.getElementById(windowId);
   const startBarButton = document.getElementById(startBarButtonId);
 
@@ -25,8 +23,6 @@ export function openCloseWindow(windowId: string, startBarButtonId: string, star
     showHideElement(window);
     showHideElement(startBarButton);
   }
-
-  if (startMenuId) openCloseMenu(startMenuId);
 }
 
 export function minimizeMaximizeWindow(windowId: string, startBarButtonId: string) {

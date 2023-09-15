@@ -4,12 +4,12 @@ import WindowsThemeButton from '../windows-theme/windows-theme-button/WindowsThe
 import Contacts from '../contacts/Contacts';
 import ThemeSwitch from '../theme-switch/ThemeSwitch';
 import ContactModel from '../../models/contact/contact';
-import WindowModel from '../../models/component-helpers/window';
+import MenuItemModel from '../../models/component-helpers/menu-item';
 
 import styles from './Footer.module.css';
 
 type Props = {
-  windows: WindowModel[];
+  menuItems: MenuItemModel[];
   contacts: ContactModel[];
   useDarkTheme: boolean;
   setUseDarkTheme: Dispatch<SetStateAction<boolean>>;
@@ -18,7 +18,7 @@ type Props = {
 };
 
 export default function Footer({
-  windows,
+  menuItems,
   contacts,
   useDarkTheme,
   setUseDarkTheme,
@@ -26,7 +26,7 @@ export default function Footer({
   setTheme,
 }: Props): JSX.Element {
   return useWindowsTheme ? (
-    <WindowsStartBar windows={windows} useDarkTheme={useDarkTheme} setTheme={setTheme} />
+    <WindowsStartBar menuItems={menuItems} useDarkTheme={useDarkTheme} setTheme={setTheme} />
   ) : (
     <div className={`${styles.container} col-md-12`}>
       <WindowsThemeButton setTheme={setTheme} useDarkTheme={useDarkTheme} />

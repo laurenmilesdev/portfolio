@@ -1,12 +1,16 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
-import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
+import {
+  useStateMock,
+  setBoolStateMock,
+  setStringStateMock,
+} from '../../../../mocks/use-state-mock';
 import StartMenuItem, {
   shutdownLabelText,
   shutdownMenuItemLabelId,
 } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
 import { startMenuDivId } from '../../../../../src/components/windows-theme/start-bar/StartBar';
-import { windows } from '../../../../mocks/data-mock';
+import { menuItems } from '../../../../mocks/data-mock';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
@@ -20,39 +24,47 @@ jest.mock('next/image', () => ({
 }));
 
 describe('StartMenuItem component', () => {
+  const showStartMenu = true;
+  const setShowStartMenu = setBoolStateMock;
   const useDarkTheme = true;
   const setTheme = setStringStateMock;
 
   it('renders menu item', () => {
     const index = 1;
-    const window = windows[index];
+    const menuItem = menuItems[index];
 
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+
     render(
       <StartMenuItem
         startMenuDivId={startMenuDivId}
+        showStartMenu={showStartMenu}
+        setShowStartMenu={setShowStartMenu}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
         useLineStyle={true}
-        window={window}
+        menuItem={menuItem}
       />
     );
 
-    const element = document.getElementById(window.menuItemButtonId ?? '') as HTMLLabelElement;
+    const element = document.getElementById(menuItem.menuItemButtonId) as HTMLLabelElement;
 
     expect(element).toBeInTheDocument();
-    expect(element).toHaveTextContent(window.title);
+    expect(element).toHaveTextContent(menuItem.title);
   });
 
   it('renders shutdown menu item if page and index are undefined', () => {
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+
     render(
       <StartMenuItem
         startMenuDivId={startMenuDivId}
+        showStartMenu={showStartMenu}
+        setShowStartMenu={setShowStartMenu}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
       />

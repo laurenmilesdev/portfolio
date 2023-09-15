@@ -1,19 +1,23 @@
 import { Dispatch, SetStateAction, useEffect } from 'react';
-import WindowModel from '../../../../models/component-helpers/window';
+import MenuItemModel from '../../../../models/component-helpers/menu-item';
 
 import styles from './StartMenu.module.css';
 import StartMenuItem from '../start-menu-item/StartMenuItem';
 
 type Props = {
   startMenuDivId: string;
-  windows: WindowModel[];
+  showStartMenu: boolean;
+  setShowStartMenu: Dispatch<SetStateAction<boolean>>;
+  menuItems: MenuItemModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
 };
 
 export default function StartMenu({
   startMenuDivId,
-  windows,
+  showStartMenu,
+  setShowStartMenu,
+  menuItems,
   useDarkTheme,
   setTheme,
 }: Props): JSX.Element {
@@ -34,19 +38,23 @@ export default function StartMenu({
       </div>
 
       <ul>
-        {windows.map((window: WindowModel, index: number) => (
+        {menuItems.map((menuItem: MenuItemModel, index: number) => (
           <StartMenuItem
             startMenuDivId={startMenuDivId}
+            showStartMenu={showStartMenu}
+            setShowStartMenu={setShowStartMenu}
             useDarkTheme={useDarkTheme}
             setTheme={setTheme}
-            useLineStyle={index === windows.length - 1}
-            window={window}
+            useLineStyle={index === menuItems.length - 1}
+            menuItem={menuItem}
             key={index}
           />
         ))}
 
         <StartMenuItem
           startMenuDivId={startMenuDivId}
+          showStartMenu={showStartMenu}
+          setShowStartMenu={setShowStartMenu}
           useDarkTheme={useDarkTheme}
           setTheme={setTheme}
         />
