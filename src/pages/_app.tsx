@@ -89,6 +89,8 @@ export default function App({ Component, pageProps }: AppProps) {
         menuItem.window.windowId as string,
         menuItem.window.startBarButtonId as string,
         menuItem.window.isInternetExplorerWindow as boolean,
+        menuItem.window.widthPercentage as number,
+        menuItem.window.heightPercentage as number,
         (menuItem.window.addressBarUrl as string) ?? ''
       );
 
@@ -116,7 +118,12 @@ export default function App({ Component, pageProps }: AppProps) {
         menuItems.map((menuItem: MenuItemModel, index: number) => {
           if (menuItem.window)
             return (
-              <Window window={menuItem.window} key={index}>
+              <Window
+                window={menuItem.window}
+                heightPercentage={menuItem.window.heightPercentage}
+                widthPercentage={menuItem.window.widthPercentage}
+                key={index}
+              >
                 {menuItem.window.component}
               </Window>
             );
