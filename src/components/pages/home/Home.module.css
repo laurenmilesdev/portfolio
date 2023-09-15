@@ -38,14 +38,14 @@
 
 .logo {
   width: 55%;
-  top: 10%;
   left: 22%;
+  top: 10%;
 }
 
 .windows-theme-logo {
   width: 45%;
-  top: 27%;
   left: 27%;
+  top: 15%;
 }
 
 @media screen and (max-width: 1500px) {
@@ -61,13 +61,11 @@
   .logo {
     width: 55%;
     left: 23%;
-    top: 13%;
   }
 
   .windows-theme-logo {
-    width: 55%;
-    left: 21%;
-    top: 29%;
+    width: 50%;
+    left: 24%;
   }
 }
 
@@ -84,13 +82,11 @@
   .logo {
     width: 75%;
     left: 13%;
-    top: 13%;
   }
 
   .windows-theme-logo {
     width: 65%;
     left: 17%;
-    top: 32%;
   }
 }
 
@@ -107,6 +103,5 @@
   .windows-theme-logo {
     width: 75%;
     left: 12%;
-    top: 40%;
   }
 }
