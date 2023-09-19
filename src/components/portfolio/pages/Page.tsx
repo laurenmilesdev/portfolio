@@ -2,7 +2,10 @@ import Fade from '@mui/material/Fade';
 import PageModel from '../../../models/component-helpers/page';
 import styles from './Page.module.css';
 
-type Props = { pageValue: number; page: PageModel };
+type Props = {
+  pageValue: number;
+  page: PageModel;
+};
 
 export const titleDivId = 'title';
 export const contentDivId = 'content';
