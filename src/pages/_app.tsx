@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css';
 
 import Data from '../../data.json';
-import TabPanel from '../components/portfolio/tab-panel/TabPanel';
 import Home from '../components/portfolio/pages/home/Home';
 import About from '../components/portfolio/pages/about/About';
 import Projects from '../components/portfolio/pages/projects/Projects';
@@ -65,11 +64,7 @@ export default function App({ Component, pageProps }: AppProps) {
       setTheme={setTheme}
       useWindowsTheme={useWindowsTheme}
     >
-      {pages.map(({ component }, index: number) => (
-        <TabPanel value={pageValue} index={index} key={index}>
-          <Component {...pageProps} component={component} />
-        </TabPanel>
-      ))}
+      <Component {...pageProps} pages={pages} pageValue={pageValue} />
     </Layout>
   );
   const windowsThemeLayout = (
