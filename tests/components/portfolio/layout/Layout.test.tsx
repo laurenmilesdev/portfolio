@@ -1,5 +1,7 @@
 import { render } from '@testing-library/react';
-import Layout from '../../../../src/components/portfolio/layout/Layout';
+import Layout, { childrenContainerId } from '../../../../src/components/portfolio/layout/Layout';
+import { windowsThemeButtonId } from '../../../../src/components/portfolio/footer/windows-theme-button/WindowsThemeButton';
+import { switchId } from '../../../../src/components/portfolio/footer/theme-switch/ThemeSwitch';
 import { contacts } from '../../../mocks/data-mock';
 import { setBoolStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
 
@@ -13,7 +15,7 @@ describe('Layout component', () => {
   const setTheme = setStringStateMock;
   const useWindowsTheme = false;
   const componentText = 'This is the component';
-  const children = <div id="children">{componentText}</div>;
+  const children = <div>{componentText}</div>;
 
   beforeEach(() => {
     ({ getByTestId } = render(
@@ -42,9 +44,9 @@ describe('Layout component', () => {
     });
   });
 
-  describe('children', () => {
+  describe('children container', () => {
     it('renders children', () => {
-      const element = document.getElementById('children') as HTMLDivElement;
+      const element = document.getElementById(childrenContainerId) as HTMLDivElement;
 
       expect(element).toHaveTextContent(componentText);
     });
@@ -52,7 +54,7 @@ describe('Layout component', () => {
 
   describe('Footer', () => {
     it('renders Windows Theme button', () => {
-      const element = document.getElementById('windows-theme-btn') as HTMLButtonElement;
+      const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
 
       expect(element).toBeInTheDocument();
     });
@@ -64,7 +66,7 @@ describe('Layout component', () => {
     });
 
     it('renders ThemeSwitch', () => {
-      const element = document.getElementById('theme-switch') as HTMLSpanElement;
+      const element = document.getElementById(switchId) as HTMLSpanElement;
 
       expect(element).toBeInTheDocument();
     });
