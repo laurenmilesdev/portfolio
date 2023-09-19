@@ -9,10 +9,12 @@ type Props = {
   useWindowsTheme: boolean;
 };
 
-const a11yProps = (index: number): object => ({
-  id: `tab-${index}`,
-  'aria-controls': `tabpanel-${index}`,
-});
+function a11yProps(index: number): object {
+  return {
+    id: `tab-${index}`,
+    'aria-controls': `tabpanel-${index}`,
+  };
+}
 
 export default function Navigation({
   pageValue,
