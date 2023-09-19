@@ -1,6 +1,8 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import Footer from '../../../../src/components/portfolio/footer/Footer';
+import { windowsThemeButtonId } from '../../../../src/components/portfolio/footer/windows-theme-button/WindowsThemeButton';
+import { switchId } from '../../../../src/components/portfolio/footer/theme-switch/ThemeSwitch';
 import { contacts } from '../../../mocks/data-mock';
 import { useStateMock, setBoolStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
 
@@ -36,21 +38,27 @@ describe('Footer component', () => {
     ));
   });
 
-  it('renders Windows Theme button', () => {
-    const element = document.getElementById('windows-theme-btn') as HTMLButtonElement;
+  describe('WindowsThemeButton', () => {
+    it('renders Windows Theme button', () => {
+      const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
 
-    expect(element).toBeInTheDocument();
+      expect(element).toBeInTheDocument();
+    });
   });
 
-  it('renders Contacts', () => {
-    expect(getByTestId('GitHubIcon')).toBeVisible();
-    expect(getByTestId('LinkedInIcon')).toBeVisible();
-    expect(getByTestId('PictureAsPdfIcon')).toBeVisible();
+  describe('Contacts', () => {
+    it('renders Contacts', () => {
+      expect(getByTestId('GitHubIcon')).toBeVisible();
+      expect(getByTestId('LinkedInIcon')).toBeVisible();
+      expect(getByTestId('PictureAsPdfIcon')).toBeVisible();
+    });
   });
 
-  it('renders ThemeSwitch', () => {
-    const element = document.getElementById('theme-switch') as HTMLSpanElement;
+  describe('ThemeSwitch', () => {
+    it('renders ThemeSwitch', () => {
+      const element = document.getElementById(switchId) as HTMLSpanElement;
 
-    expect(element).toBeInTheDocument();
+      expect(element).toBeInTheDocument();
+    });
   });
 });
