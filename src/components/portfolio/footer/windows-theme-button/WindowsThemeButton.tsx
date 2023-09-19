@@ -8,7 +8,10 @@ import imgWhite from '../../../../../public/img/windows/windows-white.png';
 import imgBlack from '../../../../../public/img/windows/windows-black.png';
 import styles from './WindowsThemeButton.module.css';
 
-type Props = { useDarkTheme: boolean; setTheme: Dispatch<SetStateAction<string>> };
+type Props = {
+  useDarkTheme: boolean;
+  setTheme: Dispatch<SetStateAction<string>>;
+};
 
 export const windowsThemeButtonId = 'windows-theme-btn';
 export const windowsThemeWhiteImageId = 'windows-image-white';

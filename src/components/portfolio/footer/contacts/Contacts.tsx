@@ -5,7 +5,9 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import ContactModel from '../../../../models/contact/contact';
 import ContactConstants from '../../../../constants/contact';
 
-type Props = { contacts: ContactModel[] };
+type Props = {
+  contacts: ContactModel[];
+};
 
 const icons = {
   [ContactConstants.GITHUB]: <GitHubIcon />,
