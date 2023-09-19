@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import Contact, {
   descriptionDivId,
-} from '../../../../src/components/portfolio/pages/contact/Contact';
+} from '../../../../../src/components/portfolio/pages/contact/Contact';
 
 describe('Contact component', () => {
   const description = 'This is a description';

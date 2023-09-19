@@ -1,9 +1,9 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
-import { useStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
+import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
 import WindowsThemeButton, {
   buttonId,
-} from '../../../../src/components/portfolio/footer/windows-theme-button/WindowsThemeButton';
+} from '../../../../../src/components/portfolio/footer/windows-theme-button/WindowsThemeButton';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),

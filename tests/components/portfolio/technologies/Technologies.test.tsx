@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Technologies from '../../../src/components/portfolio/technologies/Technologies';
+import Technologies from '../../../../src/components/portfolio/technologies/Technologies';
 
 describe('Technologies component', () => {
   const technologies = ['tech 1', 'tech 2'];

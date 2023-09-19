@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Navigation from '../../../src/components/portfolio/navigation/Navigation';
+import Navigation from '../../../../src/components/portfolio/navigation/Navigation';
 
 describe('Navigation component', () => {
   const pageTitles: string[] = ['Tab 1', 'Tab 2', 'Tab 3'];

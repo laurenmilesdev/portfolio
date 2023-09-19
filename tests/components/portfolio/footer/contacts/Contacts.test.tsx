@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
-import Contacts from '../../../src/components/portfolio/footer/contacts/Contacts';
-import ContactModel from '../../../src/models/contact/contact';
+import Contacts from '../../../../../src/components/portfolio/footer/contacts/Contacts';
+import ContactModel from '../../../../../src/models/contact/contact';
 
-import { contacts } from '../../mocks/data-mock';
+import { contacts } from '../../../../mocks/data-mock';
 
 describe('Contacts component', () => {
   let getByTestId: any;

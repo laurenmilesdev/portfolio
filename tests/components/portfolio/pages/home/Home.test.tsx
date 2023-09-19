@@ -4,7 +4,7 @@ import Home, {
   subtitleDivId,
   descriptionDivId,
   imageId,
-} from '../../../../src/components/portfolio/pages/home/Home';
+} from '../../../../../src/components/portfolio/pages/home/Home';
 
 jest.mock('next/image', () => ({
   __esModule: true,

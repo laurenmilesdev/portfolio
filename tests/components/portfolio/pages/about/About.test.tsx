@@ -3,7 +3,7 @@ import About, {
   altText,
   descriptionDivId,
   imageId,
-} from '../../../../src/components/portfolio/pages/about/About';
+} from '../../../../../src/components/portfolio/pages/about/About';
 
 jest.mock('next/image', () => ({
   __esModule: true,
