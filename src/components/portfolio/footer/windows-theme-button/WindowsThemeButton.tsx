@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import { Button, Tooltip } from '@mui/material';
-import ThemeConstants from '../../../constants/theme';
-import { updateWindowThemeBgColor } from '../../../utils/window';
+import ThemeConstants from '../../../../constants/theme';
+import { updateWindowThemeBgColor } from '../../../../utils/window';
 
-import imgWhite from '../../../../public/img/windows/windows-white.png';
-import imgBlack from '../../../../public/img/windows/windows-black.png';
+import imgWhite from '../../../../../public/img/windows/windows-white.png';
+import imgBlack from '../../../../../public/img/windows/windows-black.png';
 import styles from './WindowsThemeButton.module.css';
 
 type Props = {
