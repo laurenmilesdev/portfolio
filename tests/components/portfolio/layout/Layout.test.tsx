@@ -1,13 +1,11 @@
-import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
-import Layout, {
-  titleDivId,
-  contentDivId,
-} from '../../../../src/components/portfolio/layout/Layout';
+import Layout from '../../../../src/components/portfolio/layout/Layout';
 import { contacts } from '../../../mocks/data-mock';
-import { useStateMock, setBoolStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
+import { setBoolStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
 
 describe('Layout component', () => {
+  let getByTestId: any;
+  const pageValue = 0;
   const pageTitles = ['Title', 'Title2'];
   const handlePageChange = () => undefined;
   const useDarkTheme = true;
@@ -15,75 +13,60 @@ describe('Layout component', () => {
   const setTheme = setStringStateMock;
   const useWindowsTheme = false;
   const componentText = 'This is the component';
-  const children = <div>{componentText}</div>;
+  const children = <div id="children">{componentText}</div>;
 
-  describe('title is undefined', () => {
-    const pageValue = 0;
+  beforeEach(() => {
+    ({ getByTestId } = render(
+      <Layout
+        pageValue={pageValue}
+        pageTitles={pageTitles}
+        handlePageChange={handlePageChange}
+        contacts={contacts}
+        useDarkTheme={useDarkTheme}
+        setUseDarkTheme={setUseDarkTheme}
+        setTheme={setTheme}
+        useWindowsTheme={useWindowsTheme}
+      >
+        {children}
+      </Layout>
+    ));
+  });
 
-    beforeEach(() => {
-      jest
-        .spyOn(React, 'useState')
-        .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+  describe('Navigation', () => {
+    it('renders tabs', () => {
+      pageTitles.forEach((title: string, index: number) => {
+        const element = document.getElementById(`tab-${index}`) as HTMLButtonElement;
 
-      render(
-        <Layout
-          pageValue={pageValue}
-          pageTitles={pageTitles}
-          handlePageChange={handlePageChange}
-          contacts={contacts}
-          useDarkTheme={useDarkTheme}
-          setUseDarkTheme={setUseDarkTheme}
-          setTheme={setTheme}
-          useWindowsTheme={useWindowsTheme}
-        >
-          {children}
-        </Layout>
-      );
+        expect(element).toHaveTextContent(title);
+      });
     });
+  });
 
-    it('does not render title', () => {
-      const element = document.getElementById(titleDivId) as HTMLDivElement;
-
-      expect(element).toBeNull();
-    });
-
-    it('renders content', () => {
-      const element = document.getElementById(contentDivId) as HTMLDivElement;
+  describe('children', () => {
+    it('renders children', () => {
+      const element = document.getElementById('children') as HTMLDivElement;
 
       expect(element).toHaveTextContent(componentText);
     });
   });
 
-  describe('title is not undefined', () => {
-    const pageValue = 1;
+  describe('Footer', () => {
+    it('renders Windows Theme button', () => {
+      const element = document.getElementById('windows-theme-btn') as HTMLButtonElement;
 
-    beforeEach(() => {
-      render(
-        <Layout
-          pageValue={pageValue}
-          pageTitles={pageTitles}
-          handlePageChange={handlePageChange}
-          contacts={contacts}
-          useDarkTheme={useDarkTheme}
-          setUseDarkTheme={setUseDarkTheme}
-          setTheme={setTheme}
-          useWindowsTheme={useWindowsTheme}
-        >
-          {children}
-        </Layout>
-      );
+      expect(element).toBeInTheDocument();
     });
 
-    it('renders title', () => {
-      const element = document.getElementById(titleDivId) as HTMLDivElement;
-
-      expect(element).toHaveTextContent(pageTitles[pageValue]);
+    it('renders Contacts', () => {
+      expect(getByTestId('GitHubIcon')).toBeVisible();
+      expect(getByTestId('LinkedInIcon')).toBeVisible();
+      expect(getByTestId('PictureAsPdfIcon')).toBeVisible();
     });
 
-    it('renders content', () => {
-      const element = document.getElementById(contentDivId) as HTMLDivElement;
+    it('renders ThemeSwitch', () => {
+      const element = document.getElementById('theme-switch') as HTMLSpanElement;
 
-      expect(element).toHaveTextContent(componentText);
+      expect(element).toBeInTheDocument();
     });
   });
 });
