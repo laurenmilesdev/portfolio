@@ -14,27 +14,27 @@ describe('Projects component', () => {
   });
 
   it('renders project titles', () => {
-    projects.forEach((project: ProjectModel, index: number) => {
+    projects.forEach(({ title }, index: number) => {
       const element = document.getElementById(`project-${index}-title`) as HTMLDivElement;
 
-      expect(element).toHaveTextContent(project.title);
+      expect(element).toHaveTextContent(title);
     });
   });
 
   it('renders project descriptions', () => {
-    projects.forEach((project: ProjectModel, index: number) => {
+    projects.forEach(({ description }, index: number) => {
       const element = document.getElementById(`project-${index}-description`) as HTMLDivElement;
 
-      expect(element).toHaveTextContent(project.description);
+      expect(element).toHaveTextContent(description);
     });
   });
 
   it('renders project company links', () => {
-    projects.forEach((project: ProjectModel, index: number) => {
+    projects.forEach(({ company, companyUrl }, index: number) => {
       const element = document.getElementById(`project-${index}-company`) as HTMLButtonElement;
 
-      expect(element).toHaveTextContent(project.company);
-      expect(element).toHaveAttribute('href', project.companyUrl);
+      expect(element).toHaveTextContent(company);
+      expect(element).toHaveAttribute('href', companyUrl);
     });
   });
 });
