@@ -2,7 +2,10 @@ import TabPanel from '../components/portfolio/tab-panel/TabPanel';
 import Page from '../components/portfolio/pages/Page';
 import PageModel from '../models/component-helpers/page';
 
-type Props = { pages: PageModel[]; pageValue: number };
+type Props = {
+  pages: PageModel[];
+  pageValue: number;
+};
 
 export default function Home({ pages, pageValue }: Props): JSX.Element {
   return (
@@ -12,7 +15,6 @@ export default function Home({ pages, pageValue }: Props): JSX.Element {
           <Page pageValue={pageValue} page={page} />
         </TabPanel>
       ))}
-      ;
     </>
   );
 }
