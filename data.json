@@ -105,8 +105,9 @@
     {
       "title": "Lauren Miles Portfolio",
       "menuItemButtonId": "portfolio-menu-item-btn",
-      "externalUrl": null,
+      "externalUrl": "",
       "window": {
+        "title": "Lauren Miles Portfolio",
         "windowId": "portfolio-window",
         "startBarButtonId": "portfolio-start-bar-btn",
         "isInternetExplorerWindow": true,
