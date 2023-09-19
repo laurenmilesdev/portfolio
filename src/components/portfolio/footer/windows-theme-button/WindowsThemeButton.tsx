@@ -10,9 +10,9 @@ import styles from './WindowsThemeButton.module.css';
 
 type Props = { useDarkTheme: boolean; setTheme: Dispatch<SetStateAction<string>> };
 
-export const buttonId = 'windows-theme-btn';
-export const whiteWindowsImageId = 'windows-image-white';
-export const blackWindowsImageId = 'windows-image-black';
+export const windowsThemeButtonId = 'windows-theme-btn';
+export const windowsThemeWhiteImageId = 'windows-image-white';
+export const windowsThemeBlackImageId = 'windows-image-black';
 
 export default function WindowsThemeButton({ useDarkTheme, setTheme }: Props): JSX.Element {
   return (
@@ -23,13 +23,13 @@ export default function WindowsThemeButton({ useDarkTheme, setTheme }: Props): J
           setTheme(ThemeConstants.WINDOWS);
           updateWindowThemeBgColor(ThemeConstants.WINDOWS);
         }}
-        id={buttonId}
+        id={windowsThemeButtonId}
       >
         <Image
           src={useDarkTheme ? imgWhite : imgBlack}
           alt="Windows icon"
           className={styles.img}
-          id={useDarkTheme ? whiteWindowsImageId : blackWindowsImageId}
+          id={useDarkTheme ? windowsThemeWhiteImageId : windowsThemeBlackImageId}
         />
       </Button>
     </Tooltip>

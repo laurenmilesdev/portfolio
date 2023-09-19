@@ -2,9 +2,9 @@ import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
 import WindowsThemeButton, {
-  buttonId,
-  whiteWindowsImageId,
-  blackWindowsImageId,
+  windowsThemeButtonId,
+  windowsThemeWhiteImageId,
+  windowsThemeBlackImageId,
 } from '../../../../../src/components/portfolio/footer/windows-theme-button/WindowsThemeButton';
 
 jest.mock('react', () => ({
@@ -33,14 +33,14 @@ describe('WindowsThemeButton component', () => {
     });
 
     it('renders button', () => {
-      const element = document.getElementById(buttonId) as HTMLButtonElement;
+      const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
 
       expect(element).toBeInTheDocument();
     });
 
     it('renders correct image', () => {
-      const element = document.getElementById(whiteWindowsImageId) as HTMLImageElement;
-      const wrongElement = document.getElementById(blackWindowsImageId) as HTMLImageElement;
+      const element = document.getElementById(windowsThemeWhiteImageId) as HTMLImageElement;
+      const wrongElement = document.getElementById(windowsThemeBlackImageId) as HTMLImageElement;
 
       expect(element).toBeInTheDocument();
       expect(wrongElement).toBeNull();
@@ -59,14 +59,14 @@ describe('WindowsThemeButton component', () => {
     });
 
     it('renders button', () => {
-      const element = document.getElementById(buttonId) as HTMLButtonElement;
+      const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
 
       expect(element).toBeInTheDocument();
     });
 
     it('renders correct image', () => {
-      const element = document.getElementById(blackWindowsImageId) as HTMLImageElement;
-      const wrongElement = document.getElementById(whiteWindowsImageId) as HTMLImageElement;
+      const element = document.getElementById(windowsThemeBlackImageId) as HTMLImageElement;
+      const wrongElement = document.getElementById(windowsThemeWhiteImageId) as HTMLImageElement;
 
       expect(element).toBeInTheDocument();
       expect(wrongElement).toBeNull();
