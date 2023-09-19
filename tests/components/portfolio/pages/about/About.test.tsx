@@ -24,15 +24,10 @@ describe('About component', () => {
     expect(element).toHaveTextContent(description);
   });
 
-  it('renders photo', () => {
-    const element = document.getElementById(imageId) as HTMLImageElement;
-
-    expect(element).toBeInTheDocument();
-  });
-
   it('renders photo with alt text', () => {
     const element = document.getElementById(imageId) as HTMLImageElement;
 
+    expect(element).toBeInTheDocument();
     expect(element.alt).toEqual(altText);
   });
 });
