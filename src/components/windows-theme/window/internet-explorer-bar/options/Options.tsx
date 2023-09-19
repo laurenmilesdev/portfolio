@@ -6,12 +6,13 @@ type Props = {
   options: string[];
 };
 
+export const optionsDivId = 'options';
 export const imageId = 'options-windows-logo';
 export const imageAltText = 'Windows logo';
 
 export default function Options({ options }: Props): JSX.Element {
   return (
-    <div className={`${styles.options} ${styles.line}`}>
+    <div className={`${styles.options} ${styles.line}`} id={optionsDivId}>
       {options &&
         options.map((option: string, index: number) => (
           <div className={styles.item} id={`option-${index}`} key={index}>
