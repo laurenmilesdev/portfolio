@@ -12,7 +12,7 @@ describe('AddressBar component', () => {
     render(<AddressBar addressBarUrl={addressBarUrl} />);
   });
 
-  it('renders "Address" label', () => {
+  it('renders address label', () => {
     const element = document.getElementById(divId) as HTMLDivElement;
 
     expect(element).toHaveTextContent(label);
