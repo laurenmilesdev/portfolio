@@ -10,7 +10,7 @@ type Props = {
   setShowStartMenu: Dispatch<SetStateAction<boolean>>;
 };
 
-export const buttonId = 'windows-start-btn';
+export const startButtonId = 'windows-start-btn';
 
 export default function StartButton({
   startMenuDivId,
@@ -20,7 +20,7 @@ export default function StartButton({
   return (
     <Button
       className={`${styles['start-btn']} windows-box-shadow`}
-      id={buttonId}
+      id={startButtonId}
       onClick={() => {
         openCloseMenu(startMenuDivId, showStartMenu);
         setShowStartMenu(!showStartMenu);
