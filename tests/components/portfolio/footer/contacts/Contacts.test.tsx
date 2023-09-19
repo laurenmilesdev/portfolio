@@ -1,7 +1,5 @@
 import { render } from '@testing-library/react';
 import Contacts from '../../../../../src/components/portfolio/footer/contacts/Contacts';
-import ContactModel from '../../../../../src/models/contact/contact';
-
 import { contacts } from '../../../../mocks/data-mock';
 
 describe('Contacts component', () => {
@@ -18,10 +16,10 @@ describe('Contacts component', () => {
   });
 
   it('renders contact buttons with correct URLs', () => {
-    contacts.forEach((contact: ContactModel, index: number) => {
-      const element = document.getElementById(`btn-${index}`) as HTMLButtonElement;
+    contacts.forEach(({ name, url }) => {
+      const element = document.getElementById(name.toLocaleLowerCase()) as HTMLButtonElement;
 
-      expect(element).toHaveAttribute('href', contact.url);
+      expect(element).toHaveAttribute('href', url);
     });
   });
 });

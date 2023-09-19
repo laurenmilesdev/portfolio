@@ -5,33 +5,26 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import ContactModel from '../../../../models/contact/contact';
 import ContactConstants from '../../../../constants/contact';
 
-type Props = {
-  contacts: ContactModel[];
-};
+type Props = { contacts: ContactModel[] };
 
-const icon = (name: string): JSX.Element =>
-  name === ContactConstants.GITHUB ? (
-    <GitHubIcon />
-  ) : name === ContactConstants.LINKEDIN ? (
-    <LinkedInIcon />
-  ) : name === ContactConstants.RESUME ? (
-    <PictureAsPdfIcon />
-  ) : (
-    <></>
-  );
+const icons = {
+  [ContactConstants.GITHUB]: <GitHubIcon />,
+  [ContactConstants.LINKEDIN]: <LinkedInIcon />,
+  [ContactConstants.RESUME]: <PictureAsPdfIcon />,
+};
 
 export default function Contacts({ contacts }: Props): JSX.Element {
   return (
     <>
-      {contacts.map((contact: ContactModel, index: number) => (
+      {contacts.map((contact: ContactModel) => (
         <Tooltip title={contact.name} key={contact.name}>
           <Button
             href={contact.url ?? ''}
             target="_blank"
             className="btn-primary"
-            id={`btn-${index}`}
+            id={contact.name.toLocaleLowerCase()}
           >
-            {icon(contact.name)}
+            {icons[contact.name]}
           </Button>
         </Tooltip>
       ))}
