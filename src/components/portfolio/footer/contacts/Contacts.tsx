@@ -9,6 +9,8 @@ type Props = {
   contacts: ContactModel[];
 };
 
+export const contactsDivId = 'contacts';
+
 const icons = {
   [ContactConstants.GITHUB]: <GitHubIcon />,
   [ContactConstants.LINKEDIN]: <LinkedInIcon />,
@@ -17,7 +19,7 @@ const icons = {
 
 export default function Contacts({ contacts }: Props): JSX.Element {
   return (
-    <>
+    <div id={contactsDivId}>
       {contacts.map((contact: ContactModel) => (
         <Tooltip title={contact.name} key={contact.name}>
           <Button
@@ -30,6 +32,6 @@ export default function Contacts({ contacts }: Props): JSX.Element {
           </Button>
         </Tooltip>
       ))}
-    </>
+    </div>
   );
 }

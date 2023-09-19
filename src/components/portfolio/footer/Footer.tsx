@@ -13,6 +13,8 @@ type Props = {
   setTheme: Dispatch<SetStateAction<string>>;
 };
 
+export const footerDivId = 'footer';
+
 export default function Footer({
   contacts,
   useDarkTheme,
@@ -20,7 +22,7 @@ export default function Footer({
   setTheme,
 }: Props): JSX.Element {
   return (
-    <div className={`${styles.container} col-md-12`}>
+    <div className={`${styles.container} col-md-12`} id={footerDivId}>
       <WindowsThemeButton setTheme={setTheme} useDarkTheme={useDarkTheme} />
 
       <Contacts contacts={contacts} />

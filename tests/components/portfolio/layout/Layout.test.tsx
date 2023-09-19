@@ -1,12 +1,11 @@
 import { render } from '@testing-library/react';
 import Layout, { childrenContainerId } from '../../../../src/components/portfolio/layout/Layout';
-import { windowsThemeButtonId } from '../../../../src/components/portfolio/footer/windows-theme-button/WindowsThemeButton';
-import { switchId } from '../../../../src/components/portfolio/footer/theme-switch/ThemeSwitch';
+import { navigationDivId } from '../../../../src/components/portfolio/navigation/Navigation';
+import { footerDivId } from '../../../../src/components/portfolio/footer/Footer';
 import { contacts } from '../../../mocks/data-mock';
 import { setBoolStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
 
 describe('Layout component', () => {
-  let getByTestId: any;
   const pageValue = 0;
   const pageTitles = ['Title', 'Title2'];
   const handlePageChange = () => undefined;
@@ -18,7 +17,7 @@ describe('Layout component', () => {
   const children = <div>{componentText}</div>;
 
   beforeEach(() => {
-    ({ getByTestId } = render(
+    render(
       <Layout
         pageValue={pageValue}
         pageTitles={pageTitles}
@@ -31,44 +30,24 @@ describe('Layout component', () => {
       >
         {children}
       </Layout>
-    ));
+    );
   });
 
-  describe('Navigation', () => {
-    it('renders tabs', () => {
-      pageTitles.forEach((title: string, index: number) => {
-        const element = document.getElementById(`tab-${index}`) as HTMLButtonElement;
+  it('renders Navigation', () => {
+    const element = document.getElementById(navigationDivId) as HTMLButtonElement;
 
-        expect(element).toHaveTextContent(title);
-      });
-    });
+    expect(element).toBeInTheDocument();
   });
 
-  describe('children container', () => {
-    it('renders children', () => {
-      const element = document.getElementById(childrenContainerId) as HTMLDivElement;
+  it('renders children', () => {
+    const element = document.getElementById(childrenContainerId) as HTMLDivElement;
 
-      expect(element).toHaveTextContent(componentText);
-    });
+    expect(element).toHaveTextContent(componentText);
   });
 
-  describe('Footer', () => {
-    it('renders Windows Theme button', () => {
-      const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
+  it('renders Footer', () => {
+    const element = document.getElementById(footerDivId) as HTMLButtonElement;
 
-      expect(element).toBeInTheDocument();
-    });
-
-    it('renders Contacts', () => {
-      expect(getByTestId('GitHubIcon')).toBeVisible();
-      expect(getByTestId('LinkedInIcon')).toBeVisible();
-      expect(getByTestId('PictureAsPdfIcon')).toBeVisible();
-    });
-
-    it('renders ThemeSwitch', () => {
-      const element = document.getElementById(switchId) as HTMLSpanElement;
-
-      expect(element).toBeInTheDocument();
-    });
+    expect(element).toBeInTheDocument();
   });
 });

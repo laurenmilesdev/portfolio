@@ -9,6 +9,8 @@ type Props = {
   useWindowsTheme: boolean;
 };
 
+export const navigationDivId = 'navigation';
+
 function a11yProps(index: number): object {
   return {
     id: `tab-${index}`,
@@ -37,9 +39,11 @@ export default function Navigation({
   );
 
   return useWindowsTheme ? (
-    <div className={`${styles['windows-theme-app-bar']} col-md-12`}>{tabs}</div>
+    <div className={`${styles['windows-theme-app-bar']} col-md-12`} id={navigationDivId}>
+      {tabs}
+    </div>
   ) : (
-    <AppBar className={`${styles['app-bar']} col-md-12`} elevation={0}>
+    <AppBar className={`${styles['app-bar']} col-md-12`} elevation={0} id={navigationDivId}>
       {tabs}
     </AppBar>
   );
