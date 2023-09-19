@@ -1,6 +1,4 @@
-type Props = {
-  description: string;
-};
+type Props = { description: string };
 
 export const descriptionDivId = 'contact-description';
 
