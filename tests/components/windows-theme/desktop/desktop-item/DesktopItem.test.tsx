@@ -3,19 +3,17 @@ import DesktopItem from '../../../../../src/components/windows-theme/desktop/des
 import { desktopItems } from '../../../../mocks/data-mock';
 
 describe('DesktopItem component', () => {
-  const desktopItem = desktopItems[0];
-
-  beforeEach(() => {
-    render(
-      <DesktopItem label={desktopItem.label} image={desktopItem.image} url={desktopItem.url} />
-    );
-  });
-
   it('renders desktop item', () => {
-    const element = document.getElementById(
-      `${desktopItem.label.toLocaleLowerCase()}-desktop-item`
-    ) as HTMLAnchorElement;
+    desktopItems.forEach((desktopItem) => {
+      render(
+        <DesktopItem label={desktopItem.label} image={desktopItem.image} url={desktopItem.url} />
+      );
 
-    expect(element).toHaveTextContent(desktopItem.label);
+      const element = document.getElementById(
+        `${desktopItem.label.toLocaleLowerCase()}-desktop-item`
+      ) as HTMLAnchorElement;
+
+      expect(element).toHaveTextContent(desktopItem.label);
+    });
   });
 });
