@@ -1,6 +1,6 @@
-import Page from './page';
+export default class Window {
+  title: string;
 
-export default class Window extends Page {
   windowId: string;
 
   startBarButtonId: string;
@@ -15,7 +15,6 @@ export default class Window extends Page {
 
   constructor(
     title: string,
-    component: JSX.Element,
     windowId: string,
     startBarButtonId: string,
     isInternetExplorerWindow: boolean,
@@ -23,7 +22,7 @@ export default class Window extends Page {
     widthPercentage: number,
     addressBarUrl?: string
   ) {
-    super(title, component);
+    this.title = title;
     this.windowId = windowId;
     this.startBarButtonId = startBarButtonId;
     this.isInternetExplorerWindow = isInternetExplorerWindow;

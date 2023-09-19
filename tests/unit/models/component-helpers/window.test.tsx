@@ -2,7 +2,6 @@ import Window from '../../../../src/models/component-helpers/window';
 
 describe('Window', () => {
   const title = 'title';
-  const component = <>Test</>;
   const windowId = 'portfolio-window';
   const startBarButtonId = 'portfolio-start-bar-btn';
   const isInternetExplorerWindow = true;
@@ -13,7 +12,6 @@ describe('Window', () => {
   it('returns Window object', () => {
     const response = new Window(
       title,
-      component,
       windowId,
       startBarButtonId,
       isInternetExplorerWindow,
@@ -23,7 +21,6 @@ describe('Window', () => {
     );
     const expectedResponse: Window = {
       title,
-      component,
       windowId,
       startBarButtonId,
       isInternetExplorerWindow,

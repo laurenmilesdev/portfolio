@@ -5,7 +5,6 @@ describe('MenuItem', () => {
   const title = 'title';
   const menuItemButtonId = 'button-id';
   const externalUrl = 'url.com';
-  const component = <>Test</>;
   const windowId = 'portfolio-window';
   const startBarButtonId = 'portfolio-start-bar-btn';
   const isInternetExplorerWindow = true;
@@ -14,7 +13,6 @@ describe('MenuItem', () => {
   const widthPercentage = 90;
   const window = new Window(
     title,
-    component,
     windowId,
     startBarButtonId,
     isInternetExplorerWindow,
