@@ -31,16 +31,6 @@ describe('Layout component', () => {
 
       expect(element).toBeInTheDocument();
     });
-
-    it('renders Desktop items', () => {
-      desktopItems.forEach(({ label }) => {
-        const element = document.getElementById(
-          `${label.toLocaleLowerCase()}-desktop-item`
-        ) as HTMLAnchorElement;
-
-        expect(element).toHaveTextContent(label);
-      });
-    });
   });
 
   describe('StartBar', () => {

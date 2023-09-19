@@ -3,7 +3,7 @@ import DesktopItem from '../../../../../src/components/windows-theme/desktop/des
 import { desktopItems } from '../../../../mocks/data-mock';
 
 describe('DesktopItem component', () => {
-  it('renders desktop item', () => {
+  it('renders desktop items', () => {
     desktopItems.forEach((desktopItem) => {
       render(
         <DesktopItem label={desktopItem.label} image={desktopItem.image} url={desktopItem.url} />
