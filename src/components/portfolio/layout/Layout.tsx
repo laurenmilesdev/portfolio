@@ -58,12 +58,14 @@ export default function Layout({
         </div>
       </Container>
 
-      <Footer
-        contacts={contacts}
-        useDarkTheme={useDarkTheme}
-        setUseDarkTheme={setUseDarkTheme}
-        setTheme={setTheme}
-      />
+      {!useWindowsTheme && (
+        <Footer
+          contacts={contacts}
+          useDarkTheme={useDarkTheme}
+          setUseDarkTheme={setUseDarkTheme}
+          setTheme={setTheme}
+        />
+      )}
     </>
   );
 }
