@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import { Switch, Tooltip } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import ThemeConstants from '../../constants/theme';
+import ThemeConstants from '../../../../constants/theme';
 
 type Props = {
   useDarkTheme: boolean;

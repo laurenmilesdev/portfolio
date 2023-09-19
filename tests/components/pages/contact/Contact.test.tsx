@@ -1,5 +1,7 @@
 import { render } from '@testing-library/react';
-import Contact, { descriptionDivId } from '../../../../src/components/pages/contact/Contact';
+import Contact, {
+  descriptionDivId,
+} from '../../../../src/components/portfolio/pages/contact/Contact';
 
 describe('Contact component', () => {
   const description = 'This is a description';

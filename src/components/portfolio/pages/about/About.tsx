@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Fade from '@mui/material/Fade';
 
-import img from '../../../../public/img/about/IMG_1465.jpg';
+import img from '../../../../../public/img/about/IMG_1465.jpg';
 import styles from './About.module.css';
 
 type Props = {

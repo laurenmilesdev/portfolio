@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction } from 'react';
-import WindowsStartBar from '../windows-theme/start-bar/StartBar';
-import WindowsThemeButton from '../windows-theme/windows-theme-button/WindowsThemeButton';
-import Contacts from '../contacts/Contacts';
-import ThemeSwitch from '../theme-switch/ThemeSwitch';
-import ContactModel from '../../models/contact/contact';
-import MenuItemModel from '../../models/component-helpers/menu-item';
+import WindowsStartBar from '../../windows-theme/start-bar/StartBar';
+import WindowsThemeButton from '../../windows-theme/windows-theme-button/WindowsThemeButton';
+import Contacts from './contacts/Contacts';
+import ThemeSwitch from './theme-switch/ThemeSwitch';
+import ContactModel from '../../../models/contact/contact';
+import MenuItemModel from '../../../models/component-helpers/menu-item';
 
 import styles from './Footer.module.css';
 

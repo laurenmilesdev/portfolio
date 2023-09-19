@@ -2,8 +2,8 @@ import { Button, Tooltip } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import ContactModel from '../../models/contact/contact';
-import ContactConstants from '../../constants/contact';
+import ContactModel from '../../../../models/contact/contact';
+import ContactConstants from '../../../../constants/contact';
 
 type Props = {
   contacts: ContactModel[];

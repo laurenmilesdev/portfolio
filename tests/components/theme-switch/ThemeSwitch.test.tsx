@@ -1,7 +1,9 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import { useStateMock, setBoolStateMock, setStringStateMock } from '../../mocks/use-state-mock';
-import ThemeSwitch, { switchId } from '../../../src/components/theme-switch/ThemeSwitch';
+import ThemeSwitch, {
+  switchId,
+} from '../../../src/components/portfolio/footer/theme-switch/ThemeSwitch';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Fade from '@mui/material/Fade';
 
 import React from 'react';
-import img from '../../../../public/img/home/headshot.png';
+import img from '../../../../../public/img/home/headshot.png';
 import styles from './Home.module.css';
 
 type Props = {

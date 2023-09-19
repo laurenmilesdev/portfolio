@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Layout, { titleDivId, contentDivId } from '../../../src/components/layout/Layout';
+import Layout, { titleDivId, contentDivId } from '../../../src/components/portfolio/layout/Layout';
 
 describe('Layout component', () => {
   const pageTitles = ['Title', 'Title2'];
