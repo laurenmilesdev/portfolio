@@ -7,18 +7,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css';
 
 import Data from '../../data.json';
-import Layout from '../components/portfolio/layout/Layout';
 import TabPanel from '../components/portfolio/tab-panel/TabPanel';
 import Home from '../components/portfolio/pages/home/Home';
 import About from '../components/portfolio/pages/about/About';
 import Projects from '../components/portfolio/pages/projects/Projects';
 import Contact from '../components/portfolio/pages/contact/Contact';
-import Desktop from '../components/windows-theme/desktop/Desktop';
-import Footer from '../components/portfolio/footer/Footer';
+import Layout from '../components/portfolio/layout/Layout';
+import WindowsThemeLayout from '../components/windows-theme/layout/Layout';
 import Window from '../components/windows-theme/window/Window';
 import PageModel from '../models/component-helpers/page';
-import MenuItemModel from '../models/component-helpers/menu-item';
-import WindowModel from '../models/component-helpers/window';
 import DesktopItemModel from '../models/component-helpers/desktop-item';
 import ThemeConstants from '../constants/theme';
 
@@ -48,11 +45,24 @@ export default function App({ Component, pageProps }: AppProps) {
     new PageModel(Data.projects.title, <Projects projects={Data.projects.projects} />),
     new PageModel(Data.contact.title, <Contact description={Data.contact.description} />),
   ];
-  const portfolioPageContent = (
+  const desktopItems = Data.contact.contacts.map(
+    (contact) =>
+      new DesktopItemModel(
+        contact.name,
+        <Image width={50} height={50} src={contact.imgSrc} alt={contact.imgDescription} />,
+        contact.url
+      )
+  );
+
+  const portfolioLayout = (
     <Layout
       pageValue={pageValue}
       pageTitles={pages.map((page: PageModel) => page.title)}
       handlePageChange={handlePageChange}
+      contacts={Data.contact.contacts}
+      useDarkTheme={useDarkTheme}
+      setUseDarkTheme={setUseDarkTheme}
+      setTheme={setTheme}
       useWindowsTheme={useWindowsTheme}
     >
       {pages.map(({ component }, index: number) => (
@@ -62,44 +72,35 @@ export default function App({ Component, pageProps }: AppProps) {
       ))}
     </Layout>
   );
+  const windowsThemeLayout = (
+    <WindowsThemeLayout
+      desktopItems={desktopItems}
+      menuItems={Data.menuItems}
+      useDarkTheme={useDarkTheme}
+      setTheme={setTheme}
+    />
+  );
 
   // TODO: Create dictionary to hold these values
   const getWindowContent = (windowId: string): JSX.Element => {
-    if (windowId === 'portfolio-window') return portfolioPageContent;
-    if (windowId === 'help-window') return <>This will be help window component</>;
+    if (windowId === 'portfolio-window') return portfolioLayout;
+    if (windowId === 'help-window') return windowsThemeLayout;
 
     return <></>;
   };
 
-  const desktopItems = Data.contact.contacts.map(
-    (contact) =>
-      new DesktopItemModel(
-        contact.name,
-        <Image width={50} height={50} src={contact.imgSrc} alt={contact.imgDescription} />,
-        contact.url
-      )
-  );
-  const menuItems: MenuItemModel[] = Data.menuItems.map((menuItem: any) => {
-    let window;
-
+  const windows = Data.menuItems.map((menuItem: any, index: number) => {
     if (menuItem.window)
-      window = new WindowModel(
-        menuItem.title as string,
-        getWindowContent(menuItem.window.windowId as string),
-        menuItem.window.windowId as string,
-        menuItem.window.startBarButtonId as string,
-        menuItem.window.isInternetExplorerWindow as boolean,
-        menuItem.window.widthPercentage as number,
-        menuItem.window.heightPercentage as number,
-        (menuItem.window.addressBarUrl as string) ?? ''
+      return (
+        <Window
+          window={menuItem.window}
+          heightPercentage={menuItem.window.heightPercentage}
+          widthPercentage={menuItem.window.widthPercentage}
+          key={index}
+        >
+          {getWindowContent(menuItem.window.windowId as string)}
+        </Window>
       );
-
-    return new MenuItemModel(
-      menuItem.title as string,
-      menuItem.menuItemButtonId as string,
-      (menuItem.externalUrl as string) ?? '',
-      window
-    );
   });
 
   return (
@@ -114,31 +115,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {useWindowsTheme &&
-        menuItems.map((menuItem: MenuItemModel, index: number) => {
-          if (menuItem.window)
-            return (
-              <Window
-                window={menuItem.window}
-                heightPercentage={menuItem.window.heightPercentage}
-                widthPercentage={menuItem.window.widthPercentage}
-                key={index}
-              >
-                {menuItem.window.component}
-              </Window>
-            );
-        })}
+      {useWindowsTheme && windows}
 
-      {useWindowsTheme ? <Desktop desktopItems={desktopItems} /> : portfolioPageContent}
-
-      <Footer
-        menuItems={menuItems}
-        contacts={Data.contact.contacts}
-        useDarkTheme={useDarkTheme}
-        setUseDarkTheme={setUseDarkTheme}
-        useWindowsTheme={useWindowsTheme}
-        setTheme={setTheme}
-      />
+      {useWindowsTheme ? windowsThemeLayout : portfolioLayout}
     </StyledEngineProvider>
   );
 }
