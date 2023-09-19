@@ -3,9 +3,7 @@ import Image from 'next/image';
 import img from '../../../../../public/img/about/IMG_1465.jpg';
 import styles from './About.module.css';
 
-type Props = {
-  description: string;
-};
+type Props = { description: string };
 
 export const descriptionDivId = 'about-description';
 export const imageId = 'about-img';
