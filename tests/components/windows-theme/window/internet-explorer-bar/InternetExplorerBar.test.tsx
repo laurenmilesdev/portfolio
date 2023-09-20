@@ -10,19 +10,15 @@ describe('InternetExplorerBar component', () => {
     render(<InternetExplorerBar addressBarUrl={addressBarUrl} />);
   });
 
-  describe('Options', () => {
-    it('renders options', () => {
-      const element = document.getElementById(optionsDivId) as HTMLDivElement;
+  it('renders Options', () => {
+    const element = document.getElementById(optionsDivId) as HTMLDivElement;
 
-      expect(element).toBeInTheDocument();
-    });
+    expect(element).toBeInTheDocument();
   });
 
-  describe('AddressBar', () => {
-    it('renders AddressBar', () => {
-      const element = document.getElementById(addressBarDivId) as HTMLDivElement;
+  it('renders AddressBar', () => {
+    const element = document.getElementById(addressBarDivId) as HTMLDivElement;
 
-      expect(element).toBeInTheDocument();
-    });
+    expect(element).toBeInTheDocument();
   });
 });

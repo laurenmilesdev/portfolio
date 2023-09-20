@@ -25,19 +25,15 @@ describe('Layout component', () => {
     );
   });
 
-  describe('Desktop', () => {
-    it('renders Desktop', () => {
-      const element = document.getElementById(desktopDivId);
+  it('renders Desktop', () => {
+    const element = document.getElementById(desktopDivId);
 
-      expect(element).toBeInTheDocument();
-    });
+    expect(element).toBeInTheDocument();
   });
 
-  describe('StartBar', () => {
-    it('renders StartBar', () => {
-      const element = document.getElementById(startBarDivId);
+  it('renders StartBar', () => {
+    const element = document.getElementById(startBarDivId);
 
-      expect(element).toBeInTheDocument();
-    });
+    expect(element).toBeInTheDocument();
   });
 });

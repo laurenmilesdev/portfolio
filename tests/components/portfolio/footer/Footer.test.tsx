@@ -38,27 +38,21 @@ describe('Footer component', () => {
     );
   });
 
-  describe('WindowsThemeButton', () => {
-    it('renders Windows Theme button', () => {
-      const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
+  it('renders WindowsTheme button', () => {
+    const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
 
-      expect(element).toBeInTheDocument();
-    });
+    expect(element).toBeInTheDocument();
   });
 
-  describe('Contacts', () => {
-    it('renders Contacts', () => {
-      const element = document.getElementById(contactsDivId);
+  it('renders Contacts', () => {
+    const element = document.getElementById(contactsDivId);
 
-      expect(element).toBeInTheDocument();
-    });
+    expect(element).toBeInTheDocument();
   });
 
-  describe('ThemeSwitch', () => {
-    it('renders ThemeSwitch', () => {
-      const element = document.getElementById(switchId) as HTMLSpanElement;
+  it('renders ThemeSwitch', () => {
+    const element = document.getElementById(switchId) as HTMLSpanElement;
 
-      expect(element).toBeInTheDocument();
-    });
+    expect(element).toBeInTheDocument();
   });
 });
