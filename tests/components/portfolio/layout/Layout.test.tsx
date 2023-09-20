@@ -5,6 +5,12 @@ import { footerDivId } from '../../../../src/components/portfolio/footer/Footer'
 import { contacts } from '../../../mocks/data-mock';
 import { setBoolStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
 
+jest.mock('next/image', () => ({
+  __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
+  default: (props: any) => <img {...props} />,
+}));
+
 describe('Layout component', () => {
   const pageValue = 0;
   const pageTitles = ['Title', 'Title2'];

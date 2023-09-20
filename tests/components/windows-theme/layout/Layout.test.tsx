@@ -6,6 +6,12 @@ import { startBarDivId } from '../../../../src/components/windows-theme/start-ba
 import { desktopItems, menuItems } from '../../../mocks/data-mock';
 import { useStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
 
+jest.mock('next/image', () => ({
+  __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
+  default: (props: any) => <img {...props} />,
+}));
+
 describe('Layout component', () => {
   const useDarkTheme = true;
   const setTheme = setStringStateMock;
