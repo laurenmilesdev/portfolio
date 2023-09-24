@@ -76,14 +76,7 @@ export default function App({ Component, pageProps }: AppProps) {
     />
   );
 
-  // TODO: Create dictionary to hold these values
-  const getWindowContent = (windowId: string): JSX.Element => {
-    if (windowId === 'portfolio-window') return portfolioLayout;
-    if (windowId === 'help-window') return windowsThemeLayout;
-
-    return <></>;
-  };
-
+  const windowContent: any = { 'portfolio-window': portfolioLayout };
   const windows = Data.menuItems.map((menuItem: any, index: number) => {
     if (menuItem.window)
       return (
@@ -93,7 +86,7 @@ export default function App({ Component, pageProps }: AppProps) {
           widthPercentage={menuItem.window.widthPercentage}
           key={index}
         >
-          {getWindowContent(menuItem.window.windowId as string)}
+          {windowContent[menuItem.window.windowId]}
         </Window>
       );
   });
