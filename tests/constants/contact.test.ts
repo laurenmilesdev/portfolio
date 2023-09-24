@@ -1,4 +1,4 @@
-import ContactConstants from '../../../src/constants/contact';
+import ContactConstants from '../../src/constants/contact';
 
 describe('ContactConstants', () => {
   it('returns GITHUB constant', () => {

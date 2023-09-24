@@ -1,4 +1,4 @@
-import DesktopItem from '../../../../src/models/component-helpers/desktop-item';
+import DesktopItem from '../../../src/models/component-helpers/desktop-item';
 
 describe('DesktopItem', () => {
   const label = 'label';

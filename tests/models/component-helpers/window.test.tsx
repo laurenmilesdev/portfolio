@@ -1,4 +1,4 @@
-import Window from '../../../../src/models/component-helpers/window';
+import Window from '../../../src/models/component-helpers/window';
 
 describe('Window', () => {
   const title = 'title';

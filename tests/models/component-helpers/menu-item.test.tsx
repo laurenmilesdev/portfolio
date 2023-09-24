@@ -1,5 +1,5 @@
-import MenuItem from '../../../../src/models/component-helpers/menu-item';
-import Window from '../../../../src/models/component-helpers/window';
+import MenuItem from '../../../src/models/component-helpers/menu-item';
+import Window from '../../../src/models/component-helpers/window';
 
 describe('MenuItem', () => {
   const title = 'title';
