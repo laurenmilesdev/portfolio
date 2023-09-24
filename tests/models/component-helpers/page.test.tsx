@@ -1,4 +1,4 @@
-import Page from '../../../../src/models/component-helpers/page';
+import Page from '../../../src/models/component-helpers/page';
 
 describe('Page', () => {
   const title = 'title';

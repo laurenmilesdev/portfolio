@@ -9,32 +9,29 @@ type Props = {
   contacts: ContactModel[];
 };
 
-const icon = (name: string): JSX.Element =>
-  name === ContactConstants.GITHUB ? (
-    <GitHubIcon />
-  ) : name === ContactConstants.LINKEDIN ? (
-    <LinkedInIcon />
-  ) : name === ContactConstants.RESUME ? (
-    <PictureAsPdfIcon />
-  ) : (
-    <></>
-  );
+export const contactsDivId = 'contacts';
+
+const icons = {
+  [ContactConstants.GITHUB]: <GitHubIcon />,
+  [ContactConstants.LINKEDIN]: <LinkedInIcon />,
+  [ContactConstants.RESUME]: <PictureAsPdfIcon />,
+};
 
 export default function Contacts({ contacts }: Props): JSX.Element {
   return (
-    <>
-      {contacts.map((contact: ContactModel, index: number) => (
+    <div id={contactsDivId}>
+      {contacts.map((contact: ContactModel) => (
         <Tooltip title={contact.name} key={contact.name}>
           <Button
             href={contact.url ?? ''}
             target="_blank"
             className="btn-primary"
-            id={`btn-${index}`}
+            id={contact.name.toLocaleLowerCase()}
           >
-            {icon(contact.name)}
+            {icons[contact.name]}
           </Button>
         </Tooltip>
       ))}
-    </>
+    </div>
   );
 }

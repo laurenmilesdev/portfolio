@@ -16,6 +16,8 @@ type Props = {
   children: React.ReactNode;
 };
 
+export const childrenContainerId = 'children-container';
+
 export default function Layout({
   pageValue,
   pageTitles,
@@ -36,7 +38,7 @@ export default function Layout({
         useWindowsTheme={useWindowsTheme}
       />
 
-      <Container>{children}</Container>
+      <Container id={childrenContainerId}>{children}</Container>
 
       {!useWindowsTheme && (
         <Footer

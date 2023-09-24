@@ -14,12 +14,13 @@ type Props = {
 };
 
 export const startMenuDivId = 'start-menu';
+export const startBarDivId = 'start-bar';
 
 export default function StartBar({ menuItems, useDarkTheme, setTheme }: Props): JSX.Element {
   const [showStartMenu, setShowStartMenu] = useState<boolean>(false);
 
   return (
-    <div className={styles['start-bar']}>
+    <div className={styles['start-bar']} id={startBarDivId}>
       <StartButton
         startMenuDivId={startMenuDivId}
         showStartMenu={showStartMenu}

@@ -1,23 +1,28 @@
 import Fade from '@mui/material/Fade';
+import PageModel from '../../../models/component-helpers/page';
 import styles from './Page.module.css';
 
-type Props = { pageValue: number; pageTitle: string; pageComponent: JSX.Element };
+type Props = {
+  pageValue: number;
+  page: PageModel;
+};
 
 export const titleDivId = 'title';
 export const contentDivId = 'content';
 
-export default function Page({ pageValue, pageTitle, pageComponent }: Props) {
+export default function Page({ pageValue, page }: Props) {
   return (
     <Fade in={true}>
       <div className={styles.container}>
+        {/* Does not render title if Home page */}
         {pageValue !== 0 && (
           <div className={`${styles.title} col-md-12 pb-3`} id={titleDivId}>
-            <h1>{pageTitle}</h1>
+            <h1>{page.title}</h1>
           </div>
         )}
 
         <div className="col-md-12" id={contentDivId}>
-          {pageComponent}
+          {page.component}
         </div>
       </div>
     </Fade>

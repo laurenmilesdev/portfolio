@@ -1,4 +1,4 @@
-import Contact from '../../../../src/models/contact/contact';
+import Contact from '../../../src/models/contact/contact';
 
 describe('Contact', () => {
   it('returns Contact object with optional properties when provided', () => {

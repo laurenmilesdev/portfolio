@@ -29,30 +29,29 @@ describe('StartMenuItem component', () => {
   const useDarkTheme = true;
   const setTheme = setStringStateMock;
 
-  it('renders menu item', () => {
-    const index = 1;
-    const menuItem = menuItems[index];
+  it('renders menu items', () => {
+    menuItems.forEach((menuItem) => {
+      jest
+        .spyOn(React, 'useState')
+        .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
 
-    jest
-      .spyOn(React, 'useState')
-      .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+      render(
+        <StartMenuItem
+          startMenuDivId={startMenuDivId}
+          showStartMenu={showStartMenu}
+          setShowStartMenu={setShowStartMenu}
+          useDarkTheme={useDarkTheme}
+          setTheme={setTheme}
+          useLineStyle={true}
+          menuItem={menuItem}
+        />
+      );
 
-    render(
-      <StartMenuItem
-        startMenuDivId={startMenuDivId}
-        showStartMenu={showStartMenu}
-        setShowStartMenu={setShowStartMenu}
-        useDarkTheme={useDarkTheme}
-        setTheme={setTheme}
-        useLineStyle={true}
-        menuItem={menuItem}
-      />
-    );
+      const element = document.getElementById(menuItem.menuItemButtonId) as HTMLLabelElement;
 
-    const element = document.getElementById(menuItem.menuItemButtonId) as HTMLLabelElement;
-
-    expect(element).toBeInTheDocument();
-    expect(element).toHaveTextContent(menuItem.title);
+      expect(element).toBeInTheDocument();
+      expect(element).toHaveTextContent(menuItem.title);
+    });
   });
 
   it('renders shutdown menu item if page and index are undefined', () => {

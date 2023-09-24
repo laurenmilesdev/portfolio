@@ -11,7 +11,8 @@ export const contacts = [
   new ContactModel('None', 'Contact description 4.', 'Contact value 4'),
 ];
 
-export const pages = [new PageModel('Page', <>Page</>), new PageModel('Page 2', <>Page</>)];
+export const pageContents = ['Page', 'Page 2'];
+export const pages = pageContents.map((content) => new PageModel(content, <>{content}</>));
 
 const menuItemsRawData = [
   {

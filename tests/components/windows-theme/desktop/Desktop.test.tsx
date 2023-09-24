@@ -7,13 +7,15 @@ describe('Desktop component', () => {
     render(<Desktop desktopItems={desktopItems} />);
   });
 
-  it('renders desktop items', () => {
-    desktopItems.forEach((item) => {
-      const element = document.getElementById(
-        `${item.label.toLocaleLowerCase()}-desktop-item`
-      ) as HTMLAnchorElement;
+  describe('DesktopItems', () => {
+    it('renders Desktop items', () => {
+      desktopItems.forEach(({ label }) => {
+        const element = document.getElementById(
+          `${label.toLocaleLowerCase()}-desktop-item`
+        ) as HTMLAnchorElement;
 
-      expect(element).toHaveTextContent(item.label);
+        expect(element).toHaveTextContent(label);
+      });
     });
   });
 });

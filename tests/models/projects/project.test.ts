@@ -1,4 +1,4 @@
-import Project from '../../../../src/models/projects/project';
+import Project from '../../../src/models/projects/project';
 
 describe('Project', () => {
   const title = 'title';

@@ -1,4 +1,4 @@
-import WindowConstants from '../../../src/constants/window';
+import WindowConstants from '../../src/constants/window';
 
 describe('WindowConstants', () => {
   it('returns WINDOW_HEADER_HEIGHT constant', () => {

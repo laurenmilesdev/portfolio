@@ -16,25 +16,65 @@ describe('Home component', () => {
   const subtitle = 'Subtitle';
   const description = 'This is the description';
 
-  beforeEach(() => {
-    render(<Home subtitle={subtitle} description={description} useWindowsTheme={false} />);
+  describe('useWindowsTheme is true', () => {
+    const useWindowsTheme = true;
+
+    beforeEach(() => {
+      render(
+        <Home subtitle={subtitle} description={description} useWindowsTheme={useWindowsTheme} />
+      );
+    });
+
+    it('renders subtitle', () => {
+      const element = document.getElementById(subtitleDivId) as HTMLDivElement;
+
+      expect(element).toHaveTextContent(subtitle);
+      expect(element).toHaveClass('windows-theme-subtitle');
+    });
+
+    it('renders description', () => {
+      const element = document.getElementById(descriptionDivId) as HTMLDivElement;
+
+      expect(element).toHaveTextContent(description);
+    });
+
+    it('renders logo with alt text', () => {
+      const element = document.getElementById(imageId) as HTMLImageElement;
+
+      expect(element).toBeInTheDocument();
+      expect(element.alt).toEqual(altText);
+      expect(element).toHaveClass('windows-theme-logo');
+    });
   });
 
-  it('renders logo', () => {
-    const element = document.getElementById(imageId) as HTMLImageElement;
+  describe('useWindowsTheme is false', () => {
+    const useWindowsTheme = false;
 
-    expect(element.alt).toEqual(altText);
-  });
+    beforeEach(() => {
+      render(
+        <Home subtitle={subtitle} description={description} useWindowsTheme={useWindowsTheme} />
+      );
+    });
 
-  it('renders subtitle', () => {
-    const element = document.getElementById(subtitleDivId) as HTMLDivElement;
+    it('renders subtitle', () => {
+      const element = document.getElementById(subtitleDivId) as HTMLDivElement;
 
-    expect(element).toHaveTextContent(subtitle);
-  });
+      expect(element).toHaveTextContent(subtitle);
+      expect(element).toHaveClass('subtitle');
+    });
 
-  it('renders description', () => {
-    const element = document.getElementById(descriptionDivId) as HTMLDivElement;
+    it('renders description', () => {
+      const element = document.getElementById(descriptionDivId) as HTMLDivElement;
 
-    expect(element).toHaveTextContent(description);
+      expect(element).toHaveTextContent(description);
+    });
+
+    it('renders logo with alt text', () => {
+      const element = document.getElementById(imageId) as HTMLImageElement;
+
+      expect(element).toBeInTheDocument();
+      expect(element.alt).toEqual(altText);
+      expect(element).toHaveClass('logo');
+    });
   });
 });

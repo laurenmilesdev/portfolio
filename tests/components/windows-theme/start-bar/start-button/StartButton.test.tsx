@@ -1,7 +1,7 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import StartButton, {
-  buttonId,
+  startButtonId,
 } from '../../../../../src/components/windows-theme/start-bar/start-button/StartButton';
 import { startMenuDivId } from '../../../../../src/components/windows-theme/start-bar/StartBar';
 import { useStateMock, setBoolStateMock } from '../../../../mocks/use-state-mock';
@@ -30,7 +30,7 @@ describe('StartButton component', () => {
   });
 
   it('renders button', () => {
-    const element = document.getElementById(buttonId) as HTMLButtonElement;
+    const element = document.getElementById(startButtonId) as HTMLButtonElement;
 
     expect(element).toBeInTheDocument();
   });

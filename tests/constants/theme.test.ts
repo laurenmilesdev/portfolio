@@ -1,4 +1,4 @@
-import ThemeConstants from '../../../src/constants/theme';
+import ThemeConstants from '../../src/constants/theme';
 
 describe('ThemeConstants', () => {
   it('returns DARK constant', () => {

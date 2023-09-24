@@ -2,7 +2,9 @@ import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
 import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
 import WindowsThemeButton, {
-  buttonId,
+  windowsThemeButtonId,
+  windowsThemeWhiteImageId,
+  windowsThemeBlackImageId,
 } from '../../../../../src/components/portfolio/footer/windows-theme-button/WindowsThemeButton';
 
 jest.mock('react', () => ({
@@ -17,20 +19,57 @@ jest.mock('next/image', () => ({
 }));
 
 describe('WindowsThemeButton component', () => {
-  const useDarkTheme = true;
   const setTheme = setStringStateMock;
 
-  beforeEach(() => {
-    jest
-      .spyOn(React, 'useState')
-      .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+  describe('useDarkTheme is true', () => {
+    const useDarkTheme = true;
 
-    render(<WindowsThemeButton useDarkTheme={useDarkTheme} setTheme={setTheme} />);
+    beforeEach(() => {
+      jest
+        .spyOn(React, 'useState')
+        .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+
+      render(<WindowsThemeButton useDarkTheme={useDarkTheme} setTheme={setTheme} />);
+    });
+
+    it('renders button', () => {
+      const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
+
+      expect(element).toBeInTheDocument();
+    });
+
+    it('renders correct image', () => {
+      const element = document.getElementById(windowsThemeWhiteImageId) as HTMLImageElement;
+      const wrongElement = document.getElementById(windowsThemeBlackImageId) as HTMLImageElement;
+
+      expect(element).toBeInTheDocument();
+      expect(wrongElement).toBeNull();
+    });
   });
 
-  it('renders button', () => {
-    const element = document.getElementById(buttonId) as HTMLButtonElement;
+  describe('useDarkTheme is false', () => {
+    const useDarkTheme = false;
 
-    expect(element).toBeInTheDocument();
+    beforeEach(() => {
+      jest
+        .spyOn(React, 'useState')
+        .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
+
+      render(<WindowsThemeButton useDarkTheme={useDarkTheme} setTheme={setTheme} />);
+    });
+
+    it('renders button', () => {
+      const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
+
+      expect(element).toBeInTheDocument();
+    });
+
+    it('renders correct image', () => {
+      const element = document.getElementById(windowsThemeBlackImageId) as HTMLImageElement;
+      const wrongElement = document.getElementById(windowsThemeWhiteImageId) as HTMLImageElement;
+
+      expect(element).toBeInTheDocument();
+      expect(wrongElement).toBeNull();
+    });
   });
 });
