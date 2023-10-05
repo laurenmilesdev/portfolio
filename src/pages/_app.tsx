@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyledEngineProvider } from '@mui/material/styles';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css';
@@ -17,6 +17,7 @@ import Window from '../components/windows-theme/window/Window';
 import PageModel from '../models/component-helpers/page';
 import DesktopItemModel from '../models/component-helpers/desktop-item';
 import ThemeConstants from '../constants/theme';
+import { updateWindowThemeBgColor } from '../utils/window';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
@@ -90,6 +91,13 @@ export default function App({ Component, pageProps }: AppProps) {
         </Window>
       );
   });
+
+  useEffect(() => {
+    if (theme !== ThemeConstants.WINDOWS)
+      document.documentElement.setAttribute('data-theme', theme);
+
+    updateWindowThemeBgColor(theme);
+  }, [theme]);
 
   return (
     <StyledEngineProvider injectFirst>

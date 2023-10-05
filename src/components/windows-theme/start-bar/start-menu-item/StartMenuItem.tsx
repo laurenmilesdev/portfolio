@@ -49,7 +49,6 @@ export default function StartMenuItem({
     const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
 
     setTheme(theme);
-    updateWindowThemeBgColor(theme);
     setShowStartMenu(!showStartMenu);
   }
 
