@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import MenuItemModel from '../../../../models/component-helpers/menu-item';
 
 import styles from './StartMenu.module.css';
@@ -21,6 +21,16 @@ export default function StartMenu({
   useDarkTheme,
   setTheme,
 }: Props): JSX.Element {
+  useEffect(() => {
+    document.addEventListener('mouseup', (e) => {
+      const element = document.getElementById(startMenuDivId);
+
+      if (element && !element?.contains(e.target as Node)) {
+        element.style.display = 'none';
+      }
+    });
+  });
+
   return (
     <div className={`${styles['start-menu']} windows-box-shadow`} id={startMenuDivId}>
       <div className={styles['start-menu-blue']}>
@@ -30,6 +40,7 @@ export default function StartMenu({
       <ul>
         {menuItems.map((menuItem: MenuItemModel, index: number) => (
           <StartMenuItem
+            startMenuDivId={startMenuDivId}
             showStartMenu={showStartMenu}
             setShowStartMenu={setShowStartMenu}
             useDarkTheme={useDarkTheme}
@@ -41,6 +52,7 @@ export default function StartMenu({
         ))}
 
         <StartMenuItem
+          startMenuDivId={startMenuDivId}
           showStartMenu={showStartMenu}
           setShowStartMenu={setShowStartMenu}
           useDarkTheme={useDarkTheme}

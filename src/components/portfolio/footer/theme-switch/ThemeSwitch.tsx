@@ -67,6 +67,8 @@ export default function ThemeSwitch({
 
     setUseDarkTheme(newUseDarkTheme);
     setTheme(theme);
+
+    document.documentElement.setAttribute('data-theme', theme);
   }
 
   return (
