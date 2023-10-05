@@ -21,6 +21,16 @@ export default function StartBar({ menuItems, useDarkTheme, setTheme }: Props): 
   const [showStartMenu, setShowStartMenu] = useState<boolean>(true);
 
   useEffect(() => {
+    document.addEventListener('mouseup', (e) => {
+      const element = document.getElementById(startMenuDivId);
+
+      if (element && !element?.contains(e.target as Node)) {
+        element.style.display = 'none';
+      }
+    });
+  }, []);
+
+  useEffect(() => {
     openCloseMenu(startMenuDivId, showStartMenu);
   }, [showStartMenu]);
 
