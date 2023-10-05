@@ -45,19 +45,19 @@ export function minimizeMaximizeWindow(windowId: string, startBarButtonId: strin
   }
 }
 
-function checkVisibility(element: HTMLElement) {
-  const { display } = element.style;
-
-  return display === 'block';
-}
-
-function showHideElement(element: HTMLElement) {
+export function showHideElement(element: HTMLElement) {
   const visible = checkVisibility(element);
 
   if (visible) element.style.display = 'none';
   else element.style.display = 'block';
 
   return visible;
+}
+
+function checkVisibility(element: HTMLElement) {
+  const { display } = element.style;
+
+  return display === 'block';
 }
 
 function removeWindowsBoxShadowClass(button: HTMLElement) {
