@@ -53,7 +53,6 @@ export default function StartMenuItem({
 
     setTimeout(() => {
       setTheme(theme);
-      updateWindowThemeBgColor(theme);
     }, 2000);
 
     setShowStartMenu(!showStartMenu);
