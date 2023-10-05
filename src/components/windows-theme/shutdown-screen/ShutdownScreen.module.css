@@ -1,0 +1,9 @@
+.shutdown-div {
+  display: none;
+}
+
+.shutdown-img {
+  width: 100%;
+  height: auto;
+  z-index: 100;
+}

@@ -2,13 +2,13 @@ import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import MenuItemModel from '../../../../models/component-helpers/menu-item';
 import ThemeConstants from '../../../../constants/theme';
-import { openCloseMenu, openCloseWindow, updateWindowThemeBgColor } from '../../../../utils/window';
+import { openCloseWindow, updateWindowThemeBgColor } from '../../../../utils/window';
+import { shutdownScreenDivId } from '../../shutdown-screen/ShutdownScreen';
 
 import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
 
 type Props = {
-  startMenuDivId: string;
   showStartMenu: boolean;
   setShowStartMenu: Dispatch<SetStateAction<boolean>>;
   useDarkTheme: boolean;
@@ -21,7 +21,6 @@ export const shutdownMenuItemLabelId = 'shutdown-menu-item';
 export const shutdownLabelText = 'Shutdown';
 
 export default function StartMenuItem({
-  startMenuDivId,
   showStartMenu,
   setShowStartMenu,
   useDarkTheme,
@@ -44,16 +43,19 @@ export default function StartMenuItem({
 
   function handleWindowOpen(windowId: string, startBarButtonId: string) {
     openCloseWindow(windowId, startBarButtonId);
-    openCloseMenu(startMenuDivId, showStartMenu);
     setShowStartMenu(!showStartMenu);
   }
 
   function handleShutdown() {
     const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
+    const shutdownScreen = document.getElementById(shutdownScreenDivId);
+    if (shutdownScreen) shutdownScreen.style.display = 'block';
 
-    setTheme(theme);
-    updateWindowThemeBgColor(theme);
-    openCloseMenu(startMenuDivId, showStartMenu);
+    setTimeout(() => {
+      setTheme(theme);
+      updateWindowThemeBgColor(theme);
+    }, 2000);
+
     setShowStartMenu(!showStartMenu);
   }
 
