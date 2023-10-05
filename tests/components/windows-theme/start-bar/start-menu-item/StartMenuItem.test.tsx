@@ -9,6 +9,7 @@ import StartMenuItem, {
   shutdownLabelText,
   shutdownMenuItemLabelId,
 } from '../../../../../src/components/windows-theme/start-bar/start-menu-item/StartMenuItem';
+import { startMenuDivId } from '../../../../../src/components/windows-theme/start-bar/StartBar';
 import { menuItems } from '../../../../mocks/data-mock';
 
 jest.mock('react', () => ({
@@ -36,6 +37,7 @@ describe('StartMenuItem component', () => {
 
       render(
         <StartMenuItem
+          startMenuDivId={startMenuDivId}
           showStartMenu={showStartMenu}
           setShowStartMenu={setShowStartMenu}
           useDarkTheme={useDarkTheme}
@@ -59,6 +61,7 @@ describe('StartMenuItem component', () => {
 
     render(
       <StartMenuItem
+        startMenuDivId={startMenuDivId}
         showStartMenu={showStartMenu}
         setShowStartMenu={setShowStartMenu}
         useDarkTheme={useDarkTheme}

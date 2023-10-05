@@ -1,10 +1,9 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import StartButton from './start-button/StartButton';
 import StartBarButton from './start-bar-button/StartBarButton';
 import StartMenu from './start-menu/StartMenu';
 import Clock from './clock/Clock';
 import MenuItemModel from '../../../models/component-helpers/menu-item';
-import { openCloseMenu } from '../../../utils/window';
 
 import styles from './StartBar.module.css';
 
@@ -18,25 +17,15 @@ export const startMenuDivId = 'start-menu';
 export const startBarDivId = 'start-bar';
 
 export default function StartBar({ menuItems, useDarkTheme, setTheme }: Props): JSX.Element {
-  const [showStartMenu, setShowStartMenu] = useState<boolean>(true);
-
-  useEffect(() => {
-    document.addEventListener('mouseup', (e) => {
-      const element = document.getElementById(startMenuDivId);
-
-      if (element && !element?.contains(e.target as Node)) {
-        element.style.display = 'none';
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    openCloseMenu(startMenuDivId, showStartMenu);
-  }, [showStartMenu]);
+  const [showStartMenu, setShowStartMenu] = useState<boolean>(false);
 
   return (
     <div className={styles['start-bar']} id={startBarDivId}>
-      <StartButton showStartMenu={showStartMenu} setShowStartMenu={setShowStartMenu} />
+      <StartButton
+        startMenuDivId={startMenuDivId}
+        showStartMenu={showStartMenu}
+        setShowStartMenu={setShowStartMenu}
+      />
 
       <div className={styles.items}>
         {menuItems.map((menuItem: MenuItemModel, index: number) => {
