@@ -2,8 +2,8 @@ import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import MenuItemModel from '../../../../models/component-helpers/menu-item';
 import ThemeConstants from '../../../../constants/theme';
-import { openCloseWindow, updateWindowThemeBgColor } from '../../../../utils/window';
-import { shutdownScreenDivId } from '../../shutdown-screen/ShutdownScreen';
+import { openCloseWindow, showHideElement } from '../../../../utils/window';
+import { shutdownScreenDivId, shutdownScreenAudioId } from '../../shutdown-screen/ShutdownScreen';
 
 import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
@@ -49,13 +49,17 @@ export default function StartMenuItem({
   function handleShutdown() {
     const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
     const shutdownScreen = document.getElementById(shutdownScreenDivId);
-    if (shutdownScreen) shutdownScreen.style.display = 'block';
+    const audio = document.getElementById(shutdownScreenAudioId) as HTMLAudioElement;
+
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    if (audio) audio.play();
+    if (shutdownScreen) showHideElement(shutdownScreen);
+
+    setShowStartMenu(!showStartMenu);
 
     setTimeout(() => {
       setTheme(theme);
-    }, 2000);
-
-    setShowStartMenu(!showStartMenu);
+    }, 2500);
   }
 
   return (
