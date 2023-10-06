@@ -115,6 +115,20 @@
         "heightPercentage": 89,
         "widthPercentage": 90
       }
+    },
+    {
+      "title": "Help",
+      "menuItemButtonId": "help-menu-item-btn",
+      "externalUrl": "",
+      "window": {
+        "title": "Help",
+        "windowId": "help-window",
+        "startBarButtonId": "help-start-bar-btn",
+        "isInternetExplorerWindow": false,
+        "addressBarUrl": "",
+        "heightPercentage": 50,
+        "widthPercentage": 50
+      }
     }
   ]
 }
