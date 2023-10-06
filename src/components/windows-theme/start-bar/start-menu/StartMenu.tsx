@@ -40,7 +40,6 @@ export default function StartMenu({
       <ul>
         {menuItems.map((menuItem: MenuItemModel, index: number) => (
           <StartMenuItem
-            startMenuDivId={startMenuDivId}
             showStartMenu={showStartMenu}
             setShowStartMenu={setShowStartMenu}
             useDarkTheme={useDarkTheme}
@@ -52,7 +51,6 @@ export default function StartMenu({
         ))}
 
         <StartMenuItem
-          startMenuDivId={startMenuDivId}
           showStartMenu={showStartMenu}
           setShowStartMenu={setShowStartMenu}
           useDarkTheme={useDarkTheme}
