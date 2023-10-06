@@ -14,6 +14,7 @@ import Contact from '../components/portfolio/pages/contact/Contact';
 import Layout from '../components/portfolio/layout/Layout';
 import WindowsThemeLayout from '../components/windows-theme/layout/Layout';
 import Window from '../components/windows-theme/window/Window';
+import HelpWindow from '../components/windows-theme/help-window/HelpWindow';
 import PageModel from '../models/component-helpers/page';
 import DesktopItemModel from '../models/component-helpers/desktop-item';
 import ThemeConstants from '../constants/theme';
@@ -77,7 +78,7 @@ export default function App({ Component, pageProps }: AppProps) {
     />
   );
 
-  const windowContent: any = { 'portfolio-window': portfolioLayout };
+  const windowContent: any = { 'portfolio-window': portfolioLayout, 'help-window': <HelpWindow /> };
   const windows = Data.menuItems.map((menuItem: any, index: number) => {
     if (menuItem.window)
       return (
