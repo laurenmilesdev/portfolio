@@ -25,7 +25,7 @@ export default function Navigation({
   useWindowsTheme,
 }: Props): JSX.Element {
   const tabs = (
-    <Tabs value={pageValue} onChange={handleChange} centered>
+    <Tabs value={pageValue} onChange={handleChange} className="nav-tabs" centered>
       {pageTitles.map((title: string, index: number) => (
         <Tab
           className={`${styles.tab} nav-tab`}
