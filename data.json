@@ -126,8 +126,8 @@
         "startBarButtonId": "help-start-bar-btn",
         "isInternetExplorerWindow": false,
         "addressBarUrl": "",
-        "heightPercentage": 50,
-        "widthPercentage": 50
+        "heightPercentage": 60,
+        "widthPercentage": 40
       }
     }
   ]
