@@ -1,10 +1,12 @@
 import { Dispatch, SetStateAction } from 'react';
+import { Tooltip } from '@mui/material';
 import WindowsThemeButton from './windows-theme-button/WindowsThemeButton';
 import Contacts from './contacts/Contacts';
 import ThemeSwitch from './theme-switch/ThemeSwitch';
 import ContactModel from '../../../models/contact/contact';
 
 import styles from './Footer.module.css';
+import ThemeConstants from '@/constants/theme';
 
 type Props = {
   contacts: ContactModel[];
@@ -27,11 +29,13 @@ export default function Footer({
 
       <Contacts contacts={contacts} />
 
-      <ThemeSwitch
-        useDarkTheme={useDarkTheme}
-        setUseDarkTheme={setUseDarkTheme}
-        setTheme={setTheme}
-      />
+      <Tooltip title={`${useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT} mode`}>
+        <ThemeSwitch
+          useDarkTheme={useDarkTheme}
+          setUseDarkTheme={setUseDarkTheme}
+          setTheme={setTheme}
+        />
+      </Tooltip>
     </div>
   );
 }
