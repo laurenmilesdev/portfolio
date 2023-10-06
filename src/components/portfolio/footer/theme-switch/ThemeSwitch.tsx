@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from 'react';
-import { Switch, Tooltip } from '@mui/material';
+import React, { Dispatch, SetStateAction } from 'react';
+import { Switch } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ThemeConstants from '../../../../constants/theme';
 
@@ -11,11 +11,7 @@ type Props = {
 
 export const switchId = 'theme-switch';
 
-export default function ThemeSwitch({
-  useDarkTheme,
-  setUseDarkTheme,
-  setTheme,
-}: Props): JSX.Element {
+const ThemeSwitch = React.forwardRef(({ useDarkTheme, setUseDarkTheme, setTheme }: Props, ref) => {
   const MaterialUISwitch = styled(Switch)(() => ({
     width: 62,
     height: 34,
@@ -70,13 +66,13 @@ export default function ThemeSwitch({
   }
 
   return (
-    <Tooltip title={`${useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT} mode`}>
-      <MaterialUISwitch
-        sx={{ mt: 0.5 }}
-        checked={useDarkTheme}
-        onChange={handleChange}
-        id={switchId}
-      />
-    </Tooltip>
+    <MaterialUISwitch
+      sx={{ mt: 0.5 }}
+      checked={useDarkTheme}
+      onChange={handleChange}
+      id={switchId}
+    />
   );
-}
+});
+
+export default ThemeSwitch;
