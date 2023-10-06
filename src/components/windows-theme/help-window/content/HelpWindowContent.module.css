@@ -1,0 +1,15 @@
+.help-tabs-container,
+.help-tabs-content-container {
+  background-color: #fff;
+  border: 2px inset;
+  padding: 2%;
+}
+
+.help-tabs-container {
+  height: 100%;
+}
+
+.help-tabs-content-container {
+  overflow-y: scroll;
+  height: 100%;
+}
