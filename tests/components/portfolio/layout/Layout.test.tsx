@@ -14,7 +14,7 @@ jest.mock('next/image', () => ({
 describe('Layout component', () => {
   const pageValue = 0;
   const pageTitles = ['Title', 'Title2'];
-  const handlePageChange = () => undefined;
+  const setPageTabValue = () => undefined;
   const useDarkTheme = true;
   const setUseDarkTheme = setBoolStateMock;
   const setTheme = setStringStateMock;
@@ -25,9 +25,9 @@ describe('Layout component', () => {
   beforeEach(() => {
     render(
       <Layout
-        pageValue={pageValue}
+        pageTabValue={pageValue}
         pageTitles={pageTitles}
-        handlePageChange={handlePageChange}
+        setPageTabValue={setPageTabValue}
         contacts={contacts}
         useDarkTheme={useDarkTheme}
         setUseDarkTheme={setUseDarkTheme}

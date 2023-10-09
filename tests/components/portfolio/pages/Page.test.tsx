@@ -14,7 +14,7 @@ describe('Page component', () => {
     const page = pages[pageValue];
 
     beforeEach(() => {
-      render(<Page pageValue={pageValue} page={page} />);
+      render(<Page pageTabValue={pageValue} page={page} />);
     });
 
     it('does not render title', () => {
@@ -35,7 +35,7 @@ describe('Page component', () => {
     const page = pages[pageValue];
 
     beforeEach(() => {
-      render(<Page pageValue={pageValue} page={page} />);
+      render(<Page pageTabValue={pageValue} page={page} />);
     });
 
     it('renders title', () => {

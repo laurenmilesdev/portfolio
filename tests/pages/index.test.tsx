@@ -8,7 +8,7 @@ describe('index.tsx', () => {
     const pageValue = 0;
 
     it('does not render title', () => {
-      render(<Home pages={pages} pageValue={pageValue} />);
+      render(<Home pages={pages} pageTabValue={pageValue} />);
 
       const element = document.getElementById(titleDivId) as HTMLDivElement;
 
@@ -16,7 +16,7 @@ describe('index.tsx', () => {
     });
 
     it('renders content', () => {
-      render(<Home pages={pages} pageValue={pageValue} />);
+      render(<Home pages={pages} pageTabValue={pageValue} />);
 
       const element = document.getElementById(contentDivId) as HTMLDivElement;
 
@@ -28,7 +28,7 @@ describe('index.tsx', () => {
     const pageValue = 1;
 
     it('renders title', () => {
-      render(<Home pages={pages} pageValue={pageValue} />);
+      render(<Home pages={pages} pageTabValue={pageValue} />);
 
       const element = document.getElementById(titleDivId) as HTMLDivElement;
 
@@ -36,7 +36,7 @@ describe('index.tsx', () => {
     });
 
     it('renders content', () => {
-      render(<Home pages={pages} pageValue={pageValue} />);
+      render(<Home pages={pages} pageTabValue={pageValue} />);
 
       const element = document.getElementById(contentDivId) as HTMLDivElement;
 

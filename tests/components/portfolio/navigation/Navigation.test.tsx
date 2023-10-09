@@ -3,15 +3,15 @@ import Navigation from '../../../../src/components/portfolio/navigation/Navigati
 
 describe('Navigation component', () => {
   const pageTitles: string[] = ['Tab 1', 'Tab 2', 'Tab 3'];
-  const handleChange = () => undefined;
+  const setPageTabValue = () => undefined;
   const value = 0;
 
   beforeEach(() => {
     render(
       <Navigation
         pageTitles={pageTitles}
-        handleChange={handleChange}
-        pageValue={value}
+        pageTabValue={value}
+        setPageTabValue={setPageTabValue}
         useWindowsTheme={false}
       />
     );
