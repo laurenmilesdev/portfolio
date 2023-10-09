@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import WindowHeader from './window-header/WindowHeader';
 import InternetExplorerBar from './internet-explorer-bar/InternetExplorerBar';
 import WindowModel from '../../../models/component-helpers/window';
@@ -11,6 +11,7 @@ type Props = {
   children: JSX.Element;
   widthPercentage: number;
   heightPercentage: number;
+  setTabValue?: Dispatch<SetStateAction<number>>;
 };
 
 export default function Window({
@@ -18,6 +19,7 @@ export default function Window({
   children,
   widthPercentage,
   heightPercentage,
+  setTabValue,
 }: Props): JSX.Element {
   const headerId = `${window.windowId}-header`;
   const contentId = `${window.windowId}-content`;
@@ -42,7 +44,7 @@ export default function Window({
   return (
     <div className={`${styles.window} windows-box-shadow`} id={window.windowId}>
       <div className={styles.header} id={headerId}>
-        <WindowHeader window={window} />
+        <WindowHeader window={window} setTabValue={setTabValue} />
 
         {window.isInternetExplorerWindow && (
           <InternetExplorerBar addressBarUrl={window.addressBarUrl} />
