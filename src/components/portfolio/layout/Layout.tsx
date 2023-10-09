@@ -46,6 +46,7 @@ export default function Layout({
           useDarkTheme={useDarkTheme}
           setUseDarkTheme={setUseDarkTheme}
           setTheme={setTheme}
+          setPageTabValue={setPageTabValue}
         />
       )}
     </>

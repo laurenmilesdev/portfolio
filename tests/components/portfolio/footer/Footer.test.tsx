@@ -5,7 +5,12 @@ import { windowsThemeButtonId } from '../../../../src/components/portfolio/foote
 import { switchId } from '../../../../src/components/portfolio/footer/theme-switch/ThemeSwitch';
 import { contactsDivId } from '../../../../src/components/portfolio/footer/contacts/Contacts';
 import { contacts } from '../../../mocks/data-mock';
-import { useStateMock, setBoolStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
+import {
+  useStateMock,
+  setBoolStateMock,
+  setNumberStateMock,
+  setStringStateMock,
+} from '../../../mocks/use-state-mock';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
@@ -22,6 +27,7 @@ describe('Footer component', () => {
   const useDarkTheme = true;
   const setUseDarkTheme = setBoolStateMock;
   const setTheme = setStringStateMock;
+  const setPageTabValue = setNumberStateMock;
 
   beforeEach(() => {
     jest
@@ -34,6 +40,7 @@ describe('Footer component', () => {
         useDarkTheme={useDarkTheme}
         setUseDarkTheme={setUseDarkTheme}
         setTheme={setTheme}
+        setPageTabValue={setPageTabValue}
       />
     );
   });

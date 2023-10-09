@@ -10,3 +10,7 @@ export function setBoolStateMock(value: SetStateAction<boolean>): void {
 export function setStringStateMock(value: SetStateAction<string>): void {
   throw new Error('Function not implemented.');
 }
+
+export function setNumberStateMock(value: SetStateAction<number>): void {
+  throw new Error('Function not implemented.');
+}

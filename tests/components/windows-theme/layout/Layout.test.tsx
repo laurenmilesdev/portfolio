@@ -4,7 +4,11 @@ import Layout from '../../../../src/components/windows-theme/layout/Layout';
 import { desktopDivId } from '../../../../src/components/windows-theme/desktop/Desktop';
 import { startBarDivId } from '../../../../src/components/windows-theme/start-bar/StartBar';
 import { desktopItems, menuItems } from '../../../mocks/data-mock';
-import { useStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
+import {
+  useStateMock,
+  setNumberStateMock,
+  setStringStateMock,
+} from '../../../mocks/use-state-mock';
 
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -15,6 +19,7 @@ jest.mock('next/image', () => ({
 describe('Layout component', () => {
   const useDarkTheme = true;
   const setTheme = setStringStateMock;
+  const setPageTabValue = setNumberStateMock;
 
   beforeEach(() => {
     jest
@@ -27,6 +32,7 @@ describe('Layout component', () => {
         menuItems={menuItems}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
+        setPageTabValue={setPageTabValue}
       />
     );
   });

@@ -1,6 +1,10 @@
 import React, { Dispatch } from 'react';
 import { render } from '@testing-library/react';
-import { useStateMock, setStringStateMock } from '../../../../mocks/use-state-mock';
+import {
+  useStateMock,
+  setNumberStateMock,
+  setStringStateMock,
+} from '../../../../mocks/use-state-mock';
 import WindowsThemeButton, {
   windowsThemeButtonId,
   windowsThemeWhiteImageId,
@@ -20,6 +24,7 @@ jest.mock('next/image', () => ({
 
 describe('WindowsThemeButton component', () => {
   const setTheme = setStringStateMock;
+  const setPageTabValue = setNumberStateMock;
 
   describe('useDarkTheme is true', () => {
     const useDarkTheme = true;
@@ -29,7 +34,13 @@ describe('WindowsThemeButton component', () => {
         .spyOn(React, 'useState')
         .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
 
-      render(<WindowsThemeButton useDarkTheme={useDarkTheme} setTheme={setTheme} />);
+      render(
+        <WindowsThemeButton
+          useDarkTheme={useDarkTheme}
+          setTheme={setTheme}
+          setPageTabValue={setPageTabValue}
+        />
+      );
     });
 
     it('renders button', () => {
@@ -55,7 +66,13 @@ describe('WindowsThemeButton component', () => {
         .spyOn(React, 'useState')
         .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
 
-      render(<WindowsThemeButton useDarkTheme={useDarkTheme} setTheme={setTheme} />);
+      render(
+        <WindowsThemeButton
+          useDarkTheme={useDarkTheme}
+          setTheme={setTheme}
+          setPageTabValue={setPageTabValue}
+        />
+      );
     });
 
     it('renders button', () => {

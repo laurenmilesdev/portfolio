@@ -10,18 +10,26 @@ import styles from './WindowsThemeButton.module.css';
 type Props = {
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
+  setPageTabValue: Dispatch<SetStateAction<number>>;
 };
 
 export const windowsThemeButtonId = 'windows-theme-btn';
 export const windowsThemeWhiteImageId = 'windows-image-white';
 export const windowsThemeBlackImageId = 'windows-image-black';
 
-export default function WindowsThemeButton({ useDarkTheme, setTheme }: Props): JSX.Element {
+export default function WindowsThemeButton({
+  useDarkTheme,
+  setTheme,
+  setPageTabValue,
+}: Props): JSX.Element {
   return (
     <Tooltip title="take me back in time">
       <Button
         className=" btn-primary"
-        onClick={() => setTheme(ThemeConstants.WINDOWS)}
+        onClick={() => {
+          setPageTabValue(0);
+          setTheme(ThemeConstants.WINDOWS);
+        }}
         id={windowsThemeButtonId}
       >
         <Image

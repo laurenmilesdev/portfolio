@@ -74,6 +74,7 @@ export default function App({ Component, pageProps }: AppProps) {
       menuItems={Data.menuItems}
       useDarkTheme={useDarkTheme}
       setTheme={setTheme}
+      setPageTabValue={setPageTabValue}
     />
   );
 
