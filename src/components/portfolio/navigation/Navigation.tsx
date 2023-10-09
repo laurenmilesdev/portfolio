@@ -4,9 +4,9 @@ import { AppBar, Tab, Tabs } from '@mui/material';
 import styles from './Navigation.module.css';
 
 type Props = {
-  pageValue: number;
   pageTitles: string[];
-  setPageValue: Dispatch<SetStateAction<number>>;
+  pageTabValue: number;
+  setPageTabValue: Dispatch<SetStateAction<number>>;
   useWindowsTheme: boolean;
 };
 
@@ -20,15 +20,15 @@ function a11yProps(index: number): object {
 }
 
 export default function Navigation({
-  pageValue,
+  pageTabValue,
   pageTitles,
-  setPageValue,
+  setPageTabValue,
   useWindowsTheme,
 }: Props): JSX.Element {
   const tabs = (
     <Tabs
-      value={pageValue}
-      onChange={(event, newValue) => setPageValue(newValue as number)}
+      value={pageTabValue}
+      onChange={(event, newValue) => setPageTabValue(newValue as number)}
       className="nav-tabs"
       centered
     >

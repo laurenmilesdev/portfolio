@@ -5,9 +5,9 @@ import Footer from '../footer/Footer';
 import ContactModel from '../../../models/contact/contact';
 
 type Props = {
-  pageValue: number;
   pageTitles: string[];
-  setPageValue: Dispatch<SetStateAction<number>>;
+  pageTabValue: number;
+  setPageTabValue: Dispatch<SetStateAction<number>>;
   contacts: ContactModel[];
   useDarkTheme: boolean;
   setUseDarkTheme: Dispatch<SetStateAction<boolean>>;
@@ -19,9 +19,9 @@ type Props = {
 export const childrenContainerId = 'children-container';
 
 export default function Layout({
-  pageValue,
   pageTitles,
-  setPageValue,
+  pageTabValue,
+  setPageTabValue,
   contacts,
   useDarkTheme,
   setUseDarkTheme,
@@ -32,9 +32,9 @@ export default function Layout({
   return (
     <>
       <Navigation
-        pageValue={pageValue}
         pageTitles={pageTitles}
-        setPageValue={setPageValue}
+        pageTabValue={pageTabValue}
+        setPageTabValue={setPageTabValue}
         useWindowsTheme={useWindowsTheme}
       />
 

@@ -21,7 +21,7 @@ import ThemeConstants from '../constants/theme';
 import { updateWindowThemeBgColor } from '../utils/window';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [pageValue, setPageValue] = useState<number>(0);
+  const [pageTabValue, setPageTabValue] = useState<number>(0);
   const [helpTabValue, setHelpTabValue] = useState<number>(0);
   const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
   const [theme, setTheme] = useState<string>(
@@ -55,16 +55,16 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const portfolioLayout = (
     <Layout
-      pageValue={pageValue}
       pageTitles={pages.map((page: PageModel) => page.title)}
-      setPageValue={setPageValue}
+      pageTabValue={pageTabValue}
+      setPageTabValue={setPageTabValue}
       contacts={Data.contact.contacts}
       useDarkTheme={useDarkTheme}
       setUseDarkTheme={setUseDarkTheme}
       setTheme={setTheme}
       useWindowsTheme={useWindowsTheme}
     >
-      <Component {...pageProps} pages={pages} pageValue={pageValue} />
+      <Component {...pageProps} pages={pages} pageTabValue={pageTabValue} />
     </Layout>
   );
   const windowsThemeLayout = (
