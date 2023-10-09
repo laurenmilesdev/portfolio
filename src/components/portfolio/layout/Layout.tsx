@@ -7,7 +7,7 @@ import ContactModel from '../../../models/contact/contact';
 type Props = {
   pageValue: number;
   pageTitles: string[];
-  handlePageChange: (event: React.SyntheticEvent, newValue: number) => void;
+  setPageValue: Dispatch<SetStateAction<number>>;
   contacts: ContactModel[];
   useDarkTheme: boolean;
   setUseDarkTheme: Dispatch<SetStateAction<boolean>>;
@@ -21,7 +21,7 @@ export const childrenContainerId = 'children-container';
 export default function Layout({
   pageValue,
   pageTitles,
-  handlePageChange,
+  setPageValue,
   contacts,
   useDarkTheme,
   setUseDarkTheme,
@@ -34,7 +34,7 @@ export default function Layout({
       <Navigation
         pageValue={pageValue}
         pageTitles={pageTitles}
-        handleChange={handlePageChange}
+        setPageValue={setPageValue}
         useWindowsTheme={useWindowsTheme}
       />
 

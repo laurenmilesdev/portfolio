@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import { AppBar, Tab, Tabs } from '@mui/material';
 
 import styles from './Navigation.module.css';
@@ -5,7 +6,7 @@ import styles from './Navigation.module.css';
 type Props = {
   pageValue: number;
   pageTitles: string[];
-  handleChange: (event: React.SyntheticEvent, newValue: number) => void;
+  setPageValue: Dispatch<SetStateAction<number>>;
   useWindowsTheme: boolean;
 };
 
@@ -21,11 +22,16 @@ function a11yProps(index: number): object {
 export default function Navigation({
   pageValue,
   pageTitles,
-  handleChange,
+  setPageValue,
   useWindowsTheme,
 }: Props): JSX.Element {
   const tabs = (
-    <Tabs value={pageValue} onChange={handleChange} className="nav-tabs" centered>
+    <Tabs
+      value={pageValue}
+      onChange={(event, newValue) => setPageValue(newValue as number)}
+      className="nav-tabs"
+      centered
+    >
       {pageTitles.map((title: string, index: number) => (
         <Tab
           className={`${styles.tab} nav-tab`}

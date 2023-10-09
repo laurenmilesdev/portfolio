@@ -22,14 +22,12 @@ import { updateWindowThemeBgColor } from '../utils/window';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [pageValue, setPageValue] = useState<number>(0);
+  const [helpTabValue, setHelpTabValue] = useState<number>(0);
   const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
   const [theme, setTheme] = useState<string>(
     useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT
   );
   const useWindowsTheme = theme === ThemeConstants.WINDOWS;
-
-  const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
-    setPageValue(newValue);
 
   const pages: PageModel[] = [
     new PageModel(
@@ -59,7 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <Layout
       pageValue={pageValue}
       pageTitles={pages.map((page: PageModel) => page.title)}
-      handlePageChange={handlePageChange}
+      setPageValue={setPageValue}
       contacts={Data.contact.contacts}
       useDarkTheme={useDarkTheme}
       setUseDarkTheme={setUseDarkTheme}
@@ -78,7 +76,10 @@ export default function App({ Component, pageProps }: AppProps) {
     />
   );
 
-  const windowContent: any = { 'portfolio-window': portfolioLayout, 'help-window': <HelpWindow /> };
+  const windowContent: any = {
+    'portfolio-window': portfolioLayout,
+    'help-window': <HelpWindow helpTabValue={helpTabValue} setHelpTabValue={setHelpTabValue} />,
+  };
   const windows = Data.menuItems.map((menuItem: any, index: number) => {
     if (menuItem.window)
       return (
