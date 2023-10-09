@@ -20,13 +20,13 @@
   font-weight: 900;
   position: absolute;
   transform: rotateZ(-90deg);
-  width: 8rem;
+  width: 12rem;
   font-size: 1.1rem;
   font-family: 'Arial Black', sans-serif;
   background: var(--windows-blue);
   left: 0;
   transform-origin: 0 0;
-  top: 8rem;
+  top: 12rem;
   box-sizing: border-box;
   padding: 0.125rem 0.75rem;
 }
