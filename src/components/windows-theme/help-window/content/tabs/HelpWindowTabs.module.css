@@ -5,6 +5,6 @@
 .help-tab {
   font-family: Arial, Helvetica, sans-serif;
   color: #000;
-  text-transform: capitalize;
+  text-transform: none;
   text-align: left;
 }
