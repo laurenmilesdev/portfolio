@@ -18,6 +18,7 @@ import HelpWindow from '../components/windows-theme/help-window/HelpWindow';
 import PageModel from '../models/component-helpers/page';
 import DesktopItemModel from '../models/component-helpers/desktop-item';
 import ThemeConstants from '../constants/theme';
+import WindowConstants from '../constants/window';
 import { updateWindowThemeBgColor } from '../utils/window';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -77,21 +78,32 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 
   const windowContent: any = {
-    'portfolio-window': portfolioLayout,
-    'help-window': <HelpWindow helpTabValue={helpTabValue} setHelpTabValue={setHelpTabValue} />,
+    [WindowConstants.PORTFOLIO_WINDOW_WINDOW_ID]: portfolioLayout,
+    [WindowConstants.HELP_WINDOW_WINDOW_ID]: (
+      <HelpWindow helpTabValue={helpTabValue} setHelpTabValue={setHelpTabValue} />
+    ),
   };
   const windows = Data.menuItems.map((menuItem: any, index: number) => {
-    if (menuItem.window)
+    if (menuItem.window) {
+      const setTabValue =
+        menuItem.window.windowId === WindowConstants.PORTFOLIO_WINDOW_WINDOW_ID
+          ? setPageTabValue
+          : menuItem.window.windowId === WindowConstants.HELP_WINDOW_WINDOW_ID
+          ? setHelpTabValue
+          : undefined;
+
       return (
         <Window
           window={menuItem.window}
           heightPercentage={menuItem.window.heightPercentage}
           widthPercentage={menuItem.window.widthPercentage}
           key={index}
+          setTabValue={setTabValue}
         >
           {windowContent[menuItem.window.windowId]}
         </Window>
       );
+    }
   });
 
   useEffect(() => {
