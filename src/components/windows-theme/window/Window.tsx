@@ -11,6 +11,7 @@ type Props = {
   children: JSX.Element;
   widthPercentage: number;
   heightPercentage: number;
+  scroll: boolean;
   setTabValue?: Dispatch<SetStateAction<number>>;
 };
 
@@ -19,6 +20,7 @@ export default function Window({
   children,
   widthPercentage,
   heightPercentage,
+  scroll,
   setTabValue,
 }: Props): JSX.Element {
   const headerId = `${window.windowId}-header`;
@@ -51,7 +53,7 @@ export default function Window({
         )}
       </div>
 
-      <div className={styles.content} id={contentId}>
+      <div className={scroll ? styles['content-scroll'] : styles.content} id={contentId}>
         {children}
       </div>
     </div>

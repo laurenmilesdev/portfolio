@@ -99,6 +99,7 @@ export default function App({ Component, pageProps }: AppProps) {
           heightPercentage={menuItem.window.heightPercentage}
           widthPercentage={menuItem.window.widthPercentage}
           key={index}
+          scroll={menuItem.window.scroll}
           setTabValue={setTabValue}
         >
           {windowContent[menuItem.window.windowId]}

@@ -113,7 +113,8 @@
         "isInternetExplorerWindow": true,
         "addressBarUrl": "https://portfolio.laurenmilesdev.com/",
         "heightPercentage": 89,
-        "widthPercentage": 90
+        "widthPercentage": 90,
+        "scroll": true
       }
     },
     {
@@ -127,7 +128,8 @@
         "isInternetExplorerWindow": false,
         "addressBarUrl": "",
         "heightPercentage": 60,
-        "widthPercentage": 40
+        "widthPercentage": 40,
+        "scroll": false
       }
     }
   ]

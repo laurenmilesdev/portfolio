@@ -9,10 +9,14 @@
   display: none;
 }
 
-.content {
+.content,
+.content-scroll {
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: var(--background-color);
+}
+
+.content-scroll {
   overflow-y: scroll;
 }
