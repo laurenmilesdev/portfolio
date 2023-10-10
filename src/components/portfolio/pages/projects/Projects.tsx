@@ -28,7 +28,12 @@ export default function Projects({ projects }: Props): JSX.Element {
               </div>
 
               <div className="col-md-12">
-                <a href={project.companyUrl ?? ''} target="_blank" id={`project-${index}-company`}>
+                <a
+                  href={project.companyUrl ?? ''}
+                  target="_blank"
+                  id={`project-${index}-company`}
+                  className="primary"
+                >
                   {project.company}
                   {<OpenInNewIcon className={styles.icon} />}
                 </a>
