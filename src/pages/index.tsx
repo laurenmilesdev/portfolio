@@ -4,15 +4,15 @@ import PageModel from '../models/component-helpers/page';
 
 type Props = {
   pages: PageModel[];
-  pageValue: number;
+  pageTabValue: number;
 };
 
-export default function Home({ pages, pageValue }: Props): JSX.Element {
+export default function Home({ pages, pageTabValue }: Props): JSX.Element {
   return (
     <>
       {pages.map((page: PageModel, index: number) => (
-        <TabPanel value={pageValue} index={index} key={index}>
-          <Page pageValue={pageValue} page={page} />
+        <TabPanel value={pageTabValue} index={index} key={index}>
+          <Page pageTabValue={pageTabValue} page={page} />
         </TabPanel>
       ))}
     </>

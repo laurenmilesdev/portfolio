@@ -5,7 +5,11 @@ import StartBar, {
 } from '../../../../src/components/windows-theme/start-bar/StartBar';
 import { startButtonId } from '../../../../src/components/windows-theme/start-bar/start-button/StartButton';
 import { clockId } from '../../../../src/components/windows-theme/start-bar/clock/Clock';
-import { useStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
+import {
+  useStateMock,
+  setNumberStateMock,
+  setStringStateMock,
+} from '../../../mocks/use-state-mock';
 import { menuItems } from '../../../mocks/data-mock';
 
 jest.mock('react', () => ({
@@ -22,13 +26,21 @@ jest.mock('next/image', () => ({
 describe('StartButton component', () => {
   const useDarkTheme = true;
   const setTheme = setStringStateMock;
+  const setPageTabValue = setNumberStateMock;
 
   beforeEach(() => {
     jest
       .spyOn(React, 'useState')
       .mockImplementation(useStateMock as () => [unknown, Dispatch<unknown>]);
 
-    render(<StartBar menuItems={menuItems} useDarkTheme={useDarkTheme} setTheme={setTheme} />);
+    render(
+      <StartBar
+        menuItems={menuItems}
+        useDarkTheme={useDarkTheme}
+        setTheme={setTheme}
+        setPageTabValue={setPageTabValue}
+      />
+    );
   });
 
   it('renders StartButton', () => {

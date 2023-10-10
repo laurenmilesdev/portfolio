@@ -9,6 +9,7 @@ type Props = {
   menuItems: MenuItemModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
+  setPageTabValue: Dispatch<SetStateAction<number>>;
 };
 
 export default function Layout({
@@ -16,11 +17,17 @@ export default function Layout({
   menuItems,
   useDarkTheme,
   setTheme,
+  setPageTabValue,
 }: Props): JSX.Element {
   return (
     <>
       <Desktop desktopItems={desktopItems} />
-      <StartBar menuItems={menuItems} useDarkTheme={useDarkTheme} setTheme={setTheme} />
+      <StartBar
+        menuItems={menuItems}
+        useDarkTheme={useDarkTheme}
+        setTheme={setTheme}
+        setPageTabValue={setPageTabValue}
+      />
     </>
   );
 }

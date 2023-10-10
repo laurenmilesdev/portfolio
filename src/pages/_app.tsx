@@ -14,21 +14,21 @@ import Contact from '../components/portfolio/pages/contact/Contact';
 import Layout from '../components/portfolio/layout/Layout';
 import WindowsThemeLayout from '../components/windows-theme/layout/Layout';
 import Window from '../components/windows-theme/window/Window';
+import HelpWindow from '../components/windows-theme/help-window/HelpWindow';
 import PageModel from '../models/component-helpers/page';
 import DesktopItemModel from '../models/component-helpers/desktop-item';
 import ThemeConstants from '../constants/theme';
+import WindowConstants from '../constants/window';
 import { updateWindowThemeBgColor } from '../utils/window';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [pageValue, setPageValue] = useState<number>(0);
+  const [pageTabValue, setPageTabValue] = useState<number>(0);
+  const [helpTabValue, setHelpTabValue] = useState<number>(0);
   const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
   const [theme, setTheme] = useState<string>(
     useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT
   );
   const useWindowsTheme = theme === ThemeConstants.WINDOWS;
-
-  const handlePageChange = (event: React.SyntheticEvent, newValue: number) =>
-    setPageValue(newValue);
 
   const pages: PageModel[] = [
     new PageModel(
@@ -56,16 +56,16 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const portfolioLayout = (
     <Layout
-      pageValue={pageValue}
       pageTitles={pages.map((page: PageModel) => page.title)}
-      handlePageChange={handlePageChange}
+      pageTabValue={pageTabValue}
+      setPageTabValue={setPageTabValue}
       contacts={Data.contact.contacts}
       useDarkTheme={useDarkTheme}
       setUseDarkTheme={setUseDarkTheme}
       setTheme={setTheme}
       useWindowsTheme={useWindowsTheme}
     >
-      <Component {...pageProps} pages={pages} pageValue={pageValue} />
+      <Component {...pageProps} pages={pages} pageTabValue={pageTabValue} />
     </Layout>
   );
   const windowsThemeLayout = (
@@ -74,22 +74,38 @@ export default function App({ Component, pageProps }: AppProps) {
       menuItems={Data.menuItems}
       useDarkTheme={useDarkTheme}
       setTheme={setTheme}
+      setPageTabValue={setPageTabValue}
     />
   );
 
-  const windowContent: any = { 'portfolio-window': portfolioLayout };
+  const windowContent: any = {
+    [WindowConstants.PORTFOLIO_WINDOW_WINDOW_ID]: portfolioLayout,
+    [WindowConstants.HELP_WINDOW_WINDOW_ID]: (
+      <HelpWindow helpTabValue={helpTabValue} setHelpTabValue={setHelpTabValue} />
+    ),
+  };
   const windows = Data.menuItems.map((menuItem: any, index: number) => {
-    if (menuItem.window)
+    if (menuItem.window) {
+      const setTabValue =
+        menuItem.window.windowId === WindowConstants.PORTFOLIO_WINDOW_WINDOW_ID
+          ? setPageTabValue
+          : menuItem.window.windowId === WindowConstants.HELP_WINDOW_WINDOW_ID
+          ? setHelpTabValue
+          : undefined;
+
       return (
         <Window
           window={menuItem.window}
           heightPercentage={menuItem.window.heightPercentage}
           widthPercentage={menuItem.window.widthPercentage}
           key={index}
+          scroll={menuItem.window.scroll}
+          setTabValue={setTabValue}
         >
           {windowContent[menuItem.window.windowId]}
         </Window>
       );
+    }
   });
 
   useEffect(() => {

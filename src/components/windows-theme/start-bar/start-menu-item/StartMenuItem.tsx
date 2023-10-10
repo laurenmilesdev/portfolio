@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import MenuItemModel from '../../../../models/component-helpers/menu-item';
 import ThemeConstants from '../../../../constants/theme';
-import { openCloseWindow, updateWindowThemeBgColor } from '../../../../utils/window';
+import { openCloseWindow } from '../../../../utils/window';
 
 import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
@@ -12,6 +12,7 @@ type Props = {
   setShowStartMenu: Dispatch<SetStateAction<boolean>>;
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
+  setPageTabValue?: Dispatch<SetStateAction<number>>;
   useLineStyle?: boolean;
   menuItem?: MenuItemModel;
 };
@@ -24,6 +25,7 @@ export default function StartMenuItem({
   setShowStartMenu,
   useDarkTheme,
   setTheme,
+  setPageTabValue,
   useLineStyle = false,
   menuItem = undefined,
 }: Props): JSX.Element {
@@ -48,6 +50,8 @@ export default function StartMenuItem({
   function handleShutdown() {
     const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
 
+    // Set page tab value back to zero on shutdown
+    if (setPageTabValue) setPageTabValue(0);
     setTheme(theme);
     setShowStartMenu(!showStartMenu);
   }

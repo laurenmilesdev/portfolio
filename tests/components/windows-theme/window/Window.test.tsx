@@ -19,6 +19,7 @@ describe('Window component', () => {
             window={window}
             widthPercentage={widthPercentage}
             heightPercentage={heightPercentage}
+            scroll={true}
           >
             {children}
           </Window>
@@ -55,6 +56,7 @@ describe('Window component', () => {
             window={window}
             widthPercentage={widthPercentage}
             heightPercentage={heightPercentage}
+            scroll={true}
           >
             {children}
           </Window>

@@ -12,12 +12,18 @@ type Props = {
   menuItems: MenuItemModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
+  setPageTabValue: Dispatch<SetStateAction<number>>;
 };
 
 export const startMenuDivId = 'start-menu';
 export const startBarDivId = 'start-bar';
 
-export default function StartBar({ menuItems, useDarkTheme, setTheme }: Props): JSX.Element {
+export default function StartBar({
+  menuItems,
+  useDarkTheme,
+  setTheme,
+  setPageTabValue,
+}: Props): JSX.Element {
   const [showStartMenu, setShowStartMenu] = useState<boolean>(true);
 
   useEffect(() => {
@@ -48,6 +54,7 @@ export default function StartBar({ menuItems, useDarkTheme, setTheme }: Props): 
         menuItems={menuItems}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
+        setPageTabValue={setPageTabValue}
       />
 
       <Clock currentTime={new Date()} />
