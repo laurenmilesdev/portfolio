@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
-import HelpWindowTabs from './tabs/HelpWindowTabs';
-import HelpWindowTabsContent from './tabs-content/HelpWindowTabsContent';
+import HelpWindowTabs from './help-window-tabs/HelpWindowTabs';
+import HelpWindowTabsContent from './help-window-tabs-content/HelpWindowTabsContent';
 import PageModel from '../../../../models/component-helpers/page';
 
 import styles from './HelpWindowContent.module.css';
@@ -13,7 +13,7 @@ type Props = {
 
 export default function HelpWindowContent({ helpTabs, helpTabValue, setHelpTabValue }: Props) {
   return (
-    <div className="col-md-12 d-flex justify-content-center">
+    <div className={`${styles.container} col-md-12`}>
       <div className={`${styles['help-tabs-container']} col-md-5`}>
         <HelpWindowTabs
           helpTabTitles={helpTabs.map((tab) => tab.title)}
