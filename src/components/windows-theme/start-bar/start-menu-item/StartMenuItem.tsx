@@ -2,17 +2,17 @@ import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import MenuItemModel from '../../../../models/component-helpers/menu-item';
 import ThemeConstants from '../../../../constants/theme';
-import { openCloseMenu, openCloseWindow, updateWindowThemeBgColor } from '../../../../utils/window';
+import { openCloseWindow } from '../../../../utils/window';
 
 import img from '../../../../../public/img/windows/ie.png';
 import styles from './StartMenuItem.module.css';
 
 type Props = {
-  startMenuDivId: string;
   showStartMenu: boolean;
   setShowStartMenu: Dispatch<SetStateAction<boolean>>;
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
+  setPageTabValue?: Dispatch<SetStateAction<number>>;
   useLineStyle?: boolean;
   menuItem?: MenuItemModel;
 };
@@ -21,11 +21,11 @@ export const shutdownMenuItemLabelId = 'shutdown-menu-item';
 export const shutdownLabelText = 'Shutdown';
 
 export default function StartMenuItem({
-  startMenuDivId,
   showStartMenu,
   setShowStartMenu,
   useDarkTheme,
   setTheme,
+  setPageTabValue,
   useLineStyle = false,
   menuItem = undefined,
 }: Props): JSX.Element {
@@ -44,16 +44,15 @@ export default function StartMenuItem({
 
   function handleWindowOpen(windowId: string, startBarButtonId: string) {
     openCloseWindow(windowId, startBarButtonId);
-    openCloseMenu(startMenuDivId, showStartMenu);
     setShowStartMenu(!showStartMenu);
   }
 
   function handleShutdown() {
     const theme = useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT;
 
+    // Set page tab value back to zero on shutdown
+    if (setPageTabValue) setPageTabValue(0);
     setTheme(theme);
-    updateWindowThemeBgColor(theme);
-    openCloseMenu(startMenuDivId, showStartMenu);
     setShowStartMenu(!showStartMenu);
   }
 

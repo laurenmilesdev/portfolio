@@ -1,0 +1,27 @@
+.header-div {
+  display: flex;
+  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  position: relative;
+  margin-bottom: 2%;
+}
+
+.header-div:before {
+  content: '';
+  width: 2px;
+  height: calc(100% - 1rem);
+  position: absolute;
+  background: #f2f2f2;
+  box-shadow: 1px 1px 0 #818181;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.header-text {
+  opacity: 0.5;
+}
+
+.header-input {
+  width: 100%;
+  border: none;
+  padding: 0.5%;
+}

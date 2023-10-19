@@ -127,12 +127,12 @@ body {
   padding-bottom: 4%;
 }
 
-a {
+a.primary {
   color: var(--font-color);
   text-transform: lowercase;
 }
 
-a:hover {
+a.primary:hover {
   color: var(--secondary);
   text-decoration: none;
 }
@@ -190,7 +190,7 @@ ul {
 }
 
 /* Navigation tabs bottom border */
-.MuiTabs-indicator {
+.nav-tabs .MuiTabs-indicator {
   background-color: var(--secondary);
   height: 4px;
 }
@@ -200,16 +200,20 @@ ul {
   color: var(--font-color);
 }
 
-/* Removes right border on projects tabs */
-.projects-tabs .MuiTabs-indicator {
+/* Selected help tabs */
+.help-tab.MuiTab-root.Mui-selected {
+  color: #fff;
+  background-color: var(--windows-blue);
+  text-align: left;
+}
+
+/* Removes right border on help tabs */
+.help-tabs .MuiTabs-indicator {
   background-color: transparent;
 }
 
-/* Selected projects tabs */
-.projects-tab.MuiTab-root.Mui-selected {
-  color: var(--font-color-opp);
-  background-color: var(--secondary);
-  text-align: left;
+.nav-tabs {
+  border: none;
 }
 
 .image {

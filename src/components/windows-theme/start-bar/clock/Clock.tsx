@@ -1,18 +1,10 @@
 import styles from './Clock.module.css';
 
-export const id = 'clock';
-
 type Props = {
   currentTime: Date;
 };
 
-export default function Clock({ currentTime }: Props) {
-  return (
-    <div className={`${styles.clock} col-md-12`} id={id}>
-      {getCurrentTimeString(currentTime)}
-    </div>
-  );
-}
+export const clockId = 'clock';
 
 export function getCurrentTimeString(currentDate: Date) {
   const minutes = currentDate.getMinutes();
@@ -27,4 +19,12 @@ export function getCurrentTimeString(currentDate: Date) {
   else minutesString = `${minutes}`;
 
   return `${hours}:${minutesString} ${ampm}`;
+}
+
+export default function Clock({ currentTime }: Props) {
+  return (
+    <div className={`${styles.clock} col-md-12`} id={clockId}>
+      {getCurrentTimeString(currentTime)}
+    </div>
+  );
 }

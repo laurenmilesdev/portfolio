@@ -5,4 +5,8 @@ export default class WindowConstants {
   static readonly WINDOW_HEADER_HEIGHT: number = 32;
 
   static readonly IE_WINDOW_HEADER_HEIGHT: number = 128;
+
+  static readonly PORTFOLIO_WINDOW_WINDOW_ID = 'portfolio-window';
+
+  static readonly HELP_WINDOW_WINDOW_ID = 'help-window';
 }

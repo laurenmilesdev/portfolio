@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import {
   useStateMock,
   setBoolStateMock,
+  setNumberStateMock,
   setStringStateMock,
 } from '../../../../mocks/use-state-mock';
 import StartMenu from '../../../../../src/components/windows-theme/start-bar/start-menu/StartMenu';
@@ -29,6 +30,7 @@ describe('StartMenu component', () => {
   const setShowStartMenu = setBoolStateMock;
   const useDarkTheme = true;
   const setTheme = setStringStateMock;
+  const setPageTabValue = setNumberStateMock;
 
   beforeEach(() => {
     jest
@@ -43,6 +45,7 @@ describe('StartMenu component', () => {
         menuItems={menuItems}
         useDarkTheme={useDarkTheme}
         setTheme={setTheme}
+        setPageTabValue={setPageTabValue}
       />
     );
   });

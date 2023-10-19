@@ -73,7 +73,7 @@
   },
   "contact": {
     "title": "Contact",
-    "description": "Do you want to make a new professional connection? Connect with me on LinkedIn. Wanna learn about my experience and view code written by me? Check out my GitHub (the source code for this project exists there) and resume for more of my experience. If you would like more direct contact, feel free to shoot me an email at <a href='mailto: laurenmiles.dev@gmail.com' target='_blank'>laurenmiles.dev@gmail.com</a>.",
+    "description": "Do you want to make a new professional connection? Connect with me on LinkedIn. Wanna learn about my experience and view code written by me? Check out my GitHub (the source code for this project exists there) and resume for more of my experience. If you would like more direct contact, feel free to shoot me an email at <a href='mailto: laurenmiles.dev@gmail.com' target='_blank' class='primary'>laurenmiles.dev@gmail.com</a>.",
     "contacts": [
       {
         "name": "LinkedIn",
@@ -105,14 +105,31 @@
     {
       "title": "Lauren Miles Portfolio",
       "menuItemButtonId": "portfolio-menu-item-btn",
-      "externalUrl": null,
+      "externalUrl": "",
       "window": {
+        "title": "Lauren Miles Portfolio",
         "windowId": "portfolio-window",
         "startBarButtonId": "portfolio-start-bar-btn",
         "isInternetExplorerWindow": true,
         "addressBarUrl": "https://portfolio.laurenmilesdev.com/",
         "heightPercentage": 89,
-        "widthPercentage": 90
+        "widthPercentage": 90,
+        "scroll": true
+      }
+    },
+    {
+      "title": "Help",
+      "menuItemButtonId": "help-menu-item-btn",
+      "externalUrl": "",
+      "window": {
+        "title": "Help",
+        "windowId": "help-window",
+        "startBarButtonId": "help-start-bar-btn",
+        "isInternetExplorerWindow": false,
+        "addressBarUrl": "",
+        "heightPercentage": 60,
+        "widthPercentage": 40,
+        "scroll": false
       }
     }
   ]

@@ -11,7 +11,8 @@ export const contacts = [
   new ContactModel('None', 'Contact description 4.', 'Contact value 4'),
 ];
 
-export const pages = [new PageModel('Page', <>Page</>), new PageModel('Page 2', <>Page</>)];
+export const pageContents = ['Page', 'Page 2'];
+export const pages = pageContents.map((content) => new PageModel(content, <>{content}</>));
 
 const menuItemsRawData = [
   {
@@ -57,13 +58,12 @@ export const menuItems = menuItemsRawData.map(
       menuItem.window
         ? new WindowModel(
             menuItem.title,
-            <>This is page content</>,
             menuItem.window.windowId,
             menuItem.window.startBarButtonId,
             menuItem.window.isInternetExplorerWindow,
             menuItem.window.heightPercentage,
             menuItem.window.widthPercentage,
-            menuItem.window.addressBarUrl ?? ''
+            menuItem.window.addressBarUrl
           )
         : undefined
     )
@@ -73,7 +73,6 @@ export const windows = menuItems.map((menuItem) => {
   if (menuItem.window) {
     return new WindowModel(
       menuItem.title,
-      menuItem.window.component,
       menuItem.window.windowId,
       menuItem.window.startBarButtonId,
       menuItem.window.isInternetExplorerWindow,

@@ -11,6 +11,7 @@ type Props = {
   menuItems: MenuItemModel[];
   useDarkTheme: boolean;
   setTheme: Dispatch<SetStateAction<string>>;
+  setPageTabValue: Dispatch<SetStateAction<number>>;
 };
 
 export default function StartMenu({
@@ -20,6 +21,7 @@ export default function StartMenu({
   menuItems,
   useDarkTheme,
   setTheme,
+  setPageTabValue,
 }: Props): JSX.Element {
   useEffect(() => {
     document.addEventListener('mouseup', (e) => {
@@ -40,7 +42,6 @@ export default function StartMenu({
       <ul>
         {menuItems.map((menuItem: MenuItemModel, index: number) => (
           <StartMenuItem
-            startMenuDivId={startMenuDivId}
             showStartMenu={showStartMenu}
             setShowStartMenu={setShowStartMenu}
             useDarkTheme={useDarkTheme}
@@ -52,11 +53,11 @@ export default function StartMenu({
         ))}
 
         <StartMenuItem
-          startMenuDivId={startMenuDivId}
           showStartMenu={showStartMenu}
           setShowStartMenu={setShowStartMenu}
           useDarkTheme={useDarkTheme}
           setTheme={setTheme}
+          setPageTabValue={setPageTabValue}
         />
       </ul>
     </div>
