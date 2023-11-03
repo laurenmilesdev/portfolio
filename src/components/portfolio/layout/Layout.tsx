@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from 'react';
-import { Container } from '@mui/material';
 import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
 import ContactModel from '../../../models/contact/contact';
@@ -42,8 +41,8 @@ export default function Layout({
           />
         </div>
 
-        <div className="col-md-10">
-          <Container id={childrenContainerId}>{children}</Container>
+        <div className={`col-md-7`} id={childrenContainerId}>
+          {children}
         </div>
       </div>
 
