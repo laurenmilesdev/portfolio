@@ -16,7 +16,7 @@ export default function Page({ pageTabValue, page }: Props) {
       <div className={styles.container}>
         {/* Does not render title if Home page */}
         {pageTabValue !== 0 && (
-          <div className={`${styles.title} col-md-12 pb-3`} id={titleDivId}>
+          <div className={`col-md-12 pb-3`} id={titleDivId}>
             <h1>{page.title}</h1>
           </div>
         )}
