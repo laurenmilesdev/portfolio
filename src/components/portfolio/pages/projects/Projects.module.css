@@ -1,22 +1,17 @@
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 4%;
 }
 
 .title {
-  width: 20%;
   text-transform: lowercase;
   letter-spacing: 0.1rem;
-  padding-right: 2%;
-}
-
-.description {
-  width: 80%;
+  margin-bottom: 1%;
 }
 
 .icon {
-  font-size: 1.1em;
+  font-size: 1em;
   margin-left: 0.5%;
 }
 
@@ -27,11 +22,5 @@
 
   .description {
     width: 100%;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 4%;
   }
 }
