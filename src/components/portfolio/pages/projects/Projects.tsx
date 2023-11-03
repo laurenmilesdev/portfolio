@@ -15,29 +15,27 @@ export default function Projects({ projects }: Props): JSX.Element {
         projects.map((project: ProjectModel, index: number) => (
           <div className={`${styles.container} col-md-12`} key={project.title}>
             <div className={`${styles.title} col-md-12`} id={`project-${index}-title`}>
-              <h5>{project.title}</h5>
+              {project.title}
             </div>
 
-            <div className={styles.description}>
-              <div className={`col-md-12`} id={`project-${index}-technologies`}>
-                {project.technologies && <Technologies technologies={project.technologies} />}
-              </div>
+            <div className={`col-md-12`} id={`project-${index}-technologies`}>
+              {project.technologies && <Technologies technologies={project.technologies} />}
+            </div>
 
-              <div className={`col-md-12 pb-2`} id={`project-${index}-description`}>
-                <p>{project.description}</p>
-              </div>
+            <div className={`col-md-12 pb-2`} id={`project-${index}-description`}>
+              <p>{project.description}</p>
+            </div>
 
-              <div className={`col-md-12`}>
-                <a
-                  href={project.companyUrl ?? ''}
-                  target="_blank"
-                  id={`project-${index}-company`}
-                  className={`primary`}
-                >
-                  {project.company}
-                  {<OpenInNewIcon className={styles.icon} />}
-                </a>
-              </div>
+            <div className={`col-md-12`}>
+              <a
+                href={project.companyUrl ?? ''}
+                target="_blank"
+                id={`project-${index}-company`}
+                className={`primary`}
+              >
+                {project.company}
+                {<OpenInNewIcon className={styles.icon} />}
+              </a>
             </div>
           </div>
         ))}
