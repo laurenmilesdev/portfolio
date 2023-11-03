@@ -12,10 +12,3 @@
   color: var(--font-color-opp);
   background-color: var(--secondary);
 }
-
-.windows-theme-app-bar {
-  background-color: var(--background-color);
-  width: 98.5%;
-  position: absolute;
-  z-index: 2;
-}

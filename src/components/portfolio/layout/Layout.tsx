@@ -4,6 +4,8 @@ import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
 import ContactModel from '../../../models/contact/contact';
 
+import styles from './Layout.module.css';
+
 type Props = {
   pageTitles: string[];
   pageTabValue: number;
@@ -31,14 +33,19 @@ export default function Layout({
 }: Props): JSX.Element {
   return (
     <>
-      <Navigation
-        pageTitles={pageTitles}
-        pageTabValue={pageTabValue}
-        setPageTabValue={setPageTabValue}
-        useWindowsTheme={useWindowsTheme}
-      />
+      <div className={styles.content}>
+        <div className="col-md-2">
+          <Navigation
+            pageTitles={pageTitles}
+            pageTabValue={pageTabValue}
+            setPageTabValue={setPageTabValue}
+          />
+        </div>
 
-      <Container id={childrenContainerId}>{children}</Container>
+        <div className="col-md-10">
+          <Container id={childrenContainerId}>{children}</Container>
+        </div>
+      </div>
 
       {!useWindowsTheme && (
         <Footer

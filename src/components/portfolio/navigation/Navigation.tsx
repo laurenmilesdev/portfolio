@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { AppBar, Tab, Tabs } from '@mui/material';
+import { Tab, Tabs } from '@mui/material';
 
 import styles from './Navigation.module.css';
 
@@ -7,7 +7,6 @@ type Props = {
   pageTitles: string[];
   pageTabValue: number;
   setPageTabValue: Dispatch<SetStateAction<number>>;
-  useWindowsTheme: boolean;
 };
 
 export const navigationDivId = 'navigation';
@@ -23,7 +22,6 @@ export default function Navigation({
   pageTabValue,
   pageTitles,
   setPageTabValue,
-  useWindowsTheme,
 }: Props): JSX.Element {
   const tabs = (
     <Tabs
@@ -31,6 +29,7 @@ export default function Navigation({
       onChange={(event, newValue) => setPageTabValue(newValue as number)}
       className="nav-tabs"
       centered
+      orientation="vertical"
     >
       {pageTitles.map((title: string, index: number) => (
         <Tab
@@ -44,13 +43,9 @@ export default function Navigation({
     </Tabs>
   );
 
-  return useWindowsTheme ? (
-    <div className={`${styles['windows-theme-app-bar']} col-md-12`} id={navigationDivId}>
+  return (
+    <div className={`${styles['app-bar']} col-md-12`} id={navigationDivId}>
       {tabs}
     </div>
-  ) : (
-    <AppBar className={`${styles['app-bar']} col-md-12`} elevation={0} id={navigationDivId}>
-      {tabs}
-    </AppBar>
   );
 }
