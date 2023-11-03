@@ -143,10 +143,13 @@ hr {
 
 h1 {
   color: var(--primary);
-  font-family: 'Rock 3D', monospace;
+  font-family: monospace;
   font-size: 6vw;
   font-weight: 600;
   margin-bottom: 3%;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-weight: bold;
 }
 
 ul {
@@ -191,13 +194,13 @@ ul {
 
 /* Navigation tabs bottom border */
 .nav-tabs .MuiTabs-indicator {
-  background-color: var(--secondary);
-  height: 4px;
+  background-color: transparent;
 }
 
 /* Selected navigation tabs */
 .nav-tab.MuiTab-root.Mui-selected {
   color: var(--font-color);
+  align-items: center;
 }
 
 /* Selected help tabs */
@@ -210,10 +213,6 @@ ul {
 /* Removes right border on help tabs */
 .help-tabs .MuiTabs-indicator {
   background-color: transparent;
-}
-
-.nav-tabs {
-  border: none;
 }
 
 .image {
