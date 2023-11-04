@@ -8,12 +8,7 @@ describe('Navigation component', () => {
 
   beforeEach(() => {
     render(
-      <Navigation
-        pageTitles={pageTitles}
-        pageTabValue={value}
-        setPageTabValue={setPageTabValue}
-        useWindowsTheme={false}
-      />
+      <Navigation pageTitles={pageTitles} pageTabValue={value} setPageTabValue={setPageTabValue} />
     );
   });
 

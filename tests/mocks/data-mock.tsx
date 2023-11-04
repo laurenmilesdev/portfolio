@@ -12,7 +12,7 @@ export const contacts = [
 ];
 
 export const pageContents = ['Page', 'Page 2'];
-export const pages = pageContents.map((content) => new PageModel(content, <>{content}</>));
+export const pages = pageContents.map((content) => new PageModel(content, <>{content}</>, content));
 
 const menuItemsRawData = [
   {
