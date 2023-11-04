@@ -76,7 +76,7 @@
   "contact": {
     "title": "Contact",
     "subtitle": "How to contact me",
-    "description": "Do you want to make a new professional connection? Connect with me on LinkedIn. Wanna learn about my experience and view code written by me? Check out my GitHub (the source code for this project exists there) and resume for more of my experience. If you would like more direct contact, feel free to shoot me an email at <a href='mailto: laurenmiles.dev@gmail.com' target='_blank' class='primary'>laurenmiles.dev@gmail.com</a>.",
+    "description": "If you would like to send me an email, feel free to at <a href='mailto: laurenmiles.dev@gmail.com' target='_blank' class='primary'>laurenmiles.dev@gmail.com</a>.",
     "contacts": [
       {
         "name": "LinkedIn",
