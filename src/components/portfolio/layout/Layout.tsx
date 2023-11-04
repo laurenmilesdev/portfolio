@@ -17,7 +17,9 @@ type Props = {
   children: React.ReactNode;
 };
 
+export const navigationDivId = 'navigation';
 export const childrenContainerId = 'children-container';
+export const footerDivId = 'footer';
 
 export default function Layout({
   pageTitles,
@@ -32,8 +34,8 @@ export default function Layout({
 }: Props): JSX.Element {
   return (
     <>
-      <div className={styles.content}>
-        <div className="col-md-2">
+      <div className="d-flex flex-row">
+        <div className={`col-md-2`} id={navigationDivId}>
           <Navigation
             pageTitles={pageTitles}
             pageTabValue={pageTabValue}
@@ -47,13 +49,15 @@ export default function Layout({
       </div>
 
       {!useWindowsTheme && (
-        <Footer
-          contacts={contacts}
-          useDarkTheme={useDarkTheme}
-          setUseDarkTheme={setUseDarkTheme}
-          setTheme={setTheme}
-          setPageTabValue={setPageTabValue}
-        />
+        <div className={`col-md-12`} id={footerDivId}>
+          <Footer
+            contacts={contacts}
+            useDarkTheme={useDarkTheme}
+            setUseDarkTheme={setUseDarkTheme}
+            setTheme={setTheme}
+            setPageTabValue={setPageTabValue}
+          />
+        </div>
       )}
     </>
   );
