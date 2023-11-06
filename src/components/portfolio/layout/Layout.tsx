@@ -3,6 +3,8 @@ import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
 import ContactModel from '../../../models/contact/contact';
 
+import styles from './Layout.module.css';
+
 type Props = {
   pageTitles: string[];
   pageTabValue: number;
@@ -33,7 +35,7 @@ export default function Layout({
   return (
     <>
       <div className="d-flex flex-row">
-        <div className={`col-md-2`} id={navigationDivId}>
+        <div className={`${styles['nav-container']}`} id={navigationDivId}>
           <Navigation
             pageTitles={pageTitles}
             pageTabValue={pageTabValue}
@@ -41,7 +43,7 @@ export default function Layout({
           />
         </div>
 
-        <div className={`col-md-8`} id={childrenContainerId}>
+        <div className={`${styles['children-container']}`} id={childrenContainerId}>
           {children}
         </div>
       </div>
