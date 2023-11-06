@@ -43,14 +43,14 @@ export default function App({ Component, pageProps }: AppProps) {
       Data.about.subtitle
     ),
     new PageModel(
-      Data.projects.title,
-      <Projects description={Data.projects.description} projects={Data.projects.projects} />,
-      Data.projects.subtitle
-    ),
-    new PageModel(
       Data.contact.title,
       <Contact description={Data.contact.description} />,
       Data.contact.subtitle
+    ),
+    new PageModel(
+      Data.projects.title,
+      <Projects description={Data.projects.description} projects={Data.projects.projects} />,
+      Data.projects.subtitle
     ),
     new PageModel(
       Data.resume.title,
