@@ -9,8 +9,6 @@ type Props = {
   setPageTabValue: Dispatch<SetStateAction<number>>;
 };
 
-export const navigationDivId = 'navigation';
-
 function a11yProps(index: number): object {
   return {
     id: `tab-${index}`,
@@ -42,9 +40,5 @@ export default function Navigation({
     </Tabs>
   );
 
-  return (
-    <div className={`${styles['app-bar']} col-md-12`} id={navigationDivId}>
-      {tabs}
-    </div>
-  );
+  return <div className={`${styles['app-bar']}`}>{tabs}</div>;
 }

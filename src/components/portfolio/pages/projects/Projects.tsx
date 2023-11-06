@@ -13,8 +13,8 @@ export default function Projects({ projects }: Props): JSX.Element {
     <>
       {projects &&
         projects.map((project: ProjectModel, index: number) => (
-          <div className={`${styles.container} col-md-12`} key={project.title}>
-            <div className={`${styles.title} col-md-12`} id={`project-${index}-title`}>
+          <div className={`${styles['projects-container']} col-md-12`} key={project.title}>
+            <div className={`${styles['project-title']} col-md-12`} id={`project-${index}-title`}>
               {project.title}
             </div>
 

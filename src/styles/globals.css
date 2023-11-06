@@ -247,9 +247,3 @@ ul {
     color-scheme: dark;
   }
 }
-
-@media screen and (max-width: 900px) {
-  h1 {
-    font-size: 3.2em;
-  }
-}

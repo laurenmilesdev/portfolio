@@ -14,7 +14,7 @@ export const contentDivId = 'content';
 export default function Page({ page }: Props) {
   return (
     <Fade in={true}>
-      <div className={styles.container}>
+      <div className={styles['page-container']}>
         <div className={`${styles.title} col-md-12`} id={titleDivId}>
           <h3>{page.subtitle}</h3>
         </div>
