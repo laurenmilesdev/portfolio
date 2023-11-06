@@ -16,6 +16,8 @@ function a11yProps(index: number): object {
   };
 }
 
+export const getTabId = (index: number) => `tab-${index}`;
+
 export default function Navigation({
   pageTabValue,
   pageTitles,
@@ -34,7 +36,7 @@ export default function Navigation({
           label={title}
           key={index}
           {...a11yProps(index)}
-          id={`tab-${index}`}
+          id={getTabId(index)}
         />
       ))}
     </Tabs>

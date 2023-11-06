@@ -8,13 +8,17 @@ type Props = {
   projects: ProjectModel[];
 };
 
+export const getTitleId = (index: number) => `project-${index}-title`;
+export const getDescriptionId = (index: number) => `project-${index}-description`;
+export const getCompanyId = (index: number) => `project-${index}-company`;
+
 export default function Projects({ projects }: Props): JSX.Element {
   return (
     <>
       {projects &&
         projects.map((project: ProjectModel, index: number) => (
           <div className={`${styles['projects-container']} col-md-12`} key={project.title}>
-            <div className={`${styles['project-title']} col-md-12`} id={`project-${index}-title`}>
+            <div className={`${styles['project-title']} col-md-12`} id={getTitleId(index)}>
               {project.title}
             </div>
 
@@ -22,7 +26,7 @@ export default function Projects({ projects }: Props): JSX.Element {
               {project.technologies && <Technologies technologies={project.technologies} />}
             </div>
 
-            <div className={`col-md-12 pb-2`} id={`project-${index}-description`}>
+            <div className={`col-md-12 pb-2`} id={getDescriptionId(index)}>
               <p>{project.description}</p>
             </div>
 
@@ -30,7 +34,7 @@ export default function Projects({ projects }: Props): JSX.Element {
               <a
                 href={project.companyUrl ?? ''}
                 target="_blank"
-                id={`project-${index}-company`}
+                id={getCompanyId(index)}
                 className={`primary`}
               >
                 {project.company}

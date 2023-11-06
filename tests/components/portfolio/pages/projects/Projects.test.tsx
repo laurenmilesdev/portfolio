@@ -1,5 +1,9 @@
 import { render } from '@testing-library/react';
-import Projects from '../../../../../src/components/portfolio/pages/projects/Projects';
+import Projects, {
+  getCompanyId,
+  getDescriptionId,
+  getTitleId,
+} from '../../../../../src/components/portfolio/pages/projects/Projects';
 import ProjectModel from '../../../../../src/models/projects/project';
 
 describe('Projects component', () => {
@@ -15,7 +19,7 @@ describe('Projects component', () => {
 
   it('renders project titles', () => {
     projects.forEach(({ title }, index: number) => {
-      const element = document.getElementById(`project-${index}-title`) as HTMLDivElement;
+      const element = document.getElementById(getTitleId(index)) as HTMLDivElement;
 
       expect(element).toHaveTextContent(title);
     });
@@ -23,7 +27,7 @@ describe('Projects component', () => {
 
   it('renders project descriptions', () => {
     projects.forEach(({ description }, index: number) => {
-      const element = document.getElementById(`project-${index}-description`) as HTMLDivElement;
+      const element = document.getElementById(getDescriptionId(index)) as HTMLDivElement;
 
       expect(element).toHaveTextContent(description);
     });
@@ -31,7 +35,7 @@ describe('Projects component', () => {
 
   it('renders project company links', () => {
     projects.forEach(({ company, companyUrl }, index: number) => {
-      const element = document.getElementById(`project-${index}-company`) as HTMLButtonElement;
+      const element = document.getElementById(getCompanyId(index)) as HTMLButtonElement;
 
       expect(element).toHaveTextContent(company);
       expect(element).toHaveAttribute('href', companyUrl);
