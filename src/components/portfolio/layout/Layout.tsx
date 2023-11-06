@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+import TickerTape from '../footer/ticker-tape/TickerTape';
 import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
 import ContactModel from '../../../models/contact/contact';
@@ -14,6 +15,7 @@ type Props = {
   setUseDarkTheme: Dispatch<SetStateAction<boolean>>;
   setTheme: Dispatch<SetStateAction<string>>;
   useWindowsTheme: boolean;
+  openToWork: boolean;
   children: React.ReactNode;
 };
 
@@ -30,10 +32,13 @@ export default function Layout({
   setUseDarkTheme,
   setTheme,
   useWindowsTheme,
+  openToWork,
   children,
 }: Props): JSX.Element {
   return (
     <>
+      {openToWork && <TickerTape />}
+
       <div className="d-flex flex-row">
         <div className={`${styles['nav-container']}`} id={navigationDivId}>
           <Navigation
