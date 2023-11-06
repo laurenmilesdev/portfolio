@@ -1,22 +1,23 @@
 {
   "home": {
     "title": "Home",
-    "subtitle": "Lauren Miles",
-    "description": "Full Stack Software Developer"
+    "subtitle": "Lauren Miles portfolio",
+    "description": "<p>I am a Full Stack Software Developer with a passion for creating modern websites and applications. I have professional experience creating web applications using C#/.NET, TypeScript/Next.js, and some Ruby on Rails and automations using JavaScript/Node.js and Azure Functions. My skills range from front end development to back end development with a slight personal preference working on the front end by creating and contributing to the UI/UX. I still very much enjoy the thrill of solving complex logic within the back end, though.</p>"
   },
   "about": {
     "title": "About",
+    "subtitle": "A bit about me",
     "description": "<p>Ever since I was little, I can remember being curious about how my belongings (toys, gadgets, etc.) worked. My mom told me I would take apart my toys as a child just to put them back together. Along with that curiosity came a drive and desire to accomplish any task I put my mind to. I was relentless and believed that if I put the time and effort into something, I could accomplish anything. I knew no limit.</p><p>Fast forward to now, an adult with more resources and an income! Those skills and traits manifested into hobbies and side projects- refurbishing old bikes, screen-printing, embroidery… just to name a few. I enjoy testing my knowledge and limits to see what I am able to accomplish with the tools I possess, and this is not limited to the Software Development world.</p><p>Prior to being a Software Developer, I spent a decade working in retail, specifically fashion merchandising. At first it was simply a way to pay the bills, but after some time, I realized that merchandising itself is a large puzzle to be solved and it became a passion of mine. It’s equivalent to a game of Tetris, balancing colors, shapes, sizes, and textures to meet a list of requirements all in one space to aesthetically entice customers. I got paid to solve puzzles and be creative all at the same time? Felt like a dream.</p><p>But as with how life goes, we all transform and grow. I had hit a wall and no longer saw an upward trajectory for my career and decided that my growth was more important than remaining comfortable. I quit my job, one of the only consistent safety nets I had ever known and enrolled in a coding bootcamp. I’ll keep it short and simply state that they are not for the faint of heart, but I made it to the other side and entered into the world of Tech.</p><p>So here I am now, a Software Developer. I have new passions to add to my list, like creating web applications that are both functional and creative. I transferred my skills from clothing to code. Now I enjoy flexing the skills I learned into back-end and front-end development, both of which pose their own challenges and allow for different solutions, logically and aesthetically. It’s an unlikely parallel that has allowed me to visualize my future again.</p>"
   },
   "projects": {
     "title": "Projects",
-    "description": "Select a project on the right to view it's details. The projects I've worked on vary from large application re-writes, maintaining and enhancing existing applications, brand new applications, and microservices to automate manual processes.",
+    "subtitle": "Projects I've worked on",
     "projects": [
       {
         "title": "BootcampOS",
         "company": "Tech Elevator",
         "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
-        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with another team under the Stride company umbrella to add features to the application that were specific to Tech Elevators needs.",
+        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with an external team (owned by Stride) that created the application to add features to the application that were specific to Tech Elevators needs. The application is used primarily by students and instructors to upload instruction content, student assignment submission and scoring, and instructor tracking of student scores and averages.",
         "companyUrl": "https://www.techelevator.com"
       },
       {
@@ -28,17 +29,18 @@
           "Azure",
           "Jest",
           "Zoho API",
-          "Postmark",
-          "Google Drive API"
+          "Postmark API",
+          "Google Drive API",
+          "Asset Panda API"
         ],
-        "description": "Created two Azure Function applications that served for automating the shipping label generation for the upcoming or ending bootcamp cohorts. One function created shipping labels used to mail the students their laptops, and the other created the return shipping labels that were emailed to the students to mail back their laptops. These functions ran on an HTTP trigger, triggering from a Zoho workflow.",
+        "description": "Created an applications that contained two Azure Functions used for automating shipping label generation for the upcoming or ending Tech Elevator bootcamp cohorts. One function created shipping labels used to mail the students their laptops, and the other created the return shipping labels that were emailed to the students to return their laptops. Both functions also updated internal information used for departmental tracking. These functions ran on an HTTP trigger, triggering from a Zoho workflow.",
         "companyUrl": "https://www.techelevator.com"
       },
       {
         "title": "Roating Tokens Automation",
         "company": "Tech Elevator",
         "technologies": ["Node.js", "JavaScript", "Azure", "Jest", "Zoho API"],
-        "description": "Created an Azure function application made to house any rotating tokens needed for development or production environments. A specific function within the application would be used to fetch the necessary token and update the value in an Azure Key Vault. These functions ran on a timer trigger, updating the token with a new value before it expired.",
+        "description": "Created an application to house any Azure Functions created to rotate tokens needed for development or production environments. A specific function within the application would be used to fetch the necessary token and update the value in an Azure Key Vault. These functions ran on a timer trigger, updating the token with a new value before it expired.",
         "companyUrl": "https://www.techelevator.com"
       },
       {
@@ -52,7 +54,7 @@
         "title": "Nationwide Children's Hospital Website",
         "company": "Nationwide Children's Hospital",
         "technologies": [".NET", "C#", "Sitecore"],
-        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore CRM was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. My time was mainly focused on enhancing accessibility within specific pages and forms to create a better experience for all users.",
+        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore CRM was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. My time was mainly focused on enhancing accessibility within specific pages and forms to create a better experience for all users and meet audit requirements.",
         "companyUrl": "https://www.nationwidechildrens.org"
       },
       {
@@ -73,7 +75,8 @@
   },
   "contact": {
     "title": "Contact",
-    "description": "Do you want to make a new professional connection? Connect with me on LinkedIn. Wanna learn about my experience and view code written by me? Check out my GitHub (the source code for this project exists there) and resume for more of my experience. If you would like more direct contact, feel free to shoot me an email at <a href='mailto: laurenmiles.dev@gmail.com' target='_blank' class='primary'>laurenmiles.dev@gmail.com</a>.",
+    "subtitle": "How to contact me",
+    "description": "If you would like to send me an email, feel free to at <a href='mailto: laurenmiles.dev@gmail.com' target='_blank' class='primary'>laurenmiles.dev@gmail.com</a>.",
     "contacts": [
       {
         "name": "LinkedIn",
