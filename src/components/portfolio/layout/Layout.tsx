@@ -3,8 +3,6 @@ import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
 import ContactModel from '../../../models/contact/contact';
 
-import styles from './Layout.module.css';
-
 type Props = {
   pageTitles: string[];
   pageTabValue: number;
@@ -43,7 +41,7 @@ export default function Layout({
           />
         </div>
 
-        <div className={`col-md-7`} id={childrenContainerId}>
+        <div className={`col-md-8`} id={childrenContainerId}>
           {children}
         </div>
       </div>

@@ -11,6 +11,7 @@ import Home from '../components/portfolio/pages/home/Home';
 import About from '../components/portfolio/pages/about/About';
 import Projects from '../components/portfolio/pages/projects/Projects';
 import Contact from '../components/portfolio/pages/contact/Contact';
+import Resume from '../components/portfolio/pages/resume/Resume';
 import Layout from '../components/portfolio/layout/Layout';
 import WindowsThemeLayout from '../components/windows-theme/layout/Layout';
 import Window from '../components/windows-theme/window/Window';
@@ -50,6 +51,11 @@ export default function App({ Component, pageProps }: AppProps) {
       Data.contact.title,
       <Contact description={Data.contact.description} />,
       Data.contact.subtitle
+    ),
+    new PageModel(
+      Data.resume.title,
+      <Resume description={Data.resume.description} />,
+      Data.resume.subtitle
     ),
   ];
   const desktopItems = Data.contact.contacts.map(

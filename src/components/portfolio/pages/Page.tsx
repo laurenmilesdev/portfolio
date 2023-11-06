@@ -8,8 +8,8 @@ type Props = {
   page: PageModel;
 };
 
-export const titleDivId = 'title';
-export const contentDivId = 'content';
+export const titleDivId = 'page-title';
+export const contentDivId = 'page-content';
 
 export default function Page({ page }: Props) {
   return (

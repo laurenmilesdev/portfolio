@@ -104,6 +104,11 @@
       }
     ]
   },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "My resume",
+    "description": "<p>Hard to view? Click <a href='/files/Lauren_Miles_Resume.pdf' target='_blank' class='primary'>here</a> to open resume in a new tab.</p>"
+  },
   "menuItems": [
     {
       "title": "Lauren Miles Portfolio",
