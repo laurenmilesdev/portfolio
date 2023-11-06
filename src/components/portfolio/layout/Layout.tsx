@@ -41,7 +41,7 @@ export default function Layout({
           />
         </div>
 
-        <div className={`col-md-7`} id={childrenContainerId}>
+        <div className={`col-md-8`} id={childrenContainerId}>
           {children}
         </div>
       </div>
