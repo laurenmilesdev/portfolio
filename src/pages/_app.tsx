@@ -30,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
     useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT
   );
   const useWindowsTheme = theme === ThemeConstants.WINDOWS;
+  const openToWork = Data.openToWork as boolean;
 
   const pages: PageModel[] = [
     new PageModel(
@@ -77,6 +78,7 @@ export default function App({ Component, pageProps }: AppProps) {
       setUseDarkTheme={setUseDarkTheme}
       setTheme={setTheme}
       useWindowsTheme={useWindowsTheme}
+      openToWork={openToWork}
     >
       <Component {...pageProps} pages={pages} pageTabValue={pageTabValue} />
     </Layout>
