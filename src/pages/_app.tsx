@@ -52,7 +52,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <Contact description={Data.contact.description} />,
       Data.contact.subtitle
     ),
-    new PageModel(Data.resume.title, <Resume />, Data.resume.subtitle),
+    new PageModel(
+      Data.resume.title,
+      <Resume description={Data.resume.description} />,
+      Data.resume.subtitle
+    ),
   ];
   const desktopItems = Data.contact.contacts.map(
     (contact) =>
