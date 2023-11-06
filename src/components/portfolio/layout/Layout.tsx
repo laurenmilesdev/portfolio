@@ -3,8 +3,6 @@ import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
 import ContactModel from '../../../models/contact/contact';
 
-import styles from './Layout.module.css';
-
 type Props = {
   pageTitles: string[];
   pageTabValue: number;
