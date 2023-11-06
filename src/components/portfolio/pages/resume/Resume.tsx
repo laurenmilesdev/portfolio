@@ -5,6 +5,7 @@ type Props = {
 };
 
 export const descriptionDivId = 'resume-description';
+export const resumeIFrameDivId = 'resume-iframe';
 
 export default function Resume({ description }: Props) {
   return (
@@ -14,7 +15,11 @@ export default function Resume({ description }: Props) {
         id={descriptionDivId}
         dangerouslySetInnerHTML={{ __html: description }}
       ></div>
-      <iframe src="/files/Lauren_Miles_Resume.pdf" className={styles.resume} />
+      <iframe
+        src="/files/Lauren_Miles_Resume.pdf"
+        className={styles.resume}
+        id={resumeIFrameDivId}
+      />
     </div>
   );
 }
