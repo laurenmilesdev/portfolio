@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
     ),
     new PageModel(
       Data.projects.title,
-      <Projects projects={Data.projects.projects} />,
+      <Projects description={Data.projects.description} projects={Data.projects.projects} />,
       Data.projects.subtitle
     ),
     new PageModel(

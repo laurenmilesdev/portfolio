@@ -5,16 +5,24 @@ import ProjectModel from '../../../../models/projects/project';
 import styles from './Projects.module.css';
 
 type Props = {
+  description: string;
   projects: ProjectModel[];
 };
 
+export const descriptionDivId = 'projects-description';
 export const getTitleId = (index: number) => `project-${index}-title`;
 export const getDescriptionId = (index: number) => `project-${index}-description`;
 export const getCompanyId = (index: number) => `project-${index}-company`;
 
-export default function Projects({ projects }: Props): JSX.Element {
+export default function Projects({ description, projects }: Props): JSX.Element {
   return (
     <>
+      <div
+        className="col-md-12 pb-3"
+        id={descriptionDivId}
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
+
       {projects &&
         projects.map((project: ProjectModel, index: number) => (
           <div className={`${styles['projects-container']} col-md-12`} key={project.title}>

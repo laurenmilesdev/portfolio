@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import Projects, {
+  descriptionDivId,
   getCompanyId,
   getDescriptionId,
   getTitleId,
@@ -7,6 +8,7 @@ import Projects, {
 import ProjectModel from '../../../../../src/models/projects/project';
 
 describe('Projects component', () => {
+  const pageDescription = 'Page description.';
   const technologies = ['tech 1', 'tech 2'];
   const projects: ProjectModel[] = [
     new ProjectModel('Project 1', 'Company 1', technologies, 'Project 1 description'),
@@ -14,7 +16,13 @@ describe('Projects component', () => {
   ];
 
   beforeEach(() => {
-    render(<Projects projects={projects} />);
+    render(<Projects description={pageDescription} projects={projects} />);
+  });
+
+  it('renders page description', () => {
+    const element = document.getElementById(descriptionDivId);
+
+    expect(element).toHaveTextContent(pageDescription);
   });
 
   it('renders project titles', () => {
