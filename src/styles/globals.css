@@ -58,6 +58,9 @@
   --windows-white: #f2f2f2;
 
   --windows-box-shadow-blue: #cce9eb;
+
+  --height: 1.5rem;
+  --speed: 30s;
 }
 
 [data-theme='light'] {
