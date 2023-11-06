@@ -39,17 +39,17 @@ export default function App({ Component, pageProps }: AppProps) {
     new PageModel(
       Data.about.title,
       <About description={Data.about.description} />,
-      Data.about.subtitle as string
+      Data.about.subtitle
     ),
     new PageModel(
       Data.projects.title,
       <Projects projects={Data.projects.projects} />,
-      Data.projects.subtitle as string
+      Data.projects.subtitle
     ),
     new PageModel(
       Data.contact.title,
       <Contact description={Data.contact.description} />,
-      Data.contact.subtitle as string
+      Data.contact.subtitle
     ),
   ];
   const desktopItems = Data.contact.contacts.map(
