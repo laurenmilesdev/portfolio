@@ -210,7 +210,8 @@ ul {
 /* Selected navigation tabs */
 .nav-tab.MuiTab-root.Mui-selected {
   color: var(--font-color);
-  align-items: center;
+  align-items: end;
+  border-bottom: 2px solid var(--secondary);
 }
 
 /* Selected help tabs */
@@ -245,5 +246,11 @@ ul {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .nav-tab.MuiTab-root.Mui-selected {
+    align-items: start;
   }
 }
