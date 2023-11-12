@@ -36,14 +36,12 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 
-  --primary: #eed7ce;
-  --primary-light: #f8f0ec;
-  --secondary: #9093a2;
-  --tertiary: #c2d2d6;
+  --primary: #a25210;
+  --secondary: #989381;
 
-  --background-color: #000;
-  --font-color: #fff;
-  --font-color-opp: #000;
+  --background-color: #e8e7e3;
+  --font-color: #000;
+  --font-color-opp: #fff;
 
   --warn: #e0a66c;
 
@@ -63,15 +61,13 @@
   --speed: 30s;
 }
 
-[data-theme='light'] {
-  --primary: #74788b;
-  --secondary: #94b1b8;
-  --secondary-light: #d1dee0;
-  --tertiary: #f5f0f0;
+[data-theme='dark'] {
+  --primary: #989381;
+  --secondary: #a25210;
 
-  --background-color: #e8e7e3;
-  --font-color: #000;
-  --font-color-opp: #fff;
+  --background-color: #000;
+  --font-color: #fff;
+  --font-color-opp: #000;
 
   --about-img-op: 0.25;
   --home-img-op: 0.5;
