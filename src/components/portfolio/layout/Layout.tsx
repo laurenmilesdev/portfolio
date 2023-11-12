@@ -3,6 +3,7 @@ import TickerTape from '../ticker-tape/TickerTape';
 import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
 import ContactModel from '../../../models/contact/contact';
+import TickerTapeConstants from '../../../constants/ticker-tape';
 
 import styles from './Layout.module.css';
 
@@ -37,7 +38,7 @@ export default function Layout({
 }: Props): JSX.Element {
   return (
     <>
-      {openToWork && <TickerTape />}
+      {openToWork && <TickerTape text={TickerTapeConstants.OPEN_TO_WORK} />}
 
       <div className="d-flex flex-row">
         <div className={`${styles['nav-container']}`} id={navigationDivId}>

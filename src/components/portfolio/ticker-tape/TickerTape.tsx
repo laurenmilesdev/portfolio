@@ -2,20 +2,15 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 
 import styles from './TickerTape.module.css';
 
-export default function TickerTape() {
-  const tickerWords = [
-    'open to work',
-    'open to work',
-    'open to work',
-    'open to work',
-    'open to work',
-    'open to work',
-  ];
+type Props = {
+  text: string[];
+};
 
+export default function TickerTape({ text }: Props) {
   return (
     <div className={styles['ticker-tape']}>
       <div className={styles.ticker}>
-        {tickerWords.map((word: string) => (
+        {text.map((word: string) => (
           <>
             <div className={styles['ticker-item']}>
               {word.toUpperCase()}{' '}
