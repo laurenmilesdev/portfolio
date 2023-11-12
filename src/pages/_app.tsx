@@ -25,7 +25,7 @@ import { updateWindowThemeBgColor } from '../utils/window';
 export default function App({ Component, pageProps }: AppProps) {
   const [pageTabValue, setPageTabValue] = useState<number>(0);
   const [helpTabValue, setHelpTabValue] = useState<number>(0);
-  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
+  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(false);
   const [theme, setTheme] = useState<string>(
     useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT
   );
