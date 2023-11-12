@@ -9,45 +9,22 @@ jest.mock('next/image', () => ({
 }));
 
 describe('Page component', () => {
-  describe('Home page', () => {
-    const pageValue = 0;
-    const page = pages[pageValue];
+  const pageValue = 1;
+  const page = pages[pageValue];
 
-    beforeEach(() => {
-      render(<Page pageTabValue={pageValue} page={page} />);
-    });
-
-    it('does not render title', () => {
-      const element = document.getElementById(titleDivId) as HTMLDivElement;
-
-      expect(element).toBeNull();
-    });
-
-    it('renders page content', () => {
-      const element = document.getElementById(contentDivId) as HTMLDivElement;
-
-      expect(element).toHaveTextContent(pageContents[pageValue]);
-    });
+  beforeEach(() => {
+    render(<Page pageTabValue={pageValue} page={page} />);
   });
 
-  describe('not Home page', () => {
-    const pageValue = 1;
-    const page = pages[pageValue];
+  it('renders title', () => {
+    const element = document.getElementById(titleDivId) as HTMLDivElement;
 
-    beforeEach(() => {
-      render(<Page pageTabValue={pageValue} page={page} />);
-    });
+    expect(element).toHaveTextContent(page.title);
+  });
 
-    it('renders title', () => {
-      const element = document.getElementById(titleDivId) as HTMLDivElement;
+  it('renders page content', () => {
+    const element = document.getElementById(contentDivId) as HTMLDivElement;
 
-      expect(element).toHaveTextContent(page.title);
-    });
-
-    it('renders page content', () => {
-      const element = document.getElementById(contentDivId) as HTMLDivElement;
-
-      expect(element).toHaveTextContent(pageContents[pageValue]);
-    });
+    expect(element).toHaveTextContent(pageContents[pageValue]);
   });
 });

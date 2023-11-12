@@ -11,6 +11,7 @@ import Home from '../components/portfolio/pages/home/Home';
 import About from '../components/portfolio/pages/about/About';
 import Projects from '../components/portfolio/pages/projects/Projects';
 import Contact from '../components/portfolio/pages/contact/Contact';
+import Resume from '../components/portfolio/pages/resume/Resume';
 import Layout from '../components/portfolio/layout/Layout';
 import WindowsThemeLayout from '../components/windows-theme/layout/Layout';
 import Window from '../components/windows-theme/window/Window';
@@ -24,7 +25,7 @@ import { updateWindowThemeBgColor } from '../utils/window';
 export default function App({ Component, pageProps }: AppProps) {
   const [pageTabValue, setPageTabValue] = useState<number>(0);
   const [helpTabValue, setHelpTabValue] = useState<number>(0);
-  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(true);
+  const [useDarkTheme, setUseDarkTheme] = useState<boolean>(false);
   const [theme, setTheme] = useState<string>(
     useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT
   );
@@ -33,17 +34,29 @@ export default function App({ Component, pageProps }: AppProps) {
   const pages: PageModel[] = [
     new PageModel(
       Data.home.title,
-      (
-        <Home
-          subtitle={Data.home.subtitle}
-          description={Data.home.description}
-          useWindowsTheme={useWindowsTheme}
-        />
-      )
+      <Home description={Data.home.description} />,
+      Data.home.subtitle
     ),
-    new PageModel(Data.about.title, <About description={Data.about.description} />),
-    new PageModel(Data.projects.title, <Projects projects={Data.projects.projects} />),
-    new PageModel(Data.contact.title, <Contact description={Data.contact.description} />),
+    new PageModel(
+      Data.about.title,
+      <About description={Data.about.description} />,
+      Data.about.subtitle
+    ),
+    new PageModel(
+      Data.contact.title,
+      <Contact description={Data.contact.description} />,
+      Data.contact.subtitle
+    ),
+    new PageModel(
+      Data.projects.title,
+      <Projects description={Data.projects.description} projects={Data.projects.projects} />,
+      Data.projects.subtitle
+    ),
+    new PageModel(
+      Data.resume.title,
+      <Resume description={Data.resume.description} />,
+      Data.resume.subtitle
+    ),
   ];
   const desktopItems = Data.contact.contacts.map(
     (contact) =>
@@ -64,6 +77,7 @@ export default function App({ Component, pageProps }: AppProps) {
       setUseDarkTheme={setUseDarkTheme}
       setTheme={setTheme}
       useWindowsTheme={useWindowsTheme}
+      openToWork={Data.openToWork}
     >
       <Component {...pageProps} pages={pages} pageTabValue={pageTabValue} />
     </Layout>

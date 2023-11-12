@@ -4,43 +4,21 @@ import { titleDivId, contentDivId } from '../../src/components/portfolio/pages/P
 import { pages, pageContents } from '../mocks/data-mock';
 
 describe('index.tsx', () => {
-  describe('Home page component', () => {
-    const pageValue = 0;
+  const pageValue = 1;
 
-    it('does not render title', () => {
-      render(<Home pages={pages} pageTabValue={pageValue} />);
+  it('renders title', () => {
+    render(<Home pages={pages} pageTabValue={pageValue} />);
 
-      const element = document.getElementById(titleDivId) as HTMLDivElement;
+    const element = document.getElementById(titleDivId) as HTMLDivElement;
 
-      expect(element).toBeNull();
-    });
-
-    it('renders content', () => {
-      render(<Home pages={pages} pageTabValue={pageValue} />);
-
-      const element = document.getElementById(contentDivId) as HTMLDivElement;
-
-      expect(element).toHaveTextContent(pageContents[pageValue]);
-    });
+    expect(element).toHaveTextContent(pageContents[pageValue]);
   });
 
-  describe('all other components', () => {
-    const pageValue = 1;
+  it('renders content', () => {
+    render(<Home pages={pages} pageTabValue={pageValue} />);
 
-    it('renders title', () => {
-      render(<Home pages={pages} pageTabValue={pageValue} />);
+    const element = document.getElementById(contentDivId) as HTMLDivElement;
 
-      const element = document.getElementById(titleDivId) as HTMLDivElement;
-
-      expect(element).toHaveTextContent(pageContents[pageValue]);
-    });
-
-    it('renders content', () => {
-      render(<Home pages={pages} pageTabValue={pageValue} />);
-
-      const element = document.getElementById(contentDivId) as HTMLDivElement;
-
-      expect(element).toHaveTextContent(pageContents[pageValue]);
-    });
+    expect(element).toHaveTextContent(pageContents[pageValue]);
   });
 });

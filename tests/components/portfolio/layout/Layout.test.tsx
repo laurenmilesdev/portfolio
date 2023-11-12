@@ -1,7 +1,9 @@
 import { render } from '@testing-library/react';
-import Layout, { childrenContainerId } from '../../../../src/components/portfolio/layout/Layout';
-import { navigationDivId } from '../../../../src/components/portfolio/navigation/Navigation';
-import { footerDivId } from '../../../../src/components/portfolio/footer/Footer';
+import Layout, {
+  childrenContainerId,
+  footerDivId,
+  navigationDivId,
+} from '../../../../src/components/portfolio/layout/Layout';
 import { contacts } from '../../../mocks/data-mock';
 import { setBoolStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
 

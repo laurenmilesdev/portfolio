@@ -16,8 +16,6 @@ type Props = {
   setPageTabValue: Dispatch<SetStateAction<number>>;
 };
 
-export const footerDivId = 'footer';
-
 export default function Footer({
   contacts,
   useDarkTheme,
@@ -26,7 +24,7 @@ export default function Footer({
   setPageTabValue,
 }: Props): JSX.Element {
   return (
-    <div className={`${styles.container} col-md-12`} id={footerDivId}>
+    <div className={styles['footer-container']}>
       <WindowsThemeButton
         setTheme={setTheme}
         useDarkTheme={useDarkTheme}

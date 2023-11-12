@@ -7,7 +7,7 @@ export const descriptionDivId = 'contact-description';
 export default function Contact({ description }: Props): JSX.Element {
   return (
     <div
-      className="col-md-12"
+      className="col-md-12 pb-3"
       id={descriptionDivId}
       dangerouslySetInnerHTML={{ __html: description }}
     />

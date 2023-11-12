@@ -17,8 +17,8 @@ export default function HelpWindow({ helpTabValue, setHelpTabValue }: Props) {
       tabContent(
         'Why are the Windows features limited?',
         <>
-          Since most of this Windows theme was created using CSS, unfortunately with that comes
-          limitations. CSS is simply the styling applied to a website or application, it does not
+          Since most of this Windows theme was created using CSS, with that comes limitations
+          unfortunately. CSS is simply the styling applied to a website or application, it does not
           include the user interactivity. Since I used JavaScript for some of the functionality,
           enhancements can be made in the future to improve the UI experience.
         </>
