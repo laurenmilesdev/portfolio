@@ -45,8 +45,7 @@
 
   --warn: #e0a66c;
 
-  --about-img-op: 0.4;
-  --home-img-op: 0.6;
+  --about-img-op: 0.2;
 
   --windows-blue: #011590;
   --windows-green: #008080;
@@ -69,8 +68,7 @@
   --font-color: #fff;
   --font-color-opp: #000;
 
-  --about-img-op: 0.25;
-  --home-img-op: 0.5;
+  --about-img-op: 0.4;
 }
 
 @media (prefers-color-scheme: dark) {
