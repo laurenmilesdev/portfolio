@@ -6,17 +6,16 @@ type Props = {
   text: string[];
 };
 
+export const tickerTapeDivId = 'ticker-tape';
+
 export default function TickerTape({ text }: Props) {
   return (
-    <div className={styles['ticker-tape']}>
+    <div className={styles['ticker-tape']} id={tickerTapeDivId}>
       <div className={styles.ticker}>
-        {text.map((word: string) => (
-          <>
-            <div className={styles['ticker-item']}>
-              {word.toUpperCase()}{' '}
-              <SentimentSatisfiedAltIcon fontSize="small" sx={{ marginBottom: '0.07rem' }} />
-            </div>{' '}
-          </>
+        {text.map((word: string, index: number) => (
+          <div className={styles['ticker-item']} key={index}>
+            {word} <SentimentSatisfiedAltIcon fontSize="small" sx={{ marginBottom: '0.07rem' }} />{' '}
+          </div>
         ))}
       </div>
     </div>
