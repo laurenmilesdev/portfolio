@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import TickerTape from '../footer/ticker-tape/TickerTape';
+import TickerTape from '../ticker-tape/TickerTape';
 import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
 import ContactModel from '../../../models/contact/contact';
