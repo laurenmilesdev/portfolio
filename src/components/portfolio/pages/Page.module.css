@@ -1,7 +1,6 @@
 .page-container {
   display: flex;
   flex-direction: column;
-  padding-top: 6%;
   padding-left: 5%;
   padding-right: 5%;
   color: var(--font-color);
