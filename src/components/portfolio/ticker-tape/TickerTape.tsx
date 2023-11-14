@@ -14,7 +14,7 @@ export default function TickerTape({ text }: Props) {
       <div className={styles.ticker}>
         {text.map((word: string, index: number) => (
           <div className={styles['ticker-item']} key={index}>
-            {word} <SentimentSatisfiedAltIcon fontSize="small" sx={{ marginBottom: '0.07rem' }} />{' '}
+            {word} <SentimentSatisfiedAltIcon fontSize="small" sx={{ marginBottom: '.25rem' }} />{' '}
           </div>
         ))}
       </div>
