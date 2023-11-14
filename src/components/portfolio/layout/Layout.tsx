@@ -20,6 +20,7 @@ type Props = {
   children: React.ReactNode;
 };
 
+export const pageContentDivId = 'page-content';
 export const navigationDivId = 'navigation';
 export const childrenContainerId = 'children-container';
 export const footerDivId = 'footer';
@@ -40,7 +41,7 @@ export default function Layout({
     <>
       {openToWork && <TickerTape text={TickerTapeConstants.OPEN_TO_WORK} />}
 
-      <div className="d-flex flex-row">
+      <div className={`${styles['page-content']}`} id={pageContentDivId}>
         <div className={`${styles['nav-container']}`} id={navigationDivId}>
           <Navigation
             pageTitles={pageTitles}

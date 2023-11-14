@@ -1,6 +1,11 @@
+.page-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+}
+
 .nav-container {
   width: 10%;
-  margin-top: 2%;
 }
 
 .children-container {
