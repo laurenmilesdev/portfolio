@@ -11,8 +11,8 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Professional projects I've worked on",
-    "description": "To view personal projects (including the source code for this portfolio) please visit my <a href='' target='_blank' class='primary'>Github</a>.",
+    "subtitle": "Projects I've worked on",
+    "description": "Below are professional projects I have worked on in my career. To view personal projects, including the source code for this portfolio, please visit my <a href='' target='_blank' class='primary'>Github</a>.",
     "projects": [
       {
         "title": "BootcampOS",

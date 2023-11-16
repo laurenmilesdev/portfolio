@@ -8,15 +8,14 @@
   height: auto;
   opacity: var(--about-img-op);
   position: absolute;
-  right: 10%;
+  right: 15%;
   top: 40%;
   border-radius: 5%;
 }
 
 @media screen and (max-width: 900px) {
   .image {
-    width: 15em;
+    width: 15rem;
     height: auto;
-    position: absolute;
   }
 }
