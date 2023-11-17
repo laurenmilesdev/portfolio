@@ -56,8 +56,9 @@
 
   --windows-box-shadow-blue: #cce9eb;
 
-  --height: 1.5rem;
-  --speed: 30s;
+  --ticker-height: 1.5rem;
+  --ticker-speed: 40s;
+  --ticker-speed-mobile: 100s;
 }
 
 [data-theme='dark'] {
