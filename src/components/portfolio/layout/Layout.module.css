@@ -6,9 +6,21 @@
 
 .nav-container {
   width: 10%;
+  position: fixed;
 }
 
 .children-container {
   width: 75%;
-  padding-left: 3%;
+  padding-left: 10%;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-container {
+    width: 6rem;
+  }
+
+  .children-container {
+    padding-left: 6rem;
+    width: 100%;
+  }
 }

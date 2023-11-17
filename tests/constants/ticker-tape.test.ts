@@ -11,6 +11,7 @@ describe('TickerTapeConstants', () => {
       'OPEN TO WORK',
       'OPEN TO WORK',
       'OPEN TO WORK',
+      'OPEN TO WORK',
     ]);
   });
 });

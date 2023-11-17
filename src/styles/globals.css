@@ -56,8 +56,9 @@
 
   --windows-box-shadow-blue: #cce9eb;
 
-  --height: 1.5rem;
-  --speed: 30s;
+  --ticker-height: 1.5rem;
+  --ticker-speed: 40s;
+  --ticker-speed-mobile: 100s;
 }
 
 [data-theme='dark'] {
@@ -121,7 +122,7 @@ div#__next > div {
 body {
   background-color: var(--background-color);
   height: 100%;
-  padding-bottom: 4%;
+  padding: 2rem 0 1.5rem 0;
 }
 
 a.primary {
@@ -246,7 +247,7 @@ ul {
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
   .nav-tab.MuiTab-root.Mui-selected {
     align-items: start;
   }
