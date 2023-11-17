@@ -45,11 +45,12 @@ describe('Footer component', () => {
     );
   });
 
-  it('renders WindowsTheme button', () => {
-    const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
+  // NOTE: Commenting out test because component is hidden temp
+  // it('renders WindowsTheme button', () => {
+  //   const element = document.getElementById(windowsThemeButtonId) as HTMLButtonElement;
 
-    expect(element).toBeInTheDocument();
-  });
+  //   expect(element).toBeInTheDocument();
+  // });
 
   it('renders Contacts', () => {
     const element = document.getElementById(contactsDivId);

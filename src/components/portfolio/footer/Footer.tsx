@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { Tooltip } from '@mui/material';
-import WindowsThemeButton from './windows-theme-button/WindowsThemeButton';
+// import WindowsThemeButton from './windows-theme-button/WindowsThemeButton';
 import Contacts from './contacts/Contacts';
 import ThemeSwitch from './theme-switch/ThemeSwitch';
 import ContactModel from '../../../models/contact/contact';
@@ -21,15 +21,17 @@ export default function Footer({
   useDarkTheme,
   setUseDarkTheme,
   setTheme,
-  setPageTabValue,
-}: Props): JSX.Element {
+}: // setPageTabValue,
+Props): JSX.Element {
   return (
     <div className={styles['footer-container']}>
-      <WindowsThemeButton
+      {/* NOTE: Temporarily hiding Windows theme button */}
+
+      {/* <WindowsThemeButton
         setTheme={setTheme}
         useDarkTheme={useDarkTheme}
         setPageTabValue={setPageTabValue}
-      />
+      /> */}
 
       <Contacts contacts={contacts} />
 
