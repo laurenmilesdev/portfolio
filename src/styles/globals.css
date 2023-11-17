@@ -121,7 +121,7 @@ div#__next > div {
 body {
   background-color: var(--background-color);
   height: 100%;
-  padding: 2% 0 6% 0;
+  padding: 2rem 0 1.5rem 0;
 }
 
 a.primary {
