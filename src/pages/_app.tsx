@@ -133,7 +133,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Software Developer Lauren Miles' portfolio containing work experience, resume, and contact information."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="img/favicon.ico" />
       </Head>
 
       {useWindowsTheme && windows}
