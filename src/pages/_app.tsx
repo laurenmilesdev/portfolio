@@ -56,9 +56,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const desktopItems = Data.contacts.map(
     (contact) =>
       new DesktopItemModel(
-        contact.name as string,
+        contact.name,
         <Image width={50} height={50} src={contact.imgSrc} alt={contact.imgDescription} />,
-        contact.url as string
+        contact.url
       )
   );
 
