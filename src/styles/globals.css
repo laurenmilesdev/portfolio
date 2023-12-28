@@ -125,6 +125,7 @@ body {
   background-color: var(--background-color);
   height: 100%;
   padding: 2rem 0 1.5rem 0;
+  color: var(--font-color);
 }
 
 a.primary {
@@ -138,15 +139,12 @@ a.primary:hover {
   text-decoration: none;
 }
 
-hr {
-  border: 4px solid var(--secondary);
-}
-
 h1,
 h3 {
   font-family: 'Monofett';
   text-transform: uppercase;
   letter-spacing: 0.25rem;
+  color: var(--font-color);
 }
 
 h1 {
@@ -155,10 +153,6 @@ h1 {
 
 h3 {
   font-size: 3rem;
-}
-
-ul {
-  padding-left: 0%;
 }
 
 .windows-box-shadow {
