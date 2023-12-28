@@ -236,11 +236,12 @@ ul {
   margin-bottom: 0;
 }
 
+/* Global styling for Tooltip */
 .MuiTooltip-tooltip {
   background-color: var(--secondary);
   color: var(--font-color-opp);
   letter-spacing: 0.1rem;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 @media (prefers-color-scheme: dark) {
