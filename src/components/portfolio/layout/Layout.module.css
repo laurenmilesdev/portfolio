@@ -10,5 +10,19 @@
   padding-top: 5%;
 }
 
+.logo {
+  width: 10rem;
+  height: auto;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  position: fixed;
+}
+
 @media screen and (max-width: 1200px) {
+  .logo {
+    width: 2.5rem;
+    left: 0.5rem;
+    bottom: 0.25rem;
+  }
 }
