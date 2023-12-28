@@ -4,6 +4,7 @@ import Layout, {
   footerDivId,
   navigationDivId,
 } from '../../../../src/components/portfolio/layout/Layout';
+import { tickerTapeDivId } from '../../../../src/components/portfolio/ticker-tape/TickerTape';
 import { contacts } from '../../../mocks/data-mock';
 import { setBoolStateMock, setStringStateMock } from '../../../mocks/use-state-mock';
 
@@ -35,6 +36,7 @@ describe('Layout component', () => {
         setUseDarkTheme={setUseDarkTheme}
         setTheme={setTheme}
         useWindowsTheme={useWindowsTheme}
+        openToWork={true}
       >
         {children}
       </Layout>
@@ -55,6 +57,12 @@ describe('Layout component', () => {
 
   it('renders Footer', () => {
     const element = document.getElementById(footerDivId) as HTMLButtonElement;
+
+    expect(element).toBeInTheDocument();
+  });
+
+  it('renders TickerTape', () => {
+    const element = document.getElementById(tickerTapeDivId) as HTMLButtonElement;
 
     expect(element).toBeInTheDocument();
   });

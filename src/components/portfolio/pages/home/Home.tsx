@@ -5,11 +5,5 @@ type Props = {
 export const descriptionDivId = 'home-description';
 
 export default function Home({ description }: Props): JSX.Element {
-  return (
-    <div
-      className={`col-md-12`}
-      id={descriptionDivId}
-      dangerouslySetInnerHTML={{ __html: description }}
-    ></div>
-  );
+  return <div id={descriptionDivId} dangerouslySetInnerHTML={{ __html: description }}></div>;
 }

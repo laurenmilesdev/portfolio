@@ -11,15 +11,21 @@ type Props = {
 export const titleDivId = 'page-title';
 export const contentDivId = 'page-content';
 
-export default function Page({ page }: Props) {
+export default function Page({ pageTabValue, page }: Props) {
+  const homePage = pageTabValue === 0;
+  const title = homePage ? <h1>{page.subtitle}</h1> : <h3>{page.subtitle}</h3>;
+
   return (
     <Fade in={true}>
-      <div className={styles['page-container']}>
-        <div className={`${styles.title} col-md-12`} id={titleDivId}>
-          <h3>{page.subtitle}</h3>
+      <div className={`${styles.container}`}>
+        <div className={`${homePage ? styles['home-title'] : styles.title}`} id={titleDivId}>
+          {title}
         </div>
 
-        <div className={`col-md-12`} id={contentDivId}>
+        <div
+          className={`${homePage ? styles['home-description'] : styles.description}`}
+          id={contentDivId}
+        >
           {page.component}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+import { Container } from '@mui/material';
 import TickerTape from '../ticker-tape/TickerTape';
 import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
@@ -39,10 +40,10 @@ export default function Layout({
 }: Props): JSX.Element {
   return (
     <>
-      {openToWork && <TickerTape text={TickerTapeConstants.OPEN_TO_WORK} />}
-
-      <div className={`${styles['page-content']}`} id={pageContentDivId}>
+      <div id={pageContentDivId}>
         <div className={`${styles['nav-container']}`} id={navigationDivId}>
+          {openToWork && <TickerTape text={TickerTapeConstants.OPEN_TO_WORK} />}
+
           <Navigation
             pageTitles={pageTitles}
             pageTabValue={pageTabValue}
@@ -50,9 +51,9 @@ export default function Layout({
           />
         </div>
 
-        <div className={`${styles['children-container']}`} id={childrenContainerId}>
+        <Container className={styles['children-container']} id={childrenContainerId}>
           {children}
-        </div>
+        </Container>
       </div>
 
       {!useWindowsTheme && (

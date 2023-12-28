@@ -1,7 +1,7 @@
 import { Button, Tooltip } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import EmailIcon from '@mui/icons-material/Email';
 import ContactModel from '../../../../models/contact/contact';
 import ContactConstants from '../../../../constants/contact';
 
@@ -14,7 +14,7 @@ export const contactsDivId = 'contacts';
 const icons = {
   [ContactConstants.GITHUB]: <GitHubIcon />,
   [ContactConstants.LINKEDIN]: <LinkedInIcon />,
-  [ContactConstants.RESUME]: <PictureAsPdfIcon />,
+  [ContactConstants.EMAIL]: <EmailIcon />,
 };
 
 export default function Contacts({ contacts }: Props): JSX.Element {
