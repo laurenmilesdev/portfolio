@@ -18,14 +18,12 @@ export default function Page({ pageTabValue, page }: Props) {
   return (
     <Fade in={true}>
       <div className={`${styles.container}`}>
-        <div className={`${styles.title} ${homePage ? 'col-md-6' : 'col-md-4'}`} id={titleDivId}>
+        <div className={`${homePage ? styles['home-title'] : styles.title}`} id={titleDivId}>
           {title}
         </div>
 
         <div
-          className={`${homePage ? styles['home-description'] : styles.description} ${
-            homePage ? 'col-md-6' : 'col-md-8'
-          }`}
+          className={`${homePage ? styles['home-description'] : styles.description}`}
           id={contentDivId}
         >
           {page.component}
