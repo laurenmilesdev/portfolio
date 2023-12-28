@@ -8,8 +8,8 @@ import ContactModel from '../../../models/contact/contact';
 import TickerTapeConstants from '../../../constants/ticker-tape';
 
 import styles from './Layout.module.css';
-import logoBlack from '../../../../public/img/logo-black.png';
-import logoWhite from '../../../../public/img/logo-white.png';
+import logoBlack from '../../../../public/img/logo/logo-black.png';
+import logoWhite from '../../../../public/img/logo/logo-white.png';
 
 type Props = {
   pageTitles: string[];
