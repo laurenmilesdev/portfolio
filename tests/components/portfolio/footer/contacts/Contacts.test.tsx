@@ -12,7 +12,7 @@ describe('Contacts component', () => {
   it('renders contact buttons with correct icons', () => {
     expect(getByTestId('GitHubIcon')).toBeVisible();
     expect(getByTestId('LinkedInIcon')).toBeVisible();
-    expect(getByTestId('PictureAsPdfIcon')).toBeVisible();
+    expect(getByTestId('EmailIcon')).toBeVisible();
   });
 
   it('renders contact buttons with correct URLs', () => {
