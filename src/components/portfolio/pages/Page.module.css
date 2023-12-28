@@ -1,11 +1,23 @@
-.page-container {
+.container {
   display: flex;
-  flex-direction: column;
-  padding-left: 5%;
-  padding-right: 5%;
-  color: var(--font-color);
+  flex-direction: row;
+  position: relative;
 }
 
 .title {
-  text-align: right;
+  font-size: 6rem;
+  font-family: 'Monofett';
+  padding: 0% 1%;
+}
+
+.description,
+.home-description {
+  padding: 0% 1%;
+}
+
+.home-description {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: monospace;
 }
