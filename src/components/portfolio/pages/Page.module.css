@@ -1,11 +1,62 @@
-.page-container {
+.container {
   display: flex;
-  flex-direction: column;
-  padding-left: 5%;
-  padding-right: 5%;
-  color: var(--font-color);
+  flex-direction: row;
+  position: relative;
+}
+
+.title,
+.home-title {
+  font-size: 6rem;
+  font-family: 'Monofett';
+  padding: 0% 1% 2%;
 }
 
 .title {
-  text-align: right;
+  width: 40%;
+}
+
+.home-title {
+  width: 50%;
+}
+
+.description,
+.home-description {
+  padding: 1% 1%;
+}
+
+.description {
+  width: 60%;
+}
+
+.home-description {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: monospace;
+  width: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    position: relative;
+  }
+
+  .title,
+  .description {
+    width: 100%;
+  }
+
+  .home-title,
+  .home-description {
+    width: 100%;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .title,
+  .home-title {
+    padding: 6% 1% 2%;
+  }
 }

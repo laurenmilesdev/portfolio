@@ -10,13 +10,13 @@ import Data from '../../data.json';
 import Home from '../components/portfolio/pages/home/Home';
 import About from '../components/portfolio/pages/about/About';
 import Projects from '../components/portfolio/pages/projects/Projects';
-import Contact from '../components/portfolio/pages/contact/Contact';
 import Resume from '../components/portfolio/pages/resume/Resume';
 import Layout from '../components/portfolio/layout/Layout';
 import WindowsThemeLayout from '../components/windows-theme/layout/Layout';
 import Window from '../components/windows-theme/window/Window';
 import HelpWindow from '../components/windows-theme/help-window/HelpWindow';
 import PageModel from '../models/component-helpers/page';
+import ContactModel from '../models/contact/contact';
 import DesktopItemModel from '../models/component-helpers/desktop-item';
 import ThemeConstants from '../constants/theme';
 import WindowConstants from '../constants/window';
@@ -43,11 +43,6 @@ export default function App({ Component, pageProps }: AppProps) {
       Data.about.subtitle
     ),
     new PageModel(
-      Data.contact.title,
-      <Contact description={Data.contact.description} />,
-      Data.contact.subtitle
-    ),
-    new PageModel(
       Data.projects.title,
       <Projects description={Data.projects.description} projects={Data.projects.projects} />,
       Data.projects.subtitle
@@ -58,7 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
       Data.resume.subtitle
     ),
   ];
-  const desktopItems = Data.contact.contacts.map(
+  const desktopItems = Data.contacts.map(
     (contact) =>
       new DesktopItemModel(
         contact.name,
@@ -72,7 +67,7 @@ export default function App({ Component, pageProps }: AppProps) {
       pageTitles={pages.map((page: PageModel) => page.title)}
       pageTabValue={pageTabValue}
       setPageTabValue={setPageTabValue}
-      contacts={Data.contact.contacts}
+      contacts={Data.contacts as ContactModel[]}
       useDarkTheme={useDarkTheme}
       setUseDarkTheme={setUseDarkTheme}
       setTheme={setTheme}
@@ -138,7 +133,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Software Developer Lauren Miles' portfolio containing work experience, resume, and contact information."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`img/favicon/${useDarkTheme ? `white` : `black`}-favicon.ico`} />
       </Head>
 
       {useWindowsTheme && windows}

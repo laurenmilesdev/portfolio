@@ -1,26 +1,28 @@
-.page-content {
-  display: flex;
-  flex-direction: row;
-  margin-top: 3%;
-}
-
 .nav-container {
-  width: 10%;
+  background-color: var(--background-color);
   position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
 }
 
 .children-container {
-  width: 75%;
-  padding-left: 10%;
+  padding-top: 5%;
+}
+
+.logo {
+  width: 10rem;
+  height: auto;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  position: fixed;
 }
 
 @media screen and (max-width: 1200px) {
-  .nav-container {
-    width: 6rem;
-  }
-
-  .children-container {
-    padding-left: 6rem;
-    width: 100%;
+  .logo {
+    width: 2.5rem;
+    left: 0.5rem;
+    bottom: 0.25rem;
   }
 }

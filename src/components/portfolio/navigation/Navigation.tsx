@@ -28,7 +28,6 @@ export default function Navigation({
       value={pageTabValue}
       onChange={(event, newValue) => setPageTabValue(newValue as number)}
       className={`${styles.tabs} nav-tabs`}
-      orientation="vertical"
     >
       {pageTitles.map((title: string, index: number) => (
         <Tab
