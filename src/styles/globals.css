@@ -39,9 +39,11 @@
   --primary: #a25210;
   --secondary: #989381;
 
-  --background-color: #e8e7e3;
+  --background-color: #fff;
   --font-color: #000;
   --font-color-opp: #fff;
+
+  --ticker-tape: #d0e31c;
 
   --warn: #e0a66c;
 
