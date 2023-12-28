@@ -1,8 +1,8 @@
 {
   "home": {
     "title": "Home",
-    "subtitle": "Lauren Miles portfolio",
-    "description": "<p>I am a Full Stack Software Developer with a passion for creating modern websites and applications. I have professional experience creating web applications using C#/.NET, TypeScript/Next.js, and some Ruby on Rails and automations using JavaScript/Node.js and Azure Functions. My skills range from front end development to back end development with a slight personal preference working on the front end by creating and contributing to the UI/UX. I still very much enjoy the thrill of solving complex logic within the back end, though.</p>"
+    "subtitle": "Full Stack Software Developer",
+    "description": "<p>I am a Full Stack Software Developer with a passion for creating modern websites and applications. I have professional experience creating web applications using C#/.NET, TypeScript/Next.js, and some Ruby on Rails and automations using JavaScript/Node.js and Azure Functions. My skills range from front end development to back end development with a slight personal preference working on the front end by creating and contributing to the UI/UX- but I still very much enjoy the thrill of solving complex logic on the back end.</p>"
   },
   "about": {
     "title": "About",
@@ -94,14 +94,6 @@
         "url": "https://github.com/laurenmilesdev",
         "imgSrc": "./img/desktop/github-pixelated.png",
         "imgDescription": "GitHub logo"
-      },
-      {
-        "name": "Resume",
-        "value": "Lauren_Miles_Resume.pdf",
-        "description": "Download resume as PDF",
-        "url": "/files/Lauren_Miles_Resume.pdf",
-        "imgSrc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAHlBMVEUAAACAgID//7QAAADAwMD///8AgIAAAIAAgAAAAP+MXRRYAAAAAXRSTlMAQObYZgAAAAFiS0dEBfhv6ccAAAAHdElNRQfiBhoANyCM1dKOAAAAkUlEQVQoz2NgYBCEAQYoEFKCAEUDdAFhdAFHAzSBEGE0gVCoErBAWpKSorGxMVwgzT0jCUg5wwTU3Do62lAEIirTmpEFUl0yy8qMkAVcJdJmIgukhUh0TkcWSJzZkY4ioDYzo7wcxZaZM6YVIwsolVcWG6EIKBmD+MgCEIBTYCYETBpoFYQERFzgACJgjAQYGADW/1JJ50I4UgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNi0yNlQwMDo1NTozMi0wNDowMA4ejnkAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDYtMjZUMDA6NTU6MzItMDQ6MDB/QzbFAAAAAElFTkSuQmCC",
-        "imgDescription": "Resume logo"
       }
     ]
   },
