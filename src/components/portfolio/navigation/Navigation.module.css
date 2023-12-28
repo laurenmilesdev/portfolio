@@ -1,5 +1,7 @@
 .app-bar {
   background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .tabs {
@@ -10,7 +12,7 @@
   font-family: monospace;
   color: var(--font-color);
   font-size: 1rem;
-  text-transform: lowercase;
+  text-transform: uppercase;
   letter-spacing: 0.1rem;
   align-items: start;
 }
