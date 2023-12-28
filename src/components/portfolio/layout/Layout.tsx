@@ -42,13 +42,13 @@ export default function Layout({
     <>
       <div id={pageContentDivId}>
         <div className={`${styles['nav-container']}`} id={navigationDivId}>
+          {openToWork && <TickerTape text={TickerTapeConstants.OPEN_TO_WORK} />}
+
           <Navigation
             pageTitles={pageTitles}
             pageTabValue={pageTabValue}
             setPageTabValue={setPageTabValue}
           />
-
-          {openToWork && <TickerTape text={TickerTapeConstants.OPEN_TO_WORK} />}
         </div>
 
         <Container className={styles['children-container']} id={childrenContainerId}>

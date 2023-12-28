@@ -2,6 +2,7 @@
   background-color: transparent;
   display: flex;
   justify-content: flex-end;
+  padding-top: 2rem;
 }
 
 .tabs {
