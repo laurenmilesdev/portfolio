@@ -7,12 +7,11 @@
 .title,
 .home-title {
   font-size: 6rem;
-  font-family: 'Monofett';
   padding: 0% 1% 2%;
 }
 
 .title {
-  width: 40%;
+  width: 30%;
 }
 
 .home-title {
@@ -25,14 +24,13 @@
 }
 
 .description {
-  width: 60%;
+  width: 70%;
 }
 
 .home-description {
   position: absolute;
   bottom: 0;
   right: 0;
-  font-family: monospace;
   width: 50%;
 }
 
@@ -51,12 +49,5 @@
   .home-description {
     width: 100%;
     position: relative;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .title,
-  .home-title {
-    padding: 6% 1% 2%;
   }
 }

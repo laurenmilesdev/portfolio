@@ -126,21 +126,20 @@ body {
   height: 100%;
   padding: 2rem 0 3rem 0;
   color: var(--font-color);
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
 a.primary {
   color: var(--font-color);
-  font-family: monospace;
 }
 
 a.primary:hover {
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 h1,
 h3 {
-  font-family: 'Monofett';
+  font-family: 'Monofett', monospace;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   color: var(--font-color);
