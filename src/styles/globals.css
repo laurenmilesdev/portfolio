@@ -140,7 +140,7 @@ a.primary:hover {
 
 h1,
 h3 {
-  font-family: 'Monofett';
+  font-family: 'Monofett', monospace;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   color: var(--font-color);
