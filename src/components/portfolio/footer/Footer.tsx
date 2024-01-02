@@ -35,13 +35,11 @@ Props): JSX.Element {
 
       <Contacts contacts={contacts} />
 
-      <Tooltip title={`${useDarkTheme ? ThemeConstants.DARK : ThemeConstants.LIGHT} mode`}>
-        <ThemeSwitch
-          useDarkTheme={useDarkTheme}
-          setUseDarkTheme={setUseDarkTheme}
-          setTheme={setTheme}
-        />
-      </Tooltip>
+      <ThemeSwitch
+        useDarkTheme={useDarkTheme}
+        setUseDarkTheme={setUseDarkTheme}
+        setTheme={setTheme}
+      />
     </div>
   );
 }
