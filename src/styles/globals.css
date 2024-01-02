@@ -131,12 +131,10 @@ body {
 
 a.primary {
   color: var(--font-color);
-  font-family: monospace;
 }
 
 a.primary:hover {
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 h1,
