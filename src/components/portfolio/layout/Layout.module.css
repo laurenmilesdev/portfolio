@@ -21,8 +21,14 @@
 
 @media screen and (max-width: 1200px) {
   .logo {
-    width: 2.5rem;
+    width: 2.2rem;
     left: 0.5rem;
     bottom: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .children-container {
+    padding-top: 13%;
   }
 }
