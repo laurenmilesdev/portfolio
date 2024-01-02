@@ -222,11 +222,6 @@ h3 {
   height: auto;
 }
 
-/* Removes extra margin from Switch */
-.MuiSwitch-root.MuiSwitch-sizeMedium {
-  margin-bottom: 0;
-}
-
 /* Global styling for Tooltip */
 .MuiTooltip-tooltip {
   background-color: var(--font-color);
@@ -238,12 +233,6 @@ h3 {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .nav-tab.MuiTab-root.Mui-selected {
-    align-items: start;
   }
 }
 
