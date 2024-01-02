@@ -26,3 +26,9 @@
     bottom: 0.25rem;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .children-container {
+    padding-top: 13%;
+  }
+}

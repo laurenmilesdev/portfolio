@@ -25,17 +25,9 @@ export default function Projects({ description, projects }: Props): JSX.Element 
 
       {projects &&
         projects.map((project: ProjectModel, index: number) => (
-          <div className={`${styles['projects-container']} col-md-12`} key={project.title}>
+          <div className={`${styles['project-container']} col-md-12`} key={project.title}>
             <div className={`${styles['project-title']} col-md-12`} id={getTitleId(index)}>
               {project.title}
-            </div>
-
-            <div className={`col-md-12`} id={`project-${index}-technologies`}>
-              {project.technologies && <Technologies technologies={project.technologies} />}
-            </div>
-
-            <div className={`col-md-12 pb-2`} id={getDescriptionId(index)}>
-              <p>{project.description}</p>
             </div>
 
             <div className={`col-md-12`}>
@@ -48,6 +40,14 @@ export default function Projects({ description, projects }: Props): JSX.Element 
                 {project.company}
                 {<OpenInNewIcon className={styles.icon} />}
               </a>
+            </div>
+
+            <div className={`col-md-12`} id={`project-${index}-technologies`}>
+              {project.technologies && <Technologies technologies={project.technologies} />}
+            </div>
+
+            <div className={`col-md-12 pb-2`} id={getDescriptionId(index)}>
+              <p>{project.description}</p>
             </div>
           </div>
         ))}

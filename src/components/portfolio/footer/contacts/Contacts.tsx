@@ -5,6 +5,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import ContactModel from '../../../../models/contact/contact';
 import ContactConstants from '../../../../constants/contact';
 
+import styles from './Contacts.module.css';
+
 type Props = {
   contacts: ContactModel[];
 };
@@ -19,7 +21,7 @@ const icons = {
 
 export default function Contacts({ contacts }: Props): JSX.Element {
   return (
-    <div id={contactsDivId}>
+    <div className={styles.container} id={contactsDivId}>
       {contacts.map((contact: ContactModel) => (
         <Tooltip title={contact.name} key={contact.name}>
           <Button
