@@ -70,8 +70,11 @@
         "company": "KiZAN Technologies",
         "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
         "description": "Contributed in creating an internal application for Four Roses to keep track of internal funding proposals. The web application allowed a user to compose a proposal and submit it to the proper internal department. Users on the receiving end would get an email when a proposal was submitted and have the capability of approving or rejecting the proposal, or requesting more information. If more information was needed, the proposal would begin the process over again.",
-",
-me": {
+        "companyUrl": "https://www.kizan.com"
+      }
+    ]
+  },
+  "resume": {
     "title": "Resume",
     "subtitle": "My resume",
     "description": "<p>Hard to view? On mobile? Click <a href='/files/Lauren_Miles_Resume.pdf' target='_blank' class='primary'>here</a> to open resume in a new tab.</p>"
