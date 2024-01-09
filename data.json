@@ -2,7 +2,7 @@
   "home": {
     "title": "Home",
     "subtitle": "Full Stack Software Developer",
-    "description": "<p>I'm Lauren and I'm a Software Developer with a passion for creating modern websites and applications. I have professional experience creating web applications using C#/.NET, TypeScript/Next.js, and some Ruby on Rails and automations using JavaScript/Node.js and Azure Functions. My skills range from front end development to back end development with a slight personal preference working on the front end by creating and contributing to the UI/UX- but I still very much enjoy the thrill of solving complex logic on the back end.</p>"
+    "description": "<p>I'm Lauren and I'm a Software Developer with a passion for creating modern websites and applications. I have professional experience creating web applications using C#/.NET, TypeScript/Next.js, and automations using JavaScript/Node.js and Azure Functions. My skills range from front end development to back end development with a slight personal preference working on the front end by creating and contributing to the UI/UX- but I still very much enjoy the thrill of solving complex logic on the back end.</p>"
   },
   "about": {
     "title": "About",
@@ -18,7 +18,7 @@
         "title": "BootcampOS",
         "company": "Tech Elevator",
         "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
-        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team paired with an external team (owned by Stride) that created the application to add features to the application that were specific to Tech Elevators needs. The application is used primarily by students and instructors to upload instruction content, student assignment submission and scoring, and instructor tracking of student scores and averages.",
+        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team worked with the Galvanize team, who created the application, to add features specific to Tech Elevators needs. The application is used primarily by instructors to upload instruction content and track student scores/module averages, and students to submit assignments for scoring.",
         "companyUrl": "https://www.techelevator.com"
       },
       {
@@ -34,7 +34,7 @@
           "Google Drive API",
           "Asset Panda API"
         ],
-        "description": "Created an applications that contained two Azure Functions used for automating shipping label generation for the upcoming or ending Tech Elevator bootcamp cohorts. One function created shipping labels used to mail the students their laptops, and the other created the return shipping labels that were emailed to the students to return their laptops. Both functions also updated internal information used for departmental tracking. These functions ran on an HTTP trigger, triggering from a Zoho workflow.",
+        "description": "Created an application that contained two Azure Functions used for automating shipping label generation for the upcoming or ending Tech Elevator bootcamp cohorts. One function created shipping labels used by the IT Department to mail the students their laptops, and the other created the return shipping labels that were emailed to the students to ship their laptops back. Both functions also updated internal data used for departmental tracking. These functions ran on an HTTP trigger, triggering from a Zoho workflow.",
         "companyUrl": "https://www.techelevator.com"
       },
       {
@@ -55,7 +55,7 @@
         "title": "Nationwide Children's Hospital Website",
         "company": "Nationwide Children's Hospital",
         "technologies": [".NET", "C#", "Sitecore"],
-        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore CRM was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. My time was mainly focused on enhancing accessibility within specific pages and forms to create a better experience for all users and meet audit requirements.",
+        "description": "Paired with the Marketing team to work on the NCH main website. Sitecore CMS was used to allow the Marketing team to make updates to the site while the Development team would create the framework and layout for the site's pages. This would include minor updates and enhancements. My time was mainly focused on enhancing accessibility within specific pages and forms to create a better experience for all users and meet audit requirements.",
         "companyUrl": "https://www.nationwidechildrens.org"
       },
       {
@@ -69,7 +69,7 @@
         "title": "Four Roses Bourbon Internal Application",
         "company": "KiZAN Technologies",
         "technologies": [".NET", "C#", "Telerik UI", "jQuery", "MSSQL"],
-        "description": "Contributed in creating an internal application for Four Roses to keep track of internal funding proposals. The web application allowed a user to compose a proposal and submit it to the proper internal department. Users on the receiving end would get an email when a proposal was submitted and have the capability of approving or rejecting the proposal or requesting more information. If more information was needed, the proposal would begin the process over again.",
+        "description": "Contributed in creating an internal application for Four Roses to keep track of internal funding proposals. The web application allowed a user to compose a proposal and submit it to the proper internal department. Users on the receiving end would get an email when a proposal was submitted and have the capability of approving or rejecting the proposal, or requesting more information. If more information was needed, the proposal would begin the process over again.",
         "companyUrl": "https://www.kizan.com"
       }
     ]
