@@ -18,7 +18,7 @@
         "title": "BootcampOS",
         "company": "Tech Elevator",
         "technologies": ["Ruby on Rails", "Ruby", "PostgreSQL", "Redis", "RSpec"],
-        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team worked with the Galvanize team, who created the application, to add features to that are specific to Tech Elevators needs. The application is used primarily by instructors to upload instruction content and track student scores/module averages, and students to submit assignments for scoring.",
+        "description": "Contributed to the BootcampOS application used by students enrolled in the Tech Elevator bootcamp. Our team worked with the Galvanize team, who created the application, to add features specific to Tech Elevators needs. The application is used primarily by instructors to upload instruction content and track student scores/module averages, and students to submit assignments for scoring.",
         "companyUrl": "https://www.techelevator.com"
       },
       {
