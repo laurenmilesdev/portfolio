@@ -2,7 +2,7 @@
   "home": {
     "title": "Home",
     "subtitle": "Full Stack Software Developer",
-    "description": "<p>I'm Lauren and I'm a Software Developer with a passion for creating modern websites and applications. I have professional experience creating web applications using C#/.NET, TypeScript/Next.js, and some Ruby on Rails and automations using JavaScript/Node.js and Azure Functions. My skills range from front end development to back end development with a slight personal preference working on the front end by creating and contributing to the UI/UX- but I still very much enjoy the thrill of solving complex logic on the back end.</p>"
+    "description": "<p>I'm Lauren and I'm a Software Developer with a passion for creating modern websites and applications. I have professional experience creating web applications using C#/.NET, TypeScript/Next.js, and automations using JavaScript/Node.js and Azure Functions. My skills range from front end development to back end development with a slight personal preference working on the front end by creating and contributing to the UI/UX- but I still very much enjoy the thrill of solving complex logic on the back end.</p>"
   },
   "about": {
     "title": "About",
